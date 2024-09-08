@@ -307,6 +307,7 @@ $(document).ready(function () {
 });
 
 // ====Solaimain====
+
 // sort svg color change
 const sortSvg1 = document.getElementById("filtering-click-sort-svg1");
 const sortSvg2 = document.getElementById("filtering-click-sort-svg2");
@@ -355,27 +356,57 @@ $(".destination-filtering-card-carousel .owl-carousel").owlCarousel({
 const headers = document.querySelectorAll(".accordion-header");
 
 headers.forEach((header) => {
-  header.addEventListener("click", function () {
+  header?.addEventListener("click", function () {
     const section = this.parentElement;
     const content = section.querySelector(".accordion-content");
     const allContents = document.querySelectorAll(".accordion-content");
+    const dropDownArrow = header.querySelector(".dropdown--arrow");
+    const destinationAccordionBtn = header.querySelector(
+      ".destination--dropdown--arrow",
+    );
+    if (dropDownArrow) {
+      allContents.forEach((c) => {
+        if (c !== content) {
+          c.style.maxHeight = null;
+          c.style.padding = "0 15px";
+          c.parentElement.classList.remove("active");
+          dropDownArrow.style.transform = "rotate(0deg)";
+        }
+      });
 
-    allContents.forEach((c) => {
-      if (c !== content) {
-        c.style.maxHeight = null;
-        c.style.padding = "0 15px";
-        c.parentElement.classList.remove("active");
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        content.style.padding = "0 15px";
+        section.classList.remove("active");
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        content.style.padding = "15px";
+        dropDownArrow.style.transform = "rotate(180deg)";
+        section.classList.add("active");
       }
-    });
+    }
 
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-      content.style.padding = "0 15px";
-      section.classList.remove("active");
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-      content.style.padding = "15px";
-      section.classList.add("active");
+    if(destinationAccordionBtn){
+      allContents.forEach((c) => {
+        if (c !== content) {
+          c.style.maxHeight = null;
+          c.style.padding = "0 15px";
+          c.parentElement.classList.remove("active");
+          destinationAccordionBtn.style.transform = "rotate(0deg)";
+        }
+      });
+  
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        content.style.padding = "0 15px";
+        section.classList.remove("active");
+       
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        content.style.padding = "15px";
+        destinationAccordionBtn.style.transform = "rotate(-90deg)";
+        section.classList.add("active");
+      }
     }
   });
 });

@@ -24,7 +24,7 @@
       "
     >
       <!-- Navbar::start -->
-      <div class="mx-5 md:mx-10 lg:mx-0 pt-10 text-textColor">
+      <div class="mx-5 pt-10 text-textColor md:mx-10 lg:mx-0">
         <div
           class="container mx-auto flex items-center justify-between rounded-xl bg-white px-4 py-2 md:h-24 xl:px-8"
         >
@@ -221,7 +221,7 @@
                     </svg>
                   </div>
                 </div>
-                <div class="filter-page-accordion-main xl:pt-6">
+                <div class="filter-page-accordion-main">
                   <div class="accordion">
                     <div class="accordion-section">
                       <div
@@ -233,6 +233,7 @@
                           Destination
                         </h4>
                         <svg
+                          class="dropdown--arrow"
                           xmlns="http://www.w3.org/2000/svg"
                           width="18"
                           height="18"
@@ -258,12 +259,11 @@
                             <input
                               type="radio"
                               class="h-4 w-4 cursor-pointer rounded-full"
-                              type="radio"
                               name=""
                               id="europe"
                             />
                             <label
-                              class="font-inter text-sm text-[#404A60] md:text-base"
+                              class="cursor-pointer font-inter text-sm text-[#404A60] md:text-base"
                               for="europe"
                               >Europe</label
                             >
@@ -285,7 +285,7 @@
                               id="finland"
                             />
                             <label
-                              class="font-inter text-sm text-[#404A60] md:text-base"
+                              class="cursor-pointer font-inter text-sm text-[#404A60] md:text-base"
                               for="finland"
                               >Finland</label
                             >
@@ -307,7 +307,7 @@
                               id="america"
                             />
                             <label
-                              class="font-inter text-sm text-[#404A60] md:text-base"
+                              class="cursor-pointer font-inter text-sm text-[#404A60] md:text-base"
                               for="america"
                               >America</label
                             >
@@ -327,7 +327,7 @@
                               id="maldives"
                             />
                             <label
-                              class="font-inter text-sm text-[#404A60] md:text-base"
+                              class="cursor-pointer font-inter text-sm text-[#404A60] md:text-base"
                               for="maldives"
                               >Maldives</label
                             >
@@ -349,6 +349,7 @@
                           Price
                         </h4>
                         <svg
+                          class="dropdown--arrow"
                           xmlns="http://www.w3.org/2000/svg"
                           width="18"
                           height="18"
@@ -368,7 +369,7 @@
                       <div class="accordion-content">
                         <div class="price-range-container">
                           <input
-                            id="price-range-input "
+                            id="price-range-input"
                             class="range h-[2px] w-full cursor-pointer appearance-none text-sm accent-[#1CA8CB] md:text-base"
                             type="range"
                             value="200"
@@ -406,6 +407,7 @@
                           Duration
                         </h4>
                         <svg
+                          class="dropdown--arrow"
                           xmlns="http://www.w3.org/2000/svg"
                           width="18"
                           height="18"
@@ -463,6 +465,7 @@
                           Trip Types
                         </h4>
                         <svg
+                          class="dropdown--arrow"
                           xmlns="http://www.w3.org/2000/svg"
                           width="16"
                           height="16"
@@ -493,7 +496,7 @@
                             />
                             <label
                               for="budget-travel"
-                              class="font-inter text-sm text-[#404A60] md:text-base"
+                              class="cursor-pointer font-inter text-sm text-[#404A60] md:text-base"
                               >Budget Travel</label
                             >
                           </div>
@@ -515,7 +518,7 @@
                             />
                             <label
                               for="time-friendly"
-                              class="font-inter text-sm text-[#404A60] md:text-base"
+                              class="cursor-pointer font-inter text-sm text-[#404A60] md:text-base"
                               >Time Friendly</label
                             >
                           </div>
@@ -537,7 +540,7 @@
                             />
                             <label
                               for="nature-walks"
-                              class="font-inter text-sm text-[#404A60] md:text-base"
+                              class="cursor-pointer font-inter text-sm text-[#404A60] md:text-base"
                               >Nature Walks</label
                             >
                           </div>
@@ -557,7 +560,7 @@
                             />
                             <label
                               for="weekend-tips"
-                              class="font-inter text-sm text-[#404A60] md:text-base"
+                              class="cursor-pointer font-inter text-sm text-[#404A60] md:text-base"
                               >Weekend Tips</label
                             >
                           </div>
@@ -575,7 +578,7 @@
             <!-- right part -->
             <div class="lg:col-span-8">
               <div
-                class="flex w-full flex-col items-start gap-6 rounded-lg border border-[#EBECEF] px-6 py-4 md:flex-row md:items-center md:justify-end md:px-7 md:py-7"
+                class="flex w-full flex-col items-start gap-6 rounded-lg border border-[#EBECEF] px-6 py-4 md:flex-row md:items-center md:justify-between md:px-7 md:py-7 lg:justify-end"
               >
                 <div
                   class="destination-filtering-nice-select flex items-center gap-1"
@@ -671,42 +674,53 @@
                 </div>
               </div>
               <!-- card container -->
-              <div class="grid grid-cols-1 gap-10 pt-6 xl:grid-cols-2">
+              <div
+                class="grid grid-cols-1 gap-10 overflow-hidden pt-6 xl:grid-cols-2"
+              >
                 <!-- item  -->
                 <div class="flex flex-col overflow-hidden rounded-md border">
                   <div class="destination-filtering-card-carousel w-full">
-                    <div class="owl-carousel owl-theme">
-                      <div class="item">
+                    <div class="owl-carousel owl-theme group">
+                      <div class="item overflow-hidden">
                         <div class="w-full">
                           <img
-                            class="h-full w-full bg-cover"
+                            class="h-full w-full bg-cover transition duration-[0.8s] group-hover:scale-150"
                             src="./assets/img/sm-filtering-card1.png"
                             alt=""
                           />
                         </div>
                       </div>
-                      <div class="item">
+                      <div class="item overflow-hidden">
                         <div class="w-full">
                           <img
-                            class="h-full w-full bg-cover"
+                            class="h-full w-full bg-cover transition duration-[0.8s] group-hover:scale-150"
                             src="./assets/img/sm-filtering-card1.png"
                             alt=""
                           />
                         </div>
                       </div>
-                      <div class="item">
+                      <div class="item overflow-hidden">
                         <div class="w-full">
                           <img
-                            class="h-full w-full bg-cover"
+                            class="h-full w-full bg-cover transition duration-[0.8s] group-hover:scale-150"
                             src="./assets/img/sm-filtering-card1.png"
                             alt=""
                           />
                         </div>
                       </div>
-                      <div class="item">
+                      <div class="item overflow-hidden">
                         <div class="w-full">
                           <img
-                            class="h-full w-full bg-cover"
+                            class="h-full w-full bg-cover transition duration-[0.8s] group-hover:scale-150"
+                            src="./assets/img/sm-filtering-card1.png"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                      <div class="item overflow-hidden">
+                        <div class="w-full">
+                          <img
+                            class="h-full w-full bg-cover transition duration-[0.8s] group-hover:scale-150"
                             src="./assets/img/sm-filtering-card1.png"
                             alt=""
                           />
@@ -881,10 +895,9 @@
                     </div>
                     <!-- card text right part -->
                     <div class="col-span-5 pl-3 md:pl-0">
-                      <div
-                        class="filtering-card-fav-icon flex w-full cursor-pointer justify-end pb-6"
-                      >
+                      <div class="flex w-full justify-end pb-6">
                         <svg
+                          class="filtering-card-fav-icon cursor-pointer"
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
                           height="25"
@@ -979,7 +992,7 @@
                     </div>
                     <!-- view details button container -->
                     <a
-                      class="col-span-12 mt-5 flex w-full items-center justify-center rounded-full bg-[#1CA8CB] py-2 font-poppins text-sm text-white md:mt-10 md:py-3 md:text-base"
+                      class="col-span-12 mt-5 flex w-full items-center justify-center rounded-full bg-[#1CA8CB] py-2 font-poppins text-sm text-white transition duration-500 hover:scale-105 md:mt-10 md:py-3 md:text-base"
                       href="destination-details.html"
                     >
                       <button>View Details</button>
@@ -989,38 +1002,47 @@
                 <!-- item  -->
                 <div class="flex flex-col overflow-hidden rounded-md border">
                   <div class="destination-filtering-card-carousel w-full">
-                    <div class="owl-carousel owl-theme">
-                      <div class="item">
+                    <div class="owl-carousel owl-theme group">
+                      <div class="item overflow-hidden">
                         <div class="w-full">
                           <img
-                            class="h-full w-full bg-cover"
+                            class="h-full w-full bg-cover transition duration-[0.8s] group-hover:scale-150"
                             src="./assets/img/sm-filtering-card1.png"
                             alt=""
                           />
                         </div>
                       </div>
-                      <div class="item">
+                      <div class="item overflow-hidden">
                         <div class="w-full">
                           <img
-                            class="h-full w-full bg-cover"
+                            class="h-full w-full bg-cover transition duration-[0.8s] group-hover:scale-150"
                             src="./assets/img/sm-filtering-card1.png"
                             alt=""
                           />
                         </div>
                       </div>
-                      <div class="item">
+                      <div class="item overflow-hidden">
                         <div class="w-full">
                           <img
-                            class="h-full w-full bg-cover"
+                            class="h-full w-full bg-cover transition duration-[0.8s] group-hover:scale-150"
                             src="./assets/img/sm-filtering-card1.png"
                             alt=""
                           />
                         </div>
                       </div>
-                      <div class="item">
+                      <div class="item overflow-hidden">
                         <div class="w-full">
                           <img
-                            class="h-full w-full bg-cover"
+                            class="h-full w-full bg-cover transition duration-[0.8s] group-hover:scale-150"
+                            src="./assets/img/sm-filtering-card1.png"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                      <div class="item overflow-hidden">
+                        <div class="w-full">
+                          <img
+                            class="h-full w-full bg-cover transition duration-[0.8s] group-hover:scale-150"
                             src="./assets/img/sm-filtering-card1.png"
                             alt=""
                           />
@@ -1195,10 +1217,9 @@
                     </div>
                     <!-- card text right part -->
                     <div class="col-span-5 pl-3 md:pl-0">
-                      <div
-                        class="filtering-card-fav-icon flex w-full cursor-pointer justify-end pb-6"
-                      >
+                      <div class="flex w-full justify-end pb-6">
                         <svg
+                          class="filtering-card-fav-icon cursor-pointer"
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
                           height="25"
@@ -1293,7 +1314,7 @@
                     </div>
                     <!-- view details button container -->
                     <a
-                      class="col-span-12 mt-5 flex w-full items-center justify-center rounded-full bg-[#1CA8CB] py-2 font-poppins text-sm text-white md:mt-10 md:py-3 md:text-base"
+                      class="col-span-12 mt-5 flex w-full items-center justify-center rounded-full bg-[#1CA8CB] py-2 font-poppins text-sm text-white transition duration-500 hover:scale-105 md:mt-10 md:py-3 md:text-base"
                       href="destination-details.html"
                     >
                       <button>View Details</button>
@@ -1303,38 +1324,47 @@
                 <!-- item  -->
                 <div class="flex flex-col overflow-hidden rounded-md border">
                   <div class="destination-filtering-card-carousel w-full">
-                    <div class="owl-carousel owl-theme">
-                      <div class="item">
+                    <div class="owl-carousel owl-theme group">
+                      <div class="item overflow-hidden">
                         <div class="w-full">
                           <img
-                            class="h-full w-full bg-cover"
+                            class="h-full w-full bg-cover transition duration-[0.8s] group-hover:scale-150"
                             src="./assets/img/sm-filtering-card1.png"
                             alt=""
                           />
                         </div>
                       </div>
-                      <div class="item">
+                      <div class="item overflow-hidden">
                         <div class="w-full">
                           <img
-                            class="h-full w-full bg-cover"
+                            class="h-full w-full bg-cover transition duration-[0.8s] group-hover:scale-150"
                             src="./assets/img/sm-filtering-card1.png"
                             alt=""
                           />
                         </div>
                       </div>
-                      <div class="item">
+                      <div class="item overflow-hidden">
                         <div class="w-full">
                           <img
-                            class="h-full w-full bg-cover"
+                            class="h-full w-full bg-cover transition duration-[0.8s] group-hover:scale-150"
                             src="./assets/img/sm-filtering-card1.png"
                             alt=""
                           />
                         </div>
                       </div>
-                      <div class="item">
+                      <div class="item overflow-hidden">
                         <div class="w-full">
                           <img
-                            class="h-full w-full bg-cover"
+                            class="h-full w-full bg-cover transition duration-[0.8s] group-hover:scale-150"
+                            src="./assets/img/sm-filtering-card1.png"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                      <div class="item overflow-hidden">
+                        <div class="w-full">
+                          <img
+                            class="h-full w-full bg-cover transition duration-[0.8s] group-hover:scale-150"
                             src="./assets/img/sm-filtering-card1.png"
                             alt=""
                           />
@@ -1509,10 +1539,9 @@
                     </div>
                     <!-- card text right part -->
                     <div class="col-span-5 pl-3 md:pl-0">
-                      <div
-                        class="filtering-card-fav-icon flex w-full cursor-pointer justify-end pb-6"
-                      >
+                      <div class="flex w-full justify-end pb-6">
                         <svg
+                          class="filtering-card-fav-icon cursor-pointer"
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
                           height="25"
@@ -1607,7 +1636,7 @@
                     </div>
                     <!-- view details button container -->
                     <a
-                      class="col-span-12 mt-5 flex w-full items-center justify-center rounded-full bg-[#1CA8CB] py-2 font-poppins text-sm text-white md:mt-10 md:py-3 md:text-base"
+                      class="col-span-12 mt-5 flex w-full items-center justify-center rounded-full bg-[#1CA8CB] py-2 font-poppins text-sm text-white transition duration-500 hover:scale-105 md:mt-10 md:py-3 md:text-base"
                       href="destination-details.html"
                     >
                       <button>View Details</button>
@@ -1617,38 +1646,47 @@
                 <!-- item  -->
                 <div class="flex flex-col overflow-hidden rounded-md border">
                   <div class="destination-filtering-card-carousel w-full">
-                    <div class="owl-carousel owl-theme">
-                      <div class="item">
+                    <div class="owl-carousel owl-theme group">
+                      <div class="item overflow-hidden">
                         <div class="w-full">
                           <img
-                            class="h-full w-full bg-cover"
+                            class="h-full w-full bg-cover transition duration-[0.8s] group-hover:scale-150"
                             src="./assets/img/sm-filtering-card1.png"
                             alt=""
                           />
                         </div>
                       </div>
-                      <div class="item">
+                      <div class="item overflow-hidden">
                         <div class="w-full">
                           <img
-                            class="h-full w-full bg-cover"
+                            class="h-full w-full bg-cover transition duration-[0.8s] group-hover:scale-150"
                             src="./assets/img/sm-filtering-card1.png"
                             alt=""
                           />
                         </div>
                       </div>
-                      <div class="item">
+                      <div class="item overflow-hidden">
                         <div class="w-full">
                           <img
-                            class="h-full w-full bg-cover"
+                            class="h-full w-full bg-cover transition duration-[0.8s] group-hover:scale-150"
                             src="./assets/img/sm-filtering-card1.png"
                             alt=""
                           />
                         </div>
                       </div>
-                      <div class="item">
+                      <div class="item overflow-hidden">
                         <div class="w-full">
                           <img
-                            class="h-full w-full bg-cover"
+                            class="h-full w-full bg-cover transition duration-[0.8s] group-hover:scale-150"
+                            src="./assets/img/sm-filtering-card1.png"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                      <div class="item overflow-hidden">
+                        <div class="w-full">
+                          <img
+                            class="h-full w-full bg-cover transition duration-[0.8s] group-hover:scale-150"
                             src="./assets/img/sm-filtering-card1.png"
                             alt=""
                           />
@@ -1823,10 +1861,9 @@
                     </div>
                     <!-- card text right part -->
                     <div class="col-span-5 pl-3 md:pl-0">
-                      <div
-                        class="filtering-card-fav-icon flex w-full cursor-pointer justify-end pb-6"
-                      >
+                      <div class="flex w-full justify-end pb-6">
                         <svg
+                          class="filtering-card-fav-icon cursor-pointer"
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
                           height="25"
@@ -1921,7 +1958,7 @@
                     </div>
                     <!-- view details button container -->
                     <a
-                      class="col-span-12 mt-5 flex w-full items-center justify-center rounded-full bg-[#1CA8CB] py-2 font-poppins text-sm text-white md:mt-10 md:py-3 md:text-base"
+                      class="col-span-12 mt-5 flex w-full items-center justify-center rounded-full bg-[#1CA8CB] py-2 font-poppins text-sm text-white transition duration-500 hover:scale-105 md:mt-10 md:py-3 md:text-base"
                       href="destination-details.html"
                     >
                       <button>View Details</button>

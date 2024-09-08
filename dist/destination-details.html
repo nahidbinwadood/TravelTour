@@ -198,7 +198,7 @@
       <!-- destination details main wrapper -->
       <div class="bg-white py-12 font-poppins 2xl:py-[150px]">
         <div class="container mx-auto px-4 xl:px-8">
-          <div class="grid grid-cols-1 gap-8 xl:gap-[80px] xl:grid-cols-12">
+          <div class="grid grid-cols-1 gap-8 xl:grid-cols-12 xl:gap-[80px]">
             <!-- Left Part::Start -->
 
             <div class="xl:col-span-7">
@@ -226,26 +226,54 @@
 
               <!-- travel details -->
 
-              <div class="overflow-hidden rounded-lg border">
+              <div class="overflow-hidden rounded-lg border blogs--slider">
                 <!-- carousel content -->
-                <div class="w-full overflow-hidden">
-                  <img
-                    class="h-full w-full object-cover"
-                    src="assets/img/sm-destination-details.png"
-                    alt=""
-                  />
+
+                <!-- Slider::Start -->
+                <div class="owl-carousel overflow-hidden rounded-t-lg">
+                  <div>
+                    <img
+                      class="h-[280px] md:h-[350px] lg:h-[5400px] xl:h-[450px] 2xl:h-[500px]"
+                      src="./assets/img/blogs/slider-1.png"
+                      alt=""
+                    />
+                  </div>
+                  <div>
+                    <img
+                      class="h-[280px] md:h-[350px] lg:h-[5400px] xl:h-[450px] 2xl:h-[500px]"
+                      src="./assets/img/blogs/slider-1.png"
+                      alt=""
+                    />
+                  </div>
+                  <div>
+                    <img
+                      class="h-[280px] md:h-[350px] lg:h-[5400px] xl:h-[450px] 2xl:h-[500px]"
+                      src="./assets/img/blogs/slider-1.png"
+                      alt=""
+                    />
+                  </div>
+                  <div>
+                    <img
+                      class="h-[280px] md:h-[350px] lg:h-[5400px] xl:h-[450px] 2xl:h-[500px]"
+                      src="./assets/img/blogs/slider-1.png"
+                      alt=""
+                    />
+                  </div>
                 </div>
+                <!-- Slider::End -->
 
                 <!-- travel description details -->
 
-                <div class="px-4 lg:px-8 py-4 md:px-6 md:py-6 lg:py-8">
+                <div class="px-4 py-4 md:px-6 md:py-6 lg:px-8 lg:py-8">
                   <h2
-                    class="pb-4 md:pb-6 lg:pb-7 text-xl text-[#000] md:text-3xl lg:text-4xl 2xl:text-[42px]"
+                    class="pb-4 text-xl text-[#000] md:pb-6 md:text-3xl lg:pb-7 lg:text-4xl 2xl:text-[42px]"
                   >
                     Trip Info
                   </h2>
 
-                  <div class="flex flex-col md:flex-row items-start justify-center gap-8 md:items-start md:justify-between">
+                  <div
+                    class="flex flex-col items-start justify-center gap-8 md:flex-row md:items-start md:justify-between"
+                  >
                     <!-- details info row -->
                     <div class="flex flex-col justify-between gap-8 lg:gap-12">
                       <!-- info items -->
@@ -273,7 +301,9 @@
                               stroke-linejoin="round"
                             />
                           </svg>
-                          <span class="text-gray-500 text-sm md:text-base">Accommodation</span>
+                          <span class="text-sm text-gray-500 md:text-base"
+                            >Accommodation</span
+                          >
                         </div>
                         <h4 class="text-sm md:text-base">5 stars hotel</h4>
                       </div>
@@ -292,9 +322,11 @@
                               fill="#1CA8CB"
                             />
                           </svg>
-                          <span class="text-gray-500 text-sm md:text-base">Best Season</span>
+                          <span class="text-sm text-gray-500 md:text-base"
+                            >Best Season</span
+                          >
                         </div>
-                        <h4 class="text-sm md:text-base ">Autumn</h4>
+                        <h4 class="text-sm md:text-base">Autumn</h4>
                       </div>
                       <!-- info items -->
                       <div class="flex flex-col items-start gap-2.5">
@@ -319,7 +351,9 @@
                               fill="#1CA8CB"
                             />
                           </svg>
-                          <span class="text-gray-500 text-sm md:text-base">Meals</span>
+                          <span class="text-sm text-gray-500 md:text-base"
+                            >Meals</span
+                          >
                         </div>
                         <h4 class="text-sm md:text-base">Breakfast & Dinner</h4>
                       </div>
@@ -356,7 +390,9 @@
                               </clipPath>
                             </defs>
                           </svg>
-                          <span class="text-gray-500 text-sm md:text-base">Departure City</span>
+                          <span class="text-sm text-gray-500 md:text-base"
+                            >Departure City</span
+                          >
                         </div>
                         <h4 class="text-sm md:text-base">Swish</h4>
                       </div>
@@ -420,7 +456,9 @@
                               </clipPath>
                             </defs>
                           </svg>
-                          <span class="text-gray-500 text-sm md:text-base">Guide</span>
+                          <span class="text-sm text-gray-500 md:text-base"
+                            >Guide</span
+                          >
                         </div>
                         <h4 class="text-sm md:text-base">Guided</h4>
                       </div>
@@ -454,7 +492,9 @@
                               </clipPath>
                             </defs>
                           </svg>
-                          <span class="text-gray-500 text-sm md:text-base">Tour Availability</span>
+                          <span class="text-sm text-gray-500 md:text-base"
+                            >Tour Availability</span
+                          >
                         </div>
                         <h4 class="text-sm md:text-base">Available</h4>
                       </div>
@@ -484,7 +524,9 @@
                               fill="#1CA8CB"
                             />
                           </svg>
-                          <span class="text-gray-500 text-sm md:text-base">Arrival City</span>
+                          <span class="text-sm text-gray-500 md:text-base"
+                            >Arrival City</span
+                          >
                         </div>
                         <h4 class="text-sm md:text-base">Zurich</h4>
                       </div>
@@ -510,7 +552,9 @@
                               </clipPath>
                             </defs>
                           </svg>
-                          <span class="text-gray-500 text-sm md:text-base">Language</span>
+                          <span class="text-sm text-gray-500 md:text-base"
+                            >Language</span
+                          >
                         </div>
                         <h4 class="text-sm md:text-base">English</h4>
                       </div>
@@ -541,7 +585,9 @@
                               </clipPath>
                             </defs>
                           </svg>
-                          <span class="text-gray-500 text-sm md:text-base">Transportation</span>
+                          <span class="text-sm text-gray-500 md:text-base"
+                            >Transportation</span
+                          >
                         </div>
                         <h4 class="text-sm md:text-base">Bus</h4>
                       </div>
@@ -630,7 +676,9 @@
                             </clipPath>
                           </defs>
                         </svg>
-                        <span class="text-gray-500 text-sm md:text-base">Trip Type</span>
+                        <span class="text-sm text-gray-500 md:text-base"
+                          >Trip Type</span
+                        >
                       </div>
                       <h4 class="text-sm md:text-base">
                         Budget Travel, Nature walk, Weekend Trips
@@ -642,15 +690,19 @@
 
               <!-- calender date range picker  -->
 
-              <div class="mt-8 lg:mt-16 w-full rounded-lg bg-[#EEFBFD] p-5 px-5">
-                <h3 class="text-lg md:text-xl lg:text-2xl xl:text-[32px]">Dates & Prices</h3>
+              <div
+                class="mt-8 w-full rounded-lg bg-[#EEFBFD] p-5 px-5 lg:mt-16"
+              >
+                <h3 class="text-lg md:text-xl lg:text-2xl xl:text-[32px]">
+                  Dates & Prices
+                </h3>
               </div>
 
               <div
                 class="sm-date-range-picker-container relative flex items-center justify-between pt-4"
               >
                 <input
-                  class="text-normal text-xs md:text-sm lg:text-base w-full rounded-md border border-[#1CA8CB] px-2 py-2 font-light text-[#BDC0CC] focus:border-[#1CA8CB]"
+                  class="text-normal w-full rounded-md border border-[#1CA8CB] px-2 py-2 text-xs font-light text-[#BDC0CC] focus:border-[#1CA8CB] md:text-sm lg:text-base"
                   type="text"
                   name="daterange"
                   value="01/01/2024 - 01/15/2024"
@@ -674,13 +726,17 @@
 
               <!-- overview and map -->
 
-              <div class="mt-8 md:mt-12 overflow-hidden rounded-md border">
+              <div class="mt-8 overflow-hidden rounded-md border md:mt-12">
                 <div class="bg-[#EEFBFD] px-8 py-5">
-                  <h3 class="text-lg md:text-xl lg:text-2xl xl:text-[32px]">Overview</h3>
+                  <h3 class="text-lg md:text-xl lg:text-2xl xl:text-[32px]">
+                    Overview
+                  </h3>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-5 md:p-8 pb-4 md:pb-12 lg:pb-16">
-                  <p class="font-light text-[#000] text-sm md:text-base">
+                <div
+                  class="grid grid-cols-1 gap-8 p-5 pb-4 md:grid-cols-2 md:p-8 md:pb-12 lg:pb-16"
+                >
+                  <p class="text-sm font-light text-[#000] md:text-base">
                     The Tiananmen, a gate in the wall of the Imperial City, was
                     built in 1415 during the Ming dynasty. In the 17th century,
                     fighting between Li Zicheng’s rebel forces and the forces of
@@ -706,9 +762,9 @@
                 <div class="p-5 md:p-8">
                   <h4 class="text-[#000 pb-6 text-2xl">What’s Included</h4>
 
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
+                  <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-8">
                     <div>
-                      <h4 class="pb-4 md:pb-5 lg:pb-7 font-medium text-[#000]">
+                      <h4 class="pb-4 font-medium text-[#000] md:pb-5 lg:pb-7">
                         Package includes
                       </h4>
                       <div class="flex flex-col gap-3 md:pl-4">
@@ -735,7 +791,8 @@
                               </clipPath>
                             </defs>
                           </svg>
-                          <span class="font-light text-[#000] text-sm md:text-base"
+                          <span
+                            class="text-sm font-light text-[#000] md:text-base"
                             >General Services: Travel by bus with English
                             speaking guide, basic travel insurance, hotel and
                             breakfast buffet.</span
@@ -764,7 +821,8 @@
                               </clipPath>
                             </defs>
                           </svg>
-                          <span class="font-light text-[#000] text-sm md:text-base"
+                          <span
+                            class="text-sm font-light text-[#000] md:text-base"
                             >Includes arrival transfer</span
                           >
                         </div>
@@ -791,7 +849,8 @@
                               </clipPath>
                             </defs>
                           </svg>
-                          <span class="font-light text-[#000] text-sm md:text-base"
+                          <span
+                            class="text-sm font-light text-[#000] md:text-base"
                             >City Tour: Barcelona, paris</span
                           >
                         </div>
@@ -818,14 +877,15 @@
                               </clipPath>
                             </defs>
                           </svg>
-                          <span class="font-light text-[#000] text-sm md:text-base"
+                          <span
+                            class="text-sm font-light text-[#000] md:text-base"
                             >City Tour: Barcelona, paris</span
                           >
                         </div>
                       </div>
                     </div>
                     <div>
-                      <h4 class="pb-4 md:pb-7 font-medium text-[#000]">
+                      <h4 class="pb-4 font-medium text-[#000] md:pb-7">
                         Package includes
                       </h4>
                       <div class="flex flex-col gap-3 md:pl-4">
@@ -854,7 +914,8 @@
                               </clipPath>
                             </defs>
                           </svg>
-                          <span class="font-light text-[#000] text-sm md:text-base"
+                          <span
+                            class="text-sm font-light text-[#000] md:text-base"
                             >General Services: Travel by bus with English
                             speaking guide, basic travel insurance, hotel and
                             breakfast buffet.</span
@@ -885,7 +946,8 @@
                               </clipPath>
                             </defs>
                           </svg>
-                          <span class="font-light text-[#000] text-sm md:text-base"
+                          <span
+                            class="text-sm font-light text-[#000] md:text-base"
                             >Includes arrival transfer</span
                           >
                         </div>
@@ -914,7 +976,8 @@
                               </clipPath>
                             </defs>
                           </svg>
-                          <span class="font-light text-[#000] text-sm md:text-base"
+                          <span
+                            class="text-sm font-light text-[#000] md:text-base"
                             >City Tour: Barcelona, paris</span
                           >
                         </div>
@@ -943,7 +1006,8 @@
                               </clipPath>
                             </defs>
                           </svg>
-                          <span class="font-light text-[#000] text-sm md:text-base"
+                          <span
+                            class="text-sm font-light text-[#000] md:text-base"
                             >City Tour: Barcelona, paris</span
                           >
                         </div>
@@ -954,13 +1018,17 @@
 
                 <!-- pricing info -->
                 <div class="p-5 md:p-8">
-                  <h3 class="pb-4 md:pb-6 text-base md:text-lg lg:text-2xl">Pricing Info</h3>
-                  <div class="md:pl-10 pr-4 text-sm font-light text-[#000]">
+                  <h3 class="pb-4 text-base md:pb-6 md:text-lg lg:text-2xl">
+                    Pricing Info
+                  </h3>
+                  <div class="pr-4 text-sm font-light text-[#000] md:pl-10">
                     <h4 class="pb-2 text-sm md:text-base">
                       Your reservation is always subject to confirmation by
                       email, normally within one to two business days.
                     </h4>
-                    <ul class="flex flex-col gap-1 md:pl-2 text-sm md:text-base space-y-2 md:space-y-0">
+                    <ul
+                      class="flex flex-col gap-1 space-y-2 text-sm md:space-y-0 md:pl-2 md:text-base"
+                    >
                       <li><span>*</span> Adult: 16 and older</li>
                       <li>
                         <span>*</span> Child: 3-15 years of age (minimum one
@@ -993,22 +1061,29 @@
               <!-- FAQ  -->
 
               <div class="mt-10 overflow-hidden rounded-md border">
-                <div class="md:mb-6 bg-[#EEFBFD] px-5 py-4 md:px-8 md:py-5">
-                  <h3 class="text-lg md:text-xl lg:text-2xl xl:text-[32px] text-[#113D48]">
+                <div class="bg-[#EEFBFD] px-5 py-4 md:mb-6 md:px-8 md:py-5">
+                  <h3
+                    class="text-lg text-[#113D48] md:text-xl lg:text-2xl xl:text-[32px]"
+                  >
                     Frequently Asked Questions (FAQs)
                   </h3>
                 </div>
 
-                <div class="destination-details-page-accordion px-4 py-3 md:px-6 md:py-4 lg:px-7 lg:py-7 font-poppins">
+                <div
+                  class="destination-details-page-accordion px-4 py-3 font-poppins md:px-6 md:py-4 lg:px-7 lg:py-7"
+                >
                   <div class="accordion pb-4 md:pb-8">
                     <div class="accordion-section">
                       <div
                         class="accordion-header flex items-center justify-between"
                       >
-                        <h4 class="font-inter font-medium text-[#222E48] text-sm md:text-base lg:text-xl">
+                        <h4
+                          class="font-inter text-sm font-medium text-[#222E48] md:text-base lg:text-xl"
+                        >
                           <span>1.</span> What is included in the tour package?
                         </h4>
                         <svg
+                          class="destination--dropdown--arrow"
                           xmlns="http://www.w3.org/2000/svg"
                           width="38"
                           height="38"
@@ -1033,8 +1108,8 @@
                           />
                         </svg>
                       </div>
-                      <div class="accordion-content ">
-                        <p  >
+                      <div class="accordion-content">
+                        <p>
                           The tour package includes accommodation, guided tours,
                           meals as specified in the itinerary, and
                           transportation between destinations during the tour.
@@ -1048,11 +1123,14 @@
                       <div
                         class="accordion-header flex items-center justify-between"
                       >
-                        <h4 class="font-inter font-medium text-[#222E48] text-sm md:text-base lg:text-xl">
+                        <h4
+                          class="font-inter text-sm font-medium text-[#222E48] md:text-base lg:text-xl"
+                        >
                           <span>2.</span> What is the best time to visit
                           Switzerland?
                         </h4>
                         <svg
+                          class="destination--dropdown--arrow"
                           xmlns="http://www.w3.org/2000/svg"
                           width="38"
                           height="38"
@@ -1093,10 +1171,13 @@
                       <div
                         class="accordion-header flex items-center justify-between"
                       >
-                        <h4 class="font-inter font-medium text-[#222E48] text-sm md:text-base lg:text-xl ">
+                        <h4
+                          class="font-inter text-sm font-medium text-[#222E48] md:text-base lg:text-xl"
+                        >
                           <span>3.</span> Can I customize the tour itinerary?
                         </h4>
                         <svg
+                          class="destination--dropdown--arrow"
                           xmlns="http://www.w3.org/2000/svg"
                           width="38"
                           height="38"
@@ -1139,11 +1220,14 @@
                       <div
                         class="accordion-header flex items-center justify-between"
                       >
-                        <h4 class="font-inter font-medium text-[#222E48] text-sm md:text-base lg:text-xl ">
+                        <h4
+                          class="font-inter text-sm font-medium text-[#222E48] md:text-base lg:text-xl"
+                        >
                           <span>4.</span> Are there any additional fees I should
                           be aware of?
                         </h4>
                         <svg
+                          class="destination--dropdown--arrow"
                           xmlns="http://www.w3.org/2000/svg"
                           width="38"
                           height="38"
@@ -1186,19 +1270,23 @@
             <!-- right part::Start -->
             <div class="xl:col-span-5">
               <h4
-                class="w-fit rounded-lg bg-[#1CA8CB] px-3 py-px text-sm font-light text-white"
+                class="w-fit rounded-lg bg-[#1CA8CB] px-3 py-px text-sm font-light text-white xl:mt-32"
               >
                 30% off
               </h4>
 
-              <div class="flex items-center gap-8 md:gap-12 lg:gap-16 xl:gap-20 pt-4">
+              <div
+                class="flex items-center gap-8 pt-4 md:gap-12 lg:gap-16 xl:gap-20"
+              >
                 <div>
                   <div class="flex items-center gap-4 pb-2">
                     <h4 class="text-sm text-[#000]">From</h4>
                     <span class="text-sm text-gray-500">$589</span>
                   </div>
                   <div class="flex items-center gap-2 md:gap-4">
-                    <h3 class="text-base md:text-lg lg:text-xl xl:text-2xl"><span>$</span>500</h3>
+                    <h3 class="text-base md:text-lg lg:text-xl xl:text-2xl">
+                      <span>$</span>500
+                    </h3>
                     <span class="text-gray-500">/ Adult</span>
                   </div>
                 </div>
@@ -1208,13 +1296,15 @@
                     <span class="text-sm text-gray-500">$589</span>
                   </div>
                   <div class="flex items-center gap-4">
-                    <h3 class="text-base md:text-lg lg:text-xl xl:text-2xl"><span>$</span>300</h3>
+                    <h3 class="text-base md:text-lg lg:text-xl xl:text-2xl">
+                      <span>$</span>300
+                    </h3>
                     <span class="text-gray-500">/ Child</span>
                   </div>
                 </div>
               </div>
 
-              <div class="space-y-2 pt-4 pb-4 md:pb-7 md:pt-7">
+              <div class="space-y-2 pb-4 pt-4 md:pb-7 md:pt-7">
                 <h4
                   class="mr-2 inline-block w-fit rounded-xl bg-red-400 px-3 py-px text-sm text-white"
                 >
@@ -1341,7 +1431,7 @@
               <!-- book now button  -->
               <a class="w-full" href="#">
                 <button
-                  class="px- mt-6 md:mt-8 w-full rounded-lg bg-[#FF5108] py-3 md:py-4 lg:py-5 text-base lg:text-xl xl:text-[22px] text-white"
+                  class="px- mt-6 w-full rounded-lg bg-[#FF5108] py-3 text-base text-white md:mt-8 md:py-4 lg:py-5 lg:text-xl xl:text-[22px]"
                 >
                   Book Now
                 </button>
@@ -1352,7 +1442,9 @@
                 class="mt-8 overflow-hidden rounded-xl border border-[#1CA8CB]"
               >
                 <div class="bg-[#1CA8CB] px-8 py-2.5">
-                  <h3 class="md:text-[18px] text-white">Price Trip, Book Now</h3>
+                  <h3 class="text-white md:text-[18px]">
+                    Price Trip, Book Now
+                  </h3>
                 </div>
 
                 <div class="space-y-[26px] p-5 md:p-7">
@@ -1362,7 +1454,7 @@
                         class="flex h-4 w-4 items-center justify-center rounded-full bg-[#1CA8CB] text-xs text-white"
                         >1</span
                       >
-                      <label class="text-[#113D48] text-sm md:text-base" for=""
+                      <label class="text-sm text-[#113D48] md:text-base" for=""
                         >Departure Date:</label
                       >
                     </div>
@@ -1400,7 +1492,9 @@
                           class="flex h-4 w-4 items-center justify-center rounded-full bg-[#1CA8CB] text-xs text-white"
                           >2</span
                         >
-                        <label class="text-[#113D48] text-sm md:text-base" for=""
+                        <label
+                          class="text-sm text-[#113D48] md:text-base"
+                          for=""
                           >Number of Room:</label
                         >
                       </div>
@@ -1412,7 +1506,9 @@
                         <option value="5">5</option>
                       </select>
                     </div>
-                    <div class="flex flex-col md:flex-row items-center gap-4 md:pl-8 pt-2.5">
+                    <div
+                      class="flex flex-col items-center gap-4 pt-2.5 md:flex-row md:pl-8"
+                    >
                       <h4 class="text-xs text-gray-500">Room 1:</h4>
                       <div class="flex items-center gap-2">
                         <div class="flex items-center gap-1">
@@ -1448,7 +1544,9 @@
                           class="flex h-4 w-4 items-center justify-center rounded-full bg-[#1CA8CB] text-xs text-white"
                           >3</span
                         >
-                        <label class="text-nowrap text-[#113D48] text-sm md:text-base" for=""
+                        <label
+                          class="text-nowrap text-sm text-[#113D48] md:text-base"
+                          for=""
                           >Hotel Option:</label
                         >
                       </div>
@@ -1471,7 +1569,9 @@
                           class="flex h-4 w-4 items-center justify-center rounded-full bg-[#1CA8CB] text-xs text-white"
                           >4</span
                         >
-                        <label class="text-nowrap text-[#113D48] text-sm md:text-base" for=""
+                        <label
+                          class="text-nowrap text-sm text-[#113D48] md:text-base"
+                          for=""
                           >Seat Category:</label
                         >
                       </div>
@@ -1494,7 +1594,9 @@
                           class="flex h-4 w-4 items-center justify-center rounded-full bg-[#1CA8CB] text-xs text-white"
                           >5</span
                         >
-                        <label class="text-nowrap text-[#113D48] text-sm md:text-base" for=""
+                        <label
+                          class="text-nowrap text-sm text-[#113D48] md:text-base"
+                          for=""
                           >Return:</label
                         >
                       </div>
@@ -1513,14 +1615,20 @@
                     <div
                       class="destination-details-page-return-option flex flex-col items-start gap-4"
                     >
-                      <div class="flex flex-col md:flex-row md:items-center gap-2">
+                      <div
+                        class="flex flex-col gap-2 md:flex-row md:items-center"
+                      >
                         <span
                           class="flex h-4 w-4 items-center justify-center rounded-full bg-[#1CA8CB] text-xs text-white"
                           >6</span
                         >
-                        <label class="flex flex-col md:flex-row gap-2 md:gap-4 text-nowrap" for=""
-                          ><span class="text-[#113D48 text-sm md:text-base">Departure Time:</span>
-                          <h4 class="flex  items-center gap-1">
+                        <label
+                          class="flex flex-col gap-2 text-nowrap md:flex-row md:gap-4"
+                          for=""
+                          ><span class="text-[#113D48 text-sm md:text-base"
+                            >Departure Time:</span
+                          >
+                          <h4 class="flex items-center gap-1">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="16"
@@ -1571,7 +1679,9 @@
                                 stroke-linejoin="round"
                               />
                             </svg>
-                            <span class="text-sm md:text-base">Find Closest pickup </span>
+                            <span class="text-sm md:text-base"
+                              >Find Closest pickup
+                            </span>
                           </h4>
                         </label>
                       </div>
@@ -1584,7 +1694,9 @@
                             class="h-4 w-4"
                             id="dp-1"
                           />
-                          <label class="cursor-pointer text-gray-800 text-sm md:text-base" for="dp-1"
+                          <label
+                            class="cursor-pointer text-sm text-gray-800 md:text-base"
+                            for="dp-1"
                             >6:30 am 135-20 39th Avenue-Flushing, NY
                           </label>
                         </div>
@@ -1595,7 +1707,9 @@
                             class="h-4 w-4"
                             id="dp-2"
                           />
-                          <label class="cursor-pointer text-gray-800 text-sm md:text-base" for="dp-2"
+                          <label
+                            class="cursor-pointer text-sm text-gray-800 md:text-base"
+                            for="dp-2"
                             >7:00 am 321 W 42nd St - New York-Flushing, NY
                           </label>
                         </div>
@@ -1606,7 +1720,9 @@
                             class="h-4 w-4"
                             id="dp-3"
                           />
-                          <label class="cursor-pointer text-gray-800 text-sm md:text-base" for="dp-3"
+                          <label
+                            class="cursor-pointer text-sm text-gray-800 md:text-base"
+                            for="dp-3"
                             >7:00 am 321 W 42nd St - New York-Flushing, NY
                           </label>
                         </div>
@@ -1617,7 +1733,9 @@
                             class="h-4 w-4"
                             id="dp-4"
                           />
-                          <label class="cursor-pointer text-gray-800 text-sm md:text-base" for="dp-4"
+                          <label
+                            class="cursor-pointer text-sm text-gray-800 md:text-base"
+                            for="dp-4"
                             >7:00 am 321 W 42nd St - New York-Flushing, NY
                           </label>
                         </div>
@@ -1628,7 +1746,9 @@
                             class="h-4 w-4"
                             id="dp-5"
                           />
-                          <label class="cursor-pointer text-gray-800 text-sm md:text-base" for="dp-5"
+                          <label
+                            class="cursor-pointer text-sm text-gray-800 md:text-base"
+                            for="dp-5"
                             >7:00 am 321 W 42nd St - New York-Flushing, NY
                           </label>
                         </div>
@@ -1645,7 +1765,9 @@
                           class="flex h-4 w-4 items-center justify-center rounded-full bg-[#1CA8CB] text-xs text-white"
                           >7</span
                         >
-                        <label class="flex gap-4 md:text-nowrap text-sm md:text-base" for=""
+                        <label
+                          class="flex gap-4 text-sm md:text-nowrap md:text-base"
+                          for=""
                           ><span class="text-[#113D48]"
                             >Do you need to extend hotel stay?</span
                           >
@@ -1653,7 +1775,9 @@
                       </div>
 
                       <div class="flex flex-col gap-2 pl-px">
-                        <div class="flex items-center gap-5 text-sm md:text-base  ">
+                        <div
+                          class="flex items-center gap-5 text-sm md:text-base"
+                        >
                           <h4>Arrival Early?</h4>
                           <div class="flex items-center gap-2">
                             <div class="flex items-center gap-1">
@@ -1680,7 +1804,9 @@
                         </div>
                       </div>
                       <div class="flex flex-col gap-2 pl-px">
-                        <div class="flex items-center gap-4 text-sm md:text-base">
+                        <div
+                          class="flex items-center gap-4 text-sm md:text-base"
+                        >
                           <h4>Staying Late?</h4>
                           <div class="flex items-center gap-2">
                             <div class="flex items-center gap-1">
@@ -1716,8 +1842,10 @@
                   <div class="flex items-start gap-4">
                     <h4>Total Fare:</h4>
                     <div class="flex flex-col gap-2">
-                      <h4 class="text-gray-500 text-sm md:text-base">(inc, tax, fees)</h4>
-                      <span class="text-xl font-semibold text-[#1CA8CB] "
+                      <h4 class="text-sm text-gray-500 md:text-base">
+                        (inc, tax, fees)
+                      </h4>
+                      <span class="text-xl font-semibold text-[#1CA8CB]"
                         >$0.00</span
                       >
                     </div>
@@ -1727,13 +1855,15 @@
 
                   <div class="flex items-center gap-4 pt-6 md:pt-8 lg:pt-12">
                     <a href="">
-                      <button class="rounded-full bg-white px-5 py-2 md:py-2.5 text-sm md:text-base">
+                      <button
+                        class="rounded-full bg-white px-5 py-2 text-sm md:py-2.5 md:text-base"
+                      >
                         Calculate
                       </button>
                     </a>
                     <a href="">
                       <button
-                        class="rounded-full bg-[#1CA8CB] px-5 py-2 md:py-2.5 text-white text-sm md:text-base"
+                        class="rounded-full bg-[#1CA8CB] px-5 py-2 text-sm text-white md:py-2.5 md:text-base"
                       >
                         Add to Cart
                       </button>
@@ -1747,8 +1877,10 @@
           </div>
         </div>
         <!-- Related Trips -->
-        <div class="px-5 pt-12 md:pt-20 lg:pt-32 container mx-auto">
-          <h3 class="pb-6 md:pb-8 lg:pb-12 text-2xl md:text-3xl lg:text-[32px] font-semibold text-[#113D48]">
+        <div class="container mx-auto px-5 pt-12 md:pt-20 lg:pt-32">
+          <h3
+            class="pb-6 text-2xl font-semibold text-[#113D48] md:pb-8 md:text-3xl lg:pb-12 lg:text-[32px]"
+          >
             Related Tips you might interested in
           </h3>
           <div class="grid grid-cols-1 gap-12 xl:grid-cols-3">

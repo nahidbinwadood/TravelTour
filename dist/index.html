@@ -30,13 +30,11 @@
       </div>
       <!-- Video ::End -->
       <!-- shade::Start -->
-      <div
-        class="absolute inset-0 w-full bg-black/60 h-full -z-10"
-      ></div>
+      <div class="absolute inset-0 -z-10 h-full w-full bg-black/60"></div>
       <!-- shade::End -->
 
       <!-- Navbar::start -->
-      <div class="mx-5 md:mx-10 lg:mx-0 pt-10 text-textColor">
+      <div class="mx-5 pt-10 text-textColor md:mx-10 lg:mx-0">
         <div
           class="container mx-auto flex items-center justify-between rounded-xl bg-white px-4 py-2 md:h-24 xl:px-8"
         >
@@ -354,14 +352,18 @@
               <div
                 class="flex flex-col items-center gap-5 md:flex-row xl:w-full"
               >
-                <div
-                  class="2xl:max-w-40 w-full "
-                >
-                  <input type="number" name="" id="" placeholder="Add number" class="placeholder:text-xs focus:outline-none border rounded-md py-2 md:py-[9px] px-5 w-full font-poppins text-xs">
+                <div class="w-full 2xl:max-w-40">
+                  <input
+                    type="number"
+                    name=""
+                    id=""
+                    placeholder="Add number"
+                    class="w-full rounded-md border px-5 py-2 font-poppins text-xs placeholder:text-xs focus:outline-none md:py-[9px]"
+                  />
                 </div>
                 <a
                   href="destination-filter.html"
-                  class="flex cursor-pointer items-center gap-2 rounded-md bg-primary pl-8 pr-8 md:pl-6 md:pr-10 2xl:pr-12 2xl:pl-8 py-3 text-white transition-all duration-300 hover:scale-105 font-poppins"
+                  class="flex cursor-pointer items-center gap-2 rounded-md bg-primary py-3 pl-8 pr-8 font-poppins text-white transition-all duration-300 hover:scale-105 md:pl-6 md:pr-10 2xl:pl-8 2xl:pr-12"
                 >
                   <img src="./assets/img/icons/search-normal.svg" alt="" />
                   <p class="text-xs">Search</p>
