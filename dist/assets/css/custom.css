@@ -1,0 +1,109 @@
+.slider--content {
+  animation: slide 80s infinite linear;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+#slider-container:hover .slider--content {
+  animation-play-state: paused;
+}
+
+/* Contact Form::Start */
+.contact-form-first-name::after {
+  content: "";
+  background-image: url("../img/contact/user.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 40px; /* Adjust the positioning as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px; /* Adjust size */
+  height: 20px; /* Adjust size */
+  pointer-events: none; /* To prevent the icon from interfering with input focus */
+}
+
+.contact-form-mail::after {
+  content: "";
+  background-image: url("../img/contact/direct-send.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 40px; /* Adjust the positioning as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px; /* Adjust size */
+  height: 20px; /* Adjust size */
+  pointer-events: none; /* To prevent the icon from interfering with input focus */
+}
+
+.contact-form-comment::after {
+  content: "";
+  background-image: url("../img/contact/messages-3.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 40px; /* Adjust the positioning as needed */
+  top: 20%;
+  transform: translateY(-50%);
+  width: 20px; /* Adjust size */
+  height: 20px; /* Adjust size */
+  pointer-events: none; /* To prevent the icon from interfering with input focus */
+}
+
+/* Contact Form::End */
+
+/*====Accordion==== */
+#content,
+#content-beach,
+#content-city,
+#content-mountain,
+#content-news {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+/*====Accordion==== */
+
+/* ====Responsive::Start==== */
+@media only screen and (min-width: 320px) and (max-width: 500px) {
+  footer .footer--form input {
+    max-width: 250px;
+  }
+}
+@media (min-width: 479px) {
+  footer .footer--form {
+    flex-direction: row;
+  }
+}
+@media (max-width: 640px) {
+  .contact-form-first-name::after,
+  .contact-form-comment::after,
+  .contact-form-mail::after {
+    right: 30px;
+    width: 15px;
+    height: 15px;
+  }
+
+  .contact-form-select .nice-select {
+    height: 53px;
+    line-height: 53px;
+  }
+  .contact-form-select .nice-select,
+  .contact-form-select .nice-select .list {
+    font-size: 14px;
+  }
+  .contact-form-select .nice-select:after {
+    height: 8px;
+    width: 8px;
+    right: 35px;
+  }
+}
+
+/* ====Responsive::End==== */
