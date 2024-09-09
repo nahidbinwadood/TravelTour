@@ -31,6 +31,8 @@
     <link rel="stylesheet" href="./assets/css/owl.css" />
     <link rel="stylesheet" href="./assets/css/all.min.css" />
     <link rel="stylesheet" href="./assets/css/plugins/owl.carousel.min.css" />
+    <link rel="stylesheet" href="./assets/css/plugins/fancybox.min.css" />
+    <link rel="stylesheet" href="./assets/css/custom.css" />
     <!-- custom styles -->
   </head>
   <body>
@@ -239,10 +241,11 @@
                     />
                     <!-- Slider Preview Buttons::Start -->
                     <div
-                      class="absolute bottom-10 left-10 z-[10000] font-poppins flex items-center gap-5"
+                      class="absolute bottom-10 left-10 z-[10000] flex items-center gap-5 font-poppins"
                     >
                       <div
-                        class="flex w-[120px] cursor-pointer items-center gap-3 bg-white px-5 py-2 rounded-[47px]"
+                        id="fancyGallerybtn"
+                        class="flex w-[120px] cursor-pointer items-center gap-3 rounded-[47px] bg-white px-5 py-2"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -288,14 +291,71 @@
                           />
                         </svg>
                         <h2 class="text-xs">Gallery</h2>
+
+                        <!-- FancyImages::Start -->
+                        <div style="display: none">
+                          <a
+                            href="./assets/img/destination-details/image-1.jpg"
+                            data-fancybox="gallery"
+                          >
+                            <img
+                              src="./assets/img/sm-destination-details.png"
+                            />
+                          </a>
+                          <a
+                            href="./assets/img/destination-details/image-2.jpg"
+                            data-fancybox="gallery"
+                          >
+                            <img
+                              src="./assets/img/destination-details/image-2.jpg"
+                            />
+                          </a>
+                          <a
+                            href="./assets/img/destination-details/image-3.jpg"
+                            data-fancybox="gallery"
+                          >
+                            <img
+                              src="./assets/img/destination-details/image-3.jpg"
+                            />
+                          </a>
+                          <a
+                            href="./assets/img/destination-details/image-4.jpg"
+                            data-fancybox="gallery"
+                          >
+                            <img
+                              src="./assets/img/destination-details/image-4.jpg"
+                            />
+                          </a>
+                        </div>
+                        <!-- FancyImages::End -->
                       </div>
                       <div
-                        class="flex w-[120px] cursor-pointer items-center gap-3 bg-white px-5 py-2 rounded-[47px]"
+                        id="fancyVideobtn"
+                        class="flex w-[120px] cursor-pointer items-center gap-3 rounded-[47px] bg-white px-5 py-2"
                       >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
-                        <path d="M7.25 16.5H11.75C15.5 16.5 17 15 17 11.25V6.75C17 3 15.5 1.5 11.75 1.5H7.25C3.5 1.5 2 3 2 6.75V11.25C2 15 3.5 16.5 7.25 16.5Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M7.32812 9.00158V7.89158C7.32812 6.45908 8.34063 5.88158 9.57813 6.59408L10.5381 7.14908L11.4981 7.70408C12.7356 8.41658 12.7356 9.58658 11.4981 10.2991L10.5381 10.8541L9.57813 11.4091C8.34063 12.1216 7.32812 11.5366 7.32812 10.1116V9.00158Z" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="19"
+                          height="18"
+                          viewBox="0 0 19 18"
+                          fill="none"
+                        >
+                          <path
+                            d="M7.25 16.5H11.75C15.5 16.5 17 15 17 11.25V6.75C17 3 15.5 1.5 11.75 1.5H7.25C3.5 1.5 2 3 2 6.75V11.25C2 15 3.5 16.5 7.25 16.5Z"
+                            stroke="#292D32"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M7.32812 9.00158V7.89158C7.32812 6.45908 8.34063 5.88158 9.57813 6.59408L10.5381 7.14908L11.4981 7.70408C12.7356 8.41658 12.7356 9.58658 11.4981 10.2991L10.5381 10.8541L9.57813 11.4091C8.34063 12.1216 7.32812 11.5366 7.32812 10.1116V9.00158Z"
+                            stroke="#292D32"
+                            stroke-width="1.5"
+                            stroke-miterlimit="10"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
                         <h2 class="text-xs">Video</h2>
                       </div>
                     </div>
@@ -310,10 +370,10 @@
                     />
                     <!-- Slider Preview Buttons::Start -->
                     <div
-                      class="absolute bottom-10 left-10 z-[10000] font-poppins flex items-center gap-5"
+                      class="absolute bottom-10 left-10 z-[10000] flex items-center gap-5 font-poppins"
                     >
                       <div
-                        class="flex w-[120px] cursor-pointer items-center gap-3 bg-white px-5 py-2 rounded-[47px]"
+                        class="flex w-[120px] cursor-pointer items-center gap-3 rounded-[47px] bg-white px-5 py-2"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -361,12 +421,31 @@
                         <h2 class="text-xs">Gallery</h2>
                       </div>
                       <div
-                        class="flex w-[120px] cursor-pointer items-center gap-3 bg-white px-5 py-2 rounded-[47px]"
+                        class="flex w-[120px] cursor-pointer items-center gap-3 rounded-[47px] bg-white px-5 py-2"
                       >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
-                        <path d="M7.25 16.5H11.75C15.5 16.5 17 15 17 11.25V6.75C17 3 15.5 1.5 11.75 1.5H7.25C3.5 1.5 2 3 2 6.75V11.25C2 15 3.5 16.5 7.25 16.5Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M7.32812 9.00158V7.89158C7.32812 6.45908 8.34063 5.88158 9.57813 6.59408L10.5381 7.14908L11.4981 7.70408C12.7356 8.41658 12.7356 9.58658 11.4981 10.2991L10.5381 10.8541L9.57813 11.4091C8.34063 12.1216 7.32812 11.5366 7.32812 10.1116V9.00158Z" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="19"
+                          height="18"
+                          viewBox="0 0 19 18"
+                          fill="none"
+                        >
+                          <path
+                            d="M7.25 16.5H11.75C15.5 16.5 17 15 17 11.25V6.75C17 3 15.5 1.5 11.75 1.5H7.25C3.5 1.5 2 3 2 6.75V11.25C2 15 3.5 16.5 7.25 16.5Z"
+                            stroke="#292D32"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M7.32812 9.00158V7.89158C7.32812 6.45908 8.34063 5.88158 9.57813 6.59408L10.5381 7.14908L11.4981 7.70408C12.7356 8.41658 12.7356 9.58658 11.4981 10.2991L10.5381 10.8541L9.57813 11.4091C8.34063 12.1216 7.32812 11.5366 7.32812 10.1116V9.00158Z"
+                            stroke="#292D32"
+                            stroke-width="1.5"
+                            stroke-miterlimit="10"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
                         <h2 class="text-xs">Video</h2>
                       </div>
                     </div>
@@ -381,10 +460,10 @@
                     />
                     <!-- Slider Preview Buttons::Start -->
                     <div
-                      class="absolute bottom-10 left-10 z-[10000] font-poppins flex items-center gap-5"
+                      class="absolute bottom-10 left-10 z-[10000] flex items-center gap-5 font-poppins"
                     >
                       <div
-                        class="flex w-[120px] cursor-pointer items-center gap-3 bg-white px-5 py-2 rounded-[47px]"
+                        class="flex w-[120px] cursor-pointer items-center gap-3 rounded-[47px] bg-white px-5 py-2"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -432,12 +511,31 @@
                         <h2 class="text-xs">Gallery</h2>
                       </div>
                       <div
-                        class="flex w-[120px] cursor-pointer items-center gap-3 bg-white px-5 py-2 rounded-[47px]"
+                        class="flex w-[120px] cursor-pointer items-center gap-3 rounded-[47px] bg-white px-5 py-2"
                       >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
-                        <path d="M7.25 16.5H11.75C15.5 16.5 17 15 17 11.25V6.75C17 3 15.5 1.5 11.75 1.5H7.25C3.5 1.5 2 3 2 6.75V11.25C2 15 3.5 16.5 7.25 16.5Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M7.32812 9.00158V7.89158C7.32812 6.45908 8.34063 5.88158 9.57813 6.59408L10.5381 7.14908L11.4981 7.70408C12.7356 8.41658 12.7356 9.58658 11.4981 10.2991L10.5381 10.8541L9.57813 11.4091C8.34063 12.1216 7.32812 11.5366 7.32812 10.1116V9.00158Z" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="19"
+                          height="18"
+                          viewBox="0 0 19 18"
+                          fill="none"
+                        >
+                          <path
+                            d="M7.25 16.5H11.75C15.5 16.5 17 15 17 11.25V6.75C17 3 15.5 1.5 11.75 1.5H7.25C3.5 1.5 2 3 2 6.75V11.25C2 15 3.5 16.5 7.25 16.5Z"
+                            stroke="#292D32"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M7.32812 9.00158V7.89158C7.32812 6.45908 8.34063 5.88158 9.57813 6.59408L10.5381 7.14908L11.4981 7.70408C12.7356 8.41658 12.7356 9.58658 11.4981 10.2991L10.5381 10.8541L9.57813 11.4091C8.34063 12.1216 7.32812 11.5366 7.32812 10.1116V9.00158Z"
+                            stroke="#292D32"
+                            stroke-width="1.5"
+                            stroke-miterlimit="10"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
                         <h2 class="text-xs">Video</h2>
                       </div>
                     </div>
@@ -2775,6 +2873,16 @@
     <!-- Scritps::Start -->
 
     <!-- <script src="./assets/js/jquery.js"></script> -->
+    <!-- <script>
+      document
+        .getElementById("galleryBtn")
+        .addEventListener("click", function () {
+          // Simulate click on the first image to open Fancybox
+          Fancybox.bind('[data-fancybox="gallery"]'); // Ensure Fancybox is bound
+          document.querySelector('[data-fancybox="gallery"]').click();
+        });
+    </script> -->
+
     <script src="./assets/js/plugins/plugins.js"></script>
     <script src="./assets/js/jquery.nice-select.min.js"></script>
     <script src="./assets/js/plugins/owl.carousel.min.js"></script>
