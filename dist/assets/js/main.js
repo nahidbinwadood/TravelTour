@@ -310,21 +310,46 @@ $(document).ready(function () {
   // Accordion::End
 
 
-  // Fancybox::Start
-  const galleryButton=document.getElementById("fancyGallerybtn")
-  galleryButton?.addEventListener("click",()=>{
-    Fancybox.bind('[data-fancybox="gallery"]', {
-      transition: 'fade', 
-      Thumbs:{
-        autostart:false,
-      }
-    });
-    
+  // FancyBox::Start
+  const galleryButtons=document.querySelectorAll(".fancyGallerybtn")
+  const videoButtons=document.querySelectorAll(".fancyVideobtn")
 
-      
-    document.querySelector('[data-fancybox="gallery"]').click();
+  // Images::Start
+  galleryButtons.forEach((galleryButton)=>{
+    galleryButton?.addEventListener("click",()=>{
+      Fancybox.bind('[data-fancybox="gallery"]', {
+        transition: 'fade', 
+        Thumbs:{
+          autostart:false,
+        }
+      });     
+      document.querySelector('[data-fancybox="gallery"]').click();
+    })
   })
-  // Fancybox::End
+  // Images::End
+
+  // Videos::Start
+  videoButtons.forEach((videoButton)=>{
+    videoButton?.addEventListener("click",()=>{
+      const videoUrl=document.getElementById("hiddenVideo").getAttribute("href")
+      Fancybox.show([{
+        src: videoUrl,
+        type: 'iframe',
+        iframe: {
+            css: {
+                width: '100%',
+                height: '100%'
+            }
+        }
+    }], {
+        Thumbs: false, // Disable thumbnails
+        caption: "Watch this video", // Optional caption
+    });
+    })
+  })
+  // Videos::End
+ 
+  // FancyBox::End
 });
 
 // ====Solaimain====

@@ -244,10 +244,10 @@
                       class="absolute bottom-10 left-10 z-[10000] flex items-center gap-5 font-poppins"
                     >
                       <div
-                        id="fancyGallerybtn"
-                        class="flex w-[120px] cursor-pointer items-center gap-3 rounded-[47px] bg-white px-5 py-2"
+                        class="fancyGallerybtn transiton group flex w-[120px] cursor-pointer items-center gap-3 rounded-[47px] bg-white px-5 py-2 duration-500 hover:bg-primary hover:text-white"
                       >
                         <svg
+                          class="fancybtn--svg"
                           xmlns="http://www.w3.org/2000/svg"
                           width="19"
                           height="18"
@@ -255,6 +255,7 @@
                           fill="none"
                         >
                           <path
+                            class="duration:500 transition group-hover:stroke-white"
                             d="M7.25 7.5C8.07843 7.5 8.75 6.82843 8.75 6C8.75 5.17157 8.07843 4.5 7.25 4.5C6.42157 4.5 5.75 5.17157 5.75 6C5.75 6.82843 6.42157 7.5 7.25 7.5Z"
                             stroke="#292D32"
                             stroke-width="1.5"
@@ -262,6 +263,7 @@
                             stroke-linejoin="round"
                           />
                           <path
+                            class="duration:500 transition group-hover:stroke-white"
                             d="M10.25 1.5H7.25C3.5 1.5 2 3 2 6.75V11.25C2 15 3.5 16.5 7.25 16.5H11.75C15.5 16.5 17 15 17 11.25V7.5"
                             stroke="#292D32"
                             stroke-width="1.5"
@@ -269,6 +271,7 @@
                             stroke-linejoin="round"
                           />
                           <path
+                            class="duration:500 transition group-hover:stroke-white"
                             d="M14 6V1.5L15.5 3"
                             stroke="#292D32"
                             stroke-width="1.5"
@@ -276,6 +279,7 @@
                             stroke-linejoin="round"
                           />
                           <path
+                            class="duration:500 transition group-hover:stroke-white"
                             d="M14 1.5L12.5 3"
                             stroke="#292D32"
                             stroke-width="1.5"
@@ -283,6 +287,7 @@
                             stroke-linejoin="round"
                           />
                           <path
+                            class="duration:500 transition group-hover:stroke-white"
                             d="M2.5 14.2144L6.1975 11.7319C6.79 11.3344 7.645 11.3794 8.1775 11.8369L8.425 12.0544C9.01 12.5569 9.955 12.5569 10.54 12.0544L13.66 9.37687C14.245 8.87437 15.19 8.87437 15.775 9.37687L16.9975 10.4269"
                             stroke="#292D32"
                             stroke-width="1.5"
@@ -330,10 +335,10 @@
                         <!-- FancyImages::End -->
                       </div>
                       <div
-                        id="fancyVideobtn"
-                        class="flex w-[120px] cursor-pointer items-center gap-3 rounded-[47px] bg-white px-5 py-2"
+                        class="fancyVideobtn transiton group flex w-[120px] cursor-pointer items-center gap-3 rounded-[47px] bg-white px-5 py-2 duration-500 hover:bg-primary hover:text-white"
                       >
                         <svg
+                          class="fancybtn--svg"
                           xmlns="http://www.w3.org/2000/svg"
                           width="19"
                           height="18"
@@ -341,6 +346,7 @@
                           fill="none"
                         >
                           <path
+                            class="duration:500 transition group-hover:stroke-white"
                             d="M7.25 16.5H11.75C15.5 16.5 17 15 17 11.25V6.75C17 3 15.5 1.5 11.75 1.5H7.25C3.5 1.5 2 3 2 6.75V11.25C2 15 3.5 16.5 7.25 16.5Z"
                             stroke="#292D32"
                             stroke-width="1.5"
@@ -348,6 +354,7 @@
                             stroke-linejoin="round"
                           />
                           <path
+                            class="duration:500 transition group-hover:stroke-white"
                             d="M7.32812 9.00158V7.89158C7.32812 6.45908 8.34063 5.88158 9.57813 6.59408L10.5381 7.14908L11.4981 7.70408C12.7356 8.41658 12.7356 9.58658 11.4981 10.2991L10.5381 10.8541L9.57813 11.4091C8.34063 12.1216 7.32812 11.5366 7.32812 10.1116V9.00158Z"
                             stroke="#292D32"
                             stroke-width="1.5"
@@ -357,15 +364,23 @@
                           />
                         </svg>
                         <h2 class="text-xs">Video</h2>
+
+                        <div>
+                          <a
+                            id="hiddenVideo"
+                            href="https://www.youtube.com/watch?v=yVYQeDhAQWk"
+                            data-fancybox="video"
+                            style="display: none"
+                          ></a>
+                        </div>
                       </div>
                     </div>
                     <!-- Slider Preview Buttons::End -->
                   </div>
-
                   <div class="relative">
                     <img
                       class="h-[280px] md:h-[350px] lg:h-[5400px] xl:h-[450px] 2xl:h-[500px]"
-                      src="./assets/img/blogs/slider-1.png"
+                      src="./assets/img/destination-details/image-1.jpg"
                       alt=""
                     />
                     <!-- Slider Preview Buttons::Start -->
@@ -373,9 +388,10 @@
                       class="absolute bottom-10 left-10 z-[10000] flex items-center gap-5 font-poppins"
                     >
                       <div
-                        class="flex w-[120px] cursor-pointer items-center gap-3 rounded-[47px] bg-white px-5 py-2"
+                        class="fancyGallerybtn transiton group flex w-[120px] cursor-pointer items-center gap-3 rounded-[47px] bg-white px-5 py-2 duration-500 hover:bg-primary hover:text-white"
                       >
                         <svg
+                          class="fancybtn--svg"
                           xmlns="http://www.w3.org/2000/svg"
                           width="19"
                           height="18"
@@ -383,6 +399,7 @@
                           fill="none"
                         >
                           <path
+                            class="duration:500 transition group-hover:stroke-white"
                             d="M7.25 7.5C8.07843 7.5 8.75 6.82843 8.75 6C8.75 5.17157 8.07843 4.5 7.25 4.5C6.42157 4.5 5.75 5.17157 5.75 6C5.75 6.82843 6.42157 7.5 7.25 7.5Z"
                             stroke="#292D32"
                             stroke-width="1.5"
@@ -390,6 +407,7 @@
                             stroke-linejoin="round"
                           />
                           <path
+                            class="duration:500 transition group-hover:stroke-white"
                             d="M10.25 1.5H7.25C3.5 1.5 2 3 2 6.75V11.25C2 15 3.5 16.5 7.25 16.5H11.75C15.5 16.5 17 15 17 11.25V7.5"
                             stroke="#292D32"
                             stroke-width="1.5"
@@ -397,6 +415,7 @@
                             stroke-linejoin="round"
                           />
                           <path
+                            class="duration:500 transition group-hover:stroke-white"
                             d="M14 6V1.5L15.5 3"
                             stroke="#292D32"
                             stroke-width="1.5"
@@ -404,6 +423,7 @@
                             stroke-linejoin="round"
                           />
                           <path
+                            class="duration:500 transition group-hover:stroke-white"
                             d="M14 1.5L12.5 3"
                             stroke="#292D32"
                             stroke-width="1.5"
@@ -411,6 +431,7 @@
                             stroke-linejoin="round"
                           />
                           <path
+                            class="duration:500 transition group-hover:stroke-white"
                             d="M2.5 14.2144L6.1975 11.7319C6.79 11.3344 7.645 11.3794 8.1775 11.8369L8.425 12.0544C9.01 12.5569 9.955 12.5569 10.54 12.0544L13.66 9.37687C14.245 8.87437 15.19 8.87437 15.775 9.37687L16.9975 10.4269"
                             stroke="#292D32"
                             stroke-width="1.5"
@@ -419,11 +440,49 @@
                           />
                         </svg>
                         <h2 class="text-xs">Gallery</h2>
+
+                        <!-- FancyImages::Start -->
+                        <div style="display: none">
+                          <a
+                            href="./assets/img/destination-details/image-1.jpg"
+                            data-fancybox="gallery"
+                          >
+                            <img
+                              src="./assets/img/sm-destination-details.png"
+                            />
+                          </a>
+                          <a
+                            href="./assets/img/destination-details/image-2.jpg"
+                            data-fancybox="gallery"
+                          >
+                            <img
+                              src="./assets/img/destination-details/image-2.jpg"
+                            />
+                          </a>
+                          <a
+                            href="./assets/img/destination-details/image-3.jpg"
+                            data-fancybox="gallery"
+                          >
+                            <img
+                              src="./assets/img/destination-details/image-3.jpg"
+                            />
+                          </a>
+                          <a
+                            href="./assets/img/destination-details/image-4.jpg"
+                            data-fancybox="gallery"
+                          >
+                            <img
+                              src="./assets/img/destination-details/image-4.jpg"
+                            />
+                          </a>
+                        </div>
+                        <!-- FancyImages::End -->
                       </div>
                       <div
-                        class="flex w-[120px] cursor-pointer items-center gap-3 rounded-[47px] bg-white px-5 py-2"
+                        class="fancyVideobtn transiton group flex w-[120px] cursor-pointer items-center gap-3 rounded-[47px] bg-white px-5 py-2 duration-500 hover:bg-primary hover:text-white"
                       >
                         <svg
+                          class="fancybtn--svg"
                           xmlns="http://www.w3.org/2000/svg"
                           width="19"
                           height="18"
@@ -431,6 +490,7 @@
                           fill="none"
                         >
                           <path
+                            class="duration:500 transition group-hover:stroke-white"
                             d="M7.25 16.5H11.75C15.5 16.5 17 15 17 11.25V6.75C17 3 15.5 1.5 11.75 1.5H7.25C3.5 1.5 2 3 2 6.75V11.25C2 15 3.5 16.5 7.25 16.5Z"
                             stroke="#292D32"
                             stroke-width="1.5"
@@ -438,6 +498,7 @@
                             stroke-linejoin="round"
                           />
                           <path
+                            class="duration:500 transition group-hover:stroke-white"
                             d="M7.32812 9.00158V7.89158C7.32812 6.45908 8.34063 5.88158 9.57813 6.59408L10.5381 7.14908L11.4981 7.70408C12.7356 8.41658 12.7356 9.58658 11.4981 10.2991L10.5381 10.8541L9.57813 11.4091C8.34063 12.1216 7.32812 11.5366 7.32812 10.1116V9.00158Z"
                             stroke="#292D32"
                             stroke-width="1.5"
@@ -447,15 +508,23 @@
                           />
                         </svg>
                         <h2 class="text-xs">Video</h2>
+
+                        <div>
+                          <a
+                            id="hiddenVideo"
+                            href="https://www.youtube.com/watch?v=yVYQeDhAQWk"
+                            data-fancybox="video"
+                            style="display: none"
+                          ></a>
+                        </div>
                       </div>
                     </div>
                     <!-- Slider Preview Buttons::End -->
                   </div>
-
                   <div class="relative">
                     <img
                       class="h-[280px] md:h-[350px] lg:h-[5400px] xl:h-[450px] 2xl:h-[500px]"
-                      src="./assets/img/blogs/slider-1.png"
+                      src="./assets/img/destination-details/image-2.jpg"
                       alt=""
                     />
                     <!-- Slider Preview Buttons::Start -->
@@ -463,9 +532,10 @@
                       class="absolute bottom-10 left-10 z-[10000] flex items-center gap-5 font-poppins"
                     >
                       <div
-                        class="flex w-[120px] cursor-pointer items-center gap-3 rounded-[47px] bg-white px-5 py-2"
+                        class="fancyGallerybtn transiton group flex w-[120px] cursor-pointer items-center gap-3 rounded-[47px] bg-white px-5 py-2 duration-500 hover:bg-primary hover:text-white"
                       >
                         <svg
+                          class="fancybtn--svg"
                           xmlns="http://www.w3.org/2000/svg"
                           width="19"
                           height="18"
@@ -473,6 +543,7 @@
                           fill="none"
                         >
                           <path
+                            class="duration:500 transition group-hover:stroke-white"
                             d="M7.25 7.5C8.07843 7.5 8.75 6.82843 8.75 6C8.75 5.17157 8.07843 4.5 7.25 4.5C6.42157 4.5 5.75 5.17157 5.75 6C5.75 6.82843 6.42157 7.5 7.25 7.5Z"
                             stroke="#292D32"
                             stroke-width="1.5"
@@ -480,6 +551,7 @@
                             stroke-linejoin="round"
                           />
                           <path
+                            class="duration:500 transition group-hover:stroke-white"
                             d="M10.25 1.5H7.25C3.5 1.5 2 3 2 6.75V11.25C2 15 3.5 16.5 7.25 16.5H11.75C15.5 16.5 17 15 17 11.25V7.5"
                             stroke="#292D32"
                             stroke-width="1.5"
@@ -487,6 +559,7 @@
                             stroke-linejoin="round"
                           />
                           <path
+                            class="duration:500 transition group-hover:stroke-white"
                             d="M14 6V1.5L15.5 3"
                             stroke="#292D32"
                             stroke-width="1.5"
@@ -494,6 +567,7 @@
                             stroke-linejoin="round"
                           />
                           <path
+                            class="duration:500 transition group-hover:stroke-white"
                             d="M14 1.5L12.5 3"
                             stroke="#292D32"
                             stroke-width="1.5"
@@ -501,6 +575,7 @@
                             stroke-linejoin="round"
                           />
                           <path
+                            class="duration:500 transition group-hover:stroke-white"
                             d="M2.5 14.2144L6.1975 11.7319C6.79 11.3344 7.645 11.3794 8.1775 11.8369L8.425 12.0544C9.01 12.5569 9.955 12.5569 10.54 12.0544L13.66 9.37687C14.245 8.87437 15.19 8.87437 15.775 9.37687L16.9975 10.4269"
                             stroke="#292D32"
                             stroke-width="1.5"
@@ -509,11 +584,49 @@
                           />
                         </svg>
                         <h2 class="text-xs">Gallery</h2>
+
+                        <!-- FancyImages::Start -->
+                        <div style="display: none">
+                          <a
+                            href="./assets/img/destination-details/image-1.jpg"
+                            data-fancybox="gallery"
+                          >
+                            <img
+                              src="./assets/img/sm-destination-details.png"
+                            />
+                          </a>
+                          <a
+                            href="./assets/img/destination-details/image-2.jpg"
+                            data-fancybox="gallery"
+                          >
+                            <img
+                              src="./assets/img/destination-details/image-2.jpg"
+                            />
+                          </a>
+                          <a
+                            href="./assets/img/destination-details/image-3.jpg"
+                            data-fancybox="gallery"
+                          >
+                            <img
+                              src="./assets/img/destination-details/image-3.jpg"
+                            />
+                          </a>
+                          <a
+                            href="./assets/img/destination-details/image-4.jpg"
+                            data-fancybox="gallery"
+                          >
+                            <img
+                              src="./assets/img/destination-details/image-4.jpg"
+                            />
+                          </a>
+                        </div>
+                        <!-- FancyImages::End -->
                       </div>
                       <div
-                        class="flex w-[120px] cursor-pointer items-center gap-3 rounded-[47px] bg-white px-5 py-2"
+                        class="fancyVideobtn transiton group flex w-[120px] cursor-pointer items-center gap-3 rounded-[47px] bg-white px-5 py-2 duration-500 hover:bg-primary hover:text-white"
                       >
                         <svg
+                          class="fancybtn--svg"
                           xmlns="http://www.w3.org/2000/svg"
                           width="19"
                           height="18"
@@ -521,6 +634,7 @@
                           fill="none"
                         >
                           <path
+                            class="duration:500 transition group-hover:stroke-white"
                             d="M7.25 16.5H11.75C15.5 16.5 17 15 17 11.25V6.75C17 3 15.5 1.5 11.75 1.5H7.25C3.5 1.5 2 3 2 6.75V11.25C2 15 3.5 16.5 7.25 16.5Z"
                             stroke="#292D32"
                             stroke-width="1.5"
@@ -528,6 +642,7 @@
                             stroke-linejoin="round"
                           />
                           <path
+                            class="duration:500 transition group-hover:stroke-white"
                             d="M7.32812 9.00158V7.89158C7.32812 6.45908 8.34063 5.88158 9.57813 6.59408L10.5381 7.14908L11.4981 7.70408C12.7356 8.41658 12.7356 9.58658 11.4981 10.2991L10.5381 10.8541L9.57813 11.4091C8.34063 12.1216 7.32812 11.5366 7.32812 10.1116V9.00158Z"
                             stroke="#292D32"
                             stroke-width="1.5"
@@ -537,6 +652,159 @@
                           />
                         </svg>
                         <h2 class="text-xs">Video</h2>
+
+                        <div>
+                          <a
+                            id="hiddenVideo"
+                            href="https://www.youtube.com/watch?v=yVYQeDhAQWk"
+                            data-fancybox="video"
+                            style="display: none"
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Slider Preview Buttons::End -->
+                  </div>
+                  <div class="relative">
+                    <img
+                      class="h-[280px] md:h-[350px] lg:h-[5400px] xl:h-[450px] 2xl:h-[500px]"
+                      src="./assets/img/destination-details/image-3.jpg"
+                      alt=""
+                    />
+                    <!-- Slider Preview Buttons::Start -->
+                    <div
+                      class="absolute bottom-10 left-10 z-[10000] flex items-center gap-5 font-poppins"
+                    >
+                      <div
+                        class="fancyGallerybtn transiton group flex w-[120px] cursor-pointer items-center gap-3 rounded-[47px] bg-white px-5 py-2 duration-500 hover:bg-primary hover:text-white"
+                      >
+                        <svg
+                          class="fancybtn--svg"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="19"
+                          height="18"
+                          viewBox="0 0 19 18"
+                          fill="none"
+                        >
+                          <path
+                            class="duration:500 transition group-hover:stroke-white"
+                            d="M7.25 7.5C8.07843 7.5 8.75 6.82843 8.75 6C8.75 5.17157 8.07843 4.5 7.25 4.5C6.42157 4.5 5.75 5.17157 5.75 6C5.75 6.82843 6.42157 7.5 7.25 7.5Z"
+                            stroke="#292D32"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            class="duration:500 transition group-hover:stroke-white"
+                            d="M10.25 1.5H7.25C3.5 1.5 2 3 2 6.75V11.25C2 15 3.5 16.5 7.25 16.5H11.75C15.5 16.5 17 15 17 11.25V7.5"
+                            stroke="#292D32"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            class="duration:500 transition group-hover:stroke-white"
+                            d="M14 6V1.5L15.5 3"
+                            stroke="#292D32"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            class="duration:500 transition group-hover:stroke-white"
+                            d="M14 1.5L12.5 3"
+                            stroke="#292D32"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            class="duration:500 transition group-hover:stroke-white"
+                            d="M2.5 14.2144L6.1975 11.7319C6.79 11.3344 7.645 11.3794 8.1775 11.8369L8.425 12.0544C9.01 12.5569 9.955 12.5569 10.54 12.0544L13.66 9.37687C14.245 8.87437 15.19 8.87437 15.775 9.37687L16.9975 10.4269"
+                            stroke="#292D32"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        <h2 class="text-xs">Gallery</h2>
+
+                        <!-- FancyImages::Start -->
+                        <div style="display: none">
+                          <a
+                            href="./assets/img/destination-details/image-1.jpg"
+                            data-fancybox="gallery"
+                          >
+                            <img
+                              src="./assets/img/sm-destination-details.png"
+                            />
+                          </a>
+                          <a
+                            href="./assets/img/destination-details/image-2.jpg"
+                            data-fancybox="gallery"
+                          >
+                            <img
+                              src="./assets/img/destination-details/image-2.jpg"
+                            />
+                          </a>
+                          <a
+                            href="./assets/img/destination-details/image-3.jpg"
+                            data-fancybox="gallery"
+                          >
+                            <img
+                              src="./assets/img/destination-details/image-3.jpg"
+                            />
+                          </a>
+                          <a
+                            href="./assets/img/destination-details/image-4.jpg"
+                            data-fancybox="gallery"
+                          >
+                            <img
+                              src="./assets/img/destination-details/image-4.jpg"
+                            />
+                          </a>
+                        </div>
+                        <!-- FancyImages::End -->
+                      </div>
+                      <div
+                        class="fancyVideobtn transiton group flex w-[120px] cursor-pointer items-center gap-3 rounded-[47px] bg-white px-5 py-2 duration-500 hover:bg-primary hover:text-white"
+                      >
+                        <svg
+                          class="fancybtn--svg"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="19"
+                          height="18"
+                          viewBox="0 0 19 18"
+                          fill="none"
+                        >
+                          <path
+                            class="duration:500 transition group-hover:stroke-white"
+                            d="M7.25 16.5H11.75C15.5 16.5 17 15 17 11.25V6.75C17 3 15.5 1.5 11.75 1.5H7.25C3.5 1.5 2 3 2 6.75V11.25C2 15 3.5 16.5 7.25 16.5Z"
+                            stroke="#292D32"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            class="duration:500 transition group-hover:stroke-white"
+                            d="M7.32812 9.00158V7.89158C7.32812 6.45908 8.34063 5.88158 9.57813 6.59408L10.5381 7.14908L11.4981 7.70408C12.7356 8.41658 12.7356 9.58658 11.4981 10.2991L10.5381 10.8541L9.57813 11.4091C8.34063 12.1216 7.32812 11.5366 7.32812 10.1116V9.00158Z"
+                            stroke="#292D32"
+                            stroke-width="1.5"
+                            stroke-miterlimit="10"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        <h2 class="text-xs">Video</h2>
+
+                        <div>
+                          <a
+                            id="hiddenVideo"
+                            href="https://www.youtube.com/watch?v=yVYQeDhAQWk"
+                            data-fancybox="video"
+                            style="display: none"
+                          ></a>
+                        </div>
                       </div>
                     </div>
                     <!-- Slider Preview Buttons::End -->
