@@ -79,11 +79,11 @@
 .fancybox__thumbs {
   display: none !important; /* Ensure it is hidden */
 }
-.fancybtn--svg path{
-transition:stroke 0.5s ease;
+.fancybtn--svg path {
+  transition: stroke 0.5s ease;
 }
-.fancybtn--svg:hover path{
-stroke:#ffffff;
+.fancybtn--svg:hover path {
+  stroke: #ffffff;
 }
 
 /* ====FancyBox::End==== */

@@ -109,16 +109,16 @@ $(document).ready(function () {
       moveIndicator(tab);
 
       // Updating Panels:
-      panels.forEach((panel)=>{
-        let panelId=panel.getAttribute("id")
-        if(panelId===tabId){
+      panels.forEach((panel) => {
+        let panelId = panel.getAttribute("id");
+        if (panelId === tabId) {
           panel.classList.remove("invisible", "opacity-0");
-        panel.classList.add("visible", "opacity-100")
-        }else{
+          panel.classList.add("visible", "opacity-100");
+        } else {
           panel.classList.add("invisible", "opacity-0");
-        panel.classList.remove("visible", "opacity-100");
+          panel.classList.remove("visible", "opacity-100");
         }
-      })
+      });
 
       // Update selected state for accessibility and styling
       tabs.forEach((t) => {
