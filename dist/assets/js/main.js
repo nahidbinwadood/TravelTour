@@ -82,7 +82,7 @@ $(document).ready(function () {
 
   const tabs = document.querySelectorAll(".tab");
   const indicator = document.querySelector(".indicator");
-
+  const panels = document.querySelectorAll(".tab-panel");
   const moveIndicator = (tab) => {
     const tabRect = tab?.getBoundingClientRect();
     const parentRect = tab?.parentElement?.getBoundingClientRect();
@@ -103,8 +103,22 @@ $(document).ready(function () {
   moveIndicator(tabs[0]);
 
   tabs.forEach((tab) => {
+    const tabId = tab.getAttribute("aria-controls");
     tab.addEventListener("click", () => {
+      console.log(tabId);
       moveIndicator(tab);
+
+      // Updating Panels:
+      panels.forEach((panel)=>{
+        let panelId=panel.getAttribute("id")
+        if(panelId===tabId){
+          panel.classList.remove("invisible", "opacity-0");
+        panel.classList.add("visible", "opacity-100")
+        }else{
+          panel.classList.add("invisible", "opacity-0");
+        panel.classList.remove("visible", "opacity-100");
+        }
+      })
 
       // Update selected state for accessibility and styling
       tabs.forEach((t) => {
@@ -309,46 +323,52 @@ $(document).ready(function () {
   });
   // Accordion::End
 
-
   // FancyBox::Start
-  const galleryButtons=document.querySelectorAll(".fancyGallerybtn")
-  const videoButtons=document.querySelectorAll(".fancyVideobtn")
+  const galleryButtons = document.querySelectorAll(".fancyGallerybtn");
+  const videoButtons = document.querySelectorAll(".fancyVideobtn");
 
   // Images::Start
-  galleryButtons.forEach((galleryButton)=>{
-    galleryButton?.addEventListener("click",()=>{
+  galleryButtons.forEach((galleryButton) => {
+    galleryButton?.addEventListener("click", () => {
       Fancybox.bind('[data-fancybox="gallery"]', {
-        transition: 'fade', 
-        Thumbs:{
-          autostart:false,
-        }
-      });     
+        transition: "fade",
+        Thumbs: {
+          autostart: false,
+        },
+      });
       document.querySelector('[data-fancybox="gallery"]').click();
-    })
-  })
+    });
+  });
   // Images::End
 
   // Videos::Start
-  videoButtons.forEach((videoButton)=>{
-    videoButton?.addEventListener("click",()=>{
-      const videoUrl=document.getElementById("hiddenVideo").getAttribute("href")
-      Fancybox.show([{
-        src: videoUrl,
-        type: 'iframe',
-        iframe: {
-            css: {
-                width: '100%',
-                height: '100%'
-            }
-        }
-    }], {
-        Thumbs: false, // Disable thumbnails
-        caption: "Watch this video", // Optional caption
+  videoButtons.forEach((videoButton) => {
+    videoButton?.addEventListener("click", () => {
+      const videoUrl = document
+        .getElementById("hiddenVideo")
+        .getAttribute("href");
+      Fancybox.show(
+        [
+          {
+            src: videoUrl,
+            type: "iframe",
+            iframe: {
+              css: {
+                width: "100%",
+                height: "100%",
+              },
+            },
+          },
+        ],
+        {
+          Thumbs: false, // Disable thumbnails
+          caption: "Watch this video", // Optional caption
+        },
+      );
     });
-    })
-  })
+  });
   // Videos::End
- 
+
   // FancyBox::End
 });
 
