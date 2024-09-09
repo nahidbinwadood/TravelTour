@@ -316,6 +316,12 @@ $(document).ready(function () {
 const sortSvg1 = document.getElementById("filtering-click-sort-svg1");
 const sortSvg2 = document.getElementById("filtering-click-sort-svg2");
 
+// Grid::Start
+const multiGrid=document.getElementById("multiGrid")
+const singleGrid=document.getElementById("singleGrid")
+ 
+
+// Grid::End
 function changeLayout(svg1, svg2) {
   svg1.classList.add("svg-active");
   svg2.classList.remove("svg-active");
@@ -323,10 +329,20 @@ function changeLayout(svg1, svg2) {
 
 sortSvg1?.addEventListener("click", () => {
   changeLayout(sortSvg1, sortSvg2);
+  console.log('svg1 clicked');
+  singleGrid.classList.remove("hidden")
+  singleGrid.classList.add("grid")
+  multiGrid.classList.add("hidden")
+  multiGrid.classList.remove("grid")
 });
 
 sortSvg2?.addEventListener("click", () => {
   changeLayout(sortSvg2, sortSvg1);
+  console.log('svg2 clicked');
+  singleGrid.classList.remove("grid")
+  singleGrid.classList.add("hidden")
+  multiGrid.classList.add("grid")
+  multiGrid.classList.remove("hidden")
 });
 
 // change favIcon fill
@@ -337,6 +353,7 @@ function changeSvgFill(svg) {
   if (toggle) {
     svg.children[0].style.fill = "#1CA8CB";
     toggle = false;
+  
   } else {
     svg.children[0].style.fill = "white";
     toggle = true;
@@ -346,15 +363,19 @@ function changeSvgFill(svg) {
 favIcon?.forEach((item) => {
   item.addEventListener("click", () => {
     changeSvgFill(item);
+    
   });
 });
+ 
 
 $(".destination-filtering-card-carousel .owl-carousel").owlCarousel({
-  loop: true,
-  margin: 0,
+  loop: true, // Enable looping
+  margin: 10, // Set margin between items
   nav: false,
   items: 1,
 });
+
+
 
 // accordion
 const headers = document.querySelectorAll(".accordion-header");
@@ -365,16 +386,20 @@ headers.forEach((header) => {
     const content = section.querySelector(".accordion-content");
     const allContents = document.querySelectorAll(".accordion-content");
     const dropDownArrow = header.querySelector(".dropdown--arrow");
+
     const destinationAccordionBtn = header.querySelector(
       ".destination--dropdown--arrow",
     );
     if (dropDownArrow) {
       allContents.forEach((c) => {
         if (c !== content) {
+          const contentsParent = c.parentElement;
+          const inactiveDropDows =
+            contentsParent.querySelector(".dropdown--arrow");
           c.style.maxHeight = null;
           c.style.padding = "0 15px";
           c.parentElement.classList.remove("active");
-          dropDownArrow.style.transform = "rotate(0deg)";
+          inactiveDropDows.style.transform = "rotate(180deg)";
         }
       });
 
@@ -382,10 +407,11 @@ headers.forEach((header) => {
         content.style.maxHeight = null;
         content.style.padding = "0 15px";
         section.classList.remove("active");
+        dropDownArrow.style.transform = "rotate(180deg)";
       } else {
         content.style.maxHeight = content.scrollHeight + "px";
         content.style.padding = "15px";
-        dropDownArrow.style.transform = "rotate(180deg)";
+        dropDownArrow.style.transform = "rotate(360deg)";
         section.classList.add("active");
       }
     }
@@ -393,10 +419,14 @@ headers.forEach((header) => {
     if (destinationAccordionBtn) {
       allContents.forEach((c) => {
         if (c !== content) {
+          const contentsParent = c.parentElement;
+          const inactiveDropDows = contentsParent.querySelector(
+            ".destination--dropdown--arrow",
+          );
           c.style.maxHeight = null;
           c.style.padding = "0 15px";
           c.parentElement.classList.remove("active");
-          destinationAccordionBtn.style.transform = "rotate(0deg)";
+          inactiveDropDows.style.transform = "rotate(0deg)";
         }
       });
 
@@ -404,6 +434,7 @@ headers.forEach((header) => {
         content.style.maxHeight = null;
         content.style.padding = "0 15px";
         section.classList.remove("active");
+        destinationAccordionBtn.style.transform="rotate(0deg)"
       } else {
         content.style.maxHeight = content.scrollHeight + "px";
         content.style.padding = "15px";
