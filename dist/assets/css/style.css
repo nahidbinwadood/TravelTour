@@ -622,6 +622,10 @@ video {
   inset: 0px;
 }
 
+.bottom-10{
+  bottom: 2.5rem;
+}
+
 .bottom-6{
   bottom: 1.5rem;
 }
@@ -632,6 +636,10 @@ video {
 
 .left-1\/2{
   left: 50%;
+}
+
+.left-10{
+  left: 2.5rem;
 }
 
 .left-4{
@@ -692,6 +700,10 @@ video {
 
 .z-20{
   z-index: 20;
+}
+
+.z-\[10000\]{
+  z-index: 10000;
 }
 
 .col-span-12{
@@ -1033,6 +1045,10 @@ video {
   width: 100vw;
 }
 
+.w-\[120px\]{
+  width: 120px;
+}
+
 .w-\[200px\]{
   width: 200px;
 }
@@ -1283,6 +1299,10 @@ video {
 
 .rounded-\[46px\]{
   border-radius: 46px;
+}
+
+.rounded-\[47px\]{
+  border-radius: 47px;
 }
 
 .rounded-\[48px\]{
@@ -3172,20 +3192,20 @@ video {
     grid-column: span 4 / span 4;
   }
 
-  .xl\:col-span-5{
-    grid-column: span 5 / span 5;
-  }
-
   .xl\:col-span-6{
     grid-column: span 6 / span 6;
+  }
+
+  .xl\:col-span-8{
+    grid-column: span 8 / span 8;
   }
 
   .xl\:col-span-7{
     grid-column: span 7 / span 7;
   }
 
-  .xl\:col-span-8{
-    grid-column: span 8 / span 8;
+  .xl\:col-span-5{
+    grid-column: span 5 / span 5;
   }
 
   .xl\:mx-24{
@@ -3391,6 +3411,10 @@ video {
     gap: 2.5rem;
   }
 
+  .xl\:gap-16{
+    gap: 4rem;
+  }
+
   .xl\:gap-20{
     gap: 5rem;
   }
@@ -3405,10 +3429,6 @@ video {
 
   .xl\:gap-8{
     gap: 2rem;
-  }
-
-  .xl\:gap-\[80px\]{
-    gap: 80px;
   }
 
   .xl\:space-y-16 > :not([hidden]) ~ :not([hidden]){
