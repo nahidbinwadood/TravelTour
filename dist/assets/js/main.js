@@ -154,6 +154,22 @@ $(document).ready(function () {
       },
     },
   });
+  $(".auth-container .owl-carousel").owlCarousel({
+    loop: true, // Enable looping
+    margin: 10, // Set margin between items
+    nav: true,
+    responsive: {
+      0: {
+        items: 1, // Number of items for screens up to 600px wide
+      },
+      768: {
+        items: 1, // Number of items for screens up to 1000px wide
+      },
+      1000: {
+        items: 1, // Number of items for screens wider than 1000px
+      },
+    },
+  });
   $(".blogs--slider .owl-carousel").owlCarousel({
     loop: true, // Enable looping
     margin: 40, // Set margin between items
@@ -370,6 +386,40 @@ $(document).ready(function () {
   // Videos::End
 
   // FancyBox::End
+
+  // Password Icon::Start
+  const showButton = document.getElementById("show--pass");
+  const hideButton = document.getElementById("hide--pass");
+  const passField = document.getElementById("password--field");
+
+
+
+  showButton?.addEventListener("click", () => {
+    hideButton?.classList.remove("hidden");
+    showButton?.classList.add("hidden");
+    passField.setAttribute("type", "password");
+  });
+  hideButton?.addEventListener("click", () => {
+    hideButton?.classList.add("hidden");
+    showButton?.classList.remove("hidden");
+    passField.setAttribute("type", "text");
+  });
+  
+  const showButton2 = document.getElementById("show--pass--2");
+  const hideButton2 = document.getElementById("hide--pass--2");
+  const passField2 = document.getElementById("password--field--2");
+  
+  showButton2?.addEventListener("click", () => {
+    hideButton2?.classList.remove("hidden");
+    showButton2?.classList.add("hidden");
+    passField2.setAttribute("type", "password");
+  });
+  hideButton2?.addEventListener("click", () => {
+    hideButton2?.classList.add("hidden");
+    showButton2?.classList.remove("hidden");
+    passField2.setAttribute("type", "text");
+  });
+  // Password Icon::End
 });
 
 // ====Solaimain====

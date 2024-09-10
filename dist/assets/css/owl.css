@@ -68,6 +68,36 @@
 }
 /* =====Blogs Carousel==== */
 
+/*====Auth Carousel==== */
+.auth-container .owl-carousel {
+  position: relative;
+}
+.auth-container .owl-nav {
+  display: none;
+}
+.auth-container .owl-dots {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.auth-container .owl-dots .owl-dot {
+  height: 10px;
+  width: 10px;
+  margin-right: 8px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  background: white;
+}
+.auth-container .owl-dots .owl-dot.active {
+  background: #1ca8cb;
+  height: 10px;
+  width: 32px;
+  border-radius: 5px;
+  border: 1px solid #1ca8cb;
+}
+/*====Auth Carousel==== */
+
 @media (max-width: 768px) {
   .destination--slider .owl-dots .owl-dot {
     height: 12px;

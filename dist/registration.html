@@ -148,80 +148,231 @@
     <main class="min-h-[calc(100vh-858px)]">
       <!-- Registration Section::Start -->
       <section
-        class="container mx-auto mb-24 flex flex-col items-center justify-center md:mb-36 lg:mb-52 xl:mb-64 xl:mt-10"
+        class="auth-container 2xl::gap-32 container mx-auto mb-20 mt-10 flex flex-col-reverse gap-8 md:gap-16 lg:flex-row-reverse lg:items-center lg:gap-20"
       >
-        <!-- Title Section::Start -->
-        <div class="lg: mb-5 mt-10 text-center font-poppins md:mb-8 lg:mb-10">
-          <h2
-            class="mb-4 text-2xl font-medium tracking-tighter md:mb-6 md:text-3xl lg:text-4xl"
-          >
-            Create an account
-          </h2>
-          <h4 class="mb-2 text-sm md:text-xl">Let’s create your account</h4>
-          <div class="text-sm md:text-xl">
-            Already have an account?
-            <a href="login.html" class="text-[#FF5108]">Log In!</a>
+        <div
+          class="flex w-full flex-col justify-center font-poppins xl:w-[65%]"
+        >
+          <!-- Title::Start -->
+          <div class="mb-6 md:mb-10">
+            <h2 class="pb-4 text-2xl md:text-3xl lg:text-4xl">Sign up</h2>
+            <p class="text-sm text-black/50 md:text-base">
+              Let’s get you all st up so you can access your personal account.
+            </p>
+          </div>
+          <!-- Title::End -->
+
+          <!-- Form::Start -->
+          <div>
+            <form action="" class="font-montserrat">
+              <div class="flex flex-col gap-5">
+                <div class="flex flex-col md:flex-row items-center gap-5 w-full">
+                  <fieldset
+                    class="flex rounded-md border border-[#79747E] px-6 py-2 text-sm md:px-8 w-full"
+                  >
+                    <legend>First Name</legend>
+                    <input
+                      placeholder="Enter Your First Name"
+                      type="text"
+                      name="firstName"
+                      id=""
+                      class="-mt-2 h-8 w-full border-none outline-none focus:outline-none md:h-10"
+                      required
+                    />
+                  </fieldset>
+
+                  <fieldset
+                    class="flex rounded-md border border-[#79747E] px-6 py-2 text-sm md:px-8 w-full"
+                  >
+                    <legend>Last Name</legend>
+                    <input
+                      placeholder="Enter Your Last Name"
+                      type="text"
+                      name="lastName"
+                      id=""
+                      class="-mt-2 h-8 w-full border-none outline-none focus:outline-none md:h-10"
+                      required
+                    />
+                  </fieldset>
+                </div>
+
+                <fieldset
+                  class="flex rounded-md border border-[#79747E] px-6 py-2 text-sm md:px-8"
+                >
+                  <legend>Email</legend>
+                  <input
+                    placeholder="Enter Your Email"
+                    type="email"
+                    name="Email"
+                    id=""
+                    class="-mt-2 h-8 w-full border-none outline-none focus:outline-none md:h-10"
+                    required
+                  />
+                </fieldset>
+
+                <fieldset
+                  class="relative flex rounded-md border border-[#79747E] px-6 py-2 text-sm md:px-8"
+                >
+                  <legend>Password</legend>
+                  <input
+                    id="password--field--2"
+                    placeholder="Enter Your Password"
+                    type="password"
+                    name="password"
+                    id=""
+                    class="-mt-2 h-8 w-full border-none outline-none focus:outline-none md:h-10 password--field"
+                  />
+                  <svg
+                    id="hide--pass--2"
+                    class="cursor-pointer -mt-1 md:-mt-0"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="25"
+                    viewBox="0 0 24 25"
+                    fill="none"
+                  >
+                    <path
+                      d="M20.2481 21.2481C20.1496 21.2483 20.0521 21.229 19.9611 21.1912C19.8701 21.1535 19.7875 21.0981 19.718 21.0283L3.21798 4.5283C3.08327 4.3865 3.00928 4.19769 3.01178 4.00212C3.01428 3.80655 3.09309 3.61969 3.23139 3.48139C3.36969 3.34309 3.55655 3.26428 3.75212 3.26178C3.94769 3.25928 4.1365 3.33327 4.2783 3.46798L20.7783 19.968C20.8831 20.0729 20.9545 20.2065 20.9834 20.3519C21.0123 20.4974 20.9975 20.6481 20.9407 20.7851C20.884 20.9221 20.7879 21.0392 20.6646 21.1216C20.5414 21.204 20.3964 21.2481 20.2481 21.2481ZM11.6231 15.0536L9.19549 12.626C9.18158 12.6122 9.16369 12.6031 9.14435 12.6C9.12501 12.5969 9.10518 12.5999 9.08764 12.6086C9.07011 12.6174 9.05576 12.6314 9.0466 12.6487C9.03744 12.666 9.03394 12.6858 9.03658 12.7052C9.13459 13.335 9.43032 13.9173 9.88103 14.3681C10.3317 14.8188 10.9141 15.1145 11.5439 15.2125C11.5633 15.2152 11.5831 15.2117 11.6004 15.2025C11.6177 15.1933 11.6317 15.179 11.6405 15.1615C11.6492 15.1439 11.6522 15.1241 11.6491 15.1047C11.646 15.0854 11.6369 15.0675 11.6231 15.0536ZM12.3731 9.44267L14.8045 11.8731C14.8184 11.8871 14.8364 11.8964 14.8558 11.8996C14.8752 11.9028 14.8952 11.8998 14.9128 11.8911C14.9305 11.8823 14.9449 11.8682 14.9541 11.8508C14.9633 11.8333 14.9667 11.8134 14.9639 11.7939C14.8662 11.1632 14.5702 10.58 14.1189 10.1288C13.6676 9.67747 13.0844 9.38153 12.4538 9.28377C12.4342 9.28075 12.4143 9.28399 12.3967 9.29301C12.3791 9.30203 12.3648 9.31638 12.3559 9.334C12.3469 9.35162 12.3438 9.37162 12.3469 9.39114C12.35 9.41065 12.3592 9.42869 12.3731 9.44267Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M23.0156 13.0637C23.1708 12.8202 23.2529 12.5372 23.252 12.2484C23.2512 11.9596 23.1675 11.6771 23.0109 11.4344C21.7706 9.51625 20.1614 7.88688 18.3577 6.72203C16.3594 5.43203 14.1562 4.75 11.985 4.75C10.8404 4.75157 9.7035 4.9382 8.61843 5.30266C8.58807 5.31276 8.56079 5.33046 8.5392 5.35409C8.51761 5.37772 8.50242 5.40647 8.49509 5.43763C8.48776 5.46878 8.48853 5.50129 8.49732 5.53207C8.50611 5.56284 8.52263 5.59085 8.54531 5.61344L10.7597 7.82781C10.7827 7.85086 10.8113 7.86752 10.8427 7.87615C10.8741 7.88478 10.9072 7.88508 10.9387 7.87703C11.6893 7.69412 12.4744 7.70752 13.2183 7.91595C13.9622 8.12438 14.6399 8.52082 15.1862 9.0671C15.7325 9.61338 16.1289 10.2911 16.3373 11.035C16.5458 11.7789 16.5592 12.5639 16.3762 13.3145C16.3683 13.346 16.3686 13.379 16.3773 13.4103C16.3859 13.4416 16.4025 13.4702 16.4255 13.4931L19.6106 16.6806C19.6438 16.7138 19.6881 16.7334 19.735 16.7355C19.7819 16.7376 19.8278 16.722 19.8637 16.6919C21.0898 15.6468 22.1522 14.4239 23.0156 13.0637ZM12 16.75C11.3188 16.75 10.6465 16.5954 10.0337 16.2978C9.42094 16.0002 8.88375 15.5673 8.46263 15.0319C8.04151 14.4964 7.74745 13.8723 7.60262 13.2067C7.45779 12.5411 7.46598 11.8512 7.62656 11.1892C7.63452 11.1577 7.63417 11.1247 7.62555 11.0934C7.61692 11.0621 7.60031 11.0336 7.57734 11.0106L4.44422 7.87609C4.41099 7.84283 4.36649 7.82327 4.31952 7.82127C4.27255 7.81927 4.22655 7.83499 4.19062 7.86531C3.04734 8.84078 1.9875 10.0277 1.01859 11.4147C0.84899 11.6581 0.755584 11.9465 0.750243 12.2431C0.744901 12.5397 0.827865 12.8313 0.988591 13.0806C2.22656 15.018 3.81937 16.6497 5.59547 17.7986C7.59656 19.0938 9.74625 19.75 11.985 19.75C13.1412 19.7469 14.2899 19.5643 15.39 19.2086C15.4206 19.1988 15.4482 19.1813 15.4702 19.1578C15.4921 19.1342 15.5076 19.1054 15.5152 19.0742C15.5227 19.0429 15.5222 19.0102 15.5134 18.9793C15.5047 18.9483 15.4882 18.9201 15.4655 18.8973L13.2403 16.6727C13.2174 16.6497 13.1888 16.6331 13.1575 16.6244C13.1262 16.6158 13.0932 16.6155 13.0617 16.6234C12.7141 16.7077 12.3577 16.7502 12 16.75Z"
+                      fill="black"
+                    />
+                  </svg>
+
+                  <svg
+                    id="show--pass--2"
+                    class="cursor-pointer -mt-1 md:-mt-0 hidden"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M23.0091 11.1844C21.7687 9.26625 20.1595 7.63688 18.3558 6.47203C16.3603 5.18203 14.1572 4.5 11.985 4.5C9.99187 4.5 8.03203 5.06953 6.15984 6.19266C4.25062 7.33781 2.52093 9.01078 1.01859 11.1647C0.84899 11.4081 0.755584 11.6965 0.750243 11.9931C0.744901 12.2897 0.827865 12.5813 0.988591 12.8306C2.22656 14.768 3.81984 16.3997 5.59547 17.5486C7.59468 18.8438 9.74625 19.5 11.985 19.5C14.1745 19.5 16.3823 18.8236 18.3694 17.5444C20.1722 16.3833 21.7781 14.7478 23.0137 12.8137C23.1689 12.5702 23.251 12.2872 23.2502 11.9984C23.2493 11.7096 23.1656 11.4271 23.0091 11.1844ZM12.0009 16.5C11.1109 16.5 10.2409 16.2361 9.50087 15.7416C8.76085 15.2471 8.18407 14.5443 7.84348 13.7221C7.50288 12.8998 7.41377 11.995 7.5874 11.1221C7.76103 10.2492 8.18962 9.44736 8.81895 8.81802C9.44829 8.18868 10.2501 7.7601 11.123 7.58647C11.9959 7.41283 12.9007 7.50195 13.723 7.84254C14.5453 8.18314 15.2481 8.75991 15.7425 9.49993C16.237 10.24 16.5009 11.11 16.5009 12C16.4996 13.1931 16.025 14.3369 15.1814 15.1805C14.3378 16.0241 13.194 16.4986 12.0009 16.5Z"
+                      fill="black"
+                    />
+                  </svg>
+                </fieldset>
+
+                <fieldset
+                  class="relative flex rounded-md border border-[#79747E] px-6 py-2 text-sm md:px-8"
+                >
+                  <legend>Confirm Password</legend>
+                  <input
+                    id="password--field"
+                    placeholder="Enter Your Password"
+                    type="password"
+                    name="confirmPassword"
+                    id=""
+                    class="-mt-2 h-8 w-full border-none outline-none focus:outline-none md:h-10"
+                  />
+                  <svg
+                    id="hide--pass"
+                    class="cursor-pointer -mt-1 md:-mt-0"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="25"
+                    viewBox="0 0 24 25"
+                    fill="none"
+                  >
+                    <path
+                      d="M20.2481 21.2481C20.1496 21.2483 20.0521 21.229 19.9611 21.1912C19.8701 21.1535 19.7875 21.0981 19.718 21.0283L3.21798 4.5283C3.08327 4.3865 3.00928 4.19769 3.01178 4.00212C3.01428 3.80655 3.09309 3.61969 3.23139 3.48139C3.36969 3.34309 3.55655 3.26428 3.75212 3.26178C3.94769 3.25928 4.1365 3.33327 4.2783 3.46798L20.7783 19.968C20.8831 20.0729 20.9545 20.2065 20.9834 20.3519C21.0123 20.4974 20.9975 20.6481 20.9407 20.7851C20.884 20.9221 20.7879 21.0392 20.6646 21.1216C20.5414 21.204 20.3964 21.2481 20.2481 21.2481ZM11.6231 15.0536L9.19549 12.626C9.18158 12.6122 9.16369 12.6031 9.14435 12.6C9.12501 12.5969 9.10518 12.5999 9.08764 12.6086C9.07011 12.6174 9.05576 12.6314 9.0466 12.6487C9.03744 12.666 9.03394 12.6858 9.03658 12.7052C9.13459 13.335 9.43032 13.9173 9.88103 14.3681C10.3317 14.8188 10.9141 15.1145 11.5439 15.2125C11.5633 15.2152 11.5831 15.2117 11.6004 15.2025C11.6177 15.1933 11.6317 15.179 11.6405 15.1615C11.6492 15.1439 11.6522 15.1241 11.6491 15.1047C11.646 15.0854 11.6369 15.0675 11.6231 15.0536ZM12.3731 9.44267L14.8045 11.8731C14.8184 11.8871 14.8364 11.8964 14.8558 11.8996C14.8752 11.9028 14.8952 11.8998 14.9128 11.8911C14.9305 11.8823 14.9449 11.8682 14.9541 11.8508C14.9633 11.8333 14.9667 11.8134 14.9639 11.7939C14.8662 11.1632 14.5702 10.58 14.1189 10.1288C13.6676 9.67747 13.0844 9.38153 12.4538 9.28377C12.4342 9.28075 12.4143 9.28399 12.3967 9.29301C12.3791 9.30203 12.3648 9.31638 12.3559 9.334C12.3469 9.35162 12.3438 9.37162 12.3469 9.39114C12.35 9.41065 12.3592 9.42869 12.3731 9.44267Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M23.0156 13.0637C23.1708 12.8202 23.2529 12.5372 23.252 12.2484C23.2512 11.9596 23.1675 11.6771 23.0109 11.4344C21.7706 9.51625 20.1614 7.88688 18.3577 6.72203C16.3594 5.43203 14.1562 4.75 11.985 4.75C10.8404 4.75157 9.7035 4.9382 8.61843 5.30266C8.58807 5.31276 8.56079 5.33046 8.5392 5.35409C8.51761 5.37772 8.50242 5.40647 8.49509 5.43763C8.48776 5.46878 8.48853 5.50129 8.49732 5.53207C8.50611 5.56284 8.52263 5.59085 8.54531 5.61344L10.7597 7.82781C10.7827 7.85086 10.8113 7.86752 10.8427 7.87615C10.8741 7.88478 10.9072 7.88508 10.9387 7.87703C11.6893 7.69412 12.4744 7.70752 13.2183 7.91595C13.9622 8.12438 14.6399 8.52082 15.1862 9.0671C15.7325 9.61338 16.1289 10.2911 16.3373 11.035C16.5458 11.7789 16.5592 12.5639 16.3762 13.3145C16.3683 13.346 16.3686 13.379 16.3773 13.4103C16.3859 13.4416 16.4025 13.4702 16.4255 13.4931L19.6106 16.6806C19.6438 16.7138 19.6881 16.7334 19.735 16.7355C19.7819 16.7376 19.8278 16.722 19.8637 16.6919C21.0898 15.6468 22.1522 14.4239 23.0156 13.0637ZM12 16.75C11.3188 16.75 10.6465 16.5954 10.0337 16.2978C9.42094 16.0002 8.88375 15.5673 8.46263 15.0319C8.04151 14.4964 7.74745 13.8723 7.60262 13.2067C7.45779 12.5411 7.46598 11.8512 7.62656 11.1892C7.63452 11.1577 7.63417 11.1247 7.62555 11.0934C7.61692 11.0621 7.60031 11.0336 7.57734 11.0106L4.44422 7.87609C4.41099 7.84283 4.36649 7.82327 4.31952 7.82127C4.27255 7.81927 4.22655 7.83499 4.19062 7.86531C3.04734 8.84078 1.9875 10.0277 1.01859 11.4147C0.84899 11.6581 0.755584 11.9465 0.750243 12.2431C0.744901 12.5397 0.827865 12.8313 0.988591 13.0806C2.22656 15.018 3.81937 16.6497 5.59547 17.7986C7.59656 19.0938 9.74625 19.75 11.985 19.75C13.1412 19.7469 14.2899 19.5643 15.39 19.2086C15.4206 19.1988 15.4482 19.1813 15.4702 19.1578C15.4921 19.1342 15.5076 19.1054 15.5152 19.0742C15.5227 19.0429 15.5222 19.0102 15.5134 18.9793C15.5047 18.9483 15.4882 18.9201 15.4655 18.8973L13.2403 16.6727C13.2174 16.6497 13.1888 16.6331 13.1575 16.6244C13.1262 16.6158 13.0932 16.6155 13.0617 16.6234C12.7141 16.7077 12.3577 16.7502 12 16.75Z"
+                      fill="black"
+                    />
+                  </svg>
+
+                  <svg
+                    id="show--pass"
+                    class="cursor-pointer -mt-1 md:-mt-0 hidden"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M23.0091 11.1844C21.7687 9.26625 20.1595 7.63688 18.3558 6.47203C16.3603 5.18203 14.1572 4.5 11.985 4.5C9.99187 4.5 8.03203 5.06953 6.15984 6.19266C4.25062 7.33781 2.52093 9.01078 1.01859 11.1647C0.84899 11.4081 0.755584 11.6965 0.750243 11.9931C0.744901 12.2897 0.827865 12.5813 0.988591 12.8306C2.22656 14.768 3.81984 16.3997 5.59547 17.5486C7.59468 18.8438 9.74625 19.5 11.985 19.5C14.1745 19.5 16.3823 18.8236 18.3694 17.5444C20.1722 16.3833 21.7781 14.7478 23.0137 12.8137C23.1689 12.5702 23.251 12.2872 23.2502 11.9984C23.2493 11.7096 23.1656 11.4271 23.0091 11.1844ZM12.0009 16.5C11.1109 16.5 10.2409 16.2361 9.50087 15.7416C8.76085 15.2471 8.18407 14.5443 7.84348 13.7221C7.50288 12.8998 7.41377 11.995 7.5874 11.1221C7.76103 10.2492 8.18962 9.44736 8.81895 8.81802C9.44829 8.18868 10.2501 7.7601 11.123 7.58647C11.9959 7.41283 12.9007 7.50195 13.723 7.84254C14.5453 8.18314 15.2481 8.75991 15.7425 9.49993C16.237 10.24 16.5009 11.11 16.5009 12C16.4996 13.1931 16.025 14.3369 15.1814 15.1805C14.3378 16.0241 13.194 16.4986 12.0009 16.5Z"
+                      fill="black"
+                    />
+                  </svg>
+                </fieldset>
+
+
+                <div class="flex gap-2 font-montserrat md:items-center py-3">
+                  <input
+                    type="checkbox"
+                    name=""
+                    id="terms"
+                    class="mt-1 size-4 md:mt-0"
+                    required
+                  />
+                  <label
+                    for="terms"
+                    class="cursor-pointer text-sm font-medium"
+                    >I agree to all the <span><a href="#" class="text-secondary">Terms</a></span> and <span><a href="#" class="text-secondary">Privacy Policies</a></span></label
+                  >
+                </div>
+                 
+
+                <div class="py-2 md:py-4">
+                  <button
+                    class="w-full rounded border border-primary bg-primary py-2 text-center font-poppins text-white duration-700 hover:bg-white hover:text-primary md:py-3"
+                  >
+                    <a href="#">Create account</a>
+                  </button>
+                  <div class="pt-4 text-center text-sm md:text-base">
+                    <p>
+                      Already have an account? 
+                      <span
+                        ><a href="login.html" class="text-secondary"
+                          >Login</a
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Horizontal Line::Start -->
+
+                
+
+                <!-- Horizontal Line::End -->
+              </div>
+            </form>
+          </div>
+          <!-- Form::End -->
+        </div>
+
+        <!-- Slider::Start -->
+        <div class="w-full xl:w-[35%]">
+          <div class="mt-12 w-full">
+            <div
+              class="md:[500px] h-[250px] w-full overflow-hidden rounded-2xl lg:h-[650px]"
+            >
+              <img
+                class="h-full w-full object-cover"
+                src="./assets/img/auth/slider-1.png"
+                alt=""
+              />
+            </div>
           </div>
         </div>
-        <!-- Title Section::End -->
-
-        <!-- Form::Start -->
-        <div
-          class="mx-auto rounded-lg border border-black/40 px-6 py-8 font-poppins md:px-10 md:py-10 lg:my-12 lg:px-12 xl:px-16 xl:py-16"
-        >
-          <form>
-            <div class="mb-6 w-full md:w-[400px] lg:w-[500px] xl:w-[600px]">
-              <input
-                class="focus:shadow-outline w-full appearance-none rounded-lg border px-4 py-4 text-sm leading-tight text-textColor placeholder:text-sm placeholder:text-black focus:outline-none md:px-8 md:text-base md:placeholder:text-base xl:px-12"
-                id="username"
-                type="text"
-                required
-                placeholder="Username*"
-              />
-            </div>
-            <div class="mb-6 w-full md:w-[400px] lg:w-[500px] xl:w-[600px]">
-              <input
-                class="focus:shadow-outline w-full appearance-none rounded-lg border px-4 py-4 text-sm leading-tight text-textColor placeholder:text-sm placeholder:text-black focus:outline-none md:px-8 md:text-base md:placeholder:text-base xl:px-12"
-                id="username"
-                type="email"
-                placeholder="Your email*"
-                required
-              />
-            </div>
-            <div class="mb-6 w-full md:w-[400px] lg:w-[500px] xl:w-[600px]">
-              <input
-                class="focus:shadow-outline w-full appearance-none rounded-lg border px-4 py-4 text-sm leading-tight text-textColor placeholder:text-sm placeholder:text-black focus:outline-none md:px-8 md:text-base md:placeholder:text-base xl:px-12"
-                id="username"
-                type="email"
-                placeholder="Confirm email*"
-                required
-              />
-            </div>
-
-            <p class="mb-4 text-center text-sm text-black md:text-lg">
-              A password will be emailed to you.
-            </p>
-
-            <!-- Button::Start -->
-
-            <a
-              href="#"
-              class="transtion mt-6 flex items-center justify-center rounded-md bg-primary py-3 pl-8 pr-6 font-poppins text-sm text-white shadow-md duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-75 md:mt-10 md:pr-8 md:text-base lg:mt-12 lg:pl-12 lg:pr-10"
-            >
-              <span class="mr-2">Register</span>
-              <img
-                src="./assets/img/icons/arrow-up.svg"
-                alt="Arrow Icon"
-                class="size-5 md:size-6"
-              />
-              <input type="submit" class="hidden" />
-            </a>
-
-            <!-- Button::End -->
-          </form>
-        </div>
-
-        <!-- Form::End -->
+        <!-- Slider::End -->
       </section>
       <!-- Registration Section::End -->
     </main>
