@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FinedBus Tour | Login</title>
+    <title>FinedBus Tour | Verify Code</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/nice-select.css" />
     <link rel="stylesheet" href="./assets/css/all.min.css" />
@@ -149,16 +149,36 @@
     <main class="min-h-[calc(100vh-858px)]">
       <!-- Login Section::Start -->
       <section
-        class="auth-container 2xl::gap-32 container mx-auto mb-20 mt-10 flex flex-col-reverse items-center gap-8 md:gap-16 lg:flex-row lg:gap-20"
+        class="auth-container 2xl::gap-32 container mx-auto mb-20 mt-10 flex flex-col-reverse items-center gap-8 md:gap-16 lg:flex-row-reverse lg:gap-20"
       >
         <div
-          class="flex w-full flex-col justify-center font-poppins xl:w-[65%]"
+          class="mt-20 flex w-full flex-col justify-center font-poppins xl:w-[65%] 2xl:px-40"
         >
           <!-- Title::Start -->
-          <div class="mb-6 md:mb-10 lg:mb-16">
-            <h2 class="pb-4 text-2xl md:text-3xl lg:text-4xl">Login</h2>
-            <p class="text-sm text-black/50 md:text-base">
-              Login to access your personal account
+          <div class="mb-6 md:mb-10">
+            <div class="mb-5 flex cursor-pointer items-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="25"
+                viewBox="0 0 24 25"
+                fill="none"
+              >
+                <path
+                  d="M15.75 19.25L9 12.5L15.75 5.75"
+                  stroke="#112211"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <a href="login.html">Back to login</a>
+            </div>
+            <h2 class="pb-4 text-2xl md:text-3xl lg:text-4xl">
+                Verify code
+            </h2>
+            <p class="text-sm text-black/50 md:text-base pt-5">
+              An authentication code has been sent to your email.
             </p>
           </div>
           <!-- Title::End -->
@@ -168,28 +188,14 @@
             <form action="">
               <div class="flex flex-col gap-5">
                 <fieldset
-                  class="flex rounded-md border border-[#79747E] px-6 py-2 text-sm md:px-8"
-                >
-                  <legend>Email</legend>
-                  <input
-                    placeholder="Enter Your Email"
-                    type="email"
-                    name="Email"
-                    id=""
-                    class="-mt-2 h-8 w-full border-none outline-none focus:outline-none md:h-10"
-                    required
-                  />
-                </fieldset>
-
-                <fieldset
                   class="relative flex rounded-md border border-[#79747E] px-6 py-2 text-sm md:px-8"
                 >
-                  <legend>Password</legend>
+                  <legend>Enter Code</legend>
                   <input
                     id="password--field"
                     placeholder="Enter Your Password"
                     type="password"
-                    name="password"
+                    name="cod"
                     id=""
                     class="-mt-2 h-8 w-full border-none outline-none focus:outline-none md:h-10"
                   />
@@ -231,55 +237,17 @@
                     />
                   </svg>
                 </fieldset>
-
-                <div class="flex items-center justify-between">
-                  <div class="flex gap-2 font-inter md:items-center">
-                    <input
-                      type="checkbox"
-                      name=""
-                      id="terms"
-                      class="mt-1 size-4 md:mt-0"
-                      required
-                    />
-                    <label
-                      for="terms"
-                      class="cursor-pointer text-sm font-medium"
-                      >Remember Me</label
-                    >
-                  </div>
-                  <div>
-                    <a href="#" class="text-sm font-medium text-secondary"
-                      >Forgot Password</a
-                    >
-                  </div>
+                <div class="font-montserrat">
+                    <p>Didn’t receive a code? <span><a href="#" class="text-sm text-secondary">Resend</a></span></p>
                 </div>
 
                 <div class="py-2 md:py-4">
                   <button
                     class="w-full rounded border border-primary bg-primary py-2 text-center font-poppins text-white duration-700 hover:bg-white hover:text-primary md:py-3"
                   >
-                    <a href="#">Login</a>
+                    <a href="#">Verify</a>
                   </button>
-                  <div class="pt-4 text-center text-sm md:text-base">
-                    <p>
-                      Don’t have an account?
-                      <span
-                        ><a href="registration.html" class="text-secondary"
-                          >Sign up</a
-                        ></span
-                      >
-                    </p>
-                  </div>
                 </div>
-
-                <!-- Horizontal Line::Start -->
-
-                <div class="flex items-center gap-5">
-                  <div class="h-[1px] w-1/2 bg-black/30"></div>
-                  <div class="h-[1px] w-1/2 bg-black/30"></div>
-                </div>
-
-                <!-- Horizontal Line::End -->
               </div>
             </form>
           </div>
