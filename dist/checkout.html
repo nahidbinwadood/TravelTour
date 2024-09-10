@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FinedBus Tour | Registration</title>
+    <title>FinedBus Tour | Checkout</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/nice-select.css" />
     <link rel="stylesheet" href="./assets/css/all.min.css" />
@@ -145,86 +145,289 @@
     <!-- Header::End -->
 
     <!-- Main::Start -->
-    <main class="min-h-[calc(100vh-858px)]">
-      <!-- Registration Section::Start -->
+    <main class="min-h-[calc(100vh-793px)]">
+      <!-- Title Section::Start -->
       <section
-        class="container mx-auto mb-24 flex flex-col items-center justify-center md:mb-36 lg:mb-52 xl:mb-64 xl:mt-10"
+        class="container mx-auto my-8 font-poppins md:my-14 lg:my-16 xl:my-20"
       >
-        <!-- Title Section::Start -->
-        <div class="lg: mb-5 mt-10 text-center font-poppins md:mb-8 lg:mb-10">
-          <h2
-            class="mb-4 text-2xl font-medium tracking-tighter md:mb-6 md:text-3xl lg:text-4xl"
-          >
-            Create an account
-          </h2>
-          <h4 class="mb-2 text-sm md:text-xl">Let’s create your account</h4>
-          <div class="text-sm md:text-xl">
-            Already have an account?
-            <a href="login.html" class="text-[#FF5108]">Log In!</a>
+        <div class="text-textColor">
+          <h2 class="font-medium md:text-2xl">CheckOut</h2>
+          <div class="mt-3 flex items-center md:text-xl">
+            <h3 class="mr-3 text-sm md:mr-5 md:text-base lg:text-xl">Home</h3>
+            <div class="mr-3 md:mr-5">
+              <img
+                class="size-4 md:size-5 lg:size-6"
+                src="./assets/img/checkout/arrow-right2.svg"
+                alt=""
+              />
+            </div>
+            <h3 class="text-sm md:mr-5 md:text-base lg:text-xl">Checkout</h3>
           </div>
         </div>
-        <!-- Title Section::End -->
-
-        <!-- Form::Start -->
-        <div
-          class="mx-auto rounded-lg border border-black/40 px-6 py-8 font-poppins md:px-10 md:py-10 lg:my-12 lg:px-12 xl:px-16 xl:py-16"
-        >
-          <form>
-            <div class="mb-6 w-full md:w-[400px] lg:w-[500px] xl:w-[600px]">
-              <input
-                class="focus:shadow-outline w-full appearance-none rounded-lg border px-4 py-4 text-sm leading-tight text-textColor placeholder:text-sm placeholder:text-black focus:outline-none md:px-8 md:text-base md:placeholder:text-base xl:px-12"
-                id="username"
-                type="text"
-                required
-                placeholder="Username*"
-              />
-            </div>
-            <div class="mb-6 w-full md:w-[400px] lg:w-[500px] xl:w-[600px]">
-              <input
-                class="focus:shadow-outline w-full appearance-none rounded-lg border px-4 py-4 text-sm leading-tight text-textColor placeholder:text-sm placeholder:text-black focus:outline-none md:px-8 md:text-base md:placeholder:text-base xl:px-12"
-                id="username"
-                type="email"
-                placeholder="Your email*"
-                required
-              />
-            </div>
-            <div class="mb-6 w-full md:w-[400px] lg:w-[500px] xl:w-[600px]">
-              <input
-                class="focus:shadow-outline w-full appearance-none rounded-lg border px-4 py-4 text-sm leading-tight text-textColor placeholder:text-sm placeholder:text-black focus:outline-none md:px-8 md:text-base md:placeholder:text-base xl:px-12"
-                id="username"
-                type="email"
-                placeholder="Confirm email*"
-                required
-              />
-            </div>
-
-            <p class="mb-4 text-center text-sm text-black md:text-lg">
-              A password will be emailed to you.
-            </p>
-
-            <!-- Button::Start -->
-
-            <a
-              href="#"
-              class="transtion mt-6 flex items-center justify-center rounded-md bg-primary py-3 pl-8 pr-6 font-poppins text-sm text-white shadow-md duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-75 md:mt-10 md:pr-8 md:text-base lg:mt-12 lg:pl-12 lg:pr-10"
-            >
-              <span class="mr-2">Register</span>
-              <img
-                src="./assets/img/icons/arrow-up.svg"
-                alt="Arrow Icon"
-                class="size-5 md:size-6"
-              />
-              <input type="submit" class="hidden" />
-            </a>
-
-            <!-- Button::End -->
-          </form>
-        </div>
-
-        <!-- Form::End -->
       </section>
-      <!-- Registration Section::End -->
+      <!-- Title Section::End -->
+
+      <!-- Checkout Form::Start -->
+      <section class="container mx-auto mb-12 md:mb-20 lg:mb-28">
+        <div
+          class="rounded border border-black/30 px-5 py-6 md:px-8 md:py-8 lg:px-10 lg:py-12"
+        >
+          <!-- Top Part-Form::Start -->
+
+          <!-- Order ID::Start -->
+          <div
+            class="border-b border-black/40 pb-3 font-poppins text-textColor md:text-xl"
+          >
+            <h4>Order #3344-323345</h4>
+          </div>
+          <!-- Order ID::End -->
+
+          <!-- Order Information::Start -->
+          <div
+            class="my-6 flex flex-col justify-between md:my-12 md:flex-row md:items-center lg:pr-16"
+          >
+            <div
+              class="flex flex-col gap-4 md:flex-row md:items-center md:gap-10"
+            >
+              <!-- Order Image::Start -->
+              <div
+                class="overflow-hidden rounded-2xl md:h-[197px] md:w-[227px]"
+              >
+                <img
+                  class="h-full w-full object-cover"
+                  src="./assets/img/checkout/order-image.png"
+                  alt=""
+                />
+              </div>
+              <!-- Order Image::End -->
+
+              <!-- Information::Start -->
+              <div class="h-full space-y-4 font-poppins">
+                <div>
+                  <h4 class="font-medium tracking-[-0.4px] md:text-xl">
+                    Tour of the Swiss Alps
+                  </h4>
+                </div>
+                <div
+                  class="flex flex-col gap-4 font-medium tracking-[-0.36px] text-black md:text-lg lg:flex-row lg:items-center lg:gap-10"
+                >
+                  <h4>
+                    Date: <span class="font-light">24 September 2024,</span>
+                  </h4>
+                  <h4>Time: <span class="font-light">12 am</span></h4>
+                </div>
+                <div
+                  class="font-medium tracking-[-0.36px] text-black md:text-lg"
+                >
+                  <h4>Duration: <span class="font-light">4 Days</span></h4>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="font-medium md:text-lg lg:pb-3">
+                    <h2>Tickets:</h2>
+                  </div>
+                  <div>
+                    <p class="text-sm md:text-base">Children x1= $200.00</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Information::End -->
+            </div>
+            <div>
+              <p
+                class="mt-4 flex items-center gap-2 font-poppins font-light md:text-lg"
+              >
+                <span class="block md:hidden">Total:</span> $200.00
+              </p>
+            </div>
+          </div>
+          <!-- Order Information::End -->
+
+          <!-- Amounts::Start -->
+          <div>
+            <div
+              class="flex border-b border-black/40 py-4 font-poppins text-sm md:py-5 md:text-lg lg:items-center lg:justify-end lg:pr-16"
+            >
+              <h4>SubTotal: <span class="pl-3 font-light">$200.00</span></h4>
+            </div>
+            <div
+              class="flex border-b border-black/40 py-4 font-poppins text-sm md:py-5 md:text-lg lg:items-center lg:justify-end lg:pr-16"
+            >
+              <h4>Total: <span class="pl-3 font-light">$200.00</span></h4>
+            </div>
+            <div
+              class="flex border-b border-black/40 py-4 font-poppins text-sm md:py-5 md:text-lg lg:items-center lg:justify-end lg:pr-16"
+            >
+              <h4>Amount Paid: <span class="pl-3 font-light">$0.00</span></h4>
+            </div>
+            <div
+              class="flex border-b border-black/40 py-4 font-poppins text-sm md:py-5 md:text-lg lg:items-center lg:justify-end lg:pr-16"
+            >
+              <h4>Amount Due: <span class="pl-3 font-light">$200.00</span></h4>
+            </div>
+          </div>
+          <!-- Amounts::End -->
+          <!-- Top Part-Form::End -->
+
+          <!-- Form::Start -->
+          <div class="mt-8 font-poppins md:mt-8 lg:mb-12 lg:mt-24">
+            <!-- Form Title::Start -->
+            <div class="font-semibold tracking-[-0.52px] md:text-xl">
+              <h2>Contact Information</h2>
+            </div>
+            <!-- Form Title::End -->
+            <div class="py-6 md:py-8 lg:py-12">
+              <form action="">
+                <div
+                  class="flex flex-col items-center justify-between gap-5 pb-6 md:flex-row md:pb-8 lg:pb-10"
+                >
+                  <div class="rouned-[50px] w-full overflow-hidden">
+                    <input
+                      type="text"
+                      placeholder="First Name"
+                      name="firstName"
+                      id=""
+                      required
+                      class="rouned-[50px] w-full rounded-lg border border-black/50 px-5 py-3 font-inter text-sm placeholder:font-inter placeholder:text-sm focus:outline-none md:px-8 md:py-4 md:text-base md:placeholder:text-base lg:pb-5"
+                    />
+                  </div>
+                  <div class="rouned-[50px] w-full overflow-hidden">
+                    <input
+                      type="text"
+                      placeholder="Last Name"
+                      name="lastName"
+                      id=""
+                      required
+                      class="rouned-[50px] w-full rounded-lg border border-black/50 px-5 py-3 font-inter text-sm placeholder:font-inter placeholder:text-sm focus:outline-none md:px-8 md:py-4 md:text-base md:placeholder:text-base lg:pb-5"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="flex flex-col items-center justify-between gap-5 pb-6 md:flex-row md:pb-8 lg:pb-10"
+                >
+                  <div class="rouned-[50px] w-full overflow-hidden">
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      name="email"
+                      id=""
+                      required
+                      class="rouned-[50px] w-full rounded-lg border border-black/50 px-5 py-3 font-inter text-sm placeholder:font-inter placeholder:text-sm focus:outline-none md:px-8 md:py-4 md:text-base md:placeholder:text-base lg:pb-5"
+                    />
+                  </div>
+                  <div class="rouned-[50px] w-full overflow-hidden">
+                    <input
+                      type="email"
+                      placeholder="Re-Type Email"
+                      name="reTypedEmail"
+                      id=""
+                      class="rouned-[50px] w-full rounded-lg border border-black/50 px-5 py-3 font-inter text-sm placeholder:font-inter placeholder:text-sm focus:outline-none md:px-8 md:py-4 md:text-base md:placeholder:text-base lg:pb-5"
+                    />
+                  </div>
+                </div>
+
+                <div class="pb-6 md:w-1/2 md:pb-8 lg:pb-10">
+                  <div class="rouned-[50px] w-full overflow-hidden">
+                    <input
+                      type="number"
+                      placeholder="Contact Phone"
+                      name="phone"
+                      id=""
+                      required
+                      class="rouned-[50px] w-full rounded-lg border border-black/50 px-5 py-3 font-inter text-sm placeholder:font-inter placeholder:text-sm focus:outline-none md:px-8 md:py-4 md:text-base md:placeholder:text-base lg:pb-5"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="mb-6 flex justify-between rounded border border-black/50 px-5 py-3 font-inter text-lg font-medium md:px-8 md:py-4 lg:mb-16 lg:px-12 lg:py-5"
+                >
+                  <div><p class="text-sm md:text-base">Amount to pay:</p></div>
+                  <div class="checkout--input flex items-center gap-2">
+                    <input type="radio" name="" id="" checked />
+                    <div class="text-sm md:text-base"><p>$200.00</p></div>
+                  </div>
+                </div>
+
+                <div class="space-y-3 md:space-y-4">
+                  <h2 class="font-semibold tracking-[-0.52px] md:text-xl">
+                    Payment Method
+                  </h2>
+                  <h2 class="text-sm font-semibold md:text-base">pay later</h2>
+                </div>
+
+                <div>
+                  <div class="rouned-[50px] mt-5 w-full overflow-hidden">
+                    <input
+                      type="text"
+                      placeholder="Book Now Pay Later"
+                      name="paymentMethod"
+                      id=""
+                      required
+                      class="rouned-[50px] w-full rounded-lg border border-black/50 px-5 py-3 md:px-8  md:py-4 lg:pb-5 font-inter placeholder:font-inter focus:outline-none text-sm placeholder:text-sm md:text-base md:placeholder:text-base"
+                    />
+                  </div>
+                  <div>
+                    <p class="mt-2 text-xs text-black/70 md:ml-5 md:text-sm">
+                      You have to edit “Terms and Conditions” page to replace
+                      this start content with your own
+                    </p>
+                  </div>
+                  <div class="mt-2 flex gap-2 font-inter md:items-center">
+                    <input
+                      type="checkbox"
+                      name=""
+                      id="terms"
+                      class="mt-1 size-4 md:mt-0"
+                    />
+                    <label for="terms" class="cursor-pointer text-sm md:text-lg"
+                      >I read and agree terms and the condition</label
+                    >
+                  </div>
+                  <button
+                    class="mt-4 rounded-md bg-secondary transition duration-500 hover:scale-95 md:mt-8 md:rounded-xl"
+                  >
+                    <a
+                      href="#"
+                      class="flex items-center gap-2 py-2 pl-5 pr-4 font-poppins text-sm text-white md:py-3 md:pl-8 md:pr-6 md:text-base lg:text-lg lg:pl-9 lg:pr-8"
+                      >Complete My Order
+                      <svg
+                        class="size-7 md:size-auto"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="35"
+                        height="35"
+                        viewBox="0 0 35 35"
+                        fill="none"
+                      >
+                        <path
+                          d="M23.612 19.8425L23.2821 11.2646L14.7041 11.5946"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-miterlimit="10"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M11.7297 23.7399L23.1641 11.3906"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-miterlimit="10"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- Form::End -->
+        </div>
+      </section>
+      <!-- Checkout Form::End -->
     </main>
+
     <!-- Main::End -->
 
     <!-- Footer::Start -->
