@@ -392,8 +392,6 @@ $(document).ready(function () {
   const hideButton = document.getElementById("hide--pass");
   const passField = document.getElementById("password--field");
 
-
-
   showButton?.addEventListener("click", () => {
     hideButton?.classList.remove("hidden");
     showButton?.classList.add("hidden");
@@ -404,11 +402,11 @@ $(document).ready(function () {
     showButton?.classList.remove("hidden");
     passField.setAttribute("type", "text");
   });
-  
+
   const showButton2 = document.getElementById("show--pass--2");
   const hideButton2 = document.getElementById("hide--pass--2");
   const passField2 = document.getElementById("password--field--2");
-  
+
   showButton2?.addEventListener("click", () => {
     hideButton2?.classList.remove("hidden");
     showButton2?.classList.add("hidden");
@@ -420,6 +418,12 @@ $(document).ready(function () {
     passField2.setAttribute("type", "text");
   });
   // Password Icon::End
+
+  // AOS::
+  AOS.init({
+    once: true,
+  });
+  // AOS::
 });
 
 // ====Solaimain====
@@ -549,60 +553,6 @@ headers.forEach((header) => {
       }
     }
   });
-});
-
-// duration range input
-const durationRange = document.getElementById("duration-range-input");
-const durationRangeMax = document.getElementById("duration-range-max-value");
-const priceRange = document.getElementById("price-range-input");
-const priceRangeMax = document.getElementById("price-range-max-value");
-
-function priceRangeSlide(a) {
-  priceRangeMax.innerText = `$ ${a}`;
-}
-
-function durationRangeSlide(a) {
-  durationRangeMax.innerText = ` ${a} Days`;
-}
-
-// date range picker
-
-$('input[name="daterange"]').daterangepicker({
-  ranges: {
-    Today: [moment(), moment()],
-  },
-});
-
-$(function () {
-  $('input[name="daterange"]').daterangepicker(
-    {
-      opens: "left",
-      minYear: 2024,
-      maxYear: parseInt(moment().format("YYYY"), 10),
-    },
-    function (start, end, label) {
-      console.log(
-        "A new date selection was made: " +
-          start.format("YYYY-MM-DD") +
-          " to " +
-          end.format("YYYY-MM-DD"),
-      );
-    },
-  );
-});
-
-$(function () {
-  $('input[name="birthday"]').daterangepicker(
-    {
-      singleDatePicker: true,
-      showDropdowns: true,
-      minYear: 2024,
-      maxYear: parseInt(moment().format("YYYY"), 10),
-    },
-    function (start, end, label) {
-      var years = moment().diff(start, "years");
-    },
-  );
 });
 
 // ====Solaimain====

@@ -23,6 +23,9 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
     ></script>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+
     <!-- date range picker script and styles -->
     <!-- custom styles -->
     <link rel="stylesheet" href="./assets/css/style.css" />
@@ -1256,31 +1259,9 @@
                 </h3>
               </div>
 
-              <div
-                class="sm-date-range-picker-container relative flex items-center justify-between pt-4"
-              >
-                <input
-                  class="text-normal w-full rounded-md border border-[#1CA8CB] px-2 py-2 text-xs font-light text-[#BDC0CC] focus:border-[#1CA8CB] md:text-sm lg:text-base"
-                  type="text"
-                  name="daterange"
-                  value="01/01/2024 - 01/15/2024"
-                />
-                <svg
-                  class="absolute right-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="17"
-                  viewBox="0 0 16 17"
-                  fill="none"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M12.6668 2.49935H13.3335C14.0668 2.49935 14.6668 3.09935 14.6668 3.83268V14.4993C14.6668 15.2327 14.0668 15.8327 13.3335 15.8327H2.66683C1.9335 15.8327 1.3335 15.2327 1.3335 14.4993V3.83268C1.3335 3.09935 1.9335 2.49935 2.66683 2.49935H3.3335V1.83268C3.3335 1.46602 3.6335 1.16602 4.00016 1.16602C4.36683 1.16602 4.66683 1.46602 4.66683 1.83268V2.49935H11.3335V1.83268C11.3335 1.46602 11.6335 1.16602 12.0002 1.16602C12.3668 1.16602 12.6668 1.46602 12.6668 1.83268V2.49935ZM3.3335 14.4993H12.6668C13.0335 14.4993 13.3335 14.1993 13.3335 13.8327V5.83268H2.66683V13.8327C2.66683 14.1993 2.96683 14.4993 3.3335 14.4993Z"
-                    fill="#494E50"
-                  />
-                </svg>
-              </div>
+              <div id="calendar"></div>
+
+                
 
               <!-- overview and map -->
 
@@ -3163,15 +3144,7 @@
     <!-- Scritps::Start -->
 
     <!-- <script src="./assets/js/jquery.js"></script> -->
-    <!-- <script>
-      document
-        .getElementById("galleryBtn")
-        .addEventListener("click", function () {
-          // Simulate click on the first image to open Fancybox
-          Fancybox.bind('[data-fancybox="gallery"]'); // Ensure Fancybox is bound
-          document.querySelector('[data-fancybox="gallery"]').click();
-        });
-    </script> -->
+    
 
     <script src="./assets/js/plugins/plugins.js"></script>
     <script src="./assets/js/jquery.nice-select.min.js"></script>
