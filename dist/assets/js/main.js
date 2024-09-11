@@ -432,6 +432,9 @@ $(document).ready(function () {
   let selectedStartDate = null;
   let selectedEndDate = null;
 
+  const departureDateShow=document.getElementById("departure-date")
+
+
   function renderCalendar(year, month, calendarElement) {
       const firstDay = new Date(year, month, 1);
       const daysInMonth = new Date(year, month + 1, 0).getDate();
@@ -489,13 +492,17 @@ $(document).ready(function () {
       const dateRange = document.getElementById('dateRange');
       if (selectedStartDate && selectedEndDate) {
           dateRange.value = `${selectedStartDate.toLocaleDateString()} - ${selectedEndDate.toLocaleDateString()}`;
+          if(departureDateShow){
+            departureDateShow.textContent=selectedStartDate.toLocaleDateString();
+          }
+
       } else if (selectedStartDate) {
           dateRange.value = selectedStartDate.toLocaleDateString();
       } else {
           dateRange.value = '';
       }
   }
-
+ 
   function showHoverInfo(event) {
       const cell = event.target.closest('.calendar-cell');
       if (!cell || cell.classList.contains('disabled')) return;
@@ -555,7 +562,7 @@ $(document).ready(function () {
   updateCalendars();
   // ====Date Range ::End====
 
-
+ 
 });
 
 // ====Solaimain====
