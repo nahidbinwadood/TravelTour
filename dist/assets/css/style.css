@@ -1125,6 +1125,10 @@ video {
   flex: 1 1 0%;
 }
 
+.border-collapse{
+  border-collapse: collapse;
+}
+
 .-translate-x-1\/2{
   --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2005,12 +2009,20 @@ video {
   line-height: 1rem;
 }
 
+.font-bold{
+  font-weight: 700;
+}
+
 .font-light{
   font-weight: 300;
 }
 
 .font-medium{
   font-weight: 500;
+}
+
+.font-normal{
+  font-weight: 400;
 }
 
 .font-semibold{
@@ -2149,6 +2161,11 @@ video {
 .text-\[\#949494\]{
   --tw-text-opacity: 1;
   color: rgb(148 148 148 / var(--tw-text-opacity));
+}
+
+.text-\[\#949499\]{
+  --tw-text-opacity: 1;
+  color: rgb(148 148 153 / var(--tw-text-opacity));
 }
 
 .text-black{
@@ -2293,14 +2310,6 @@ video {
 
 .duration-\[0\.8s\]{
   transition-duration: 0.8s;
-}
-
-.duration-100{
-  transition-duration: 100ms;
-}
-
-.duration-1000{
-  transition-duration: 1000ms;
 }
 
 .ease-in-out{
@@ -2756,12 +2765,12 @@ video {
     text-wrap: nowrap;
   }
 
-  .md\:rounded-xl{
-    border-radius: 0.75rem;
-  }
-
   .md\:rounded-2xl{
     border-radius: 1rem;
+  }
+
+  .md\:rounded-xl{
+    border-radius: 0.75rem;
   }
 
   .md\:p-3{
@@ -3385,16 +3394,8 @@ video {
     grid-column: span 4 / span 4;
   }
 
-  .xl\:col-span-5{
-    grid-column: span 5 / span 5;
-  }
-
   .xl\:col-span-6{
     grid-column: span 6 / span 6;
-  }
-
-  .xl\:col-span-7{
-    grid-column: span 7 / span 7;
   }
 
   .xl\:col-span-8{
