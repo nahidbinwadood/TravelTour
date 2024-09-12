@@ -898,10 +898,6 @@ video {
   margin-top: 3px;
 }
 
-.-mt-3{
-  margin-top: -0.75rem;
-}
-
 .block{
   display: block;
 }
@@ -1005,10 +1001,6 @@ video {
 
 .h-\[280px\]{
   height: 280px;
-}
-
-.h-\[2px\]{
-  height: 2px;
 }
 
 .h-\[300px\]{
@@ -2240,10 +2232,6 @@ video {
 
 .line-through{
   text-decoration-line: line-through;
-}
-
-.accent-\[\#1CA8CB\]{
-  accent-color: #1CA8CB;
 }
 
 .opacity-0{
