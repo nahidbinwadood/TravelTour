@@ -11,6 +11,92 @@
     <link rel="stylesheet" href="./assets/css/all.min.css" />
     <link rel="stylesheet" href="./assets/css/plugins/owl.carousel.min.css" />
     <link rel="stylesheet" href="./assets/css/plugins/aos.css" />
+    <style>
+      .range-slider {
+        position: relative;
+        height: 30px;
+      }
+      .slider-track {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 4px;
+        background: #ddd;
+      }
+      .slider-range {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 4px;
+        background: #1ca8cb;
+      }
+      .slider-thumb {
+        position: absolute;
+        top: 50%;
+        width: 15px;
+        height: 15px;
+        background: #1ca8cb;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+      }
+      .price-display {
+        text-align: center;
+      }
+
+      /* Date Range::Start */
+      .ant-date-slider-container {
+        font-family: Arial, sans-serif;
+        max-width: 400px;
+        
+      }
+      .ant-date-slider {
+        position: relative;
+        width: 100%;
+        height: 30px; 
+      }
+      .ant-date-track {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 4px;
+        background: #ddd;
+      }
+      .ant-date-range {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 4px;
+        background: #1ca8cb;
+      }
+      .ant-date-thumb {
+        position: absolute;
+        top: 50%;
+        width: 20px;
+        height: 20px;
+        background: #1ca8cb;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+      }
+      .ant-date-label {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
+      .ant-date-header {
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .ant-date-arrow {
+        font-size: 1.2em;
+      }
+      /* Date Range::End */
+    </style>
   </head>
   <body>
     <header
@@ -31,15 +117,15 @@
           data-aos-duration="1500"
           class="container mx-auto flex items-center justify-between rounded-xl bg-white px-4 py-2 md:h-24 xl:px-8"
         >
-        <div class="cursor-pointer">
-          <a href="index.html">
-            <img
-            class="mt-2 h-12 md:h-[70px] md:w-20"
-            src="./assets/img/logo.png"
-            alt=""
-          />
-          </a>
-        </div>
+          <div class="cursor-pointer">
+            <a href="index.html">
+              <img
+                class="mt-2 h-12 md:h-[70px] md:w-20"
+                src="./assets/img/logo.png"
+                alt=""
+              />
+            </a>
+          </div>
           <!-- NavLinks::start -->
           <div
             class="hidden items-center gap-5 font-inter xl:flex 2xl:gap-9 2xl:text-lg"
@@ -418,33 +504,19 @@
                         </svg>
                       </div>
                       <div class="accordion-content">
-                        <div class="price-range-container">
-                          <input
-                            id="price-range-input"
-                            class="range h-[2px] w-full cursor-pointer appearance-none text-sm accent-[#1CA8CB] md:text-base"
-                            type="range"
-                            value="200"
-                            min="0"
-                            max="1000"
-                            onChange="priceRangeSlide(this.value)"
-                            onmousemove="priceRangeSlide(this.value)"
-                          />
-                        </div>
-                        <div
-                          class="mb-10 flex items-center justify-between pt-2"
-                        >
-                          <h4
-                            class="font-inter text-sm text-[#404A60] md:text-base"
-                            id="price-range-min-value"
+                        <div>
+                          <div class="range-slider -mt-2">
+                            <div class="slider-track"></div>
+                            <div class="slider-range"></div>
+                            <div class="slider-thumb" id="minThumb"></div>
+                            <div class="slider-thumb" id="maxThumb"></div>
+                          </div>
+                          <div
+                            class="price-display text-sm md:text-base flex items-center justify-between pb-2 font-inter text-[#404A60]"
                           >
-                            $ <span>200</span>
-                          </h4>
-                          <h4
-                            class="font-inter text-sm text-[#404A60] md:text-base"
-                            id="price-range-max-value"
-                          >
-                            $ <span>1000</span>
-                          </h4>
+                            <p>$ <span id="minPrice">200</span></p>
+                            <p>$ <span id="maxPrice">580</span></p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -476,33 +548,25 @@
                         </svg>
                       </div>
                       <div class="accordion-content">
-                        <div class="duration-range-container">
-                          <input
-                            id="duration-range-input"
-                            class="range h-[2px] w-full cursor-pointer appearance-none text-sm accent-[#1CA8CB] md:text-base"
-                            type="range"
-                            value="2"
-                            min="0"
-                            max="7"
-                            onChange="durationRangeSlide(this.value)"
-                            onmousemove="durationRangeSlide(this.value)"
-                          />
-                        </div>
-                        <div
-                          class="mb-10 flex items-center justify-between pt-2"
-                        >
-                          <h4
-                            class="font-inter text-sm text-[#404A60] md:text-base"
-                            id="duration-range-min-value"
-                          >
-                            2 <span>Days</span>
-                          </h4>
-                          <h4
-                            class="font-inter text-sm text-[#404A60] md:text-base"
-                            id="duration-range-max-value"
-                          >
-                            7 <span>Days</span>
-                          </h4>
+                        <div class="custom-date-duration-range -mt-1">
+                          <div class="ant-date-slider-container">
+                            <div class="ant-date-slider" id="antDateSlider">
+                              <div class="ant-date-track"></div>
+                              <div class="ant-date-range"></div>
+                              <div
+                                class="ant-date-thumb"
+                                id="antMinDateThumb"
+                              ></div>
+                              <div
+                                class="ant-date-thumb"
+                                id="antMaxDateThumb"
+                              ></div>
+                            </div>
+                            <div class="ant-date-label pb-8 font-inter text-[#404A60] text-sm md:text-base">
+                              <span><span id="antMinDate">0</span> Days</span>
+                              <span><span id="antMaxDate">6</span> Days</span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -3701,6 +3765,196 @@
     <!-- Footer::End -->
 
     <!-- Scripts::Start -->
+    <script>
+      const slider = document.querySelector(".range-slider");
+      const minThumb = document.getElementById("minThumb");
+      const maxThumb = document.getElementById("maxThumb");
+      const range = document.querySelector(".slider-range");
+      const minPrice = document.getElementById("minPrice");
+      const maxPrice = document.getElementById("maxPrice");
+
+      const minValue = 200;
+      const maxValue = 580;
+      let activeThumb = null;
+
+      function setThumbPosition(thumb, value) {
+        const percent = ((value - minValue) / (maxValue - minValue)) * 100;
+        thumb.style.left = `${percent}%`;
+      }
+
+      function updateRange() {
+        const minPercent = parseFloat(minThumb.style.left);
+        const maxPercent = parseFloat(maxThumb.style.left);
+        range.style.left = `${minPercent}%`;
+        range.style.width = `${maxPercent - minPercent}%`;
+      }
+
+      function updatePrices() {
+        const minPercent = parseFloat(minThumb.style.left);
+        const maxPercent = parseFloat(maxThumb.style.left);
+        const minPriceValue = Math.round(
+          minValue + (minPercent / 100) * (maxValue - minValue),
+        );
+        const maxPriceValue = Math.round(
+          minValue + (maxPercent / 100) * (maxValue - minValue),
+        );
+        minPrice.textContent = minPriceValue;
+        maxPrice.textContent = maxPriceValue;
+      }
+
+      function onMouseMove(e) {
+        if (!activeThumb) return;
+        let percent =
+          ((e.clientX - slider.getBoundingClientRect().left) /
+            slider.offsetWidth) *
+          100;
+        percent = Math.max(0, Math.min(percent, 100));
+
+        if (activeThumb === minThumb) {
+          const maxPercent = parseFloat(maxThumb.style.left);
+          if (percent < maxPercent) {
+            setThumbPosition(
+              minThumb,
+              minValue + (percent / 100) * (maxValue - minValue),
+            );
+          }
+        } else {
+          const minPercent = parseFloat(minThumb.style.left);
+          if (percent > minPercent) {
+            setThumbPosition(
+              maxThumb,
+              minValue + (percent / 100) * (maxValue - minValue),
+            );
+          }
+        }
+
+        updateRange();
+        updatePrices();
+      }
+
+      function onMouseUp() {
+        activeThumb = null;
+        document.removeEventListener("mousemove", onMouseMove);
+        document.removeEventListener("mouseup", onMouseUp);
+      }
+
+      minThumb.addEventListener("mousedown", () => {
+        activeThumb = minThumb;
+        document.addEventListener("mousemove", onMouseMove);
+        document.addEventListener("mouseup", onMouseUp);
+      });
+
+      maxThumb.addEventListener("mousedown", () => {
+        activeThumb = maxThumb;
+        document.addEventListener("mousemove", onMouseMove);
+        document.addEventListener("mouseup", onMouseUp);
+      });
+
+      // Initialize positions
+      setThumbPosition(minThumb, minValue);
+      setThumbPosition(maxThumb, maxValue);
+      updateRange();
+      updatePrices();
+    </script>
+
+    <script>
+      function createAntDateSlider(
+        sliderId,
+        minValue,
+        maxValue,
+        minDisplayId,
+        maxDisplayId,
+      ) {
+        const slider = document.getElementById(sliderId);
+        const minThumb = document.getElementById("antMinDateThumb");
+        const maxThumb = document.getElementById("antMaxDateThumb");
+        const range = slider.querySelector(".ant-date-range");
+        const minDisplay = document.getElementById(minDisplayId);
+        const maxDisplay = document.getElementById(maxDisplayId);
+
+        let activeThumb = null;
+
+        function setThumbPosition(thumb, value) {
+          const percent = ((value - minValue) / (maxValue - minValue)) * 100;
+          thumb.style.left = `${percent}%`;
+        }
+
+        function updateRange() {
+          const minPercent = parseFloat(minThumb.style.left);
+          const maxPercent = parseFloat(maxThumb.style.left);
+          range.style.left = `${minPercent}%`;
+          range.style.width = `${maxPercent - minPercent}%`;
+        }
+
+        function updateDisplay() {
+          const minPercent = parseFloat(minThumb.style.left) / 100;
+          const maxPercent = parseFloat(maxThumb.style.left) / 100;
+          const minVal = Math.round(
+            minValue + minPercent * (maxValue - minValue),
+          );
+          const maxVal = Math.round(
+            minValue + maxPercent * (maxValue - minValue),
+          );
+          minDisplay.textContent = minVal;
+          maxDisplay.textContent = maxVal;
+        }
+
+        function onMouseMove(e) {
+          if (!activeThumb) return;
+          const rect = slider.getBoundingClientRect();
+          let percent = (e.clientX - rect.left) / rect.width;
+          percent = Math.max(0, Math.min(percent, 1));
+
+          if (activeThumb === minThumb) {
+            const maxVal = parseFloat(maxThumb.style.left) / 100;
+            if (percent < maxVal) {
+              setThumbPosition(
+                minThumb,
+                minValue + percent * (maxValue - minValue),
+              );
+            }
+          } else {
+            const minVal = parseFloat(minThumb.style.left) / 100;
+            if (percent > minVal) {
+              setThumbPosition(
+                maxThumb,
+                minValue + percent * (maxValue - minValue),
+              );
+            }
+          }
+
+          updateRange();
+          updateDisplay();
+        }
+
+        function onMouseUp() {
+          activeThumb = null;
+          document.removeEventListener("mousemove", onMouseMove);
+          document.removeEventListener("mouseup", onMouseUp);
+        }
+
+        minThumb.addEventListener("mousedown", () => {
+          activeThumb = minThumb;
+          document.addEventListener("mousemove", onMouseMove);
+          document.addEventListener("mouseup", onMouseUp);
+        });
+
+        maxThumb.addEventListener("mousedown", () => {
+          activeThumb = maxThumb;
+          document.addEventListener("mousemove", onMouseMove);
+          document.addEventListener("mouseup", onMouseUp);
+        });
+
+        // Initialize positions
+        setThumbPosition(minThumb, minValue);
+        setThumbPosition(maxThumb, maxValue);
+        updateRange();
+        updateDisplay();
+      }
+
+      // Initialize date range slider
+      createAntDateSlider("antDateSlider", 0, 6, "antMinDate", "antMaxDate");
+    </script>
 
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/plugins/plugins.js"></script>

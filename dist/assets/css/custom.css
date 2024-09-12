@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Arizonia&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 body {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 .guests--number::before {
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE0IDE0Ij4KICA8ZyBjbGlwLXBhdGg9InVybCgjY2xpcDBfMjk0XzE3NzIpIj4KICAgIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMiBDMTAuMzQzMSAyIDkuMCAzLjM0MzEgOSAzQzkgNi42NTY4NSA5IDUgMTAgMTIgMTAgMkwxMiAwWiIgZmlsbD0iIzkwOTQ5NCIvPgoKICAgIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMyBDMTAuMzQzMSAzIDkuMCAzLjM0MzEgOSAzQzkgNi42NTY4NSA5IDUgMTIgMTIgMkwxMiAwWiIgZmlsbD0iIzkwOTQ5NCIvPgoKICAgIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTAgMTAgTDEyIDggTDEyIDEwQzEyIDkgMTEuNDI1IDEyIDEzLjkzIDEyIDM4LjkzIEwiIGZpbGw9IiM5NDk0OTQiLz4KCiAgICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMTIgTDE0IDggTDE0IDEwQzE0IDEwQzE0IDEyLjY1MTMgMTMuNjUyOSAxMCAxMCAxMCAxNCAxMS4wMzAwIFoiIGZpbGw9IiM5NDk0OTQiLz4KIDwvZyPgRfX0PC9kZWZzPjwvc3ZnPg==");
