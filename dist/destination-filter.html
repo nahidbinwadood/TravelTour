@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./assets/css/owl.css" />
     <link rel="stylesheet" href="./assets/css/all.min.css" />
     <link rel="stylesheet" href="./assets/css/plugins/owl.carousel.min.css" />
+    <link rel="stylesheet" href="./assets/css/plugins/aos.css" />
   </head>
   <body>
     <header
@@ -26,23 +27,31 @@
       <!-- Navbar::start -->
       <div class="mx-5 pt-10 text-textColor md:mx-10 lg:mx-0">
         <div
+          data-aos="fade-down"
+          data-aos-duration="1500"
           class="container mx-auto flex items-center justify-between rounded-xl bg-white px-4 py-2 md:h-24 xl:px-8"
         >
-          <div>
+        <div class="cursor-pointer">
+          <a href="index.html">
             <img
-              class="mt-2 h-12 md:h-[70px] md:w-20"
-              src="./assets/img/logo.png"
-              alt=""
-            />
-          </div>
+            class="mt-2 h-12 md:h-[70px] md:w-20"
+            src="./assets/img/logo.png"
+            alt=""
+          />
+          </a>
+        </div>
           <!-- NavLinks::start -->
           <div
             class="hidden items-center gap-5 font-inter xl:flex 2xl:gap-9 2xl:text-lg"
           >
-            <a href="index.html" class="transition duration-300">Home</a>
+            <a
+              href="index.html"
+              class="transition duration-300 hover:text-primary"
+              >Home</a
+            >
             <a
               href="destination.html"
-              class="text-primary transition duration-300 hover:text-primary"
+              class="text-primary transition duration-300"
               >Destinations</a
             >
             <a
@@ -73,7 +82,7 @@
           </div>
           <!-- NavLinks::end -->
 
-          <!-- NavLinks with button::start -->
+          <!-- Navlinks with button::start -->
           <div class="hidden items-center gap-5 font-inter xl:flex 2xl:text-lg">
             <a href="" class="transition duration-300 hover:text-primary"
               >Track Order</a
@@ -107,71 +116,92 @@
             class="fixed inset-0 hidden bg-gray-900 bg-opacity-50 transition-opacity"
           ></div>
 
-          <!-- Sidebar ::start -->
-
-          <div
-            id="sidebar"
-            class="fixed left-0 top-0 z-20 h-full w-60 -translate-x-full transform overflow-y-scroll bg-white transition-transform duration-500 md:w-64"
-          >
-            <div class="pb-4 pt-12">
-              <img class="mx-auto" src="./assets/img/logo.png" alt="" />
-            </div>
-
-            <!-- NavLinks ::start -->
-
-            <div class="py-4 pl-10 font-inter text-sm">
-              <div class="flex flex-col justify-center gap-4">
-                <a href="index.html">Home</a>
-                <a href="destination.html" class="text-primary">Destination</a>
-                <a href="best-deals.html">Best Deals</a>
-                <a href="about-us.html">About Us</a>
-                <a href="services.html">Services</a>
-                <a href="blog.html">Blog</a>
-                <a href="contact.html">Contact</a>
-              </div>
-
-              <!-- Horizontal Line ::start -->
-              <div class="my-4 mr-8 border bg-gray-200"></div>
-              <!-- Horizontal Line ::end -->
-              <div class="mt-4 flex flex-col justify-center gap-4">
-                <a href="">Track Order</a>
-                <a href="">Cart</a>
-                <div>
-                  <a
-                    href="login.html"
-                    class="inline-block rounded-md bg-primary px-12 py-3 text-white transition-all duration-300 hover:scale-105 hover:text-textColor"
-                  >
-                    Login
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- NavLinks ::end -->
-          </div>
-          <!-- Sidebar ::start -->
           <!-- Navbar Responsive::end -->
-          <!-- NavLinks with button::end -->
+          <!-- Navlinks with button::end -->
         </div>
       </div>
-      <!-- Navbar::End -->
+
+      <!-- Sidebar ::start -->
+
+      <div
+        id="sidebar"
+        class="fixed left-0 top-0 z-20 h-full w-60 -translate-x-full transform overflow-y-scroll bg-white transition-transform duration-500 md:w-64"
+      >
+        <div class="pb-4 pt-12">
+          <img class="mx-auto" src="./assets/img/logo.png" alt="" />
+        </div>
+
+        <!-- NavLinks ::start -->
+
+        <div class="py-4 pl-10 font-inter text-sm">
+          <div class="flex flex-col justify-center gap-4">
+            <a href="index.html">Home</a>
+            <a href="destination.html" class="text-primary">Destination</a>
+            <a href="best-deals.html">Best Deals</a>
+            <a href="about-us.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="blog-details.html">Blog</a>
+            <a href="contact.html">Contact</a>
+          </div>
+
+          <!-- Horizontal Line ::start -->
+          <div class="my-4 mr-8 border bg-gray-200"></div>
+          <!-- Horizontal Line ::end -->
+          <div class="mt-4 flex flex-col justify-center gap-4">
+            <a href="">Track Order</a>
+            <a href="">Cart</a>
+            <div>
+              <a
+                href="login.html"
+                class="inline-block rounded-md bg-primary px-12 py-3 text-white transition-all duration-300 hover:scale-105 hover:text-textColor"
+              >
+                Login
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- NavLinks ::end -->
+      </div>
+      <!-- Sidebar ::start -->
 
       <!-- Banner::start -->
       <section
         class="container mx-auto py-12 text-center font-poppins text-white 2xl:py-0 2xl:pt-40"
       >
-        <h1 class="text-3xl font-semibold md:text-4xl lg:text-5xl 2xl:text-6xl">
+        <h1
+          data-aos="zoom-out"
+          data-aos-duration="1600"
+          class="text-3xl font-semibold md:text-4xl lg:text-5xl 2xl:text-6xl"
+        >
           Destinations: Finland
         </h1>
         <div class="mt-5 flex items-center justify-center text-center text-xl">
-          <h3 class="mr-3 text-sm md:mr-5 md:text-base lg:text-xl">Home</h3>
+          <h3
+            data-aos="zoom-out"
+            data-aos-duration="1600"
+            data-aos-delay="200"
+            class="mr-3 text-sm md:mr-5 md:text-base lg:text-xl"
+          >
+            Home
+          </h3>
           <div class="mr-3 md:mr-5">
             <img
+              data-aos="zoom-out"
+              data-aos-duration="1600"
+              data-aos-delay="250"
               class="size-5 lg:size-6"
               src="./assets/img/destination/arrow-right.svg.svg"
               alt=""
             />
           </div>
-          <h3 class="text-sm md:mr-5 md:text-base lg:text-xl">Finland</h3>
+          <h3
+            data-aos="zoom-out"
+            data-aos-duration="1600"
+            data-aos-delay="300"
+            class="text-sm md:mr-5 md:text-base lg:text-xl"
+          >
+            Finland
+          </h3>
         </div>
       </section>
       <!-- Banner::end -->
@@ -181,11 +211,19 @@
     <main>
       <!-- Destination Filtering Section Starts -->
 
-      <div class="bg-white pb-12 pt-12 2xl:pb-[100px] 2xl:pt-[90px]">
+      <div
+        class="overflow-x-hidden bg-white pb-12 pt-12 2xl:pb-[100px] 2xl:pt-[90px]"
+      >
         <div class="container mx-auto px-4 xl:px-8">
           <div class="grid grid-cols-1 gap-6 lg:grid-cols-12">
             <!-- left part -->
-            <div class="lg:col-span-4">
+            <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+              data-aos-offset="0"
+              class="lg:col-span-4"
+            >
               <div class="rounded-lg border p-5 xl:p-8">
                 <div
                   class="flex items-center justify-between border-b border-dashed pb-4 xl:pb-6"
@@ -608,6 +646,10 @@
             <!-- right part -->
             <div class="lg:col-span-8">
               <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="200"
+                data-aos-offset="0"
                 class="flex w-full flex-col items-start gap-6 rounded-lg border border-[#EBECEF] px-6 py-4 md:flex-row md:items-center md:justify-between md:px-7 md:py-7 lg:justify-end"
               >
                 <div
@@ -709,7 +751,13 @@
                 class="grid grid-cols-1 gap-10 overflow-hidden pt-6 xl:grid-cols-2"
               >
                 <!-- item  -->
-                <div class="flex flex-col overflow-hidden rounded-md border">
+                <div
+                  data-aos="fade-up"
+                  data-aos-duration="1200"
+                  data-aos-delay="200"
+                  data-aos-offset="0"
+                  class="flex flex-col overflow-hidden rounded-md border"
+                >
                   <div class="destination-filtering-card-carousel w-full">
                     <div class="owl-carousel owl-theme group">
                       <div class="item overflow-hidden">
@@ -1031,7 +1079,13 @@
                   </div>
                 </div>
                 <!-- item  -->
-                <div class="flex flex-col overflow-hidden rounded-md border">
+                <div
+                  data-aos="fade-up"
+                  data-aos-duration="1200"
+                  data-aos-delay="200"
+                  data-aos-offset="0"
+                  class="flex flex-col overflow-hidden rounded-md border"
+                >
                   <div class="destination-filtering-card-carousel w-full">
                     <div class="owl-carousel owl-theme group">
                       <div class="item overflow-hidden">
@@ -1353,7 +1407,13 @@
                   </div>
                 </div>
                 <!-- item  -->
-                <div class="flex flex-col overflow-hidden rounded-md border">
+                <div
+                  data-aos="fade-up"
+                  data-aos-duration="1200"
+                  data-aos-delay="300"
+                  data-aos-offset="0"
+                  class="flex flex-col overflow-hidden rounded-md border"
+                >
                   <div class="destination-filtering-card-carousel w-full">
                     <div class="owl-carousel owl-theme group">
                       <div class="item overflow-hidden">
@@ -1675,7 +1735,13 @@
                   </div>
                 </div>
                 <!-- item  -->
-                <div class="flex flex-col overflow-hidden rounded-md border">
+                <div
+                  data-aos="fade-up"
+                  data-aos-duration="1200"
+                  data-aos-delay="300"
+                  data-aos-offset="0"
+                  class="flex flex-col overflow-hidden rounded-md border"
+                >
                   <div class="destination-filtering-card-carousel w-full">
                     <div class="owl-carousel owl-theme group">
                       <div class="item overflow-hidden">
@@ -2005,7 +2071,13 @@
                 class="hidden grid-cols-1 gap-10 overflow-hidden pt-6"
               >
                 <!-- item  -->
-                <div class="flex flex-col overflow-hidden rounded-md border">
+                <div
+                  data-aos="fade-up"
+                  data-aos-duration="1200"
+                  data-aos-delay="200"
+                  data-aos-offset="0"
+                  class="flex flex-col overflow-hidden rounded-md border"
+                >
                   <div class="destination-filtering-card-carousel w-full">
                     <div class="owl-carousel owl-theme group">
                       <div class="item overflow-hidden">
@@ -2327,7 +2399,13 @@
                   </div>
                 </div>
                 <!-- item  -->
-                <div class="flex flex-col overflow-hidden rounded-md border">
+                <div
+                  data-aos="fade-up"
+                  data-aos-duration="1200"
+                  data-aos-delay="200"
+                  data-aos-offset="0"
+                  class="flex flex-col overflow-hidden rounded-md border"
+                >
                   <div class="destination-filtering-card-carousel w-full">
                     <div class="owl-carousel owl-theme group">
                       <div class="item overflow-hidden">
@@ -2649,7 +2727,13 @@
                   </div>
                 </div>
                 <!-- item  -->
-                <div class="flex flex-col overflow-hidden rounded-md border">
+                <div
+                  data-aos="fade-up"
+                  data-aos-duration="1200"
+                  data-aos-delay="300"
+                  data-aos-offset="0"
+                  class="flex flex-col overflow-hidden rounded-md border"
+                >
                   <div class="destination-filtering-card-carousel w-full">
                     <div class="owl-carousel owl-theme group">
                       <div class="item overflow-hidden">
@@ -2971,7 +3055,13 @@
                   </div>
                 </div>
                 <!-- item  -->
-                <div class="flex flex-col overflow-hidden rounded-md border">
+                <div
+                  data-aos="fade-up"
+                  data-aos-duration="1200"
+                  data-aos-delay="300"
+                  data-aos-offset="0"
+                  class="flex flex-col overflow-hidden rounded-md border"
+                >
                   <div class="destination-filtering-card-carousel w-full">
                     <div class="owl-carousel owl-theme group">
                       <div class="item overflow-hidden">
@@ -3305,7 +3395,7 @@
     <!-- Main Section::End -->
 
     <!-- Footer::Start -->
-    <footer class="bg-textColor py-14 text-white xl:py-28">
+    <footer class="overflow-x-hidden bg-textColor py-14 text-white xl:py-28">
       <section class="container mx-auto">
         <!-- Footer Title::start -->
         <div
@@ -3313,12 +3403,20 @@
         >
           <div>
             <h2
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="100"
+              data-aos-offset="0"
               class="font-manrope text-2xl font-semibold capitalize leading-snug md:text-3xl lg:text-4xl xl:w-2/3"
             >
               get updated the latest newsletter
             </h2>
           </div>
           <form
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+            data-aos-offset="0"
             class="footer--form flex flex-col gap-5 md:flex-row xl:items-center"
           >
             <input
@@ -3346,16 +3444,33 @@
           class="grid grid-cols-1 items-center justify-center gap-8 pt-12 md:grid-cols-2 md:gap-12 lg:px-16 xl:grid-cols-12"
         >
           <div class="xl:col-span-4">
-            <div>
+            <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="100"
+              data-aos-offset="0"
+            >
               <img src="./assets/img/footer/footerlogo.png" alt="" />
             </div>
             <div>
-              <p class="font-inter text-sm leading-6 lg:text-base">
+              <p
+                data-aos="fade-right"
+                data-aos-duration="1000"
+                data-aos-delay="150"
+                data-aos-offset="0"
+                class="font-inter text-sm leading-6 lg:text-base"
+              >
                 Rapidiously myocardinate cross-platform intellectual capital
                 model. Appropriately create interactive infrastructures
               </p>
             </div>
-            <div class="flex items-center gap-3 pt-5">
+            <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+              data-aos-offset="0"
+              class="flex items-center gap-3 pt-5"
+            >
               <div
                 class="cursor-pointer transition duration-300 hover:scale-105"
               >
@@ -3408,30 +3523,52 @@
 
           <div class="space-y-4 font-inter xl:col-span-2 xl:mt-12">
             <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="100"
+              data-aos-offset="0"
               class="transtition flex cursor-pointer items-center gap-5 duration-500 hover:text-primary"
             >
               <i class="fa-solid fa-chevron-right mt-[3px] text-sm"></i>
               <a href="index.html" class="text-sm lg:text-base">Home</a>
             </div>
+
             <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="150"
+              data-aos-offset="0"
               class="transtition flex cursor-pointer items-center gap-5 duration-500 hover:text-primary"
             >
               <i class="fa-solid fa-chevron-right mt-[3px] text-sm"></i>
               <a href="about-us.html" class="text-sm lg:text-base">About Us</a>
             </div>
+
             <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+              data-aos-offset="0"
               class="transtition flex cursor-pointer items-center gap-5 duration-500 hover:text-primary"
             >
               <i class="fa-solid fa-chevron-right mt-[3px] text-sm"></i>
               <a href="services.html" class="text-sm lg:text-base">Services</a>
             </div>
             <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="250"
+              data-aos-offset="0"
               class="transtition flex cursor-pointer items-center gap-5 duration-500 hover:text-primary"
             >
               <i class="fa-solid fa-chevron-right mt-[3px] text-sm"></i>
               <a href="#" class="text-sm lg:text-base">Tour Guide</a>
             </div>
             <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="300"
+              data-aos-offset="0"
               class="transtition flex cursor-pointer items-center gap-5 duration-500 hover:text-primary"
             >
               <i class="fa-solid fa-chevron-right mt-[3px] text-sm"></i>
@@ -3442,7 +3579,13 @@
 
           <!-- 3rd Section::Start -->
           <div class="space-y-5 xl:col-span-3 xl:mt-12">
-            <div class="flex items-center gap-3 font-inter">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="100"
+              data-aos-offset="0"
+              class="flex items-center gap-3 font-inter"
+            >
               <div
                 class="cursor-pointer transition duration-300 hover:scale-105"
               >
@@ -3457,7 +3600,13 @@
                 >
               </div>
             </div>
-            <div class="flex items-center gap-3 font-inter">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="150"
+              data-aos-offset="0"
+              class="flex items-center gap-3 font-inter"
+            >
               <div
                 class="cursor-pointer transition duration-300 hover:scale-105"
               >
@@ -3476,7 +3625,13 @@
                 >
               </div>
             </div>
-            <div class="flex items-center gap-3 font-inter">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="250"
+              data-aos-offset="0"
+              class="flex items-center gap-3 font-inter"
+            >
               <div
                 class="cursor-pointer transition duration-300 hover:scale-105"
               >
@@ -3494,7 +3649,12 @@
 
           <!-- 4th Section::Start -->
           <div class="xl:col-span-3 xl:mt-12">
-            <div>
+            <div
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="100"
+              data-aos-offset="0"
+            >
               <img src="./assets/img/footer/Container.png" alt="" />
             </div>
           </div>
@@ -3505,7 +3665,7 @@
     </footer>
 
     <section
-      class="font-inter text-white"
+      class="overflow-x-hidden font-inter text-white"
       style="
         background-image: url(&quot;./assets/img/footer/footer-bg.png&quot;);
       "
@@ -3514,11 +3674,23 @@
         class="container mx-auto flex items-center justify-between py-4 xl:px-16"
       >
         <div>
-          <h5 class="text-xs md:text-sm">
+          <h5
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="100"
+            data-aos-offset="0"
+            class="text-xs md:text-sm"
+          >
             Copyright 2024 Tourm.All Rights Reserved.
           </h5>
         </div>
-        <div class="flex items-center gap-3">
+        <div
+          data-aos="fade-left"
+          data-aos-duration="1300"
+          data-aos-delay="200"
+          data-aos-offset="0"
+          class="flex items-center gap-3"
+        >
           <h5 class="font-roboto text-xs md:text-base">We Accept</h5>
           <div>
             <img src="./assets/img/footer/cards.png.png" alt="" />
@@ -3527,13 +3699,15 @@
       </div>
     </section>
     <!-- Footer::End -->
-    <!-- Scritps::Start -->
+
+    <!-- Scripts::Start -->
 
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/plugins/plugins.js"></script>
     <script src="./assets/js/jquery.nice-select.min.js"></script>
     <script src="./assets/js/plugins/owl.carousel.min.js"></script>
+    <script src="./assets/js/plugins/aos.js"></script>
     <script src="./assets/js/main.js"></script>
-    <!-- Scritps::End -->
+    <!-- Scripts::End -->
   </body>
 </html>
