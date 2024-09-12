@@ -26,6 +26,13 @@ body {
   animation-play-state: paused;
 }
 
+/* Homepage::Start */
+.check-in-date-picker-container input{
+  display:none;
+}
+/* Homepage::End */
+
+
 /* Contact Form::Start */
 .contact-form-first-name::after {
   content: "";
