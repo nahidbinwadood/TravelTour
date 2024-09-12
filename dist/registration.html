@@ -10,20 +10,27 @@
     <link rel="stylesheet" href="./assets/css/custom.css" />
     <link rel="stylesheet" href="./assets/css/plugins/flatpickr.min.css" />
     <link rel="stylesheet" href="./assets/css/plugins/owl.carousel.min.css" />
+    <link rel="stylesheet" href="./assets/css/plugins/aos.css" />
   </head>
   <body>
     <!-- Header::Start -->
     <header>
-      <div class="mx-5 pt-10 text-textColor md:mx-0">
+      <div
+        data-aos="fade-down"
+        data-aos-duration="1500"
+        class="mx-5 pt-10 text-textColor md:mx-0"
+      >
         <div
           class="container mx-auto flex items-center justify-between rounded-xl bg-white px-4 py-2 md:h-24 xl:px-8"
         >
-          <div>
-            <img
-              class="mt-2 h-12 md:h-[70px] md:w-20"
-              src="./assets/img/logo.png"
-              alt=""
-            />
+          <div class="cursor-pointer">
+            <a href="index.html">
+              <img
+                class="mt-2 h-12 md:h-[70px] md:w-20"
+                src="./assets/img/logo.png"
+                alt=""
+              />
+            </a>
           </div>
           <!-- NavLinks::start -->
           <div
@@ -52,10 +59,14 @@
               class="transition duration-300 hover:text-primary"
               >Services</a
             >
-            <a href="blog.html" class="transition duration-300 hover:text-primary"
+            <a
+              href="blog.html"
+              class="transition duration-300 hover:text-primary"
               >Blog</a
             >
-            <a href="contact.html" class="transition duration-300 hover:text-primary"
+            <a
+              href="contact.html"
+              class="transition duration-300 hover:text-primary"
               >Contact</a
             >
           </div>
@@ -95,53 +106,54 @@
             class="fixed inset-0 hidden bg-gray-900 bg-opacity-50 transition-opacity"
           ></div>
 
-          <!-- Sidebar ::start -->
-
-          <div
-            id="sidebar"
-            class="fixed left-0 top-0 z-20 h-full w-60 -translate-x-full transform overflow-y-scroll bg-white transition-transform duration-500 md:w-64"
-          >
-            <div class="pb-4 pt-12">
-              <img class="mx-auto" src="./assets/img/logo.png" alt="" />
-            </div>
-
-            <!-- NavLinks ::start -->
-
-            <div class="py-4 pl-10 font-inter text-sm">
-              <div class="flex flex-col justify-center gap-4">
-                <a href="index.html">Home</a>
-                <a href="destination.html">Destination</a>
-                <a href="best-deals.html">Best Deals</a>
-                <a href="about-us.html">About Us</a>
-                <a href="services.html">Services</a>
-                <a href="blog.html">Blog</a>
-                <a href="contact.html">Contact</a>
-              </div>
-
-              <!-- Horizontal Line ::start -->
-              <div class="my-4 mr-8 border bg-gray-200"></div>
-              <!-- Horizontal Line ::end -->
-              <div class="mt-4 flex flex-col justify-center gap-4">
-                <a href="">Track Order</a>
-                <a href="">Cart</a>
-                <div>
-                  <a
-                    href="login.html"
-                    class="inline-block rounded-md bg-primary px-12 py-3 text-white transition-all duration-300 hover:scale-105 hover:text-textColor"
-                  >
-                    Login
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- NavLinks ::end -->
-          </div>
-          <!-- Sidebar ::start -->
           <!-- Navbar Responsive::end -->
           <!-- Navlinks with button::end -->
         </div>
       </div>
       <!-- Navbar::End -->
+
+      <!-- Sidebar ::start -->
+
+      <div
+        id="sidebar"
+        class="fixed left-0 top-0 z-20 h-full w-60 -translate-x-full transform overflow-y-scroll bg-white transition-transform duration-500 md:w-64"
+      >
+        <div class="pb-4 pt-12">
+          <img class="mx-auto" src="./assets/img/logo.png" alt="" />
+        </div>
+
+        <!-- NavLinks ::start -->
+
+        <div class="py-4 pl-10 font-inter text-sm">
+          <div class="flex flex-col justify-center gap-4">
+            <a href="index.html">Home</a>
+            <a href="destination.html">Destination</a>
+            <a href="best-deals.html">Best Deals</a>
+            <a href="about-us.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+          </div>
+
+          <!-- Horizontal Line ::start -->
+          <div class="my-4 mr-8 border bg-gray-200"></div>
+          <!-- Horizontal Line ::end -->
+          <div class="mt-4 flex flex-col justify-center gap-4">
+            <a href="">Track Order</a>
+            <a href="">Cart</a>
+            <div>
+              <a
+                href="login.html"
+                class="inline-block rounded-md bg-primary px-12 py-3 text-white transition-all duration-300 hover:scale-105 hover:text-textColor"
+              >
+                Login
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- NavLinks ::end -->
+      </div>
+      <!-- Sidebar ::start -->
     </header>
     <!-- Header::End -->
 
@@ -151,11 +163,17 @@
       <section
         class="auth-container 2xl::gap-32 container mx-auto mb-20 mt-5 flex flex-col-reverse gap-8 md:gap-16 lg:flex-row-reverse lg:items-center lg:gap-20"
       >
-        <div class="flex w-full flex-col justify-center font-poppins xl:w-[55%] 2xl:mt-20">
+        <div
+          class="flex w-full flex-col justify-center font-poppins xl:w-[55%] 2xl:mt-20"
+        >
           <!-- Title::Start -->
           <div class="mb-6 md:mb-10">
-            <h2 class="pb-4 text-2xl md:text-3xl lg:text-4xl">Sign up</h2>
-            <p class="text-sm text-black/50 md:text-base">
+            <h2 data-aos="fade-left"
+            data-aos-duration="1200"
+            data-aos-delay="100" class="pb-4 text-2xl md:text-3xl lg:text-4xl">Sign up</h2>
+            <p data-aos="fade-left"
+            data-aos-duration="1200"
+            data-aos-delay="150" class="text-sm text-black/50 md:text-base">
               Let’s get you all st up so you can access your personal account.
             </p>
           </div>
@@ -165,9 +183,13 @@
           <div>
             <form action="" class="font-montserrat">
               <div class="flex flex-col gap-5">
-                <div class="flex flex-col md:flex-row items-center gap-5 w-full">
+                <div data-aos="fade-left"
+                data-aos-duration="1200"
+                data-aos-delay="200"
+                  class="flex w-full flex-col items-center gap-5 md:flex-row"
+                >
                   <fieldset
-                    class="flex rounded-md border border-[#79747E] px-6 py-2 text-sm md:px-8 w-full"
+                    class="flex w-full rounded-md border border-[#79747E] px-6 py-2 text-sm md:px-8"
                   >
                     <legend>First Name</legend>
                     <input
@@ -181,7 +203,7 @@
                   </fieldset>
 
                   <fieldset
-                    class="flex rounded-md border border-[#79747E] px-6 py-2 text-sm md:px-8 w-full"
+                    class="flex w-full rounded-md border border-[#79747E] px-6 py-2 text-sm md:px-8"
                   >
                     <legend>Last Name</legend>
                     <input
@@ -195,7 +217,9 @@
                   </fieldset>
                 </div>
 
-                <fieldset
+                <fieldset data-aos="fade-left"
+                data-aos-duration="1200"
+                data-aos-delay="250"
                   class="flex rounded-md border border-[#79747E] px-6 py-2 text-sm md:px-8"
                 >
                   <legend>Email</legend>
@@ -209,7 +233,9 @@
                   />
                 </fieldset>
 
-                <fieldset
+                <fieldset data-aos="fade-left"
+                data-aos-duration="1200"
+                data-aos-delay="300"
                   class="relative flex rounded-md border border-[#79747E] px-6 py-2 text-sm md:px-8"
                 >
                   <legend>Password</legend>
@@ -219,11 +245,11 @@
                     type="password"
                     name="password"
                     id=""
-                    class="-mt-2 h-8 w-full border-none outline-none focus:outline-none md:h-10 password--field"
+                    class="password--field -mt-2 h-8 w-full border-none outline-none focus:outline-none md:h-10"
                   />
                   <svg
                     id="hide--pass--2"
-                    class="cursor-pointer -mt-1 md:-mt-0"
+                    class="-mt-1 cursor-pointer md:-mt-0"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="25"
@@ -242,7 +268,7 @@
 
                   <svg
                     id="show--pass--2"
-                    class="cursor-pointer -mt-1 md:-mt-0 hidden"
+                    class="-mt-1 hidden cursor-pointer md:-mt-0"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -260,7 +286,9 @@
                   </svg>
                 </fieldset>
 
-                <fieldset
+                <fieldset data-aos="fade-left"
+                data-aos-duration="1200"
+                data-aos-delay="350"
                   class="relative flex rounded-md border border-[#79747E] px-6 py-2 text-sm md:px-8"
                 >
                   <legend>Confirm Password</legend>
@@ -274,7 +302,7 @@
                   />
                   <svg
                     id="hide--pass"
-                    class="cursor-pointer -mt-1 md:-mt-0"
+                    class="-mt-1 cursor-pointer md:-mt-0"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="25"
@@ -293,7 +321,7 @@
 
                   <svg
                     id="show--pass"
-                    class="cursor-pointer -mt-1 md:-mt-0 hidden"
+                    class="-mt-1 hidden cursor-pointer md:-mt-0"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -311,8 +339,9 @@
                   </svg>
                 </fieldset>
 
-
-                <div class="flex gap-2 font-montserrat md:items-center py-3">
+                <div data-aos="fade-left"
+                data-aos-duration="1200"
+                data-aos-delay="350" class="flex gap-2 py-3 font-montserrat md:items-center">
                   <input
                     type="checkbox"
                     name=""
@@ -320,15 +349,21 @@
                     class="mt-1 size-4 md:mt-0"
                     required
                   />
-                  <label
-                    for="terms"
-                    class="cursor-pointer text-sm font-medium"
-                    >I agree to all the <span><a href="#" class="text-secondary">Terms</a></span> and <span><a href="#" class="text-secondary">Privacy Policies</a></span></label
+                  <label for="terms" class="cursor-pointer text-sm font-medium"
+                    >I agree to all the
+                    <span><a href="#" class="text-secondary">Terms</a></span>
+                    and
+                    <span
+                      ><a href="#" class="text-secondary"
+                        >Privacy Policies</a
+                      ></span
+                    ></label
                   >
                 </div>
-                 
 
-                <div class="py-2 md:py-4 -mt-4">
+                <div data-aos="fade-left"
+                data-aos-duration="1200"
+                data-aos-delay="400" class="-mt-4 py-2 md:py-4">
                   <button
                     class="w-full rounded border border-primary bg-primary py-2 text-center font-poppins text-white duration-700 hover:bg-white hover:text-primary md:py-3"
                   >
@@ -336,7 +371,7 @@
                   </button>
                   <div class="pt-4 text-center text-sm md:text-base">
                     <p>
-                      Already have an account? 
+                      Already have an account?
                       <span
                         ><a href="login.html" class="text-secondary"
                           >Login</a
@@ -348,8 +383,6 @@
 
                 <!-- Horizontal Line::Start -->
 
-                
-
                 <!-- Horizontal Line::End -->
               </div>
             </form>
@@ -358,10 +391,12 @@
         </div>
 
         <!-- Slider::Start -->
-        <div class="w-full xl:w-[45%]">
-          <div class="2xl:mt-12 w-full">
+        <div  data-aos="fade-right"
+        data-aos-duration="1200"
+        data-aos-delay="100" class="w-full xl:w-[45%]">
+          <div class="w-full 2xl:mt-12">
             <div
-              class="h-[250px] md:h-[450px] w-full overflow-hidden rounded-2xl lg:h-[650px]"
+              class="h-[250px] w-full overflow-hidden rounded-2xl md:h-[450px] lg:h-[650px]"
             >
               <img
                 class="h-full w-full object-cover"
@@ -378,7 +413,7 @@
     <!-- Main::End -->
 
     <!-- Footer::Start -->
-    <footer class="bg-textColor py-14 text-white xl:py-28">
+    <footer class="overflow-x-hidden bg-textColor py-14 text-white xl:py-28">
       <section class="container mx-auto">
         <!-- Footer Title::start -->
         <div
@@ -386,12 +421,20 @@
         >
           <div>
             <h2
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="100"
+              data-aos-offset="0"
               class="font-manrope text-2xl font-semibold capitalize leading-snug md:text-3xl lg:text-4xl xl:w-2/3"
             >
               get updated the latest newsletter
             </h2>
           </div>
           <form
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+            data-aos-offset="0"
             class="footer--form flex flex-col gap-5 md:flex-row xl:items-center"
           >
             <input
@@ -419,16 +462,33 @@
           class="grid grid-cols-1 items-center justify-center gap-8 pt-12 md:grid-cols-2 md:gap-12 lg:px-16 xl:grid-cols-12"
         >
           <div class="xl:col-span-4">
-            <div>
+            <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="100"
+              data-aos-offset="0"
+            >
               <img src="./assets/img/footer/footerlogo.png" alt="" />
             </div>
             <div>
-              <p class="font-inter text-sm leading-6 lg:text-base">
+              <p
+                data-aos="fade-right"
+                data-aos-duration="1000"
+                data-aos-delay="150"
+                data-aos-offset="0"
+                class="font-inter text-sm leading-6 lg:text-base"
+              >
                 Rapidiously myocardinate cross-platform intellectual capital
                 model. Appropriately create interactive infrastructures
               </p>
             </div>
-            <div class="flex items-center gap-3 pt-5">
+            <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+              data-aos-offset="0"
+              class="flex items-center gap-3 pt-5"
+            >
               <div
                 class="cursor-pointer transition duration-300 hover:scale-105"
               >
@@ -481,30 +541,52 @@
 
           <div class="space-y-4 font-inter xl:col-span-2 xl:mt-12">
             <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="100"
+              data-aos-offset="0"
               class="transtition flex cursor-pointer items-center gap-5 duration-500 hover:text-primary"
             >
               <i class="fa-solid fa-chevron-right mt-[3px] text-sm"></i>
               <a href="index.html" class="text-sm lg:text-base">Home</a>
             </div>
+
             <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="150"
+              data-aos-offset="0"
               class="transtition flex cursor-pointer items-center gap-5 duration-500 hover:text-primary"
             >
               <i class="fa-solid fa-chevron-right mt-[3px] text-sm"></i>
               <a href="about-us.html" class="text-sm lg:text-base">About Us</a>
             </div>
+
             <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+              data-aos-offset="0"
               class="transtition flex cursor-pointer items-center gap-5 duration-500 hover:text-primary"
             >
               <i class="fa-solid fa-chevron-right mt-[3px] text-sm"></i>
               <a href="services.html" class="text-sm lg:text-base">Services</a>
             </div>
             <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="250"
+              data-aos-offset="0"
               class="transtition flex cursor-pointer items-center gap-5 duration-500 hover:text-primary"
             >
               <i class="fa-solid fa-chevron-right mt-[3px] text-sm"></i>
               <a href="#" class="text-sm lg:text-base">Tour Guide</a>
             </div>
             <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="300"
+              data-aos-offset="0"
               class="transtition flex cursor-pointer items-center gap-5 duration-500 hover:text-primary"
             >
               <i class="fa-solid fa-chevron-right mt-[3px] text-sm"></i>
@@ -515,7 +597,13 @@
 
           <!-- 3rd Section::Start -->
           <div class="space-y-5 xl:col-span-3 xl:mt-12">
-            <div class="flex items-center gap-3 font-inter">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="100"
+              data-aos-offset="0"
+              class="flex items-center gap-3 font-inter"
+            >
               <div
                 class="cursor-pointer transition duration-300 hover:scale-105"
               >
@@ -530,7 +618,13 @@
                 >
               </div>
             </div>
-            <div class="flex items-center gap-3 font-inter">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="150"
+              data-aos-offset="0"
+              class="flex items-center gap-3 font-inter"
+            >
               <div
                 class="cursor-pointer transition duration-300 hover:scale-105"
               >
@@ -549,7 +643,13 @@
                 >
               </div>
             </div>
-            <div class="flex items-center gap-3 font-inter">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="250"
+              data-aos-offset="0"
+              class="flex items-center gap-3 font-inter"
+            >
               <div
                 class="cursor-pointer transition duration-300 hover:scale-105"
               >
@@ -567,7 +667,12 @@
 
           <!-- 4th Section::Start -->
           <div class="xl:col-span-3 xl:mt-12">
-            <div>
+            <div
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="100"
+              data-aos-offset="0"
+            >
               <img src="./assets/img/footer/Container.png" alt="" />
             </div>
           </div>
@@ -578,7 +683,7 @@
     </footer>
 
     <section
-      class="font-inter text-white"
+      class="overflow-x-hidden font-inter text-white"
       style="
         background-image: url(&quot;./assets/img/footer/footer-bg.png&quot;);
       "
@@ -587,11 +692,23 @@
         class="container mx-auto flex items-center justify-between py-4 xl:px-16"
       >
         <div>
-          <h5 class="text-xs md:text-sm">
+          <h5
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="100"
+            data-aos-offset="0"
+            class="text-xs md:text-sm"
+          >
             Copyright 2024 Tourm.All Rights Reserved.
           </h5>
         </div>
-        <div class="flex items-center gap-3">
+        <div
+          data-aos="fade-left"
+          data-aos-duration="1300"
+          data-aos-delay="200"
+          data-aos-offset="0"
+          class="flex items-center gap-3"
+        >
           <h5 class="font-roboto text-xs md:text-base">We Accept</h5>
           <div>
             <img src="./assets/img/footer/cards.png.png" alt="" />
@@ -600,10 +717,10 @@
       </div>
     </section>
     <!-- Footer::End -->
-
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/plugins/owl.carousel.min.js"></script>
     <script src="./assets/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/js/plugins/aos.js"></script>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
