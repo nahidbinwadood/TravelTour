@@ -3852,6 +3852,14 @@ video {
     height: 90vh;
   }
 
+  .\32xl\:h-\[190vh\]{
+    height: 190vh;
+  }
+
+  .\32xl\:h-\[95vh\]{
+    height: 95vh;
+  }
+
   .\32xl\:min-h-\[700px\]{
     min-height: 700px;
   }
