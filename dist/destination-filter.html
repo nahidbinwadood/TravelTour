@@ -11,91 +11,9 @@
     <link rel="stylesheet" href="./assets/css/all.min.css" />
     <link rel="stylesheet" href="./assets/css/plugins/owl.carousel.min.css" />
     <link rel="stylesheet" href="./assets/css/plugins/aos.css" />
+    <link rel="stylesheet" href="./assets/css/custom.css">
     <style>
-      .range-slider {
-        position: relative;
-        height: 30px;
-      }
-      .slider-track {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 100%;
-        height: 4px;
-        background: #ddd;
-      }
-      .slider-range {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        height: 4px;
-        background: #1ca8cb;
-      }
-      .slider-thumb {
-        position: absolute;
-        top: 50%;
-        width: 15px;
-        height: 15px;
-        background: #1ca8cb;
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        cursor: pointer;
-      }
-      .price-display {
-        text-align: center;
-      }
-
-      /* Date Range::Start */
-      .ant-date-slider-container {
-        font-family: Arial, sans-serif;
-        max-width: 400px;
-        
-      }
-      .ant-date-slider {
-        position: relative;
-        width: 100%;
-        height: 30px; 
-      }
-      .ant-date-track {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 100%;
-        height: 4px;
-        background: #ddd;
-      }
-      .ant-date-range {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        height: 4px;
-        background: #1ca8cb;
-      }
-      .ant-date-thumb {
-        position: absolute;
-        top: 50%;
-        width: 20px;
-        height: 20px;
-        background: #1ca8cb;
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        cursor: pointer;
-      }
-      .ant-date-label {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-      }
-      .ant-date-header {
-        margin-bottom: 5px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .ant-date-arrow {
-        font-size: 1.2em;
-      }
-      /* Date Range::End */
+     
     </style>
   </head>
   <body>
@@ -317,7 +235,7 @@
                   <h4 class="font-inter text-[#222E48] xl:text-2xl">
                     Criteria
                   </h4>
-                  <h5
+                  <h5 id="clear-all-btn"
                     class="cursor-pointer border-b border-gray-900 font-inter leading-tight text-[#2b3855] xl:text-xl"
                   >
                     clear all
@@ -333,7 +251,7 @@
                       type="search"
                       name=""
                       placeholder="Search"
-                      id=""
+                      id="searchInput"
                     />
                     <svg
                       class="cursor-pointer"
@@ -3766,194 +3684,11 @@
 
     <!-- Scripts::Start -->
     <script>
-      const slider = document.querySelector(".range-slider");
-      const minThumb = document.getElementById("minThumb");
-      const maxThumb = document.getElementById("maxThumb");
-      const range = document.querySelector(".slider-range");
-      const minPrice = document.getElementById("minPrice");
-      const maxPrice = document.getElementById("maxPrice");
-
-      const minValue = 200;
-      const maxValue = 580;
-      let activeThumb = null;
-
-      function setThumbPosition(thumb, value) {
-        const percent = ((value - minValue) / (maxValue - minValue)) * 100;
-        thumb.style.left = `${percent}%`;
-      }
-
-      function updateRange() {
-        const minPercent = parseFloat(minThumb.style.left);
-        const maxPercent = parseFloat(maxThumb.style.left);
-        range.style.left = `${minPercent}%`;
-        range.style.width = `${maxPercent - minPercent}%`;
-      }
-
-      function updatePrices() {
-        const minPercent = parseFloat(minThumb.style.left);
-        const maxPercent = parseFloat(maxThumb.style.left);
-        const minPriceValue = Math.round(
-          minValue + (minPercent / 100) * (maxValue - minValue),
-        );
-        const maxPriceValue = Math.round(
-          minValue + (maxPercent / 100) * (maxValue - minValue),
-        );
-        minPrice.textContent = minPriceValue;
-        maxPrice.textContent = maxPriceValue;
-      }
-
-      function onMouseMove(e) {
-        if (!activeThumb) return;
-        let percent =
-          ((e.clientX - slider.getBoundingClientRect().left) /
-            slider.offsetWidth) *
-          100;
-        percent = Math.max(0, Math.min(percent, 100));
-
-        if (activeThumb === minThumb) {
-          const maxPercent = parseFloat(maxThumb.style.left);
-          if (percent < maxPercent) {
-            setThumbPosition(
-              minThumb,
-              minValue + (percent / 100) * (maxValue - minValue),
-            );
-          }
-        } else {
-          const minPercent = parseFloat(minThumb.style.left);
-          if (percent > minPercent) {
-            setThumbPosition(
-              maxThumb,
-              minValue + (percent / 100) * (maxValue - minValue),
-            );
-          }
-        }
-
-        updateRange();
-        updatePrices();
-      }
-
-      function onMouseUp() {
-        activeThumb = null;
-        document.removeEventListener("mousemove", onMouseMove);
-        document.removeEventListener("mouseup", onMouseUp);
-      }
-
-      minThumb.addEventListener("mousedown", () => {
-        activeThumb = minThumb;
-        document.addEventListener("mousemove", onMouseMove);
-        document.addEventListener("mouseup", onMouseUp);
-      });
-
-      maxThumb.addEventListener("mousedown", () => {
-        activeThumb = maxThumb;
-        document.addEventListener("mousemove", onMouseMove);
-        document.addEventListener("mouseup", onMouseUp);
-      });
-
-      // Initialize positions
-      setThumbPosition(minThumb, minValue);
-      setThumbPosition(maxThumb, maxValue);
-      updateRange();
-      updatePrices();
+      
     </script>
 
     <script>
-      function createAntDateSlider(
-        sliderId,
-        minValue,
-        maxValue,
-        minDisplayId,
-        maxDisplayId,
-      ) {
-        const slider = document.getElementById(sliderId);
-        const minThumb = document.getElementById("antMinDateThumb");
-        const maxThumb = document.getElementById("antMaxDateThumb");
-        const range = slider.querySelector(".ant-date-range");
-        const minDisplay = document.getElementById(minDisplayId);
-        const maxDisplay = document.getElementById(maxDisplayId);
-
-        let activeThumb = null;
-
-        function setThumbPosition(thumb, value) {
-          const percent = ((value - minValue) / (maxValue - minValue)) * 100;
-          thumb.style.left = `${percent}%`;
-        }
-
-        function updateRange() {
-          const minPercent = parseFloat(minThumb.style.left);
-          const maxPercent = parseFloat(maxThumb.style.left);
-          range.style.left = `${minPercent}%`;
-          range.style.width = `${maxPercent - minPercent}%`;
-        }
-
-        function updateDisplay() {
-          const minPercent = parseFloat(minThumb.style.left) / 100;
-          const maxPercent = parseFloat(maxThumb.style.left) / 100;
-          const minVal = Math.round(
-            minValue + minPercent * (maxValue - minValue),
-          );
-          const maxVal = Math.round(
-            minValue + maxPercent * (maxValue - minValue),
-          );
-          minDisplay.textContent = minVal;
-          maxDisplay.textContent = maxVal;
-        }
-
-        function onMouseMove(e) {
-          if (!activeThumb) return;
-          const rect = slider.getBoundingClientRect();
-          let percent = (e.clientX - rect.left) / rect.width;
-          percent = Math.max(0, Math.min(percent, 1));
-
-          if (activeThumb === minThumb) {
-            const maxVal = parseFloat(maxThumb.style.left) / 100;
-            if (percent < maxVal) {
-              setThumbPosition(
-                minThumb,
-                minValue + percent * (maxValue - minValue),
-              );
-            }
-          } else {
-            const minVal = parseFloat(minThumb.style.left) / 100;
-            if (percent > minVal) {
-              setThumbPosition(
-                maxThumb,
-                minValue + percent * (maxValue - minValue),
-              );
-            }
-          }
-
-          updateRange();
-          updateDisplay();
-        }
-
-        function onMouseUp() {
-          activeThumb = null;
-          document.removeEventListener("mousemove", onMouseMove);
-          document.removeEventListener("mouseup", onMouseUp);
-        }
-
-        minThumb.addEventListener("mousedown", () => {
-          activeThumb = minThumb;
-          document.addEventListener("mousemove", onMouseMove);
-          document.addEventListener("mouseup", onMouseUp);
-        });
-
-        maxThumb.addEventListener("mousedown", () => {
-          activeThumb = maxThumb;
-          document.addEventListener("mousemove", onMouseMove);
-          document.addEventListener("mouseup", onMouseUp);
-        });
-
-        // Initialize positions
-        setThumbPosition(minThumb, minValue);
-        setThumbPosition(maxThumb, maxValue);
-        updateRange();
-        updateDisplay();
-      }
-
-      // Initialize date range slider
-      createAntDateSlider("antDateSlider", 0, 6, "antMinDate", "antMaxDate");
+      
     </script>
 
     <script src="./assets/js/jquery.js"></script>
