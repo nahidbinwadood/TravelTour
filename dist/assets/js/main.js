@@ -522,10 +522,6 @@ $(document).ready(function () {
   updatePrices();
   // Custom Price Range::End
 
-
-
-  
-
   //  ===Custom Day Range::Start
   function createAntDateSlider(
     sliderId,
@@ -534,7 +530,7 @@ $(document).ready(function () {
     minDisplayId,
     maxDisplayId,
     minThumbId,
-    maxThumbId
+    maxThumbId,
   ) {
     const slider = document.getElementById(sliderId);
     const minThumb = document.getElementById(minThumbId);
@@ -542,16 +538,16 @@ $(document).ready(function () {
     const range = slider?.querySelector(".ant-date-range");
     const minDisplay = document.getElementById(minDisplayId);
     const maxDisplay = document.getElementById(maxDisplayId);
-  
+
     let activeThumb = null;
-  
+
     function setThumbPosition(thumb, value) {
       const percent = ((value - minValue) / (maxValue - minValue)) * 100;
       if (thumb) {
         thumb.style.left = `${percent}%`;
       }
     }
-  
+
     function updateRange() {
       if (minThumb && range) {
         const minPercent = parseFloat(minThumb.style.left) || 0;
@@ -560,72 +556,82 @@ $(document).ready(function () {
         range.style.width = `${maxPercent - minPercent}%`;
       }
     }
-  
+
     function updateDisplay() {
       if (minThumb && maxThumb) {
         const minPercent = parseFloat(minThumb.style.left) / 100;
         const maxPercent = parseFloat(maxThumb.style.left) / 100;
-        const minVal = Math.round(minValue + minPercent * (maxValue - minValue));
-        const maxVal = Math.round(minValue + maxPercent * (maxValue - minValue));
+        const minVal = Math.round(
+          minValue + minPercent * (maxValue - minValue),
+        );
+        const maxVal = Math.round(
+          minValue + maxPercent * (maxValue - minValue),
+        );
         minDisplay.textContent = minVal;
         maxDisplay.textContent = maxVal;
       }
     }
-  
+
     function onMouseMove(e) {
       if (!activeThumb) return;
       const rect = slider.getBoundingClientRect();
       let percent = (e.clientX - rect.left) / rect.width;
       percent = Math.max(0, Math.min(percent, 1));
-  
+
       if (activeThumb === minThumb) {
         const maxPercent = parseFloat(maxThumb.style.left) / 100;
         if (percent < maxPercent) {
-          setThumbPosition(minThumb, minValue + percent * (maxValue - minValue));
+          setThumbPosition(
+            minThumb,
+            minValue + percent * (maxValue - minValue),
+          );
         }
       } else {
         const minPercent = parseFloat(minThumb.style.left) / 100;
         if (percent > minPercent) {
-          setThumbPosition(maxThumb, minValue + percent * (maxValue - minValue));
+          setThumbPosition(
+            maxThumb,
+            minValue + percent * (maxValue - minValue),
+          );
         }
       }
-  
+
       updateRange();
       updateDisplay();
     }
-  
+
     function onMouseUp() {
       activeThumb = null;
       document.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mouseup", onMouseUp);
     }
-  
+
     minThumb?.addEventListener("mousedown", () => {
       activeThumb = minThumb;
       document.addEventListener("mousemove", onMouseMove);
       document.addEventListener("mouseup", onMouseUp);
     });
-  
+
     maxThumb?.addEventListener("mousedown", () => {
       activeThumb = maxThumb;
       document.addEventListener("mousemove", onMouseMove);
       document.addEventListener("mouseup", onMouseUp);
     });
-  
+
     function resetSlider() {
       setThumbPosition(minThumb, minValue);
       setThumbPosition(maxThumb, maxValue);
       updateRange();
       updateDisplay();
     }
-  
+
     // Initialize the slider
     resetSlider();
-  
+
     // Return the reset function for external use
     return { resetSlider };
   }
-  
+
   // Initialize the date range slider
   const antDateSliderControl = createAntDateSlider(
     "antDateSlider",
@@ -634,12 +640,11 @@ $(document).ready(function () {
     "antMinDate",
     "antMaxDate",
     "antMinDateThumb",
-    "antMaxDateThumb"
+    "antMaxDateThumb",
   );
-  
+
   // Ensure the button ID is correct
-  
-  
+
   //  ===Custom Day Range::End
 
   // ====Date Range ::Start====
@@ -838,24 +843,12 @@ $(document).ready(function () {
     setThumbPosition(minThumb, minValue);
     setThumbPosition(maxThumb, maxValue);
     updateRange();
-    updatePrices(); 
+    updatePrices();
 
     antDateSliderControl.resetSlider();
   });
 
- 
   // Clear All:: End
-
-
-
-
-
-
-
-
-
-
- 
 });
 
 // ====Solaimain====

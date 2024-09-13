@@ -9,7 +9,7 @@ module.exports = {
         roboto: "'Roboto', 'sans-serif'",
         arizonia: "'Arizonia', 'cursive'",
         manrope: "'Manrope', 'sans-serif'",
-        montserrat:"'Montserrat', 'sans-serif'"
+        montserrat: "'Montserrat', 'sans-serif'",
       },
       colors: {
         primary: "#1CA8CB",

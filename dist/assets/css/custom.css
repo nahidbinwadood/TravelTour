@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Arizonia&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Arizonia&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 body {
   overflow-x: hidden !important;
@@ -32,7 +32,6 @@ body {
 }
 
 /* Homepage::End */
-
 
 /* Contact Form::Start */
 .contact-form-first-name::after {
@@ -157,8 +156,6 @@ body {
 
 /* ===Auth Slider::End=== */
 
-
-
 /* Test */
 .cards .group:hover {
   transform: translateY(-8px) !important;
@@ -167,14 +164,7 @@ body {
 
 /* Test */
 
-
-
-
-
 /* ====Custom Date Picker::Start==== */
-
-
-
 
 /* ====Custom Date Picker::End==== */
 
@@ -220,7 +210,6 @@ body {
 .ant-date-slider-container {
   font-family: Arial, sans-serif;
   max-width: 400px;
-
 }
 
 .ant-date-slider {
@@ -277,13 +266,12 @@ body {
 /* Date Range::End */
 /* ====Custom Range::End==== */
 
-
 /* ===Dashboard::Start=== */
 .dashboard-sidebar-links .active {
   color: white;
   border-radius: 16px;
-  background: #1CA8CB;
-  box-shadow: 0px 6px 30px 0px rgba(93, 105, 244, 0.40);
+  background: #1ca8cb;
+  box-shadow: 0px 6px 30px 0px rgba(93, 105, 244, 0.4);
 }
 
 /* ===Dashboard::End=== */
@@ -302,7 +290,6 @@ body {
 }
 
 @media (max-width: 640px) {
-
   .contact-form-first-name::after,
   .contact-form-comment::after,
   .contact-form-mail::after {

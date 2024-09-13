@@ -16718,5 +16718,3 @@ var dateDropperSetup = {
   (t.Carousel = H), (t.Fancybox = rt), (t.Panzoom = M);
 });
 // ====Fancybox::End
-
- 
