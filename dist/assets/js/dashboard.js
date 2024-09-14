@@ -97,4 +97,42 @@ document.addEventListener("click", (e) => {
 });
 // Notification Popup::End
 
+// Sidebar::Start
+const responsiveSidebar = document.getElementById("dashboard-sidebar");
+const openBtn = document.getElementById("hamburger");
+const sidebarCloseBtn = document.getElementById("close--menu");
+
+openBtn?.addEventListener("click", () => {
+  if (responsiveSidebar) {
+    responsiveSidebar.classList.remove("-translate-x-full");
+    responsiveSidebar.classList.add("translate-x-0");
+    sidebarCloseBtn?.classList.remove("hidden");
+    openBtn?.classList.add("hidden");
+  }
+});
+sidebarCloseBtn?.addEventListener("click", () => {
+  if (responsiveSidebar) {
+    responsiveSidebar.classList.add("-translate-x-full");
+    responsiveSidebar.classList.remove("translate-x-0");
+    sidebarCloseBtn?.classList.add("hidden");
+    openBtn?.classList.remove("hidden");
+  }
+});
+
+document.addEventListener("click", (e) => {
+  // Sidebar::Start
+  if (
+    !responsiveSidebar.contains(e.target) &&
+    !openBtn.contains(e.target) &&
+    responsiveSidebar.classList.contains("translate-x-0")
+  ) {
+    responsiveSidebar.classList.add("-translate-x-full");
+    responsiveSidebar.classList.remove("translate-x-0");
+    sidebarCloseBtn?.classList.add("hidden");
+    openBtn?.classList.remove("hidden");
+  }
+  // Sidebar::End
+});
+// Sidebar::End
+
 // Dashboard::End

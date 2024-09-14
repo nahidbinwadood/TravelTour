@@ -329,6 +329,15 @@ body {
     width: 8px;
     right: 35px;
   }
+
+  .dashboard-sidebar-links .active {
+    color: white;
+    border-radius: 10px;
+    background: #1ca8cb;
+    box-shadow: 0px 6px 30px 0px rgba(93, 105, 244, 0.4);
+  
 }
+
+
 
 /* ====Responsive::End==== */
