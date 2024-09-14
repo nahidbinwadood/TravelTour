@@ -274,6 +274,22 @@ body {
   box-shadow: 0px 6px 30px 0px rgba(93, 105, 244, 0.4);
 }
 
+
+.custom_scrollbar::-webkit-scrollbar {
+	width: 2.5px;
+}
+.custom_scrollbar::-webkit-scrollbar-track {
+	background-color: rgb(255, 255, 255);
+	-webkit-border-radius: 2px;
+}
+.custom_scrollbar::-webkit-scrollbar-thumb:vertical {
+	background-color: rgb(142, 142, 142);
+	-webkit-border-radius: 0px;
+    -webkit-width:5;
+}
+.custom_scrollbar::-webkit-scrollbar-thumb:vertical:hover {
+	background: #1ca8cb;
+}
 /* ===Dashboard::End=== */
 
 /* ====Responsive::Start==== */

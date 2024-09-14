@@ -56,4 +56,45 @@ document.querySelectorAll(".showBtn, .hideBtn").forEach((button) => {
 
 // Pass Show/Hide::End
 
+// Notification Popup::Start
+const notificationBtn = document.getElementById("notification-btn");
+const notificationContainer = document.getElementById("notification-container");
+notificationBtn?.addEventListener("click", () => {
+  if (notificationContainer?.classList.contains("opacity-0")) {
+    notificationContainer?.classList.remove(
+      "opacity-0",
+      "translate-y-3",
+      "-z-10",
+    );
+    notificationContainer?.classList.add(
+      "opacity-100",
+      "translate-y-0",
+      "z-10",
+    );
+  } else if (notificationContainer?.classList.contains("opacity-100")) {
+    notificationContainer?.classList.add("opacity-0", "translate-y-3", "-z-10");
+    notificationContainer?.classList.remove(
+      "opacity-100",
+      "translate-y-0",
+      "z-10",
+    );
+  }
+});
+
+document.addEventListener("click", (e) => {
+  if (
+    notificationContainer?.classList.contains("opacity-100") &&
+    !notificationBtn.contains(e.target) &&
+    !notificationContainer.contains(e.target)
+  ) {
+    notificationContainer?.classList.add("opacity-0", "translate-y-3", "-z-10");
+    notificationContainer?.classList.remove(
+      "opacity-100",
+      "translate-y-0",
+      "z-10",
+    );
+  }
+});
+// Notification Popup::End
+
 // Dashboard::End
