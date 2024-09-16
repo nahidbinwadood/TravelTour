@@ -6,6 +6,7 @@
     <title>FinedBus Tour | Profile Settings</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/custom.css" />
+    <link rel="stylesheet" href="../assets/css/plugins/flatpickr.min.css" />
     <link rel="stylesheet" href="../assets/css/all.min.css" />
   </head>
   <body>
@@ -14,8 +15,8 @@
       <!-- Dashboard::Start -->
 
       <section class="flex h-[100vh]">
-         <!-- Sidebar ::Start -->
-         <section class="hidden h-full w-[350px] p-8 xl:inline-block">
+        <!-- Sidebar ::Start -->
+        <section class="hidden h-full w-[350px] p-8 xl:inline-block">
           <!-- Logo::Start -->
           <div>
             <a href="../index.html">
@@ -159,7 +160,7 @@
               </div>
             </a>
             <a
-              class="  hover:shadow-[0px_6px_30px_0px_rgba(93, 105, 244, 0.40)] group inline-block rounded-[16px] px-6 py-3 transition duration-500 hover:bg-[#1CA8CB]"
+              class="hover:shadow-[0px_6px_30px_0px_rgba(93, 105, 244, 0.40)] group inline-block rounded-[16px] px-6 py-3 transition duration-500 hover:bg-[#1CA8CB]"
               href="payment.html"
             >
               <div class="flex items-center gap-3 text-[#404A60]">
@@ -247,7 +248,9 @@
                   </defs>
                 </svg>
 
-                <h4 class="transition text-white duration-500 group-hover:text-white">
+                <h4
+                  class="text-white transition duration-500 group-hover:text-white"
+                >
                   Profile Settings
                 </h4>
               </div>
@@ -300,8 +303,8 @@
 
         <!-- Main Contents::Start -->
         <section class="w-full">
-           <!-- Header::Start -->
-           <header class="relative">
+          <!-- Header::Start -->
+          <header class="relative">
             <div
               class="flex flex-col-reverse gap-4 px-5 py-6 md:gap-6 xl:flex-row xl:items-center xl:justify-between xl:px-10 xl:py-8"
             >
@@ -673,9 +676,7 @@
                         <path
                           class="transtion duration-500 group-hover:fill-white"
                           d="M10.9109 6.68833L9.9493 5.54717C9.73637 5.2945 9.76876 4.91717 10.0217 4.70441C10.2746 4.49165 10.6522 4.524 10.8652 4.77676L11.3936 5.40376L13.0374 3.65713C13.2639 3.41651 13.6428 3.40484 13.8836 3.63111C14.1246 3.85737 14.1362 4.23594 13.9097 4.47656L11.805 6.71286C11.6171 6.91076 11.136 6.94994 10.9109 6.68833Z"
-                          fill="#5A5C5F">
-                          Payment History
-                        </h4>ff"
+                          fill="#5A5C5F"
                         />
                       </g>
                       <defs>
@@ -689,9 +690,7 @@
                         </clipPath>
                       </defs>
                     </svg>
-                    <h4
-                      class="transition duration-500 group-hover:text-white"
-                    >
+                    <h4 class="transition duration-500 group-hover:text-white">
                       My Booking
                     </h4>
                   </div>
@@ -758,7 +757,7 @@
                   </div>
                 </a>
                 <a
-                  class="  hover:shadow-[0px_6px_30px_0px_rgba(93, 105, 244, 0.40)] group inline-block rounded-[16px] px-4 py-2 text-sm transition duration-500 hover:bg-[#1CA8CB] md:px-6 md:py-3 md:text-base"
+                  class="hover:shadow-[0px_6px_30px_0px_rgba(93, 105, 244, 0.40)] group inline-block rounded-[16px] px-4 py-2 text-sm transition duration-500 hover:bg-[#1CA8CB] md:px-6 md:py-3 md:text-base"
                   href="payment.html"
                 >
                   <div class="flex items-center gap-2 text-[#404A60] md:gap-3">
@@ -804,9 +803,7 @@
                       </defs>
                     </svg>
 
-                    <h4
-                      class="transition duration-500 group-hover:text-white"
-                    >
+                    <h4 class="transition duration-500 group-hover:text-white">
                       Payment History
                     </h4>
                   </div>
@@ -901,94 +898,129 @@
           <!-- Responsive Sidebar::End -->
 
           <!-- Dashboard Contents::Start -->
-          <section class="min-h-[calc(100%-234px)] bg-[#f7f7fe] p-7  ">
+          <section class="min-h-[calc(100%-234px)] bg-[#f7f7fe] p-7">
             <!-- Top Form ::Start -->
 
-            <div class="mb-10 rounded-2xl bg-white 2xl:px-16 2xl:pb-20 2xl:pt-14">
+            <div
+              class="mb-10 rounded-2xl bg-white 2xl:px-16 2xl:pb-20 2xl:pt-14"
+            >
               <!-- title::Start -->
-              <div class="font-inter text-xl md:text-2xl font-semibold text-[#222E48]">
+              <div
+                class="font-inter text-xl font-semibold text-[#222E48] md:text-2xl"
+              >
                 <h2>Personal Information</h2>
               </div>
               <!-- title::End -->
 
               <!-- horizontal line::Start -->
-              <div class="mb-5 md:mb-10 mt-5 border-t border-black/5"></div>
+              <div class="mb-5 mt-5 border-t border-black/5 md:mb-10"></div>
               <!-- horizontal line::End -->
 
               <!-- Form::Start -->
               <div class="font-inter">
-                <form action="" class="flex flex-col md:flewo gap-6 md:gap-12">
-                  <div class="flex flex-col md:flex-row w-full gap-6 2xl:gap-24 2xl:pr-32">
+                <form action="" class="md:flewo flex flex-col gap-6 md:gap-12">
+                  <div
+                    class="flex w-full flex-col gap-6 md:flex-row 2xl:gap-24 2xl:pr-32"
+                  >
                     <div class="md:w-1/2">
                       <div class="flex flex-col gap-3 md:gap-5">
-                        <label for="name" class="text-sm md:text-base">Full Name</label>
+                        <label for="name" class="text-sm md:text-base"
+                          >Full Name</label
+                        >
                         <input
                           type="text"
                           name="name"
                           id="name"
-                          class="text-sm md:text-base md:placeholder:text-sm rounded-lg border border-black/10 px-4 py-3 2xl:px-10 2xl:py-5 placeholder:text-black/50 focus:outline-none"
+                          class="rounded-lg border border-black/10 px-4 py-3 text-sm placeholder:text-black/50 focus:outline-none md:text-base md:placeholder:text-sm 2xl:px-10 2xl:py-5"
                           value="Erich"
                         />
                       </div>
                     </div>
                     <div class="md:w-1/2">
                       <div class="flex flex-col gap-3 md:gap-5">
-                        <label for="email" class="text-sm md:text-base">Email</label>
+                        <label for="email" class="text-sm md:text-base"
+                          >Email</label
+                        >
                         <input
                           type="email"
                           name="email"
                           id="email"
-                          class="text-sm md:text-base rounded-lg border border-black/10 px-4 py-3 2xl:px-10 2xl:py-5 placeholder:text-black/50 focus:outline-none"
+                          class="rounded-lg border border-black/10 px-4 py-3 text-sm placeholder:text-black/50 focus:outline-none md:text-base 2xl:px-10 2xl:py-5"
                           value="davidlee21@gmail.com"
                         />
                       </div>
                     </div>
                   </div>
 
-                  <div class="flex flex-col md:flex-row w-full gap-6 2xl:gap-24 2xl:pr-32">
-                    <div class="2xl:w-1/2">
+                  <div
+                    class="flex w-full flex-col gap-6 md:flex-row 2xl:gap-24 2xl:pr-32"
+                  >
+                    <div class="md:w-1/2">
                       <div class="flex flex-col gap-3 md:gap-5">
-                        <label for="phone" class="text-sm md:text-base">Phone</label>
+                        <label for="phone" class="text-sm md:text-base"
+                          >Phone</label
+                        >
                         <input
                           type="tel"
                           name="phone"
                           id="phone"
                           value="+8801761624031"
-                          class="text-sm md:text-base rounded-lg border border-black/10 px-4 py-3 2xl:px-10 2xl:py-5 placeholder:text-black/50 focus:outline-none"
+                          class="rounded-lg border border-black/10 px-4 py-3 text-sm placeholder:text-black/50 focus:outline-none md:text-base 2xl:px-10 2xl:py-5"
                         />
                       </div>
                     </div>
-                    <div class="2xl:w-1/2">
+                    <div class="md:w-1/2">
                       <div class="flex flex-col gap-3 md:gap-5">
-                        <label for="nationality" class="text-sm md:text-base">Nationality</label>
+                        <label for="nationality" class="text-sm md:text-base"
+                          >Nationality</label
+                        >
                         <input
                           type="text"
                           name="nationality"
                           id="nationality"
                           value="USA"
-                          class="text-sm md:text-base rounded-lg border border-black/10  2xl:px-10 px-4 py-3 2xl:py-5 placeholder:text-black/50 focus:outline-none"
+                          class="rounded-lg border border-black/10 px-4 py-3 text-sm placeholder:text-black/50 focus:outline-none md:text-base 2xl:px-10 2xl:py-5"
                         />
                       </div>
                     </div>
                   </div>
 
-                  <div class="flex flex-col md:flex-row w-full gap-6 2xl:gap-24 2xl:pr-32">
-                    <div class="flex 2xl:w-1/2 flex-col justify-center">
+                  <div
+                    class="flex w-full flex-col gap-6 md:flex-row 2xl:gap-24 2xl:pr-32"
+                  >
+                    <div class="flex flex-col justify-center md:w-1/2">
                       <div class="flex flex-col gap-3 md:gap-5">
-                        <label for="date" class="text-sm md:text-base">Date of Birth</label>
-                        <input
-                          type="date"
-                          name="date"
-                          id="date"
-                          value="1988-09-14"
-                          class="text-sm md:text-base rounded-lg border border-black/10 px-4 py-3 2xl:px-10 2xl:py-5 placeholder:text-black/50 focus:outline-none"
-                        />
+                        <label for="date" class="text-sm md:text-base"
+                          >Date of Birth</label
+                        >
+                        <div
+                          id="dob-show"
+                          class="check-in cursor-pointer rounded-lg border border-black/10 px-4 py-3 text-sm placeholder:text-black/50 focus:outline-none md:text-base 2xl:px-10 2xl:py-5"
+                        >
+                          <label
+                            class="flex cursor-pointer items-center gap-3"
+                            for=""
+                          >
+                            <!-- Ignore the SVG part -->
+                            <span
+                              id="date-of-birth"
+                              class="cursor-pointer font-poppins  text-sm md:text-base"
+                              >19-08-08</span
+                            >
+                            <span
+                              id="check-in-updated-date"
+                              class="font-poppins text-sm md:text-base"
+                            ></span>
+                          </label>
+                        </div>
                       </div>
                     </div>
-                    <div class="2xl:w-1/2">
+                    <div class="md:w-1/2">
                       <div class="flex flex-col gap-3 md:gap-5">
-                        <label for="" class="text-sm md:text-base">Gender</label>
-                        <div class="md:mt-4 flex items-center gap-4 md:gap-8">
+                        <label for="" class="text-sm md:text-base"
+                          >Gender</label
+                        >
+                        <div class="flex items-center gap-4 md:mt-4 md:gap-8">
                           <div class="flex items-center gap-2 md:gap-4">
                             <input
                               type="radio"
@@ -997,7 +1029,9 @@
                               class="size-4 md:size-6"
                               checked
                             />
-                            <label for="male" class="cursor-pointer text-sm text-base"
+                            <label
+                              for="male"
+                              class="cursor-pointer text-base text-sm"
                               >Male</label
                             >
                           </div>
@@ -1008,7 +1042,9 @@
                               id="female"
                               class="size-4 md:size-6"
                             />
-                            <label for="female" class="cursor-pointer text-sm md:text-base"
+                            <label
+                              for="female"
+                              class="cursor-pointer text-sm md:text-base"
                               >Female</label
                             >
                           </div>
@@ -1019,7 +1055,9 @@
                               id="others"
                               class="size-4 md:size-6"
                             />
-                            <label for="others" class="cursor-pointer text-sm md:text-base"
+                            <label
+                              for="others"
+                              class="cursor-pointer text-sm md:text-base"
                               >Others</label
                             >
                           </div>
@@ -1030,11 +1068,13 @@
 
                   <div class="flex w-full">
                     <div class="flex w-full flex-col gap-3 md:gap-5">
-                      <label for="address" class="text-sm md:text-base">Address</label>
+                      <label for="address" class="text-sm md:text-base"
+                        >Address</label
+                      >
 
                       <textarea
                         rows="6"
-                        class="text-sm md:text-base rounded-lg border border-black/10 px-4 py-3 2xl:px-10  2xl:py-8 placeholder:text-black/50 focus:outline-none"
+                        class="rounded-lg border border-black/10 px-4 py-3 text-sm placeholder:text-black/50 focus:outline-none md:text-base 2xl:px-10 2xl:py-8"
                         name="address"
                         id="address"
                       >
@@ -1048,7 +1088,9 @@
                       <label for="photo">Photo</label>
 
                       <!-- image wrapper::Start -->
-                      <div class="flex flex-col lg:flex-row lg:items-center gap-6">
+                      <div
+                        class="flex flex-col gap-6 lg:flex-row lg:items-center"
+                      >
                         <div
                           class="h-[105px] w-[100px] overflow-hidden rounded"
                         >
@@ -1060,7 +1102,7 @@
                         </div>
                         <div>
                           <div
-                            class="flex items-center gap-5 md:gap-12 overflow-hidden rounded-xl border border-[#C2C2C2] lg:pr-32 2xl:pr-72"
+                            class="flex items-center gap-5 overflow-hidden rounded-xl border border-[#C2C2C2] md:gap-12 lg:pr-32 2xl:pr-72"
                           >
                             <label
                               for="photo"
@@ -1073,7 +1115,9 @@
                               id="photo"
                               class="imageInput hidden"
                             />
-                            <span class="imageFileName text-sm md:text-base">No File Chosen</span>
+                            <span class="imageFileName text-sm md:text-base"
+                              >No File Chosen</span
+                            >
                           </div>
                         </div>
                       </div>
@@ -1081,7 +1125,7 @@
                       <div class="pt-4 md:pt-8">
                         <button
                           type="submit"
-                          class="rounded-[40px] border border-white bg-primary px-5 py-2 font-inter text-white transition duration-500 hover:border-primary hover:bg-white hover:text-primary text-sm md:text-base"
+                          class="rounded-[40px] border border-white bg-primary px-5 py-2 font-inter text-sm text-white transition duration-500 hover:border-primary hover:bg-white hover:text-primary md:text-base"
                         >
                           Save Changes
                         </button>
@@ -1096,42 +1140,50 @@
             <!-- Top Form ::End -->
 
             <!-- 2nd Form::Start -->
-            <div class="mb-10 rounded-2xl bg-white 2xl:px-16 2xl:pb-20 2xl:pt-14 ">
+            <div
+              class="mb-10 rounded-2xl bg-white 2xl:px-16 2xl:pb-20 2xl:pt-14"
+            >
               <!-- title::Start -->
-              <div class="font-inter text-xl md:text-2xl font-semibold text-[#222E48]">
+              <div
+                class="font-inter text-xl font-semibold text-[#222E48] md:text-2xl"
+              >
                 <h2>Email Updates</h2>
               </div>
               <!-- title::End -->
 
               <!-- Form::Start -->
-              <div class="pt-5 md:pt-8 font-inter">
+              <div class="pt-5 font-inter md:pt-8">
                 <form action="" class="flex flex-col gap-12">
                   <div class="flex w-full flex-col gap-6 md:gap-8">
                     <div class="w-full">
                       <div class="flex flex-col gap-3 md:gap-5">
-                        <label for="newEmail" class="text-sm md:text-base">Type Your New Email</label>
+                        <label for="newEmail" class="text-sm md:text-base"
+                          >Type Your New Email</label
+                        >
                         <input
                           type="text"
                           name="newEmail"
                           id="newEmail"
-                          class="text-sm md:text-base rounded-lg border border-black/10 px-4 py-3 2xl:px-10 2xl:py-5 placeholder:text-sm placeholder:text-black/50 focus:outline-none"
+                          class="rounded-lg border border-black/10 px-4 py-3 text-sm placeholder:text-sm placeholder:text-black/50 focus:outline-none md:text-base 2xl:px-10 2xl:py-5"
                           placeholder="Type your new email Id"
                         />
                       </div>
                     </div>
                     <div class="w-full">
                       <div class="flex flex-col gap-3 md:gap-5">
-                        <label for="password" class="text-sm md:text-base">Password</label>
+                        <label for="password" class="text-sm md:text-base"
+                          >Password</label
+                        >
                         <div class="relative w-full">
                           <input
                             type="password"
                             name="password"
                             id="password"
-                            class="text-sm md:text-base w-full rounded-lg border border-black/10 px-4 py-3 2xl:px-10 2xl:py-5 placeholder:text-sm placeholder:text-black/50 focus:outline-none"
+                            class="w-full rounded-lg border border-black/10 px-4 py-3 text-sm placeholder:text-sm placeholder:text-black/50 focus:outline-none md:text-base 2xl:px-10 2xl:py-5"
                             placeholder="Type your password"
                           />
                           <svg
-                            class="showBtn absolute right-5 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer size-5 md:size-auto"
+                            class="showBtn absolute right-5 top-1/2 size-5 -translate-x-1/2 -translate-y-1/2 cursor-pointer md:size-auto"
                             data-input="password"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -1149,7 +1201,7 @@
                             />
                           </svg>
                           <svg
-                            class="hideBtn absolute right-5 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 cursor-pointer size-5 md:size-auto"
+                            class="hideBtn absolute right-5 top-1/2 hidden size-5 -translate-x-1/2 -translate-y-1/2 cursor-pointer md:size-auto"
                             data-input="password"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -1172,7 +1224,7 @@
                     <div>
                       <button
                         type="submit"
-                        class="rounded-[40px] border border-white bg-primary px-5 py-2 font-inter text-white transition duration-500 hover:border-primary hover:bg-white hover:text-primary text-sm md:text-base"
+                        class="rounded-[40px] border border-white bg-primary px-5 py-2 font-inter text-sm text-white transition duration-500 hover:border-primary hover:bg-white hover:text-primary md:text-base"
                       >
                         Save Changes
                       </button>
@@ -1189,30 +1241,36 @@
             <!-- 2nd Form::End -->
 
             <!-- 3rd Form::Start -->
-            <div class="mb-6 md:mb-10 lg:mb-20 rounded-2xl bg-white 2xl:px-16 2xl:pb-20 2xl:pt-14">
+            <div
+              class="mb-6 rounded-2xl bg-white md:mb-10 lg:mb-20 2xl:px-16 2xl:pb-20 2xl:pt-14"
+            >
               <!-- title::Start -->
-              <div class="font-inter text-xl tmd:text-2xl font-semibold text-[#222E48]">
+              <div
+                class="tmd:text-2xl font-inter text-xl font-semibold text-[#222E48]"
+              >
                 <h2>Password Updates</h2>
               </div>
               <!-- title::End -->
 
               <!-- Form::Start -->
-              <div class="pt-4 md:pt-8 font-inter">
+              <div class="pt-4 font-inter md:pt-8">
                 <form action="" class="flex flex-col gap-12">
                   <div class="flex w-full flex-col gap-6 md:gap-8">
                     <div class="w-full">
                       <div class="flex flex-col gap-3 md:gap-5">
-                        <label for="currentPass" class="text-sm md:text-base">Current password</label>
+                        <label for="currentPass" class="text-sm md:text-base"
+                          >Current password</label
+                        >
                         <div class="relative w-full">
                           <input
                             type="password"
                             name="currentPass"
                             id="currentPass"
-                            class="text-sm md:text-base md:placeholder:text-base w-full rounded-lg border border-black/10 px-4 py-3 2xl:px-10 2xl:py-5 placeholder:text-sm placeholder:text-black/50 focus:outline-none"
+                            class="w-full rounded-lg border border-black/10 px-4 py-3 text-sm placeholder:text-sm placeholder:text-black/50 focus:outline-none md:text-base md:placeholder:text-base 2xl:px-10 2xl:py-5"
                             placeholder="Type your password"
                           />
                           <svg
-                            class="showBtn absolute right-5 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer size-5 md:size-auto"
+                            class="showBtn absolute right-5 top-1/2 size-5 -translate-x-1/2 -translate-y-1/2 cursor-pointer md:size-auto"
                             data-input="currentPass"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -1230,7 +1288,7 @@
                             />
                           </svg>
                           <svg
-                            class="hideBtn absolute right-5 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 cursor-pointer size-5 md:size-auto"
+                            class="hideBtn absolute right-5 top-1/2 hidden size-5 -translate-x-1/2 -translate-y-1/2 cursor-pointer md:size-auto"
                             data-input="currentPass"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -1252,17 +1310,19 @@
                     </div>
                     <div class="w-full">
                       <div class="flex flex-col gap-3 md:gap-5">
-                        <label for="newPass" class="text-sm md:text-base">New Password</label>
+                        <label for="newPass" class="text-sm md:text-base"
+                          >New Password</label
+                        >
                         <div class="relative w-full">
                           <input
                             type="password"
                             name="newPass"
                             id="newPass"
-                            class="text-sm md:text-base md:placeholder:text-base w-full rounded-lg border border-black/10 px-4 py-3 2xl:px-10 2xl:py-5 placeholder:text-sm placeholder:text-black/50 focus:outline-none"
+                            class="w-full rounded-lg border border-black/10 px-4 py-3 text-sm placeholder:text-sm placeholder:text-black/50 focus:outline-none md:text-base md:placeholder:text-base 2xl:px-10 2xl:py-5"
                             placeholder="Type your password"
                           />
                           <svg
-                            class="showBtn absolute right-5 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer size-5 md:size-auto"
+                            class="showBtn absolute right-5 top-1/2 size-5 -translate-x-1/2 -translate-y-1/2 cursor-pointer md:size-auto"
                             data-input="newPass"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -1280,7 +1340,7 @@
                             />
                           </svg>
                           <svg
-                            class="hideBtn absolute right-5 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 cursor-pointer size-5 md:size-auto"
+                            class="hideBtn absolute right-5 top-1/2 hidden size-5 -translate-x-1/2 -translate-y-1/2 cursor-pointer md:size-auto"
                             data-input="newPass"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -1302,17 +1362,19 @@
                     </div>
                     <div class="w-full">
                       <div class="flex flex-col gap-3 md:gap-5">
-                        <label for="confirmPass" class="text-sm md:text-base">Confirm New Password</label>
+                        <label for="confirmPass" class="text-sm md:text-base"
+                          >Confirm New Password</label
+                        >
                         <div class="relative w-full">
                           <input
                             type="password"
                             name="confirmPass"
                             id="confirmPass"
-                            class="text-sm md:text-base md:placeholder:text-base w-full rounded-lg border border-black/10 px-4 py-3 2xl:px-10 2xl:py-5 placeholder:text-sm placeholder:text-black/50 focus:outline-none"
+                            class="w-full rounded-lg border border-black/10 px-4 py-3 text-sm placeholder:text-sm placeholder:text-black/50 focus:outline-none md:text-base md:placeholder:text-base 2xl:px-10 2xl:py-5"
                             placeholder="Type your password"
                           />
                           <svg
-                            class="showBtn absolute right-5 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer size-5 md:size-auto"
+                            class="showBtn absolute right-5 top-1/2 size-5 -translate-x-1/2 -translate-y-1/2 cursor-pointer md:size-auto"
                             data-input="confirmPass"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -1330,7 +1392,7 @@
                             />
                           </svg>
                           <svg
-                            class="hideBtn absolute right-5 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 cursor-pointer size-5 md:size-auto"
+                            class="hideBtn absolute right-5 top-1/2 hidden size-5 -translate-x-1/2 -translate-y-1/2 cursor-pointer md:size-auto"
                             data-input="confirmPass"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -1353,7 +1415,7 @@
                     <div>
                       <button
                         type="submit"
-                        class="rounded-[40px] border border-white bg-primary px-5 py-2 font-inter text-white transition duration-500 hover:border-primary hover:bg-white hover:text-primary text-sm md:text-base"
+                        class="rounded-[40px] border border-white bg-primary px-5 py-2 font-inter text-sm text-white transition duration-500 hover:border-primary hover:bg-white hover:text-primary md:text-base"
                       >
                         Save Changes
                       </button>
@@ -1371,133 +1433,133 @@
           </section>
           <!-- Dashboard Contents::End -->
 
-           <!-- Footer::Start -->
-           <footer
-           class="flex w-full flex-col items-center justify-between gap-5 px-6 py-8 xl:flex-row"
-         >
-           <div class="text-center font-inter text-[#404A60]">
-             <p class="text-sm md:text-base">
-               Copyright ©2024
-               <span class="text-[#5D69F4]">FineBusTour</span>. Designed By
-               <span class="text-[#00998B]">Designer</span>
-             </p>
-           </div>
+          <!-- Footer::Start -->
+          <footer
+            class="flex w-full flex-col items-center justify-between gap-5 px-6 py-8 xl:flex-row"
+          >
+            <div class="text-center font-inter text-[#404A60]">
+              <p class="text-sm md:text-base">
+                Copyright ©2024
+                <span class="text-[#5D69F4]">FineBusTour</span>. Designed By
+                <span class="text-[#00998B]">Designer</span>
+              </p>
+            </div>
 
-           <!-- Social Icons::Start -->
-           <div class="flex items-center gap-3">
-             <a
-               href="#"
-               class="group inline-block cursor-pointer rounded-full border border-[#5D69F4] p-2 transition duration-300 hover:bg-[#5D69F4] hover:shadow-[0px_6px_30px_0px_rgba(93,105,244,0.40)] md:p-3"
-             >
-               <svg
-                 xmlns="http://www.w3.org/2000/svg"
-                 width="17"
-                 height="16"
-                 viewBox="0 0 17 16"
-                 fill="none"
-               >
-                 <path
-                   class="transition duration-300 group-hover:fill-white"
-                   d="M11.7517 5.5328H9.53409V4.08C9.53409 3.5344 9.89729 3.4064 10.1517 3.4064H11.7133V1.008L9.55969 1C7.17089 1 6.62849 2.7888 6.62849 3.9344V5.5328H5.24609V8.0032H6.62849V14.9984H9.53569V8.0048H11.4973L11.7517 5.5328Z"
-                   fill="#5D69F4"
-                 />
-               </svg>
-             </a>
-             <a
-               href="#"
-               class="group inline-block cursor-pointer rounded-full border border-[#5D69F4] p-2 transition duration-300 hover:bg-[#5D69F4] hover:shadow-[0px_6px_30px_0px_rgba(93,105,244,0.40)] md:p-3"
-             >
-               <svg
-                 xmlns="http://www.w3.org/2000/svg"
-                 width="17"
-                 height="16"
-                 viewBox="0 0 17 16"
-                 fill="none"
-               >
-                 <path
-                   class="transition duration-300 group-hover:fill-white"
-                   d="M15.5016 3.65419C14.9864 3.88299 14.4328 4.03659 13.852 4.10699C14.4456 3.75179 14.9 3.18859 15.1144 2.51819C14.5592 2.84779 13.9432 3.08619 13.2904 3.21579C12.7672 2.65739 12.02 2.30859 11.1944 2.30859C9.6072 2.30859 8.3208 3.59339 8.3208 5.18059C8.3208 5.40619 8.3464 5.62539 8.3944 5.83499C6.0072 5.71499 3.8904 4.57259 2.4744 2.83339C2.228 3.25739 2.0856 3.75179 2.0856 4.27819C2.0856 5.27499 2.5928 6.15339 3.3624 6.66859C2.892 6.65419 2.4488 6.52459 2.0616 6.30859V6.34539C2.0616 7.73739 3.052 8.89739 4.3656 9.16139C4.1256 9.22699 3.8712 9.26219 3.6088 9.26219C3.4232 9.26219 3.244 9.24459 3.0696 9.21099C3.4344 10.3518 4.4952 11.1822 5.7512 11.2062C4.7688 11.9758 3.532 12.435 2.1848 12.435C1.9528 12.435 1.7256 12.4222 1.5 12.395C2.772 13.2094 4.2808 13.6846 5.9032 13.6846C11.1864 13.6846 14.076 9.30859 14.076 5.51339C14.076 5.38859 14.0728 5.26539 14.068 5.14219C14.6296 4.73579 15.1176 4.23019 15.5016 3.65419Z"
-                   fill="#5D69F4"
-                 />
-               </svg>
-             </a>
-             <a
-               href="#"
-               class="group inline-block cursor-pointer rounded-full border border-[#5D69F4] p-2 transition duration-300 hover:bg-[#5D69F4] hover:shadow-[0px_6px_30px_0px_rgba(93,105,244,0.40)] md:p-3"
-             >
-               <svg
-                 xmlns="http://www.w3.org/2000/svg"
-                 width="17"
-                 height="16"
-                 viewBox="0 0 17 16"
-                 fill="none"
-               >
-                 <path
-                   class="transition duration-300 group-hover:fill-white"
-                   d="M14.916 9.0144C14.9688 8.6832 14.996 8.3456 14.996 8C14.996 4.4128 12.0872 1.504 8.5 1.504C8.156 1.504 7.8168 1.5328 7.4856 1.584C6.8872 1.2144 6.1816 1 5.4248 1C3.2568 1 1.5 2.7568 1.5 4.9248C1.5 5.6816 1.7144 6.3872 2.084 6.9856C2.0328 7.3168 2.004 7.6544 2.004 7.9984C2.004 11.5856 4.9128 14.4928 8.4984 14.4928C8.8424 14.4928 9.1816 14.4656 9.5128 14.4144C10.1112 14.784 10.8168 14.9984 11.5736 14.9984C13.7416 14.9984 15.4984 13.2416 15.4984 11.072C15.5 10.32 15.2856 9.6144 14.916 9.0144ZM11.5832 10.9552C11.308 11.3504 10.9048 11.6592 10.3768 11.8816C9.8488 12.104 9.2232 12.2144 8.5016 12.2144C7.6376 12.2144 6.9208 12.064 6.356 11.7584C5.956 11.5392 5.6296 11.2464 5.38 10.88C5.1288 10.5136 5.0024 10.1552 5.0024 9.8048C5.0024 9.5984 5.0808 9.4192 5.2344 9.2736C5.3896 9.1264 5.588 9.0528 5.8232 9.0528C6.0152 9.0528 6.1816 9.1104 6.316 9.2256C6.4504 9.3408 6.5624 9.5072 6.6536 9.728C6.764 9.984 6.8824 10.1968 7.0104 10.368C7.1368 10.536 7.3144 10.6768 7.5448 10.7872C7.772 10.8976 8.076 10.952 8.4552 10.952C8.9736 10.952 9.3944 10.84 9.7144 10.6176C10.0376 10.3936 10.1928 10.1216 10.1928 9.7936C10.1928 9.5312 10.1096 9.3232 9.9384 9.1616C9.7656 8.9968 9.5416 8.872 9.2648 8.7856C8.9864 8.6976 8.6136 8.6032 8.1448 8.5056C7.516 8.368 6.9912 8.208 6.5656 8.0256C6.14 7.8416 5.7992 7.5904 5.548 7.272C5.2952 6.9504 5.1704 6.552 5.1704 6.08C5.1704 5.6288 5.3032 5.2272 5.5688 4.8752C5.8344 4.5232 6.2184 4.2544 6.7192 4.0672C7.2184 3.88 7.8056 3.7856 8.4792 3.7856C9.0168 3.7856 9.484 3.848 9.8776 3.9712C10.2712 4.096 10.5992 4.2608 10.86 4.4672C11.1208 4.6736 11.3112 4.8912 11.4328 5.12C11.5544 5.3488 11.6152 5.5728 11.6152 5.7904C11.6152 5.9936 11.5368 6.1776 11.3832 6.3392C11.2296 6.5008 11.0344 6.5824 10.8056 6.5824C10.5992 6.5824 10.4376 6.5344 10.3256 6.4336C10.2168 6.336 10.1016 6.1808 9.9768 5.9648C9.82 5.6624 9.6312 5.4272 9.4136 5.2592C9.2008 5.0944 8.8488 5.008 8.3608 5.0096C7.908 5.0096 7.5464 5.1024 7.2728 5.2832C6.9976 5.4672 6.8664 5.68 6.8664 5.9296C6.8664 6.0864 6.9112 6.2176 7.0024 6.3312C7.0936 6.4448 7.2216 6.544 7.3864 6.6272C7.5512 6.712 7.7176 6.7776 7.8856 6.824C8.0552 6.872 8.3384 6.9424 8.7304 7.0336C9.2216 7.1392 9.668 7.2576 10.0696 7.3872C10.4696 7.5168 10.8104 7.6736 11.0936 7.8592C11.3784 8.0448 11.6008 8.2816 11.7592 8.568C11.9192 8.8544 11.9992 9.2048 11.9992 9.616C11.9976 10.1136 11.8584 10.56 11.5832 10.9552Z"
-                   fill="#5D69F4"
-                 />
-               </svg>
-             </a>
-             <a
-               href="#"
-               class="group inline-block cursor-pointer rounded-full border border-[#5D69F4] p-2 transition duration-300 hover:bg-[#5D69F4] hover:shadow-[0px_6px_30px_0px_rgba(93,105,244,0.40)] md:p-3"
-             >
-               <svg
-                 xmlns="http://www.w3.org/2000/svg"
-                 width="17"
-                 height="16"
-                 viewBox="0 0 17 16"
-                 fill="none"
-               >
-                 <g clip-path="url(#clip0_9945_2003)">
-                   <path
-                     class="transition duration-300 group-hover:fill-white"
-                     d="M8.48622 3.88133C6.22062 3.88133 4.37742 5.72452 4.37742 7.99013C4.37742 10.2557 6.22062 12.0973 8.48622 12.0973C10.7518 12.0973 12.5934 10.2541 12.5934 7.99013C12.595 5.72452 10.7518 3.88133 8.48622 3.88133ZM8.48622 10.5309C7.08462 10.5309 5.94542 9.39173 5.94542 7.99013C5.94542 6.58853 7.08462 5.44933 8.48622 5.44933C9.88782 5.44933 11.027 6.58853 11.027 7.99013C11.027 9.39173 9.88782 10.5309 8.48622 10.5309ZM11.8446 0.078125H5.12782C2.61742 0.078125 0.574219 2.12133 0.574219 4.63173V11.3485C0.574219 13.8589 2.61742 15.9021 5.12782 15.9021H11.8446C14.355 15.9021 16.3982 13.8589 16.3982 11.3485V4.63173C16.3982 2.12133 14.3566 0.078125 11.8446 0.078125ZM14.8318 11.3485C14.8318 12.9949 13.491 14.3341 11.8446 14.3341H5.12782C3.48142 14.3341 2.14222 12.9949 2.14222 11.3485V4.63173C2.14222 2.98533 3.48142 1.64613 5.12782 1.64613H11.8446C13.491 1.64613 14.8302 2.98533 14.8302 4.63173V11.3485H14.8318ZM12.651 2.69413C12.059 2.69413 11.5758 3.17573 11.5758 3.76933C11.5758 4.36133 12.0574 4.84453 12.651 4.84453C13.243 4.84453 13.7262 4.36293 13.7262 3.76933C13.7262 3.17573 13.243 2.69413 12.651 2.69413Z"
-                     fill="#5D69F4"
-                   />
-                 </g>
-                 <defs>
-                   <clipPath id="clip0_9945_2003">
-                     <rect
-                       width="16"
-                       height="16"
-                       fill="white"
-                       transform="translate(0.5)"
-                     />
-                   </clipPath>
-                 </defs>
-               </svg>
-             </a>
-             <a
-               href="#"
-               class="group inline-block cursor-pointer rounded-full border border-[#5D69F4] p-2 transition duration-300 hover:bg-[#5D69F4] hover:shadow-[0px_6px_30px_0px_rgba(93,105,244,0.40)] md:p-3"
-             >
-               <svg
-                 xmlns="http://www.w3.org/2000/svg"
-                 width="17"
-                 height="16"
-                 viewBox="0 0 17 16"
-                 fill="none"
-               >
-                 <path
-                   class="transition duration-300 group-hover:fill-white"
-                   d="M14.4278 1H2.57177C2.00377 1 1.54297 1.4496 1.54297 2.0048V13.9984C1.54297 14.5536 2.00377 15.0016 2.57177 15.0016H14.4278C14.9958 15.0016 15.4566 14.5536 15.4566 13.9984V2.0032C15.455 1.4496 14.9942 1 14.4278 1ZM5.76057 12.7184H3.65977V6.3984H5.76057V12.7184ZM4.71097 5.536H4.69657C3.99097 5.536 3.53657 5.0512 3.53657 4.4432C3.53657 3.8224 4.00697 3.3504 4.72377 3.3504C5.44377 3.3504 5.88537 3.8224 5.89817 4.4432C5.89817 5.0512 5.44377 5.536 4.71097 5.536ZM13.3382 12.7184H11.2358V9.3376C11.2358 8.488 10.9334 7.9088 10.1734 7.9088C9.59097 7.9088 9.24537 8.2992 9.09337 8.6768C9.03897 8.8128 9.02617 9.0016 9.02617 9.1888V12.7216H6.92377C6.92377 12.7216 6.95097 6.9936 6.92377 6.4H9.02617V7.2944C9.30457 6.864 9.80537 6.2512 10.919 6.2512C12.3014 6.2512 13.3382 7.1552 13.3382 9.0976V12.7184Z"
-                   fill="#5D69F4"
-                 />
-               </svg>
-             </a>
-           </div>
-           <!-- Social Icons::End -->
+            <!-- Social Icons::Start -->
+            <div class="flex items-center gap-3">
+              <a
+                href="#"
+                class="group inline-block cursor-pointer rounded-full border border-[#5D69F4] p-2 transition duration-300 hover:bg-[#5D69F4] hover:shadow-[0px_6px_30px_0px_rgba(93,105,244,0.40)] md:p-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="16"
+                  viewBox="0 0 17 16"
+                  fill="none"
+                >
+                  <path
+                    class="transition duration-300 group-hover:fill-white"
+                    d="M11.7517 5.5328H9.53409V4.08C9.53409 3.5344 9.89729 3.4064 10.1517 3.4064H11.7133V1.008L9.55969 1C7.17089 1 6.62849 2.7888 6.62849 3.9344V5.5328H5.24609V8.0032H6.62849V14.9984H9.53569V8.0048H11.4973L11.7517 5.5328Z"
+                    fill="#5D69F4"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="group inline-block cursor-pointer rounded-full border border-[#5D69F4] p-2 transition duration-300 hover:bg-[#5D69F4] hover:shadow-[0px_6px_30px_0px_rgba(93,105,244,0.40)] md:p-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="16"
+                  viewBox="0 0 17 16"
+                  fill="none"
+                >
+                  <path
+                    class="transition duration-300 group-hover:fill-white"
+                    d="M15.5016 3.65419C14.9864 3.88299 14.4328 4.03659 13.852 4.10699C14.4456 3.75179 14.9 3.18859 15.1144 2.51819C14.5592 2.84779 13.9432 3.08619 13.2904 3.21579C12.7672 2.65739 12.02 2.30859 11.1944 2.30859C9.6072 2.30859 8.3208 3.59339 8.3208 5.18059C8.3208 5.40619 8.3464 5.62539 8.3944 5.83499C6.0072 5.71499 3.8904 4.57259 2.4744 2.83339C2.228 3.25739 2.0856 3.75179 2.0856 4.27819C2.0856 5.27499 2.5928 6.15339 3.3624 6.66859C2.892 6.65419 2.4488 6.52459 2.0616 6.30859V6.34539C2.0616 7.73739 3.052 8.89739 4.3656 9.16139C4.1256 9.22699 3.8712 9.26219 3.6088 9.26219C3.4232 9.26219 3.244 9.24459 3.0696 9.21099C3.4344 10.3518 4.4952 11.1822 5.7512 11.2062C4.7688 11.9758 3.532 12.435 2.1848 12.435C1.9528 12.435 1.7256 12.4222 1.5 12.395C2.772 13.2094 4.2808 13.6846 5.9032 13.6846C11.1864 13.6846 14.076 9.30859 14.076 5.51339C14.076 5.38859 14.0728 5.26539 14.068 5.14219C14.6296 4.73579 15.1176 4.23019 15.5016 3.65419Z"
+                    fill="#5D69F4"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="group inline-block cursor-pointer rounded-full border border-[#5D69F4] p-2 transition duration-300 hover:bg-[#5D69F4] hover:shadow-[0px_6px_30px_0px_rgba(93,105,244,0.40)] md:p-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="16"
+                  viewBox="0 0 17 16"
+                  fill="none"
+                >
+                  <path
+                    class="transition duration-300 group-hover:fill-white"
+                    d="M14.916 9.0144C14.9688 8.6832 14.996 8.3456 14.996 8C14.996 4.4128 12.0872 1.504 8.5 1.504C8.156 1.504 7.8168 1.5328 7.4856 1.584C6.8872 1.2144 6.1816 1 5.4248 1C3.2568 1 1.5 2.7568 1.5 4.9248C1.5 5.6816 1.7144 6.3872 2.084 6.9856C2.0328 7.3168 2.004 7.6544 2.004 7.9984C2.004 11.5856 4.9128 14.4928 8.4984 14.4928C8.8424 14.4928 9.1816 14.4656 9.5128 14.4144C10.1112 14.784 10.8168 14.9984 11.5736 14.9984C13.7416 14.9984 15.4984 13.2416 15.4984 11.072C15.5 10.32 15.2856 9.6144 14.916 9.0144ZM11.5832 10.9552C11.308 11.3504 10.9048 11.6592 10.3768 11.8816C9.8488 12.104 9.2232 12.2144 8.5016 12.2144C7.6376 12.2144 6.9208 12.064 6.356 11.7584C5.956 11.5392 5.6296 11.2464 5.38 10.88C5.1288 10.5136 5.0024 10.1552 5.0024 9.8048C5.0024 9.5984 5.0808 9.4192 5.2344 9.2736C5.3896 9.1264 5.588 9.0528 5.8232 9.0528C6.0152 9.0528 6.1816 9.1104 6.316 9.2256C6.4504 9.3408 6.5624 9.5072 6.6536 9.728C6.764 9.984 6.8824 10.1968 7.0104 10.368C7.1368 10.536 7.3144 10.6768 7.5448 10.7872C7.772 10.8976 8.076 10.952 8.4552 10.952C8.9736 10.952 9.3944 10.84 9.7144 10.6176C10.0376 10.3936 10.1928 10.1216 10.1928 9.7936C10.1928 9.5312 10.1096 9.3232 9.9384 9.1616C9.7656 8.9968 9.5416 8.872 9.2648 8.7856C8.9864 8.6976 8.6136 8.6032 8.1448 8.5056C7.516 8.368 6.9912 8.208 6.5656 8.0256C6.14 7.8416 5.7992 7.5904 5.548 7.272C5.2952 6.9504 5.1704 6.552 5.1704 6.08C5.1704 5.6288 5.3032 5.2272 5.5688 4.8752C5.8344 4.5232 6.2184 4.2544 6.7192 4.0672C7.2184 3.88 7.8056 3.7856 8.4792 3.7856C9.0168 3.7856 9.484 3.848 9.8776 3.9712C10.2712 4.096 10.5992 4.2608 10.86 4.4672C11.1208 4.6736 11.3112 4.8912 11.4328 5.12C11.5544 5.3488 11.6152 5.5728 11.6152 5.7904C11.6152 5.9936 11.5368 6.1776 11.3832 6.3392C11.2296 6.5008 11.0344 6.5824 10.8056 6.5824C10.5992 6.5824 10.4376 6.5344 10.3256 6.4336C10.2168 6.336 10.1016 6.1808 9.9768 5.9648C9.82 5.6624 9.6312 5.4272 9.4136 5.2592C9.2008 5.0944 8.8488 5.008 8.3608 5.0096C7.908 5.0096 7.5464 5.1024 7.2728 5.2832C6.9976 5.4672 6.8664 5.68 6.8664 5.9296C6.8664 6.0864 6.9112 6.2176 7.0024 6.3312C7.0936 6.4448 7.2216 6.544 7.3864 6.6272C7.5512 6.712 7.7176 6.7776 7.8856 6.824C8.0552 6.872 8.3384 6.9424 8.7304 7.0336C9.2216 7.1392 9.668 7.2576 10.0696 7.3872C10.4696 7.5168 10.8104 7.6736 11.0936 7.8592C11.3784 8.0448 11.6008 8.2816 11.7592 8.568C11.9192 8.8544 11.9992 9.2048 11.9992 9.616C11.9976 10.1136 11.8584 10.56 11.5832 10.9552Z"
+                    fill="#5D69F4"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="group inline-block cursor-pointer rounded-full border border-[#5D69F4] p-2 transition duration-300 hover:bg-[#5D69F4] hover:shadow-[0px_6px_30px_0px_rgba(93,105,244,0.40)] md:p-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="16"
+                  viewBox="0 0 17 16"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_9945_2003)">
+                    <path
+                      class="transition duration-300 group-hover:fill-white"
+                      d="M8.48622 3.88133C6.22062 3.88133 4.37742 5.72452 4.37742 7.99013C4.37742 10.2557 6.22062 12.0973 8.48622 12.0973C10.7518 12.0973 12.5934 10.2541 12.5934 7.99013C12.595 5.72452 10.7518 3.88133 8.48622 3.88133ZM8.48622 10.5309C7.08462 10.5309 5.94542 9.39173 5.94542 7.99013C5.94542 6.58853 7.08462 5.44933 8.48622 5.44933C9.88782 5.44933 11.027 6.58853 11.027 7.99013C11.027 9.39173 9.88782 10.5309 8.48622 10.5309ZM11.8446 0.078125H5.12782C2.61742 0.078125 0.574219 2.12133 0.574219 4.63173V11.3485C0.574219 13.8589 2.61742 15.9021 5.12782 15.9021H11.8446C14.355 15.9021 16.3982 13.8589 16.3982 11.3485V4.63173C16.3982 2.12133 14.3566 0.078125 11.8446 0.078125ZM14.8318 11.3485C14.8318 12.9949 13.491 14.3341 11.8446 14.3341H5.12782C3.48142 14.3341 2.14222 12.9949 2.14222 11.3485V4.63173C2.14222 2.98533 3.48142 1.64613 5.12782 1.64613H11.8446C13.491 1.64613 14.8302 2.98533 14.8302 4.63173V11.3485H14.8318ZM12.651 2.69413C12.059 2.69413 11.5758 3.17573 11.5758 3.76933C11.5758 4.36133 12.0574 4.84453 12.651 4.84453C13.243 4.84453 13.7262 4.36293 13.7262 3.76933C13.7262 3.17573 13.243 2.69413 12.651 2.69413Z"
+                      fill="#5D69F4"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_9945_2003">
+                      <rect
+                        width="16"
+                        height="16"
+                        fill="white"
+                        transform="translate(0.5)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="group inline-block cursor-pointer rounded-full border border-[#5D69F4] p-2 transition duration-300 hover:bg-[#5D69F4] hover:shadow-[0px_6px_30px_0px_rgba(93,105,244,0.40)] md:p-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="16"
+                  viewBox="0 0 17 16"
+                  fill="none"
+                >
+                  <path
+                    class="transition duration-300 group-hover:fill-white"
+                    d="M14.4278 1H2.57177C2.00377 1 1.54297 1.4496 1.54297 2.0048V13.9984C1.54297 14.5536 2.00377 15.0016 2.57177 15.0016H14.4278C14.9958 15.0016 15.4566 14.5536 15.4566 13.9984V2.0032C15.455 1.4496 14.9942 1 14.4278 1ZM5.76057 12.7184H3.65977V6.3984H5.76057V12.7184ZM4.71097 5.536H4.69657C3.99097 5.536 3.53657 5.0512 3.53657 4.4432C3.53657 3.8224 4.00697 3.3504 4.72377 3.3504C5.44377 3.3504 5.88537 3.8224 5.89817 4.4432C5.89817 5.0512 5.44377 5.536 4.71097 5.536ZM13.3382 12.7184H11.2358V9.3376C11.2358 8.488 10.9334 7.9088 10.1734 7.9088C9.59097 7.9088 9.24537 8.2992 9.09337 8.6768C9.03897 8.8128 9.02617 9.0016 9.02617 9.1888V12.7216H6.92377C6.92377 12.7216 6.95097 6.9936 6.92377 6.4H9.02617V7.2944C9.30457 6.864 9.80537 6.2512 10.919 6.2512C12.3014 6.2512 13.3382 7.1552 13.3382 9.0976V12.7184Z"
+                    fill="#5D69F4"
+                  />
+                </svg>
+              </a>
+            </div>
+            <!-- Social Icons::End -->
 
-           <div
-             class="flex items-center gap-6 font-inter text-sm text-[#404A60] md:text-base"
-           >
-             <a href="#">Privacy policy</a>
-             <a href="#">Terms of condition</a>
-           </div>
-         </footer>
-         <!-- Footer::End -->
+            <div
+              class="flex items-center gap-6 font-inter text-sm text-[#404A60] md:text-base"
+            >
+              <a href="#">Privacy policy</a>
+              <a href="#">Terms of condition</a>
+            </div>
+          </footer>
+          <!-- Footer::End -->
         </section>
         <!-- Main Contents::End -->
       </section>
@@ -1508,7 +1570,9 @@
     <!-- Main::End -->
 
     <!-- Scripts ::Start -->
+
     <script src="../assets/js/dashboard.js"></script>
+    <script src="../assets/js/plugins/flatpicker.js"></script>
     <!-- Scripts ::End -->
   </body>
 </html>

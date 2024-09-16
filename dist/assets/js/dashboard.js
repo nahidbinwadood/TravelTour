@@ -134,5 +134,33 @@ document.addEventListener("click", (e) => {
   // Sidebar::End
 });
 // Sidebar::End
+ 
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Initialize a Flatpickr instance without using an extra input field
+  const datePickerDiv = document.getElementById('dob-show');
+  const dateSpan = document.getElementById('date-of-birth');
+
+  // Initialize Flatpickr on a virtual input
+  const flatpickrInstance = flatpickr(datePickerDiv, {
+      dateFormat: "d-m-Y",
+      defaultDate: "19-08-08", // Initial date
+      clickOpens: false, // Disable default click behavior
+      onReady: function(selectedDates, dateStr) {
+          // Display initial date in the div
+          dateSpan.textContent = dateStr || "19-08-08";
+      },
+      onChange: function(selectedDates, dateStr) {
+          // Update the div with the selected date
+          dateSpan.textContent = dateStr;
+      },
+  });
+
+  // Add click event listener to open the Flatpickr calendar
+  datePickerDiv.addEventListener("click", function () {
+      flatpickrInstance.open();
+  });
+});
+
 
 // Dashboard::End
