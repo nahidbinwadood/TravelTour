@@ -13,6 +13,21 @@ document.getElementById("close--menu")?.addEventListener("click", function () {
   sidebar.classList.add("-translate-x-full");
 });
 
+
+document.addEventListener("click",(e)=>{
+  if( 
+    !sidebar.contains(e.target) && !openMenu.contains(e.target)
+  ){
+    openMenu.classList.remove("hidden");
+    closeMenu.classList.add("hidden");
+    sidebar.classList.add("-translate-x-full");
+  }
+})
+
+
+
+
+
 // Check In
 $(document).ready(function () {
   $("select").niceSelect();
