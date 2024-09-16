@@ -6,6 +6,7 @@
     <title>FinedBus Tour | My Wishlist</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/custom.css" />
+    <link rel="stylesheet" href="../assets/css/all.min.css" />
   </head>
   <body>
     <!-- Main::Start -->
@@ -14,10 +15,15 @@
 
       <section class="flex h-[100vh]">
         <!-- Sidebar ::Start -->
-        <section class="h-full w-[350px] p-8">
+        <section class="hidden h-full w-[350px] p-8 xl:inline-block">
           <!-- Logo::Start -->
           <div>
-            <img src="../assets/img/dashboard/dashboard-main/test.png" alt="" />
+            <a href="../index.html">
+              <img
+                src="../assets/img/dashboard/dashboard-main/test.png"
+                alt=""
+              />
+            </a>
           </div>
           <!-- Logo::End -->
 
@@ -31,11 +37,8 @@
           <div
             class="dashboard-sidebar-links flex flex-col gap-3 font-inter font-medium"
           >
-            <a
-              class="hover:shadow-[0px_6px_30px_0px_rgba(93, 105, 244, 0.40)] group inline-block rounded-[16px] px-6 py-3 transition duration-500 hover:bg-[#1CA8CB]"
-              href="dashboard.html"
-            >
-              <div class="flex items-center gap-3">
+            <a class="inline-block px-6 py-3" href="dashboard.html">
+              <div class="flex items-center gap-3 text-[#5A5C5F]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="28"
@@ -44,23 +47,18 @@
                   fill="none"
                 >
                   <path
-                    class="transtion duration-500 group-hover:fill-white"
                     d="M13.9987 8.0563L19.832 13.3063V22.418H17.4987V15.418H10.4987V22.418H8.16536V13.3063L13.9987 8.0563ZM13.9987 4.91797L2.33203 15.418H5.83203V24.7513H12.832V17.7513H15.1654V24.7513H22.1654V15.418H25.6654L13.9987 4.91797Z"
                     fill="#5A5C5F"
                   />
                 </svg>
-                <h4
-                  class="text-[#5A5C5F] transition duration-500 group-hover:text-white"
-                >
-                  My Profile
-                </h4>
+                <h4 cl>My Profile</h4>
               </div>
             </a>
             <a
               class="hover:shadow-[0px_6px_30px_0px_rgba(93, 105, 244, 0.40)] group inline-block rounded-[16px] px-6 py-3 transition duration-500 hover:bg-[#1CA8CB]"
               href="mybooking.html"
             >
-              <div class="flex items-center gap-3">
+              <div class="flex items-center gap-3 text-[#404A60]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -96,18 +94,16 @@
                     </clipPath>
                   </defs>
                 </svg>
-                <h4
-                  class="text-[#5A5C5F] transition duration-500 group-hover:text-white"
-                >
+                <h4 class="transition duration-500 group-hover:text-white">
                   My Booking
                 </h4>
               </div>
             </a>
             <a
-              class="active hover:shadow-[0px_6px_30px_0px_rgba(93, 105, 244, 0.40)] group inline-block rounded-[16px] px-6 py-3 text-white transition duration-500 hover:bg-[#1CA8CB]"
-              href="#"
+              class="active hover:shadow-[0px_6px_30px_0px_rgba(93, 105, 244, 0.40)] group inline-block rounded-[16px] px-6 py-3 transition duration-500 hover:bg-[#1CA8CB]"
+              href="wishlist.html"
             >
-              <div class="flex items-center gap-3">
+              <div class="flex items-center gap-3 text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -306,90 +302,127 @@
         <section class="w-full">
           <!-- Header::Start -->
           <header class="relative">
-            <div class="flex items-center justify-between px-6 py-8">
+            <div
+              class="flex flex-col-reverse gap-4 px-5 py-6 md:gap-6 xl:flex-row xl:items-center xl:justify-between xl:px-10 xl:py-8"
+            >
               <!-- Left Side ::Start -->
-              <form action="">
-                <div
-                  class="relative w-[1000px] rounded-[40px] bg-[#F7F7FE] px-20 py-4 font-inter"
-                >
-                  <input
-                    placeholder="Search"
-                    type="text"
-                    name="search"
-                    id=""
-                    class="w-full bg-transparent px-8 font-inter text-black/80 placeholder:text-black/80 focus:border-none focus:outline-none"
-                  />
-                  <button
-                    type="submit"
-                    class="absolute left-[8%] top-1/2 -translate-x-1/2 -translate-y-1/2"
+              <div
+                class="md:flex md:w-full md:items-center md:justify-center xl:block xl:w-fit"
+              >
+                <form action="" class="px-2 md:px-0">
+                  <div
+                    class="relative max-w-[400px] rounded-[40px] bg-[#f7f7ff] px-8 py-2 font-inter md:w-[600px] md:max-w-[600px] md:py-4 xl:w-[500px] xl:max-w-[500px] 2xl:md:w-[1000px] 2xl:max-w-[1000px] 2xl:px-20"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      name="search"
+                      id=""
+                      class="w-full bg-transparent px-8 font-inter text-sm text-black/80 placeholder:text-sm placeholder:text-black/80 focus:border-none focus:outline-none md:text-base md:placeholder:text-base"
+                    />
+                    <button
+                      type="submit"
+                      class="absolute left-[8%] top-[55%] -translate-x-1/2 -translate-y-1/2 md:top-1/2"
                     >
-                      <g clip-path="url(#clip0_9588_4707)">
-                        <path
-                          d="M0.189768 18.9119L5.35344 13.8308C4.00124 12.3616 3.17041 10.4187 3.17041 8.28068C3.17106 3.7071 6.93819 0 11.5855 0C16.2329 0 20 3.7071 20 8.28068C20 12.8543 16.2329 16.5614 11.5855 16.5614C9.57756 16.5614 7.73589 15.8668 6.28928 14.7122L1.10557 19.8134C0.852993 20.0622 0.442934 20.0622 0.190357 19.8134C0.13028 19.7547 0.0825291 19.6846 0.0499096 19.6072C0.017292 19.5299 0.000459671 19.4467 0.000404358 19.3628C0.000350952 19.2788 0.0170727 19.1957 0.0495911 19.1182C0.0821095 19.0408 0.129768 18.9707 0.189768 18.9119ZM11.5855 15.2873C15.5177 15.2873 18.7053 12.1504 18.7053 8.28068C18.7053 4.41101 15.5177 1.27403 11.5855 1.27403C7.65334 1.27403 4.46574 4.41101 4.46574 8.28068C4.46574 12.1504 7.65334 15.2873 11.5855 15.2873Z"
-                          fill="black"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_9588_4707">
-                          <rect
-                            width="20"
-                            height="20"
-                            fill="white"
-                            transform="matrix(-1 0 0 1 20 0)"
+                      <svg
+                        class="size-4 md:size-auto"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                      >
+                        <g clip-path="url(#clip0_9588_4707)">
+                          <path
+                            d="M0.189768 18.9119L5.35344 13.8308C4.00124 12.3616 3.17041 10.4187 3.17041 8.28068C3.17106 3.7071 6.93819 0 11.5855 0C16.2329 0 20 3.7071 20 8.28068C20 12.8543 16.2329 16.5614 11.5855 16.5614C9.57756 16.5614 7.73589 15.8668 6.28928 14.7122L1.10557 19.8134C0.852993 20.0622 0.442934 20.0622 0.190357 19.8134C0.13028 19.7547 0.0825291 19.6846 0.0499096 19.6072C0.017292 19.5299 0.000459671 19.4467 0.000404358 19.3628C0.000350952 19.2788 0.0170727 19.1957 0.0495911 19.1182C0.0821095 19.0408 0.129768 18.9707 0.189768 18.9119ZM11.5855 15.2873C15.5177 15.2873 18.7053 12.1504 18.7053 8.28068C18.7053 4.41101 15.5177 1.27403 11.5855 1.27403C7.65334 1.27403 4.46574 4.41101 4.46574 8.28068C4.46574 12.1504 7.65334 15.2873 11.5855 15.2873Z"
+                            fill="black"
                           />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </button>
-                </div>
-              </form>
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_9588_4707">
+                            <rect
+                              width="20"
+                              height="20"
+                              fill="white"
+                              transform="matrix(-1 0 0 1 20 0)"
+                            />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </button>
+                  </div>
+                </form>
+              </div>
               <!-- Left Side ::End -->
 
               <!-- Right Side::Start -->
-              <div class="flex items-center gap-5">
-                <div
-                  id="notification-btn"
-                  class="relative cursor-pointer rounded-full bg-[#5D69F40D] p-4"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M12 21.75C13.1 21.75 14 20.85 14 19.75H10C10 20.85 10.9 21.75 12 21.75ZM18 15.75V10.75C18 7.68 16.37 5.11 13.5 4.43V3.75C13.5 2.92 12.83 2.25 12 2.25C11.17 2.25 10.5 2.92 10.5 3.75V4.43C7.64 5.11 6 7.67 6 10.75V15.75L4 17.75V18.75H20V17.75L18 15.75ZM16 16.75H8V10.75C8 8.27 9.51 6.25 12 6.25C14.49 6.25 16 8.27 16 10.75V16.75Z"
-                      fill="#404A60"
-                    />
-                  </svg>
-                  <svg
-                    class="absolute right-[25%] top-[30%] -translate-x-1/2 -translate-y-1/2"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="5"
-                    height="5"
-                    viewBox="0 0 4 4"
-                    fill="none"
-                  >
-                    <circle cx="2" cy="2" r="2" fill="#00998B" />
-                  </svg>
+              <div
+                class="flex flex-row-reverse justify-between md:items-center xl:flex-row"
+              >
+                <div>
+                  <div class="flex gap-3">
+                    <div>
+                      <div class="flex items-center gap-5 2xl:pr-6">
+                        <div
+                          id="notification-btn"
+                          class="relative cursor-pointer rounded-full bg-[#5D69F40D] p-3 md:p-4"
+                        >
+                          <svg
+                            class="size-5 md:size-auto"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                          >
+                            <path
+                              d="M12 21.75C13.1 21.75 14 20.85 14 19.75H10C10 20.85 10.9 21.75 12 21.75ZM18 15.75V10.75C18 7.68 16.37 5.11 13.5 4.43V3.75C13.5 2.92 12.83 2.25 12 2.25C11.17 2.25 10.5 2.92 10.5 3.75V4.43C7.64 5.11 6 7.67 6 10.75V15.75L4 17.75V18.75H20V17.75L18 15.75ZM16 16.75H8V10.75C8 8.27 9.51 6.25 12 6.25C14.49 6.25 16 8.27 16 10.75V16.75Z"
+                              fill="#404A60"
+                            />
+                          </svg>
+                          <svg
+                            class="absolute right-[10%] top-[30%] -translate-x-1/2 -translate-y-1/2 2xl:right-[25%] 2xl:top-[30%]"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="5"
+                            height="5"
+                            viewBox="0 0 4 4"
+                            fill="none"
+                          >
+                            <circle cx="2" cy="2" r="2" fill="#00998B" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Hamburger Icons::Start -->
+                    <div class="mt-0 md:mt-2">
+                      <div
+                        id="hamburger"
+                        class="rounded-md bg-primary px-3 py-[6px] text-white xl:hidden"
+                      >
+                        <i class="fa-solid fa-bars"></i>
+                      </div>
+                      <div
+                        id="close--menu"
+                        class="hidden rounded-md bg-primary px-[13px] py-[6px] text-white"
+                      >
+                        <i class="fa-solid fa-xmark"></i>
+                      </div>
+                    </div>
+                    <!-- Hamburger Icons::End -->
+                  </div>
                 </div>
-                <div class="flex items-center gap-3">
+                <div
+                  class="flex flex-col gap-3 md:flex-row md:items-center md:gap-5"
+                >
                   <div>
                     <img
-                      class="size-12 rounded-full"
+                      class="size-10 rounded-full md:size-12"
                       src="../assets/img/dashboard/dashboard-main/profile-photo.png"
                       alt=""
                     />
                   </div>
-                  <div class="font-inter">
+                  <div class="font-inter text-sm md:text-base">
                     <h4 class="font-medium text-[#404A60]">David Lee</h4>
                     <p class="text-[#404A60B2]">davidlee21@gmail.com</p>
                   </div>
@@ -401,135 +434,168 @@
             <!-- Notifications::Start -->
             <div
               id="notification-container"
-              class="absolute right-[5%] -z-10 w-[550px] translate-y-3 rounded-xl bg-white px-8 py-6 font-inter opacity-0 shadow-[-7px_14px_9px_7px_rgba(0,0,0,0.15)] transition-all"
+              class="absolute right-[2%] top-[36%] -z-10 mx-5 translate-y-3 rounded-xl bg-[#f7f7ff] p-4 font-inter opacity-0 shadow-[-7px_14px_9px_7px_rgba(0,0,0,0.15)] transition-all md:top-[70%] lg:bg-white lg:px-8 lg:py-6 2xl:right-[5%] 2xl:w-[550px]"
             >
               <!-- Top Part::Start -->
-              <div class="flex items-center justify-between pb-5 font-inter">
-                <h5>Notifications</h5>
-                <a href="#">Mark All As Read</a>
+              <div class="flex items-center justify-between font-inter md:pb-5">
+                <h5 class="text-sm md:text-base">Notifications</h5>
+                <a href="#" class="text-sm md:text-base">Mark All As Read</a>
               </div>
               <!-- Top Part::End -->
 
               <!-- Notification::Start -->
               <div
-                class="custom_scrollbar flex h-fit max-h-[500px] flex-col gap-5 overflow-y-auto py-5"
+                class="custom_scrollbar flex h-fit max-h-[500px] flex-col gap-5 overflow-y-auto py-5 pl-2 pr-5"
               >
                 <div
-                  class="flex items-center gap-8 border-b border-black/20 pb-5"
+                  class="flex items-center gap-4 border-b border-black/20 pb-3 md:pb-5 lg:gap-8"
                 >
-                  <div class="size-12 overflow-hidden rounded-full">
-                    <img
-                      class="h-full w-full object-cover"
-                      src="../assets/img/dashboard/dashboard-main/profile-photo.png"
-                      alt=""
-                    />
+                  <div>
+                    <div class="size-8 overflow-hidden rounded-full md:size-12">
+                      <img
+                        class="h-full w-full object-cover"
+                        src="../assets/img/dashboard/dashboard-main/profile-photo.png"
+                        alt=""
+                      />
+                    </div>
                   </div>
-                  <div class="flex flex-col gap-2">
+                  <div class="flex flex-col gap-2 text-xs md:text-base">
                     <a href="#">New Tour Added. Please check your bookings.</a>
                     <p class="text-[10px]">10 Minutes ago</p>
                   </div>
                 </div>
                 <div
-                  class="flex items-center gap-8 border-b border-black/20 pb-5"
+                  class="flex items-center gap-4 border-b border-black/20 pb-3 md:pb-5 lg:gap-8"
                 >
-                  <div class="size-12 overflow-hidden rounded-full">
-                    <img
-                      class="h-full w-full object-cover"
-                      src="../assets/img/dashboard/dashboard-main/profile-photo.png"
-                      alt=""
-                    />
+                  <div>
+                    <div class="size-8 overflow-hidden rounded-full md:size-12">
+                      <img
+                        class="h-full w-full object-cover"
+                        src="../assets/img/dashboard/dashboard-main/profile-photo.png"
+                        alt=""
+                      />
+                    </div>
                   </div>
-                  <div class="flex flex-col gap-2">
+                  <div class="flex flex-col gap-2 text-xs md:text-base">
                     <a href="#">New Tour Added. Please check your bookings.</a>
                     <p class="text-[10px]">10 Minutes ago</p>
                   </div>
                 </div>
                 <div
-                  class="flex items-center gap-8 border-b border-black/20 pb-5"
+                  class="flex items-center gap-4 border-b border-black/20 pb-3 md:pb-5 lg:gap-8"
                 >
-                  <div class="size-12 overflow-hidden rounded-full">
-                    <img
-                      class="h-full w-full object-cover"
-                      src="../assets/img/dashboard/dashboard-main/profile-photo.png"
-                      alt=""
-                    />
+                  <div>
+                    <div class="size-8 overflow-hidden rounded-full md:size-12">
+                      <img
+                        class="h-full w-full object-cover"
+                        src="../assets/img/dashboard/dashboard-main/profile-photo.png"
+                        alt=""
+                      />
+                    </div>
                   </div>
-                  <div class="flex flex-col gap-2">
+                  <div class="flex flex-col gap-2 text-xs md:text-base">
                     <a href="#">New Tour Added. Please check your bookings.</a>
                     <p class="text-[10px]">10 Minutes ago</p>
                   </div>
                 </div>
                 <div
-                  class="flex items-center gap-8 border-b border-black/20 pb-5"
+                  class="flex items-center gap-4 border-b border-black/20 pb-3 md:pb-5 lg:gap-8"
                 >
-                  <div class="size-12 overflow-hidden rounded-full">
-                    <img
-                      class="h-full w-full object-cover"
-                      src="../assets/img/dashboard/dashboard-main/profile-photo.png"
-                      alt=""
-                    />
+                  <div>
+                    <div class="size-8 overflow-hidden rounded-full md:size-12">
+                      <img
+                        class="h-full w-full object-cover"
+                        src="../assets/img/dashboard/dashboard-main/profile-photo.png"
+                        alt=""
+                      />
+                    </div>
                   </div>
-                  <div class="flex flex-col gap-2">
+                  <div class="flex flex-col gap-2 text-xs md:text-base">
                     <a href="#">New Tour Added. Please check your bookings.</a>
                     <p class="text-[10px]">10 Minutes ago</p>
                   </div>
                 </div>
                 <div
-                  class="flex items-center gap-8 border-b border-black/20 pb-5"
+                  class="flex items-center gap-4 border-b border-black/20 pb-3 md:pb-5 lg:gap-8"
                 >
-                  <div class="size-12 overflow-hidden rounded-full">
-                    <img
-                      class="h-full w-full object-cover"
-                      src="../assets/img/dashboard/dashboard-main/profile-photo.png"
-                      alt=""
-                    />
+                  <div>
+                    <div class="size-8 overflow-hidden rounded-full md:size-12">
+                      <img
+                        class="h-full w-full object-cover"
+                        src="../assets/img/dashboard/dashboard-main/profile-photo.png"
+                        alt=""
+                      />
+                    </div>
                   </div>
-                  <div class="flex flex-col gap-2">
+                  <div class="flex flex-col gap-2 text-xs md:text-base">
                     <a href="#">New Tour Added. Please check your bookings.</a>
                     <p class="text-[10px]">10 Minutes ago</p>
                   </div>
                 </div>
                 <div
-                  class="flex items-center gap-8 border-b border-black/20 pb-5"
+                  class="flex items-center gap-4 border-b border-black/20 pb-3 md:pb-5 lg:gap-8"
                 >
-                  <div class="size-12 overflow-hidden rounded-full">
-                    <img
-                      class="h-full w-full object-cover"
-                      src="../assets/img/dashboard/dashboard-main/profile-photo.png"
-                      alt=""
-                    />
+                  <div>
+                    <div class="size-8 overflow-hidden rounded-full md:size-12">
+                      <img
+                        class="h-full w-full object-cover"
+                        src="../assets/img/dashboard/dashboard-main/profile-photo.png"
+                        alt=""
+                      />
+                    </div>
                   </div>
-                  <div class="flex flex-col gap-2">
+                  <div class="flex flex-col gap-2 text-xs md:text-base">
                     <a href="#">New Tour Added. Please check your bookings.</a>
                     <p class="text-[10px]">10 Minutes ago</p>
                   </div>
                 </div>
                 <div
-                  class="flex items-center gap-8 border-b border-black/20 pb-5"
+                  class="flex items-center gap-4 border-b border-black/20 pb-3 md:pb-5 lg:gap-8"
                 >
-                  <div class="size-12 overflow-hidden rounded-full">
-                    <img
-                      class="h-full w-full object-cover"
-                      src="../assets/img/dashboard/dashboard-main/profile-photo.png"
-                      alt=""
-                    />
+                  <div>
+                    <div class="size-8 overflow-hidden rounded-full md:size-12">
+                      <img
+                        class="h-full w-full object-cover"
+                        src="../assets/img/dashboard/dashboard-main/profile-photo.png"
+                        alt=""
+                      />
+                    </div>
                   </div>
-                  <div class="flex flex-col gap-2">
+                  <div class="flex flex-col gap-2 text-xs md:text-base">
                     <a href="#">New Tour Added. Please check your bookings.</a>
                     <p class="text-[10px]">10 Minutes ago</p>
                   </div>
                 </div>
                 <div
-                  class="flex items-center gap-8 border-b border-black/20 pb-5"
+                  class="flex items-center gap-4 border-b border-black/20 pb-3 md:pb-5 lg:gap-8"
                 >
-                  <div class="size-12 overflow-hidden rounded-full">
-                    <img
-                      class="h-full w-full object-cover"
-                      src="../assets/img/dashboard/dashboard-main/profile-photo.png"
-                      alt=""
-                    />
+                  <div>
+                    <div class="size-8 overflow-hidden rounded-full md:size-12">
+                      <img
+                        class="h-full w-full object-cover"
+                        src="../assets/img/dashboard/dashboard-main/profile-photo.png"
+                        alt=""
+                      />
+                    </div>
                   </div>
-                  <div class="flex flex-col gap-2">
+                  <div class="flex flex-col gap-2 text-xs md:text-base">
+                    <a href="#">New Tour Added. Please check your bookings.</a>
+                    <p class="text-[10px]">10 Minutes ago</p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-4 border-b border-black/20 pb-3 md:pb-5 lg:gap-8"
+                >
+                  <div>
+                    <div class="size-8 overflow-hidden rounded-full md:size-12">
+                      <img
+                        class="h-full w-full object-cover"
+                        src="../assets/img/dashboard/dashboard-main/profile-photo.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-2 text-xs md:text-base">
                     <a href="#">New Tour Added. Please check your bookings.</a>
                     <p class="text-[10px]">10 Minutes ago</p>
                   </div>
@@ -541,511 +607,870 @@
           </header>
           <!-- Header::End -->
 
+          <!-- Responsive Sidebar::Start -->
+          <div
+            id="dashboard-sidebar"
+            class="fixed inset-0 w-[250px] max-w-[250px] -translate-x-full bg-[#f7f7ff] p-5 pb-5 pl-5 pt-4 transition-all duration-500 lg:w-[300px]"
+          >
+            <div class="mt-2">
+              <div class="w-full">
+                <a href="../index.html">
+                  <img
+                    class="mx-auto"
+                    src="../assets/img/dashboard/dashboard-main/test.png"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div
+                class="dashboard-sidebar-links flex flex-col gap-3 pt-4 font-inter md:gap-4"
+              >
+                <a
+                  class="inline-block rounded px-4 py-2 text-sm md:px-6 md:py-3 md:text-base"
+                  href="dashboard.html"
+                >
+                  <div class="flex items-center gap-2 text-[#5A5C5F] md:gap-3">
+                    <svg
+                      class="size-6 md:size-auto"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="28"
+                      height="29"
+                      viewBox="0 0 28 29"
+                      fill="none"
+                    >
+                      <path
+                        d="M13.9987 8.0563L19.832 13.3063V22.418H17.4987V15.418H10.4987V22.418H8.16536V13.3063L13.9987 8.0563ZM13.9987 4.91797L2.33203 15.418H5.83203V24.7513H12.832V17.7513H15.1654V24.7513H22.1654V15.418H25.6654L13.9987 4.91797Z"
+                        fill="#5A5C5F"
+                      />
+                    </svg>
+                    <h4 cl>My Profile</h4>
+                  </div>
+                </a>
+                <a
+                  class="hover:shadow-[0px_6px_30px_0px_rgba(93, 105, 244, 0.40)] group inline-block rounded-[16px] px-4 py-2 text-sm transition duration-500 hover:bg-[#1CA8CB] md:px-6 md:py-3 md:text-base"
+                  href="mybooking.html"
+                >
+                  <div class="flex items-center gap-2 text-[#404A60] md:gap-3">
+                    <svg
+                      class="size-6 md:size-auto"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="21"
+                      viewBox="0 0 20 21"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_9690_4237)">
+                        <path
+                          class="transtion duration-500 group-hover:fill-white"
+                          d="M18.5207 16.9174H5.42923C5.26826 16.9174 5.19929 16.7059 5.32535 16.6088L7.14775 15.2081H17.5605C18.3009 15.2081 18.9149 14.5996 18.9293 13.8604L19.046 7.855C19.0593 7.17039 18.558 6.57594 17.8798 6.47458C17.5536 6.42578 17.2481 6.65008 17.1992 6.97677C17.1504 7.30346 17.3758 7.60745 17.7028 7.65634C17.7877 7.66903 17.8506 7.74287 17.8489 7.82842L17.7322 13.8372C17.7304 13.9295 17.6534 14.0117 17.5606 14.0117H7.41974L5.53064 5.84403L6.48946 5.98381C6.81636 6.03252 7.12117 5.80566 7.1701 5.47897C7.21898 5.15228 6.99357 4.84696 6.66654 4.79807L5.23036 4.583L4.68134 2.44883C4.61343 2.18428 4.37482 2.00391 4.10146 2.00391H1.77055C1.43993 2.00391 1.17188 2.27184 1.17188 2.60216C1.17188 2.93248 1.43989 3.20041 1.77055 3.20041H3.63696L6.27383 14.3586L4.59408 15.6526C3.58068 16.4335 4.15065 18.1139 5.42919 18.1139H7.00079C6.93122 18.2848 6.89302 18.5028 6.89302 18.7167C6.89302 19.7063 7.70386 20.5081 8.70055 20.5081C9.69723 20.5081 10.5081 19.708 10.5081 18.7184C10.5081 18.5044 10.4699 18.2848 10.4003 18.1139H13.67C13.6004 18.2848 13.5622 18.5028 13.5622 18.7167C13.5622 19.7063 14.373 20.5081 15.3697 20.5081C16.3664 20.5081 17.1773 19.708 17.1773 18.7184C17.1773 18.5044 17.1391 18.2848 17.0695 18.1139H18.5208C18.8515 18.1139 19.1195 17.846 19.1195 17.5157C19.1195 17.1853 18.8514 16.9174 18.5207 16.9174ZM8.70055 19.3085C8.36408 19.3085 8.09038 19.04 8.09038 18.7101C8.09038 18.3801 8.36412 18.1117 8.70055 18.1117C9.03702 18.1117 9.31076 18.3801 9.31076 18.7101C9.31076 19.04 9.03702 19.3085 8.70055 19.3085ZM15.3697 19.3085C15.0332 19.3085 14.7595 19.04 14.7595 18.7101C14.7595 18.3801 15.0332 18.1117 15.3697 18.1117C15.7062 18.1117 15.9799 18.3801 15.9799 18.7101C15.9799 19.04 15.7061 19.3085 15.3697 19.3085Z"
+                          fill="#5A5C5F"
+                        />
+                        <path
+                          class="transtion duration-500 group-hover:fill-white"
+                          d="M11.9731 9.50332C9.57555 9.50332 7.625 7.55837 7.625 5.16768C7.625 2.77698 9.57555 0.832031 11.9731 0.832031C14.3706 0.832031 16.3212 2.77698 16.3212 5.16768C16.3212 7.55837 14.3706 9.50332 11.9731 9.50332ZM11.9731 2.02827C10.2358 2.02827 8.82235 3.4366 8.82235 5.16768C8.82235 6.89875 10.2358 8.30708 11.9731 8.30708C13.7104 8.30708 15.1238 6.89875 15.1238 5.16768C15.1238 3.4366 13.7104 2.02827 11.9731 2.02827Z"
+                          fill="#5A5C5F"
+                        />
+                        <path
+                          class="transtion duration-500 group-hover:fill-white"
+                          d="M10.9109 6.68833L9.9493 5.54717C9.73637 5.2945 9.76876 4.91717 10.0217 4.70441C10.2746 4.49165 10.6522 4.524 10.8652 4.77676L11.3936 5.40376L13.0374 3.65713C13.2639 3.41651 13.6428 3.40484 13.8836 3.63111C14.1246 3.85737 14.1362 4.23594 13.9097 4.47656L11.805 6.71286C11.6171 6.91076 11.136 6.94994 10.9109 6.68833Z"
+                          fill="#5A5C5F"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_9690_4237">
+                          <rect
+                            width="20"
+                            height="20"
+                            fill="white"
+                            transform="translate(0 0.832031)"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <h4 class="transition duration-500 group-hover:text-white">
+                      My Booking
+                    </h4>
+                  </div>
+                </a>
+                <a
+                  class="active hover:shadow-[0px_6px_30px_0px_rgba(93, 105, 244, 0.40)] group inline-block rounded-[16px] px-4 py-2 text-sm transition duration-500 hover:bg-[#1CA8CB] md:px-6 md:py-3 md:text-base"
+                  href="wishlist.html"
+                >
+                  <div class="flex items-center gap-2 text-[#fff] md:gap-3">
+                    <svg
+                      class="size-6 md:size-auto"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="21"
+                      viewBox="0 0 20 21"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_9588_4769)">
+                        <path
+                          class="transtion duration-500 group-hover:fill-white"
+                          d="M9.99998 18.6256C9.71521 18.6256 9.44076 18.5224 9.22682 18.335C8.41885 17.6286 7.63991 16.9647 6.95264 16.379L6.94913 16.376C4.93421 14.6589 3.19425 13.1761 1.98363 11.7153C0.63035 10.0824 0 8.53405 0 6.84261C0 5.19925 0.563515 3.68312 1.5866 2.57336C2.62191 1.45047 4.04249 0.832031 5.58714 0.832031C6.74163 0.832031 7.79889 1.19703 8.72955 1.91679C9.1992 2.28008 9.6249 2.72472 9.99998 3.24335C10.3752 2.72472 10.8008 2.28008 11.2706 1.91679C12.2012 1.19703 13.2585 0.832031 14.413 0.832031C15.9575 0.832031 17.3782 1.45047 18.4135 2.57336C19.4366 3.68312 20 5.19925 20 6.84261C20 8.53401 19.3698 10.0824 18.0165 11.7152C16.8058 13.1761 15.066 14.6588 13.0514 16.3757C12.3629 16.9622 11.5828 17.6272 10.773 18.3354C10.559 18.5225 10.2843 18.6257 9.99998 18.6256ZM5.58714 2.00359C4.37362 2.00359 3.25882 2.48793 2.44781 3.36742C1.62476 4.26023 1.1714 5.49437 1.1714 6.84261C1.1714 8.26518 1.70011 9.53744 2.88558 10.9678C4.03136 12.3504 5.73561 13.8027 7.70889 15.4844L7.71252 15.4875C8.40237 16.0754 9.1844 16.7419 9.9983 17.4536C10.8171 16.7405 11.6003 16.0729 12.2915 15.4841C14.2647 13.8024 15.9688 12.3504 17.1145 10.9678C18.2998 9.53744 18.8286 8.26518 18.8286 6.84261C18.8286 5.49433 18.3752 4.26019 17.5522 3.36742C16.7413 2.48793 15.6264 2.00359 14.413 2.00359C13.524 2.00359 12.7078 2.28621 11.9871 2.84343C11.3449 3.34027 10.8975 3.96831 10.6352 4.40777C10.5003 4.63374 10.2629 4.76863 9.99998 4.76863C9.73705 4.76863 9.49963 4.63374 9.36475 4.40777C9.10264 3.96831 8.65522 3.34027 8.0128 2.84343C7.29217 2.28621 6.47596 2.00359 5.58714 2.00359Z"
+                          fill="#fff"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_9588_4769">
+                          <rect
+                            width="20"
+                            height="20"
+                            fill="white"
+                            transform="translate(0 0.832031)"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <h4
+                      class="text-white transition duration-500 group-hover:text-white"
+                    >
+                      Wishlist
+                    </h4>
+                  </div>
+                </a>
+                <a
+                  class="hover:shadow-[0px_6px_30px_0px_rgba(93, 105, 244, 0.40)] group inline-block rounded-[16px] px-4 py-2 text-sm transition duration-500 hover:bg-[#1CA8CB] md:px-6 md:py-3 md:text-base"
+                  href="my-reviews.html"
+                >
+                  <div class="flex items-center gap-2 text-[#404A60] md:gap-3">
+                    <svg
+                      class="size-6 md:size-auto"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        class="transition duration-500 group-hover:stroke-white"
+                        d="M10.0449 2.08203L10.0446 2.58203C10.1869 2.58213 10.3262 2.62329 10.4458 2.70056C10.5653 2.77783 10.66 2.88793 10.7186 3.01768L10.7185 3.01771L10.722 3.0252L12.7352 7.29645L12.8486 7.53713L13.1116 7.5775L17.6012 8.26652C17.6015 8.26657 17.6019 8.26662 17.6022 8.26667C17.7399 8.28863 17.869 8.34818 17.9751 8.43876C18.0814 8.52956 18.1606 8.64799 18.2038 8.78098L18.2153 8.81641L18.2158 8.81737C18.2557 8.94989 18.2609 9.09064 18.2306 9.22602C18.1981 9.37087 18.1263 9.50394 18.0231 9.61059C18.023 9.61071 18.0229 9.61082 18.0228 9.61094L14.7545 12.9742L14.5792 13.1546L14.6195 13.4028L15.392 18.1603L15.3929 18.1654C15.4185 18.3131 15.4015 18.465 15.3441 18.6035C15.2867 18.7419 15.1911 18.8612 15.0685 18.9475L15.0666 18.9488C14.9555 19.0277 14.8244 19.0735 14.6884 19.0807C14.5524 19.088 14.4172 19.0564 14.2984 18.9898L10.2769 16.7586L10.0337 16.6236L9.79074 16.7591L5.79352 18.989C5.67411 19.0555 5.53834 19.0869 5.40184 19.0797C5.26535 19.0724 5.13368 19.0267 5.02201 18.9479C4.77349 18.7732 4.64658 18.4763 4.69786 18.1597L5.47036 13.4022L5.51067 13.1539L5.33541 12.9736L2.06712 9.61031C1.96364 9.50347 1.89179 9.37033 1.85933 9.2254C1.82686 9.0804 1.83509 8.92925 1.88311 8.78863C1.9287 8.64899 2.00798 8.5305 2.1144 8.43964C2.22053 8.34903 2.34954 8.2894 2.4873 8.26727L6.97767 7.57812L7.24068 7.53776L7.35412 7.29705L9.36787 3.02393L9.36844 3.02271C9.49845 2.74489 9.75805 2.58203 10.0449 2.58203V2.08203Z"
+                        stroke="#5A5C5F"
+                      />
+                    </svg>
+
+                    <h4 class="transition duration-500 group-hover:text-white">
+                      My Reviews
+                    </h4>
+                  </div>
+                </a>
+                <a
+                  class="hover:shadow-[0px_6px_30px_0px_rgba(93, 105, 244, 0.40)] group inline-block rounded-[16px] px-4 py-2 text-sm transition duration-500 hover:bg-[#1CA8CB] md:px-6 md:py-3 md:text-base"
+                  href="payment.html"
+                >
+                  <div class="flex items-center gap-2 text-[#404A60] md:gap-3">
+                    <svg
+                      class="size-6 md:size-auto"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="21"
+                      viewBox="0 0 20 21"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_9588_6093)">
+                        <path
+                          class="transtion duration-500 group-hover:fill-white"
+                          d="M19.6538 19.1079H18.9642V18.4182C18.9642 18.3268 18.9278 18.2391 18.8632 18.1744C18.7985 18.1097 18.7108 18.0734 18.6193 18.0734C18.5279 18.0734 18.4402 18.1097 18.3755 18.1744C18.3108 18.2391 18.2745 18.3268 18.2745 18.4182V19.1079H17.5849C17.4934 19.1079 17.4057 19.1442 17.341 19.2089C17.2764 19.2736 17.24 19.3613 17.24 19.4527C17.24 19.5442 17.2764 19.6319 17.341 19.6966C17.4057 19.7612 17.4934 19.7975 17.5849 19.7975H18.2745V20.4872C18.2745 20.5787 18.3108 20.6664 18.3755 20.731C18.4402 20.7957 18.5279 20.832 18.6193 20.832C18.7108 20.832 18.7985 20.7957 18.8632 20.731C18.9278 20.6664 18.9642 20.5787 18.9642 20.4872V19.7975H19.6538C19.7453 19.7975 19.833 19.7612 19.8977 19.6966C19.9623 19.6319 19.9987 19.5442 19.9987 19.4527C19.9987 19.3613 19.9623 19.2736 19.8977 19.2089C19.833 19.1442 19.7453 19.1079 19.6538 19.1079ZM17.5849 2.55617H18.2745V3.24582C18.2745 3.33728 18.3108 3.42499 18.3755 3.48965C18.4402 3.55432 18.5279 3.59065 18.6193 3.59065C18.7108 3.59065 18.7985 3.55432 18.8632 3.48965C18.9278 3.42499 18.9642 3.33728 18.9642 3.24582V2.55617H19.6538C19.7453 2.55617 19.833 2.51984 19.8977 2.45517C19.9623 2.3905 19.9987 2.3028 19.9987 2.21134C19.9987 2.11989 19.9623 2.03218 19.8977 1.96751C19.833 1.90284 19.7453 1.86651 19.6538 1.86651H18.9642V1.17686C18.9642 1.0854 18.9278 0.997697 18.8632 0.933029C18.7985 0.868361 18.7108 0.832031 18.6193 0.832031C18.5279 0.832031 18.4402 0.868361 18.3755 0.933029C18.3108 0.997697 18.2745 1.0854 18.2745 1.17686V1.86651H17.5849C17.4934 1.86651 17.4057 1.90284 17.341 1.96751C17.2764 2.03218 17.24 2.11989 17.24 2.21134C17.24 2.3028 17.2764 2.3905 17.341 2.45517C17.4057 2.51984 17.4934 2.55617 17.5849 2.55617ZM18.9642 5.65962H11.378C11.2865 5.65962 11.1988 5.69595 11.1341 5.76062C11.0695 5.82528 11.0331 5.91299 11.0331 6.00445C11.0331 6.0959 11.0695 6.18361 11.1341 6.24827C11.1988 6.31294 11.2865 6.34927 11.378 6.34927H18.9642C19.1543 6.34927 19.309 6.50401 19.309 6.6941V7.72858H11.0158C10.9244 7.72858 10.8366 7.76491 10.772 7.82958C10.7073 7.89425 10.671 7.98196 10.671 8.07341C10.671 8.16486 10.7073 8.25257 10.772 8.31724C10.8366 8.38191 10.9244 8.41824 11.0158 8.41824H19.309V9.45272H10.0732C9.98177 9.45272 9.89406 9.48905 9.82939 9.55372C9.76472 9.61839 9.72839 9.70609 9.72839 9.79755C9.72839 9.889 9.76472 9.97671 9.82939 10.0414C9.89406 10.106 9.98177 10.1424 10.0732 10.1424H19.309V16.0044C19.309 16.1945 19.1543 16.3493 18.9642 16.3493H8.27452C8.18306 16.3493 8.09535 16.3856 8.03068 16.4503C7.96602 16.5149 7.92969 16.6026 7.92969 16.6941C7.92969 16.7856 7.96602 16.8733 8.03068 16.9379C8.09535 17.0026 8.18306 17.0389 8.27452 17.0389H18.9642C19.5346 17.0389 19.9987 16.5749 19.9987 16.0044V6.6941C19.9987 6.12367 19.5346 5.65962 18.9642 5.65962Z"
+                          fill="#5A5C5F"
+                        />
+                        <path
+                          class="transtion duration-500 group-hover:fill-white"
+                          d="M17.931 15.3148C18.0225 15.3148 18.1102 15.2785 18.1749 15.2138C18.2395 15.1491 18.2759 15.0614 18.2759 14.97V11.5217C18.2759 11.4302 18.2395 11.3425 18.1749 11.2779C18.1102 11.2132 18.0225 11.1769 17.931 11.1769H14.4828C14.3913 11.1769 14.3036 11.2132 14.2389 11.2779C14.1743 11.3425 14.1379 11.4302 14.1379 11.5217V14.97C14.1379 15.0614 14.1743 15.1491 14.2389 15.2138C14.3036 15.2785 14.3913 15.3148 14.4828 15.3148H17.931ZM16.5517 14.6251V13.5907H17.5862V14.6251H16.5517ZM17.5862 12.901H16.5517V11.8665H17.5862V12.901ZM14.8276 11.8665H15.8621V14.6251H14.8276V11.8665ZM11.3793 4.96996H16.5517C16.6432 4.96996 16.7309 4.93363 16.7956 4.86897C16.8602 4.8043 16.8966 4.71659 16.8966 4.62514C16.8966 4.53368 16.8602 4.44597 16.7956 4.38131C16.7309 4.31664 16.6432 4.28031 16.5517 4.28031H11.3793C11.2879 4.28031 11.2001 4.31664 11.1355 4.38131C11.0708 4.44597 11.0345 4.53368 11.0345 4.62514C11.0345 4.71659 11.0708 4.8043 11.1355 4.86897C11.2001 4.93363 11.2879 4.96996 11.3793 4.96996ZM10.7881 17.7286H4.58125C4.4898 17.7286 4.40209 17.7649 4.33742 17.8296C4.27275 17.8942 4.23642 17.982 4.23642 18.0734C4.23642 18.1649 4.27275 18.2526 4.33742 18.3172C4.40209 18.3819 4.4898 18.4182 4.58125 18.4182H10.7881C10.8796 18.4182 10.9673 18.3819 11.032 18.3172C11.0966 18.2526 11.133 18.1649 11.133 18.0734C11.133 17.982 11.0966 17.8942 11.032 17.8296C10.9673 17.7649 10.8796 17.7286 10.7881 17.7286ZM10.3448 6.00445C10.3448 4.80496 9.92491 3.63591 9.16233 2.71276C9.04147 2.56578 8.82427 2.54552 8.67694 2.66647C8.60644 2.7247 8.56195 2.80855 8.55326 2.89957C8.54457 2.99059 8.57239 3.08134 8.6306 3.15186C9.29138 3.95186 9.65517 4.96492 9.65517 6.00445C9.65517 8.47634 7.64431 10.4872 5.17241 10.4872C2.70052 10.4872 0.689655 8.47634 0.689655 6.00445C0.689655 3.53255 2.70052 1.52169 5.17241 1.52169C6.13297 1.52169 7.04892 1.82104 7.82125 2.38746C7.97483 2.50026 8.19052 2.46677 8.30315 2.31337C8.32993 2.27686 8.34926 2.23544 8.36003 2.19146C8.3708 2.14749 8.37281 2.10182 8.36593 2.05707C8.35905 2.01232 8.34342 1.96936 8.31993 1.93065C8.29645 1.89195 8.26556 1.85824 8.22905 1.83147C7.33767 1.17772 6.28078 0.832031 5.17241 0.832031C2.32034 0.832031 0 3.15238 0 6.00445C0 8.85651 2.32034 11.1769 5.17241 11.1769C8.02448 11.1769 10.3448 8.85651 10.3448 6.00445Z"
+                          fill="#5A5C5F"
+                        />
+                        <path
+                          class="transtion duration-500 group-hover:fill-white"
+                          d="M5.17161 8.85786C5.26306 8.85786 5.35077 8.82153 5.41544 8.75686C5.4801 8.69219 5.51643 8.60449 5.51643 8.51303V8.21178C6.13553 8.11989 6.61355 7.58967 6.61355 6.94545C6.61355 6.23678 6.03704 5.66027 5.32837 5.66027H5.01484C4.68652 5.66027 4.41932 5.39303 4.41932 5.06476C4.41932 4.73627 4.68656 4.46907 5.01484 4.46907H5.79863C5.89008 4.46907 5.97779 4.43274 6.04246 4.36807C6.10713 4.3034 6.14346 4.21569 6.14346 4.12424C6.14346 4.03279 6.10713 3.94508 6.04246 3.88041C5.97779 3.81574 5.89008 3.77941 5.79863 3.77941H5.51643V3.49717C5.51643 3.40572 5.4801 3.31801 5.41544 3.25334C5.35077 3.18867 5.26306 3.15234 5.17161 3.15234C5.08015 3.15234 4.99244 3.18867 4.92778 3.25334C4.86311 3.31801 4.82678 3.40572 4.82678 3.49717V3.79842C4.20768 3.89032 3.72967 4.4204 3.72967 5.06476C3.72967 5.77342 4.30617 6.34993 5.01484 6.34993H5.32837C5.65669 6.34993 5.92389 6.61717 5.92389 6.94545C5.92389 7.27394 5.65665 7.54114 5.32837 7.54114H4.38786C4.2964 7.54114 4.20869 7.57747 4.14403 7.64213C4.07936 7.7068 4.04303 7.79451 4.04303 7.88596C4.04303 7.97742 4.07936 8.06513 4.14403 8.12979C4.20869 8.19446 4.2964 8.23079 4.38786 8.23079H4.82678V8.51303C4.82678 8.60449 4.86311 8.69219 4.92778 8.75686C4.99244 8.82153 5.08015 8.85786 5.17161 8.85786ZM7.28992 16.6948C7.28992 16.6033 7.25359 16.5156 7.18893 16.4509C7.12426 16.3863 7.03655 16.3499 6.9451 16.3499H3.7923C3.60221 16.3499 3.44747 16.1952 3.44747 16.0051V11.8498C3.44747 11.7584 3.41114 11.6707 3.34647 11.606C3.2818 11.5413 3.19409 11.505 3.10264 11.505C3.01119 11.505 2.92348 11.5413 2.85881 11.606C2.79414 11.6707 2.75781 11.7584 2.75781 11.8498V16.0051C2.75781 16.5755 3.22186 17.0396 3.7923 17.0396H6.9451C7.03655 17.0396 7.12426 17.0033 7.18893 16.9386C7.25359 16.8739 7.28992 16.7862 7.28992 16.6948Z"
+                          fill="#5A5C5F"
+                        />
+                        <path
+                          class="transtion duration-500 group-hover:fill-white"
+                          d="M6.55226 11.8672C5.60162 11.8672 4.82812 12.6407 4.82812 13.5913C4.82812 14.542 5.60162 15.3155 6.55226 15.3155C6.92688 15.3155 7.28942 15.1904 7.58675 14.9644C7.88407 15.1904 8.24662 15.3155 8.62123 15.3155C9.57188 15.3155 10.3454 14.542 10.3454 13.5913C10.3454 12.6407 9.57188 11.8672 8.62123 11.8672C8.24662 11.8672 7.88407 11.9923 7.58675 12.2183C7.28942 11.9923 6.92688 11.8672 6.55226 11.8672ZM8.62123 12.5568C9.19166 12.5568 9.65571 13.0209 9.65571 13.5913C9.65571 14.1618 9.19166 14.6258 8.62123 14.6258C8.32338 14.6258 8.04808 14.4987 7.84623 14.2681C7.78088 14.1931 7.68627 14.1502 7.58675 14.1502C7.48722 14.1502 7.39261 14.1931 7.32726 14.268C7.12541 14.4987 6.85011 14.6258 6.55226 14.6258C5.98183 14.6258 5.51778 14.1618 5.51778 13.5913C5.51778 13.0209 5.98183 12.5568 6.55226 12.5568C6.85011 12.5568 7.12541 12.684 7.32726 12.9146C7.45795 13.0645 7.71554 13.0645 7.84623 12.9146C8.04808 12.684 8.32338 12.5568 8.62123 12.5568Z"
+                          fill="#5A5C5F"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_9588_6093">
+                          <rect
+                            width="20"
+                            height="20"
+                            fill="white"
+                            transform="translate(0 0.832031)"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+
+                    <h4
+                      class="text-[#404A60]transition duration-500 group-hover:text-white"
+                    >
+                      Payment History
+                    </h4>
+                  </div>
+                </a>
+                <a
+                  class="hover:shadow-[0px_6px_30px_0px_rgba(93, 105, 244, 0.40)] group inline-block rounded-[16px] px-4 py-2 text-sm transition duration-500 hover:bg-[#1CA8CB] md:px-6 md:py-3 md:text-base"
+                  href="profile-settings.html"
+                >
+                  <div class="flex items-center gap-2 text-[#404A60] md:gap-3">
+                    <svg
+                      class="size-6 md:size-auto"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="21"
+                      viewBox="0 0 20 21"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_9643_4293)">
+                        <path
+                          class="transtion duration-500 group-hover:fill-white"
+                          d="M10.9333 20.832H9.06667C8.76147 20.8317 8.46696 20.7197 8.23879 20.517C8.01062 20.3143 7.8646 20.0351 7.82833 19.732L7.62917 18.1687C7.23564 18.041 6.85278 17.8824 6.48417 17.6945L5.23917 18.662C4.99878 18.851 4.69719 18.9447 4.39203 18.9254C4.08688 18.906 3.79957 18.7749 3.585 18.557L2.2725 17.2445C2.05585 17.0302 1.92572 16.7435 1.90697 16.4393C1.88822 16.1352 1.98215 15.8347 2.17083 15.5954L3.13833 14.3495C2.94974 13.9812 2.79117 13.5983 2.66417 13.2045L1.0975 13.0054C0.794854 12.968 0.516288 12.8213 0.314179 12.593C0.11207 12.3646 0.000341233 12.0703 0 11.7654L0 9.8987C0 9.26786 0.4725 8.73536 1.1 8.66036L2.66333 8.4612C2.79107 8.06767 2.94961 7.68482 3.1375 7.3162L2.17083 6.0712C1.98139 5.83079 1.88742 5.52889 1.90695 5.22344C1.92648 4.91799 2.05815 4.63051 2.27667 4.4162L3.58917 3.1037C3.80361 2.88721 4.09022 2.7572 4.39437 2.73845C4.69851 2.7197 4.99892 2.81352 5.23833 3.00203L6.48333 3.97036C6.85217 3.78233 7.23531 3.62378 7.62917 3.4962L7.82833 1.92953C7.90333 1.30453 8.43583 0.832031 9.06667 0.832031H10.9333C11.5642 0.832031 12.0967 1.30453 12.1717 1.93203L12.3708 3.49536C12.7692 3.62453 13.1525 3.7837 13.5167 3.96953L14.7617 3.00203C15.002 2.81282 15.3037 2.71899 15.609 2.73852C15.9143 2.75805 16.2016 2.88957 16.4158 3.10786L17.7283 4.42036C18.1758 4.85453 18.2208 5.56536 17.83 6.06953L16.8625 7.31536C17.0492 7.67953 17.2083 8.06286 17.3367 8.46036L18.9033 8.65953C19.2058 8.69691 19.4841 8.84348 19.6861 9.07167C19.888 9.29986 19.9997 9.59397 20 9.8987V11.7654C20 12.3962 19.5275 12.9287 18.9 13.0037L17.3367 13.2029C17.2089 13.5964 17.0504 13.9792 16.8625 14.3479L17.83 15.5929C18.0192 15.8332 18.113 16.1349 18.0935 16.4402C18.074 16.7455 17.9425 17.0328 17.7242 17.247L16.4117 18.5595C16.1974 18.7764 15.9107 18.9066 15.6065 18.9253C15.3023 18.9441 15.0018 18.8501 14.7625 18.6612L13.5167 17.6937C13.1484 17.8823 12.7655 18.0409 12.3717 18.1679L12.1725 19.7345C12.1353 20.0371 11.9888 20.3157 11.7606 20.5178C11.5324 20.7199 11.2382 20.8317 10.9333 20.832ZM6.44167 16.782C6.51083 16.782 6.58167 16.7995 6.645 16.8345C7.11269 17.0949 7.60871 17.3007 8.12333 17.4479C8.20157 17.4703 8.27151 17.5152 8.32453 17.5769C8.37754 17.6387 8.41131 17.7146 8.42167 17.7954L8.655 19.6287C8.68 19.8379 8.86083 19.9987 9.06667 19.9987H10.9333C11.0344 19.9973 11.1315 19.9596 11.207 19.8924C11.2824 19.8252 11.3311 19.7331 11.3442 19.6329L11.5783 17.7962C11.5887 17.7155 11.6225 17.6395 11.6755 17.5778C11.7285 17.516 11.7984 17.4712 11.8767 17.4487C12.3913 17.3015 12.8873 17.0957 13.355 16.8354C13.4264 16.7955 13.5079 16.7776 13.5894 16.7838C13.671 16.79 13.7488 16.8201 13.8133 16.8704L15.2717 18.0037C15.3502 18.0669 15.4493 18.099 15.55 18.0938C15.6507 18.0885 15.7459 18.0464 15.8175 17.9754L17.1383 16.6545C17.2106 16.583 17.2539 16.4873 17.2599 16.3858C17.2659 16.2842 17.2342 16.1841 17.1708 16.1045L16.0375 14.6462C15.9874 14.5817 15.9573 14.5038 15.9511 14.4223C15.9449 14.3408 15.9627 14.2593 16.0025 14.1879C16.2628 13.7202 16.4686 13.2242 16.6158 12.7095C16.6383 12.6313 16.6832 12.5614 16.7449 12.5083C16.8067 12.4553 16.8826 12.4216 16.9633 12.4112L18.7967 12.1779C18.8977 12.1652 18.9908 12.1165 19.0587 12.0407C19.1267 11.965 19.165 11.8672 19.1667 11.7654V9.8987C19.1653 9.79767 19.1276 9.70051 19.0604 9.62505C18.9932 9.54959 18.901 9.50089 18.8008 9.48786L16.9642 9.2537C16.8834 9.24335 16.8075 9.20958 16.7458 9.15656C16.684 9.10354 16.6391 9.0336 16.6167 8.95536C16.4695 8.44074 16.2637 7.94472 16.0033 7.47703C15.9633 7.40572 15.9452 7.32413 15.9514 7.24256C15.9576 7.16099 15.9879 7.0831 16.0383 7.0187L17.1717 5.56036C17.2351 5.48213 17.2674 5.3832 17.2623 5.2826C17.2572 5.18199 17.2152 5.08682 17.1442 5.01536L15.8233 3.69453C15.7521 3.62177 15.6563 3.57814 15.5546 3.57213C15.4529 3.56612 15.3527 3.59817 15.2733 3.66203L13.815 4.79536C13.7504 4.84568 13.6724 4.87584 13.5907 4.88206C13.509 4.88829 13.4273 4.8703 13.3558 4.83036C12.8883 4.5698 12.3922 4.364 11.8775 4.21703C11.7993 4.19458 11.7293 4.1497 11.6763 4.08795C11.6233 4.02619 11.5895 3.95026 11.5792 3.86953L11.3458 2.0362C11.3334 1.93502 11.2848 1.84176 11.209 1.77361C11.1332 1.70546 11.0353 1.66701 10.9333 1.66536H9.06667C8.96564 1.66673 8.86848 1.70447 8.79302 1.77166C8.71756 1.83885 8.66885 1.931 8.65583 2.0312L8.42167 3.86786C8.41126 3.94867 8.37749 4.02468 8.32449 4.08656C8.27149 4.14844 8.20158 4.19349 8.12333 4.2162C7.60866 4.36288 7.1126 4.5684 6.645 4.8287C6.57358 4.86875 6.49193 4.88688 6.41027 4.8808C6.3286 4.87472 6.25054 4.84472 6.18583 4.79453L4.7275 3.6612C4.64926 3.59775 4.55033 3.56547 4.44973 3.57054C4.34913 3.57562 4.25395 3.6177 4.1825 3.6887L2.86167 5.01036C2.78941 5.08191 2.74613 5.17763 2.74013 5.27914C2.73413 5.38065 2.76584 5.4808 2.82917 5.56036L3.9625 7.0187C4.01264 7.08324 4.0427 7.16111 4.04892 7.2426C4.05514 7.3241 4.03726 7.40562 3.9975 7.47703C3.73681 7.94455 3.53101 8.44061 3.38417 8.95536C3.36171 9.0336 3.31684 9.10354 3.25508 9.15656C3.19333 9.20958 3.1174 9.24335 3.03667 9.2537L1.20333 9.48703C1.10231 9.49931 1.00916 9.54779 0.941131 9.62348C0.873103 9.69917 0.834806 9.79694 0.833333 9.8987V11.7654C0.833333 11.9712 0.994167 12.152 1.19917 12.1762L3.03583 12.4104C3.11656 12.4207 3.19249 12.4545 3.25425 12.5075C3.316 12.5605 3.36088 12.6305 3.38333 12.7087C3.53333 13.2304 3.74 13.7279 3.99667 14.187C4.03675 14.2583 4.05482 14.3399 4.04859 14.4215C4.04236 14.5031 4.01211 14.581 3.96167 14.6454L2.82833 16.1037C2.76489 16.1819 2.7326 16.2809 2.73768 16.3815C2.74275 16.4821 2.78483 16.5772 2.85583 16.6487L4.17667 17.9695C4.24812 18.042 4.34386 18.0854 4.44543 18.0914C4.54699 18.0974 4.64718 18.0655 4.72667 18.002L6.185 16.8687C6.25895 16.8129 6.349 16.7825 6.44167 16.782Z"
+                          fill="#5A5C5F"
+                        />
+                        <path
+                          class="transtion duration-500 group-hover:fill-white"
+                          d="M9.9987 14.9974C7.7012 14.9974 5.83203 13.1282 5.83203 10.8307C5.83203 8.53323 7.7012 6.66406 9.9987 6.66406C12.2962 6.66406 14.1654 8.53323 14.1654 10.8307C14.1654 13.1282 12.2962 14.9974 9.9987 14.9974ZM9.9987 7.4974C8.16036 7.4974 6.66536 8.9924 6.66536 10.8307C6.66536 12.6691 8.16036 14.1641 9.9987 14.1641C11.837 14.1641 13.332 12.6691 13.332 10.8307C13.332 8.9924 11.837 7.4974 9.9987 7.4974Z"
+                          fill="#5A5C5F"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_9643_4293">
+                          <rect
+                            width="20"
+                            height="20"
+                            fill="white"
+                            transform="translate(0 0.832031)"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+
+                    <h4 class="transition duration-500 group-hover:text-white">
+                      Profile Settings
+                    </h4>
+                  </div>
+                </a>
+                <a
+                  class="hover:shadow-[0px_6px_30px_0px_rgba(93, 105, 244, 0.40)] group inline-block rounded-[16px] px-4 py-2 text-sm transition duration-500 hover:bg-[#1CA8CB] md:px-6 md:py-3 md:text-base"
+                  href="../login.html"
+                >
+                  <div class="flex items-center gap-3 text-[#404A60] md:gap-2">
+                    <svg
+                      class="size-6 md:size-auto"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="21"
+                      viewBox="0 0 20 21"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_9588_4782)">
+                        <path
+                          class="transtion duration-500 group-hover:fill-white"
+                          d="M9.66086 19.686H4.44439C3.02673 19.686 1.87648 18.5315 1.87648 17.1181V4.54595C1.87648 3.1283 3.03098 1.97804 4.44439 1.97804H9.74575C10.0641 1.97804 10.3188 1.72337 10.3188 1.40504C10.3188 1.0867 10.0641 0.832031 9.74575 0.832031H4.44439C2.39431 0.832031 0.730469 2.50011 0.730469 4.54595V17.1181C0.730469 19.1682 2.39855 20.832 4.44439 20.832H9.66086C9.9792 20.832 10.2339 20.5774 10.2339 20.259C10.2339 19.9407 9.97495 19.686 9.66086 19.686Z"
+                          fill="#5A5C5F"
+                        />
+                        <path
+                          class="transtion duration-500 group-hover:fill-white"
+                          d="M19.0988 10.4277L15.4571 6.78591C15.2321 6.56095 14.8713 6.56095 14.6464 6.78591C14.4214 7.01086 14.4214 7.37164 14.6464 7.5966L17.3119 10.2621H5.68629C5.36795 10.2621 5.11328 10.5168 5.11328 10.8351C5.11328 11.1535 5.36795 11.4081 5.68629 11.4081H17.3119L14.6464 14.0737C14.4214 14.2986 14.4214 14.6594 14.6464 14.8844C14.7567 14.9947 14.9053 15.0542 15.0496 15.0542C15.1939 15.0542 15.3425 14.999 15.4528 14.8844L19.0946 11.2426C19.3238 11.0134 19.3238 10.6484 19.0988 10.4277Z"
+                          fill="#5A5C5F"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_9588_4782">
+                          <rect
+                            width="20"
+                            height="20"
+                            fill="white"
+                            transform="translate(0 0.832031)"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+
+                    <h4 class="transition duration-500 group-hover:text-white">
+                      Logout
+                    </h4>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Responsive Sidebar::End -->
+
           <!-- Dashboard Contents::Start -->
           <section class="min-h-[calc(100%-234px)] bg-[#f7f7fe] p-7">
             <!-- Booking Table::Start -->
-            <div class="mb-20 rounded-2xl bg-white pb-20 pl-12 pr-24 pt-14">
+            <div
+              class="mb-6 rounded-2xl bg-white md:mb-10 lg:mb-14 xl:mb-16 2xl:mb-20 2xl:pb-20 2xl:pl-12 2xl:pr-24 2xl:pt-14"
+            >
               <!-- title::Start -->
-              <div class="font-inter text-2xl font-semibold text-[#222E48]">
+              <div
+                class="font-inter text-xl font-semibold text-[#222E48] md:text-2xl"
+              >
                 <h2>My Wishlist</h2>
               </div>
               <!-- title::End -->
 
               <!-- Wishlist Cards::Start -->
-              <section class="flex flex-col gap-12 pt-14 mr-32">
-                <div class="flex items-center justify-between">
-                  <div class="grid h-full grid-cols-2 gap-12">
-                    <div class="h-[230px] w-[230px]">
+              <section class="flex flex-col gap-12 pt-6 2xl:pt-14">
+                <div class="flex flex-col 2xl:justify-between">
+                  <div
+                    class="grid h-full grid-cols-1 md:grid-cols-2 md:gap-8 lg:grid-cols-12 2xl:gap-12"
+                  >
+                    <div class="h-[230px] lg:col-span-3 lg:w-full">
                       <img
                         class="h-full w-full rounded-lg object-cover"
                         src="../assets/img/dashboard/dashboard-main/wishlist-img.png"
                         alt=""
                       />
                     </div>
-                    <div class="flex h-full flex-col justify-between py-4">
-                      <div class="flex flex-col gap-3 font-inter">
-                        <h2 class="text-2xl font-semibold text-[#222E48]">
-                          Grand Elysee
-                        </h2>
-                        <div class="flex items-center gap-2">
-                          <div>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="20"
-                              height="21"
-                              viewBox="0 0 20 21"
-                              fill="none"
-                            >
-                              <g clip-path="url(#clip0_9588_5124)">
-                                <path
-                                  d="M13.3389 13.7143C15.4671 10.3747 15.1996 10.7913 15.2609 10.7043C16.0358 9.61137 16.4453 8.32508 16.4453 6.98438C16.4453 3.42891 13.5601 0.5 10 0.5C6.45148 0.5 3.55469 3.42313 3.55469 6.98438C3.55469 8.32422 3.97281 9.64418 4.77305 10.7518L6.66102 13.7143C4.64246 14.0245 1.21094 14.9489 1.21094 16.9844C1.21094 17.7264 1.69523 18.7838 4.00242 19.6078C5.61344 20.1831 7.7434 20.5 10 20.5C14.2197 20.5 18.7891 19.3097 18.7891 16.9844C18.7891 14.9486 15.3616 14.0251 13.3389 13.7143ZM5.75191 10.1072C5.74547 10.0972 5.73874 10.0873 5.73172 10.0776C5.06582 9.16152 4.72656 8.07582 4.72656 6.98438C4.72656 4.05398 7.08617 1.67188 10 1.67188C12.9078 1.67188 15.2734 4.05504 15.2734 6.98438C15.2734 8.07758 14.9406 9.12645 14.3107 10.0184C14.2543 10.0929 14.5487 9.63535 10 16.773L5.75191 10.1072ZM10 19.3281C5.39086 19.3281 2.38281 17.9733 2.38281 16.9844C2.38281 16.3197 3.92844 15.2268 7.35344 14.8007L9.50586 18.1782C9.55879 18.2613 9.63181 18.3297 9.71817 18.3771C9.80454 18.4244 9.90145 18.4493 9.99996 18.4493C10.0985 18.4493 10.1954 18.4244 10.2817 18.3771C10.3681 18.3297 10.4411 18.2613 10.4941 18.1782L12.6464 14.8007C16.0715 15.2268 17.6172 16.3197 17.6172 16.9844C17.6172 17.9649 14.6362 19.3281 10 19.3281Z"
-                                  fill="#1CA8CB"
-                                />
-                                <path
-                                  d="M10 4.05469C8.38457 4.05469 7.07031 5.36895 7.07031 6.98438C7.07031 8.5998 8.38457 9.91406 10 9.91406C11.6154 9.91406 12.9297 8.5998 12.9297 6.98438C12.9297 5.36895 11.6154 4.05469 10 4.05469ZM10 8.74219C9.03074 8.74219 8.24219 7.95363 8.24219 6.98438C8.24219 6.01512 9.03074 5.22656 10 5.22656C10.9693 5.22656 11.7578 6.01512 11.7578 6.98438C11.7578 7.95363 10.9693 8.74219 10 8.74219Z"
-                                  fill="#1CA8CB"
-                                />
-                              </g>
-                              <defs>
-                                <clipPath id="clip0_9588_5124">
-                                  <rect
-                                    width="20"
-                                    height="20"
-                                    fill="white"
-                                    transform="translate(0 0.5)"
+                    <div
+                      class="flex items-center justify-between px-5 lg:col-span-9 lg:w-full lg:px-0"
+                    >
+                      <div class="flex h-full flex-col justify-between py-4">
+                        <div class="flex flex-col gap-2 font-inter md:gap-3">
+                          <h2 class="font-semibold text-[#222E48] md:text-2xl">
+                            Grand Elysee
+                          </h2>
+                          <div
+                            class="flex items-center gap-2 text-sm md:text-base"
+                          >
+                            <div>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="21"
+                                viewBox="0 0 20 21"
+                                fill="none"
+                              >
+                                <g clip-path="url(#clip0_9588_5124)">
+                                  <path
+                                    d="M13.3389 13.7143C15.4671 10.3747 15.1996 10.7913 15.2609 10.7043C16.0358 9.61137 16.4453 8.32508 16.4453 6.98438C16.4453 3.42891 13.5601 0.5 10 0.5C6.45148 0.5 3.55469 3.42313 3.55469 6.98438C3.55469 8.32422 3.97281 9.64418 4.77305 10.7518L6.66102 13.7143C4.64246 14.0245 1.21094 14.9489 1.21094 16.9844C1.21094 17.7264 1.69523 18.7838 4.00242 19.6078C5.61344 20.1831 7.7434 20.5 10 20.5C14.2197 20.5 18.7891 19.3097 18.7891 16.9844C18.7891 14.9486 15.3616 14.0251 13.3389 13.7143ZM5.75191 10.1072C5.74547 10.0972 5.73874 10.0873 5.73172 10.0776C5.06582 9.16152 4.72656 8.07582 4.72656 6.98438C4.72656 4.05398 7.08617 1.67188 10 1.67188C12.9078 1.67188 15.2734 4.05504 15.2734 6.98438C15.2734 8.07758 14.9406 9.12645 14.3107 10.0184C14.2543 10.0929 14.5487 9.63535 10 16.773L5.75191 10.1072ZM10 19.3281C5.39086 19.3281 2.38281 17.9733 2.38281 16.9844C2.38281 16.3197 3.92844 15.2268 7.35344 14.8007L9.50586 18.1782C9.55879 18.2613 9.63181 18.3297 9.71817 18.3771C9.80454 18.4244 9.90145 18.4493 9.99996 18.4493C10.0985 18.4493 10.1954 18.4244 10.2817 18.3771C10.3681 18.3297 10.4411 18.2613 10.4941 18.1782L12.6464 14.8007C16.0715 15.2268 17.6172 16.3197 17.6172 16.9844C17.6172 17.9649 14.6362 19.3281 10 19.3281Z"
+                                    fill="#1CA8CB"
                                   />
-                                </clipPath>
-                              </defs>
-                            </svg>
+                                  <path
+                                    d="M10 4.05469C8.38457 4.05469 7.07031 5.36895 7.07031 6.98438C7.07031 8.5998 8.38457 9.91406 10 9.91406C11.6154 9.91406 12.9297 8.5998 12.9297 6.98438C12.9297 5.36895 11.6154 4.05469 10 4.05469ZM10 8.74219C9.03074 8.74219 8.24219 7.95363 8.24219 6.98438C8.24219 6.01512 9.03074 5.22656 10 5.22656C10.9693 5.22656 11.7578 6.01512 11.7578 6.98438C11.7578 7.95363 10.9693 8.74219 10 8.74219Z"
+                                    fill="#1CA8CB"
+                                  />
+                                </g>
+                                <defs>
+                                  <clipPath id="clip0_9588_5124">
+                                    <rect
+                                      width="20"
+                                      height="20"
+                                      fill="white"
+                                      transform="translate(0 0.5)"
+                                    />
+                                  </clipPath>
+                                </defs>
+                              </svg>
+                            </div>
+                            <p>Paris, France</p>
                           </div>
-                          <p>Paris, France</p>
+                        </div>
+                        <div>
+                          <p
+                            class="pt-2 font-inter text-sm text-[#1CA8CB] md:text-base"
+                          >
+                            350/per night
+                          </p>
                         </div>
                       </div>
-                      <div>
-                        <p class="font-inter text-[#1CA8CB]">350/per night</p>
+                      <div
+                        class="flex h-full cursor-pointer items-center gap-5"
+                      >
+                        <a
+                          href="../destination-details.html"
+                          class="group rounded bg-[#f7f7ff] p-2 transition duration-500 hover:bg-primary md:rounded-xl md:p-3"
+                        >
+                          <svg
+                            class="size-5 md:size-auto"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="21"
+                            height="21"
+                            viewBox="0 0 21 21"
+                            fill="none"
+                          >
+                            <g clip-path="url(#clip0_9588_5144)">
+                              <path
+                                class="transition duration-500 group-hover:fill-white"
+                                d="M20.826 10.1096C20.6473 9.8652 16.3902 4.125 10.953 4.125C5.51586 4.125 1.25851 9.8652 1.08004 10.1094C0.997566 10.2224 0.953125 10.3586 0.953125 10.4985C0.953125 10.6384 0.997566 10.7746 1.08004 10.8876C1.25851 11.132 5.51586 16.8722 10.953 16.8722C16.3902 16.8722 20.6473 11.132 20.826 10.8878C20.9086 10.7749 20.9531 10.6386 20.9531 10.4987C20.9531 10.3588 20.9086 10.2225 20.826 10.1096ZM10.953 15.5536C6.94796 15.5536 3.47918 11.7437 2.45234 10.4982C3.47785 9.25156 6.93937 5.44367 10.953 5.44367C14.9578 5.44367 18.4264 9.25289 19.4537 10.4991C18.4282 11.7456 14.9666 15.5536 10.953 15.5536Z"
+                                fill="#1CA8CB"
+                              />
+                              <path
+                                class="transition duration-500 group-hover:fill-white"
+                                d="M10.9521 6.54297C8.77082 6.54297 6.99609 8.31769 6.99609 10.499C6.99609 12.6804 8.77082 14.4551 10.9521 14.4551C13.1335 14.4551 14.9082 12.6804 14.9082 10.499C14.9082 8.31769 13.1335 6.54297 10.9521 6.54297ZM10.9521 13.1364C9.49785 13.1364 8.3148 11.9533 8.3148 10.499C8.3148 9.04477 9.49789 7.86168 10.9521 7.86168C12.4064 7.86168 13.5895 9.04477 13.5895 10.499C13.5895 11.9533 12.4064 13.1364 10.9521 13.1364Z"
+                                fill="#1CA8CB"
+                              />
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_9588_5144">
+                                <rect
+                                  width="20"
+                                  height="20"
+                                  fill="white"
+                                  transform="translate(0.953125 0.5)"
+                                />
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </a>
+                        <a
+                          href="#"
+                          class="group rounded bg-[#FFD2D4] p-2 transition duration-500 hover:bg-[#FC0005] md:rounded-xl md:p-3"
+                        >
+                          <svg
+                            class="size-4 md:size-auto"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="21"
+                            height="21"
+                            viewBox="0 0 21 21"
+                            fill="none"
+                          >
+                            <g clip-path="url(#clip0_9588_5156)">
+                              <path
+                                class="transition duration-500 group-hover:fill-white"
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M7.52848 1.05527C7.52851 0.908146 7.58695 0.767048 7.69096 0.662988C7.79497 0.558927 7.93604 0.500416 8.08316 0.500313L13.6297 0.5C13.7769 0.500341 13.9179 0.559014 14.0219 0.663159C14.1258 0.767303 14.1843 0.908423 14.1844 1.05559V2.42734H7.52848V1.05527ZM16.648 19.7054C16.6339 19.9217 16.5376 20.1244 16.3789 20.272C16.2202 20.4197 16.0111 20.501 15.7943 20.4995H5.8548C5.63811 20.4989 5.42966 20.4164 5.27131 20.2685C5.11296 20.1205 5.01644 19.9182 5.00113 19.702L4.15059 7.25992H17.5558L16.6482 19.7052L16.648 19.7054ZM18.8577 6.13305H2.85547V4.84398C2.85571 4.5021 2.99161 4.17428 3.23333 3.93251C3.47505 3.69073 3.80284 3.55476 4.14473 3.55445L17.5683 3.55402C17.9102 3.55455 18.2379 3.69064 18.4795 3.93244C18.7212 4.17424 18.8571 4.50201 18.8574 4.84387V6.13293L18.8577 6.13305ZM8.28 17.5335C8.28 17.6075 8.29457 17.6807 8.32288 17.7491C8.35119 17.8174 8.39269 17.8795 8.445 17.9318C8.49732 17.9841 8.55942 18.0256 8.62777 18.054C8.69612 18.0823 8.76938 18.0968 8.84336 18.0968C8.91734 18.0968 8.9906 18.0823 9.05895 18.054C9.1273 18.0256 9.1894 17.9841 9.24171 17.9318C9.29403 17.8795 9.33552 17.8174 9.36384 17.7491C9.39215 17.6807 9.40672 17.6075 9.40672 17.5335V9.6332C9.40553 9.48463 9.3457 9.34254 9.24023 9.23788C9.13477 9.13322 8.99223 9.07446 8.84365 9.07441C8.69507 9.07436 8.55249 9.13302 8.44695 9.2376C8.34142 9.34219 8.28148 9.48424 8.2802 9.63281V17.5335H8.28ZM12.2995 17.5335C12.2995 17.6829 12.3589 17.8262 12.4646 17.9319C12.5702 18.0376 12.7135 18.0969 12.863 18.0969C13.0124 18.0969 13.1557 18.0376 13.2614 17.9319C13.367 17.8262 13.4264 17.6829 13.4264 17.5335V9.6332C13.4252 9.48461 13.3654 9.3425 13.2599 9.23782C13.1544 9.13315 13.0119 9.07439 12.8633 9.07434C12.7147 9.07428 12.5721 9.13295 12.4665 9.23755C12.361 9.34215 12.301 9.48422 12.2997 9.63281L12.2995 17.5335Z"
+                                fill="#FC0005"
+                              />
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_9588_5156">
+                                <rect
+                                  width="20"
+                                  height="20"
+                                  fill="white"
+                                  transform="translate(0.855469 0.5)"
+                                />
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </a>
                       </div>
                     </div>
-                  </div>
-                  <div class="flex h-full cursor-pointer items-center gap-5">
-                    <a
-                      href="../destination-details.html"
-                      class="group rounded-xl bg-[#f7f7ff] p-3 transition duration-500 hover:bg-primary"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="21"
-                        height="21"
-                        viewBox="0 0 21 21"
-                        fill="none"
-                      >
-                        <g clip-path="url(#clip0_9588_5144)">
-                          <path
-                            class="transition duration-500 group-hover:fill-white"
-                            d="M20.826 10.1096C20.6473 9.8652 16.3902 4.125 10.953 4.125C5.51586 4.125 1.25851 9.8652 1.08004 10.1094C0.997566 10.2224 0.953125 10.3586 0.953125 10.4985C0.953125 10.6384 0.997566 10.7746 1.08004 10.8876C1.25851 11.132 5.51586 16.8722 10.953 16.8722C16.3902 16.8722 20.6473 11.132 20.826 10.8878C20.9086 10.7749 20.9531 10.6386 20.9531 10.4987C20.9531 10.3588 20.9086 10.2225 20.826 10.1096ZM10.953 15.5536C6.94796 15.5536 3.47918 11.7437 2.45234 10.4982C3.47785 9.25156 6.93937 5.44367 10.953 5.44367C14.9578 5.44367 18.4264 9.25289 19.4537 10.4991C18.4282 11.7456 14.9666 15.5536 10.953 15.5536Z"
-                            fill="#1CA8CB"
-                          />
-                          <path
-                            class="transition duration-500 group-hover:fill-white"
-                            d="M10.9521 6.54297C8.77082 6.54297 6.99609 8.31769 6.99609 10.499C6.99609 12.6804 8.77082 14.4551 10.9521 14.4551C13.1335 14.4551 14.9082 12.6804 14.9082 10.499C14.9082 8.31769 13.1335 6.54297 10.9521 6.54297ZM10.9521 13.1364C9.49785 13.1364 8.3148 11.9533 8.3148 10.499C8.3148 9.04477 9.49789 7.86168 10.9521 7.86168C12.4064 7.86168 13.5895 9.04477 13.5895 10.499C13.5895 11.9533 12.4064 13.1364 10.9521 13.1364Z"
-                            fill="#1CA8CB"
-                          />
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_9588_5144">
-                            <rect
-                              width="20"
-                              height="20"
-                              fill="white"
-                              transform="translate(0.953125 0.5)"
-                            />
-                          </clipPath>
-                        </defs>
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      class="group rounded-xl bg-[#FFD2D4] p-3 transition duration-500 hover:bg-[#FC0005]"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="21"
-                        height="21"
-                        viewBox="0 0 21 21"
-                        fill="none"
-                      >
-                        <g clip-path="url(#clip0_9588_5156)">
-                          <path
-                            class="transition duration-500 group-hover:fill-white"
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M7.52848 1.05527C7.52851 0.908146 7.58695 0.767048 7.69096 0.662988C7.79497 0.558927 7.93604 0.500416 8.08316 0.500313L13.6297 0.5C13.7769 0.500341 13.9179 0.559014 14.0219 0.663159C14.1258 0.767303 14.1843 0.908423 14.1844 1.05559V2.42734H7.52848V1.05527ZM16.648 19.7054C16.6339 19.9217 16.5376 20.1244 16.3789 20.272C16.2202 20.4197 16.0111 20.501 15.7943 20.4995H5.8548C5.63811 20.4989 5.42966 20.4164 5.27131 20.2685C5.11296 20.1205 5.01644 19.9182 5.00113 19.702L4.15059 7.25992H17.5558L16.6482 19.7052L16.648 19.7054ZM18.8577 6.13305H2.85547V4.84398C2.85571 4.5021 2.99161 4.17428 3.23333 3.93251C3.47505 3.69073 3.80284 3.55476 4.14473 3.55445L17.5683 3.55402C17.9102 3.55455 18.2379 3.69064 18.4795 3.93244C18.7212 4.17424 18.8571 4.50201 18.8574 4.84387V6.13293L18.8577 6.13305ZM8.28 17.5335C8.28 17.6075 8.29457 17.6807 8.32288 17.7491C8.35119 17.8174 8.39269 17.8795 8.445 17.9318C8.49732 17.9841 8.55942 18.0256 8.62777 18.054C8.69612 18.0823 8.76938 18.0968 8.84336 18.0968C8.91734 18.0968 8.9906 18.0823 9.05895 18.054C9.1273 18.0256 9.1894 17.9841 9.24171 17.9318C9.29403 17.8795 9.33552 17.8174 9.36384 17.7491C9.39215 17.6807 9.40672 17.6075 9.40672 17.5335V9.6332C9.40553 9.48463 9.3457 9.34254 9.24023 9.23788C9.13477 9.13322 8.99223 9.07446 8.84365 9.07441C8.69507 9.07436 8.55249 9.13302 8.44695 9.2376C8.34142 9.34219 8.28148 9.48424 8.2802 9.63281V17.5335H8.28ZM12.2995 17.5335C12.2995 17.6829 12.3589 17.8262 12.4646 17.9319C12.5702 18.0376 12.7135 18.0969 12.863 18.0969C13.0124 18.0969 13.1557 18.0376 13.2614 17.9319C13.367 17.8262 13.4264 17.6829 13.4264 17.5335V9.6332C13.4252 9.48461 13.3654 9.3425 13.2599 9.23782C13.1544 9.13315 13.0119 9.07439 12.8633 9.07434C12.7147 9.07428 12.5721 9.13295 12.4665 9.23755C12.361 9.34215 12.301 9.48422 12.2997 9.63281L12.2995 17.5335Z"
-                            fill="#FC0005"
-                          />
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_9588_5156">
-                            <rect
-                              width="20"
-                              height="20"
-                              fill="white"
-                              transform="translate(0.855469 0.5)"
-                            />
-                          </clipPath>
-                        </defs>
-                      </svg>
-                    </a>
                   </div>
                 </div>
 
-                <div class="flex items-center justify-between">
-                  <div class="grid h-full grid-cols-2 gap-12">
-                    <div class="h-[230px] w-[230px]">
+                <div class="flex flex-col 2xl:justify-between">
+                  <div
+                    class="grid h-full grid-cols-1 md:grid-cols-2 md:gap-8 lg:grid-cols-12 2xl:gap-12"
+                  >
+                    <div class="h-[230px] lg:col-span-3 lg:w-full">
                       <img
                         class="h-full w-full rounded-lg object-cover"
-                        src="../assets/img/dashboard/dashboard-main/wishlist-2.png"
+                        src="../assets/img/dashboard/dashboard-main/wishlist-img.png"
                         alt=""
                       />
                     </div>
-                    <div class="flex h-full flex-col justify-between py-4">
-                      <div class="flex flex-col gap-3 font-inter">
-                        <h2 class="text-2xl font-semibold text-[#222E48]">
-                          Seaside Santorini
-                        </h2>
-                        <div class="flex items-center gap-3">
-                          <div>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="20"
-                              height="21"
-                              viewBox="0 0 20 21"
-                              fill="none"
-                            >
-                              <g clip-path="url(#clip0_9588_5124)">
-                                <path
-                                  d="M13.3389 13.7143C15.4671 10.3747 15.1996 10.7913 15.2609 10.7043C16.0358 9.61137 16.4453 8.32508 16.4453 6.98438C16.4453 3.42891 13.5601 0.5 10 0.5C6.45148 0.5 3.55469 3.42313 3.55469 6.98438C3.55469 8.32422 3.97281 9.64418 4.77305 10.7518L6.66102 13.7143C4.64246 14.0245 1.21094 14.9489 1.21094 16.9844C1.21094 17.7264 1.69523 18.7838 4.00242 19.6078C5.61344 20.1831 7.7434 20.5 10 20.5C14.2197 20.5 18.7891 19.3097 18.7891 16.9844C18.7891 14.9486 15.3616 14.0251 13.3389 13.7143ZM5.75191 10.1072C5.74547 10.0972 5.73874 10.0873 5.73172 10.0776C5.06582 9.16152 4.72656 8.07582 4.72656 6.98438C4.72656 4.05398 7.08617 1.67188 10 1.67188C12.9078 1.67188 15.2734 4.05504 15.2734 6.98438C15.2734 8.07758 14.9406 9.12645 14.3107 10.0184C14.2543 10.0929 14.5487 9.63535 10 16.773L5.75191 10.1072ZM10 19.3281C5.39086 19.3281 2.38281 17.9733 2.38281 16.9844C2.38281 16.3197 3.92844 15.2268 7.35344 14.8007L9.50586 18.1782C9.55879 18.2613 9.63181 18.3297 9.71817 18.3771C9.80454 18.4244 9.90145 18.4493 9.99996 18.4493C10.0985 18.4493 10.1954 18.4244 10.2817 18.3771C10.3681 18.3297 10.4411 18.2613 10.4941 18.1782L12.6464 14.8007C16.0715 15.2268 17.6172 16.3197 17.6172 16.9844C17.6172 17.9649 14.6362 19.3281 10 19.3281Z"
-                                  fill="#1CA8CB"
-                                />
-                                <path
-                                  d="M10 4.05469C8.38457 4.05469 7.07031 5.36895 7.07031 6.98438C7.07031 8.5998 8.38457 9.91406 10 9.91406C11.6154 9.91406 12.9297 8.5998 12.9297 6.98438C12.9297 5.36895 11.6154 4.05469 10 4.05469ZM10 8.74219C9.03074 8.74219 8.24219 7.95363 8.24219 6.98438C8.24219 6.01512 9.03074 5.22656 10 5.22656C10.9693 5.22656 11.7578 6.01512 11.7578 6.98438C11.7578 7.95363 10.9693 8.74219 10 8.74219Z"
-                                  fill="#1CA8CB"
-                                />
-                              </g>
-                              <defs>
-                                <clipPath id="clip0_9588_5124">
-                                  <rect
-                                    width="20"
-                                    height="20"
-                                    fill="white"
-                                    transform="translate(0 0.5)"
+                    <div
+                      class="flex items-center justify-between px-5 lg:col-span-9 lg:w-full lg:px-0"
+                    >
+                      <div class="flex h-full flex-col justify-between py-4">
+                        <div class="flex flex-col gap-2 font-inter md:gap-3">
+                          <h2 class="font-semibold text-[#222E48] md:text-2xl">
+                            Grand Elysee
+                          </h2>
+                          <div
+                            class="flex items-center gap-2 text-sm md:text-base"
+                          >
+                            <div>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="21"
+                                viewBox="0 0 20 21"
+                                fill="none"
+                              >
+                                <g clip-path="url(#clip0_9588_5124)">
+                                  <path
+                                    d="M13.3389 13.7143C15.4671 10.3747 15.1996 10.7913 15.2609 10.7043C16.0358 9.61137 16.4453 8.32508 16.4453 6.98438C16.4453 3.42891 13.5601 0.5 10 0.5C6.45148 0.5 3.55469 3.42313 3.55469 6.98438C3.55469 8.32422 3.97281 9.64418 4.77305 10.7518L6.66102 13.7143C4.64246 14.0245 1.21094 14.9489 1.21094 16.9844C1.21094 17.7264 1.69523 18.7838 4.00242 19.6078C5.61344 20.1831 7.7434 20.5 10 20.5C14.2197 20.5 18.7891 19.3097 18.7891 16.9844C18.7891 14.9486 15.3616 14.0251 13.3389 13.7143ZM5.75191 10.1072C5.74547 10.0972 5.73874 10.0873 5.73172 10.0776C5.06582 9.16152 4.72656 8.07582 4.72656 6.98438C4.72656 4.05398 7.08617 1.67188 10 1.67188C12.9078 1.67188 15.2734 4.05504 15.2734 6.98438C15.2734 8.07758 14.9406 9.12645 14.3107 10.0184C14.2543 10.0929 14.5487 9.63535 10 16.773L5.75191 10.1072ZM10 19.3281C5.39086 19.3281 2.38281 17.9733 2.38281 16.9844C2.38281 16.3197 3.92844 15.2268 7.35344 14.8007L9.50586 18.1782C9.55879 18.2613 9.63181 18.3297 9.71817 18.3771C9.80454 18.4244 9.90145 18.4493 9.99996 18.4493C10.0985 18.4493 10.1954 18.4244 10.2817 18.3771C10.3681 18.3297 10.4411 18.2613 10.4941 18.1782L12.6464 14.8007C16.0715 15.2268 17.6172 16.3197 17.6172 16.9844C17.6172 17.9649 14.6362 19.3281 10 19.3281Z"
+                                    fill="#1CA8CB"
                                   />
-                                </clipPath>
-                              </defs>
-                            </svg>
+                                  <path
+                                    d="M10 4.05469C8.38457 4.05469 7.07031 5.36895 7.07031 6.98438C7.07031 8.5998 8.38457 9.91406 10 9.91406C11.6154 9.91406 12.9297 8.5998 12.9297 6.98438C12.9297 5.36895 11.6154 4.05469 10 4.05469ZM10 8.74219C9.03074 8.74219 8.24219 7.95363 8.24219 6.98438C8.24219 6.01512 9.03074 5.22656 10 5.22656C10.9693 5.22656 11.7578 6.01512 11.7578 6.98438C11.7578 7.95363 10.9693 8.74219 10 8.74219Z"
+                                    fill="#1CA8CB"
+                                  />
+                                </g>
+                                <defs>
+                                  <clipPath id="clip0_9588_5124">
+                                    <rect
+                                      width="20"
+                                      height="20"
+                                      fill="white"
+                                      transform="translate(0 0.5)"
+                                    />
+                                  </clipPath>
+                                </defs>
+                              </svg>
+                            </div>
+                            <p>Paris, France</p>
                           </div>
-                          <p>sanorini Greece</p>
+                        </div>
+                        <div>
+                          <p
+                            class="pt-2 font-inter text-sm text-[#1CA8CB] md:text-base"
+                          >
+                            350/per night
+                          </p>
                         </div>
                       </div>
-                      <div>
-                        <p class="font-inter text-[#1CA8CB]">350/per night</p>
+                      <div
+                        class="flex h-full cursor-pointer items-center gap-5"
+                      >
+                        <a
+                          href="../destination-details.html"
+                          class="group rounded bg-[#f7f7ff] p-2 transition duration-500 hover:bg-primary md:rounded-xl md:p-3"
+                        >
+                          <svg
+                            class="size-5 md:size-auto"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="21"
+                            height="21"
+                            viewBox="0 0 21 21"
+                            fill="none"
+                          >
+                            <g clip-path="url(#clip0_9588_5144)">
+                              <path
+                                class="transition duration-500 group-hover:fill-white"
+                                d="M20.826 10.1096C20.6473 9.8652 16.3902 4.125 10.953 4.125C5.51586 4.125 1.25851 9.8652 1.08004 10.1094C0.997566 10.2224 0.953125 10.3586 0.953125 10.4985C0.953125 10.6384 0.997566 10.7746 1.08004 10.8876C1.25851 11.132 5.51586 16.8722 10.953 16.8722C16.3902 16.8722 20.6473 11.132 20.826 10.8878C20.9086 10.7749 20.9531 10.6386 20.9531 10.4987C20.9531 10.3588 20.9086 10.2225 20.826 10.1096ZM10.953 15.5536C6.94796 15.5536 3.47918 11.7437 2.45234 10.4982C3.47785 9.25156 6.93937 5.44367 10.953 5.44367C14.9578 5.44367 18.4264 9.25289 19.4537 10.4991C18.4282 11.7456 14.9666 15.5536 10.953 15.5536Z"
+                                fill="#1CA8CB"
+                              />
+                              <path
+                                class="transition duration-500 group-hover:fill-white"
+                                d="M10.9521 6.54297C8.77082 6.54297 6.99609 8.31769 6.99609 10.499C6.99609 12.6804 8.77082 14.4551 10.9521 14.4551C13.1335 14.4551 14.9082 12.6804 14.9082 10.499C14.9082 8.31769 13.1335 6.54297 10.9521 6.54297ZM10.9521 13.1364C9.49785 13.1364 8.3148 11.9533 8.3148 10.499C8.3148 9.04477 9.49789 7.86168 10.9521 7.86168C12.4064 7.86168 13.5895 9.04477 13.5895 10.499C13.5895 11.9533 12.4064 13.1364 10.9521 13.1364Z"
+                                fill="#1CA8CB"
+                              />
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_9588_5144">
+                                <rect
+                                  width="20"
+                                  height="20"
+                                  fill="white"
+                                  transform="translate(0.953125 0.5)"
+                                />
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </a>
+                        <a
+                          href="#"
+                          class="group rounded bg-[#FFD2D4] p-2 transition duration-500 hover:bg-[#FC0005] md:rounded-xl md:p-3"
+                        >
+                          <svg
+                            class="size-4 md:size-auto"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="21"
+                            height="21"
+                            viewBox="0 0 21 21"
+                            fill="none"
+                          >
+                            <g clip-path="url(#clip0_9588_5156)">
+                              <path
+                                class="transition duration-500 group-hover:fill-white"
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M7.52848 1.05527C7.52851 0.908146 7.58695 0.767048 7.69096 0.662988C7.79497 0.558927 7.93604 0.500416 8.08316 0.500313L13.6297 0.5C13.7769 0.500341 13.9179 0.559014 14.0219 0.663159C14.1258 0.767303 14.1843 0.908423 14.1844 1.05559V2.42734H7.52848V1.05527ZM16.648 19.7054C16.6339 19.9217 16.5376 20.1244 16.3789 20.272C16.2202 20.4197 16.0111 20.501 15.7943 20.4995H5.8548C5.63811 20.4989 5.42966 20.4164 5.27131 20.2685C5.11296 20.1205 5.01644 19.9182 5.00113 19.702L4.15059 7.25992H17.5558L16.6482 19.7052L16.648 19.7054ZM18.8577 6.13305H2.85547V4.84398C2.85571 4.5021 2.99161 4.17428 3.23333 3.93251C3.47505 3.69073 3.80284 3.55476 4.14473 3.55445L17.5683 3.55402C17.9102 3.55455 18.2379 3.69064 18.4795 3.93244C18.7212 4.17424 18.8571 4.50201 18.8574 4.84387V6.13293L18.8577 6.13305ZM8.28 17.5335C8.28 17.6075 8.29457 17.6807 8.32288 17.7491C8.35119 17.8174 8.39269 17.8795 8.445 17.9318C8.49732 17.9841 8.55942 18.0256 8.62777 18.054C8.69612 18.0823 8.76938 18.0968 8.84336 18.0968C8.91734 18.0968 8.9906 18.0823 9.05895 18.054C9.1273 18.0256 9.1894 17.9841 9.24171 17.9318C9.29403 17.8795 9.33552 17.8174 9.36384 17.7491C9.39215 17.6807 9.40672 17.6075 9.40672 17.5335V9.6332C9.40553 9.48463 9.3457 9.34254 9.24023 9.23788C9.13477 9.13322 8.99223 9.07446 8.84365 9.07441C8.69507 9.07436 8.55249 9.13302 8.44695 9.2376C8.34142 9.34219 8.28148 9.48424 8.2802 9.63281V17.5335H8.28ZM12.2995 17.5335C12.2995 17.6829 12.3589 17.8262 12.4646 17.9319C12.5702 18.0376 12.7135 18.0969 12.863 18.0969C13.0124 18.0969 13.1557 18.0376 13.2614 17.9319C13.367 17.8262 13.4264 17.6829 13.4264 17.5335V9.6332C13.4252 9.48461 13.3654 9.3425 13.2599 9.23782C13.1544 9.13315 13.0119 9.07439 12.8633 9.07434C12.7147 9.07428 12.5721 9.13295 12.4665 9.23755C12.361 9.34215 12.301 9.48422 12.2997 9.63281L12.2995 17.5335Z"
+                                fill="#FC0005"
+                              />
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_9588_5156">
+                                <rect
+                                  width="20"
+                                  height="20"
+                                  fill="white"
+                                  transform="translate(0.855469 0.5)"
+                                />
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </a>
                       </div>
                     </div>
-                  </div>
-                  <div class="flex h-full cursor-pointer items-center gap-5">
-                    <a
-                      href="../destination-details.html"
-                      class="group rounded-xl bg-[#f7f7ff] p-3 transition duration-500 hover:bg-primary"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="21"
-                        height="21"
-                        viewBox="0 0 21 21"
-                        fill="none"
-                      >
-                        <g clip-path="url(#clip0_9588_5144)">
-                          <path
-                            class="transition duration-500 group-hover:fill-white"
-                            d="M20.826 10.1096C20.6473 9.8652 16.3902 4.125 10.953 4.125C5.51586 4.125 1.25851 9.8652 1.08004 10.1094C0.997566 10.2224 0.953125 10.3586 0.953125 10.4985C0.953125 10.6384 0.997566 10.7746 1.08004 10.8876C1.25851 11.132 5.51586 16.8722 10.953 16.8722C16.3902 16.8722 20.6473 11.132 20.826 10.8878C20.9086 10.7749 20.9531 10.6386 20.9531 10.4987C20.9531 10.3588 20.9086 10.2225 20.826 10.1096ZM10.953 15.5536C6.94796 15.5536 3.47918 11.7437 2.45234 10.4982C3.47785 9.25156 6.93937 5.44367 10.953 5.44367C14.9578 5.44367 18.4264 9.25289 19.4537 10.4991C18.4282 11.7456 14.9666 15.5536 10.953 15.5536Z"
-                            fill="#1CA8CB"
-                          />
-                          <path
-                            class="transition duration-500 group-hover:fill-white"
-                            d="M10.9521 6.54297C8.77082 6.54297 6.99609 8.31769 6.99609 10.499C6.99609 12.6804 8.77082 14.4551 10.9521 14.4551C13.1335 14.4551 14.9082 12.6804 14.9082 10.499C14.9082 8.31769 13.1335 6.54297 10.9521 6.54297ZM10.9521 13.1364C9.49785 13.1364 8.3148 11.9533 8.3148 10.499C8.3148 9.04477 9.49789 7.86168 10.9521 7.86168C12.4064 7.86168 13.5895 9.04477 13.5895 10.499C13.5895 11.9533 12.4064 13.1364 10.9521 13.1364Z"
-                            fill="#1CA8CB"
-                          />
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_9588_5144">
-                            <rect
-                              width="20"
-                              height="20"
-                              fill="white"
-                              transform="translate(0.953125 0.5)"
-                            />
-                          </clipPath>
-                        </defs>
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      class="group rounded-xl bg-[#FFD2D4] p-3 transition duration-500 hover:bg-[#FC0005]"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="21"
-                        height="21"
-                        viewBox="0 0 21 21"
-                        fill="none"
-                      >
-                        <g clip-path="url(#clip0_9588_5156)">
-                          <path
-                            class="transition duration-500 group-hover:fill-white"
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M7.52848 1.05527C7.52851 0.908146 7.58695 0.767048 7.69096 0.662988C7.79497 0.558927 7.93604 0.500416 8.08316 0.500313L13.6297 0.5C13.7769 0.500341 13.9179 0.559014 14.0219 0.663159C14.1258 0.767303 14.1843 0.908423 14.1844 1.05559V2.42734H7.52848V1.05527ZM16.648 19.7054C16.6339 19.9217 16.5376 20.1244 16.3789 20.272C16.2202 20.4197 16.0111 20.501 15.7943 20.4995H5.8548C5.63811 20.4989 5.42966 20.4164 5.27131 20.2685C5.11296 20.1205 5.01644 19.9182 5.00113 19.702L4.15059 7.25992H17.5558L16.6482 19.7052L16.648 19.7054ZM18.8577 6.13305H2.85547V4.84398C2.85571 4.5021 2.99161 4.17428 3.23333 3.93251C3.47505 3.69073 3.80284 3.55476 4.14473 3.55445L17.5683 3.55402C17.9102 3.55455 18.2379 3.69064 18.4795 3.93244C18.7212 4.17424 18.8571 4.50201 18.8574 4.84387V6.13293L18.8577 6.13305ZM8.28 17.5335C8.28 17.6075 8.29457 17.6807 8.32288 17.7491C8.35119 17.8174 8.39269 17.8795 8.445 17.9318C8.49732 17.9841 8.55942 18.0256 8.62777 18.054C8.69612 18.0823 8.76938 18.0968 8.84336 18.0968C8.91734 18.0968 8.9906 18.0823 9.05895 18.054C9.1273 18.0256 9.1894 17.9841 9.24171 17.9318C9.29403 17.8795 9.33552 17.8174 9.36384 17.7491C9.39215 17.6807 9.40672 17.6075 9.40672 17.5335V9.6332C9.40553 9.48463 9.3457 9.34254 9.24023 9.23788C9.13477 9.13322 8.99223 9.07446 8.84365 9.07441C8.69507 9.07436 8.55249 9.13302 8.44695 9.2376C8.34142 9.34219 8.28148 9.48424 8.2802 9.63281V17.5335H8.28ZM12.2995 17.5335C12.2995 17.6829 12.3589 17.8262 12.4646 17.9319C12.5702 18.0376 12.7135 18.0969 12.863 18.0969C13.0124 18.0969 13.1557 18.0376 13.2614 17.9319C13.367 17.8262 13.4264 17.6829 13.4264 17.5335V9.6332C13.4252 9.48461 13.3654 9.3425 13.2599 9.23782C13.1544 9.13315 13.0119 9.07439 12.8633 9.07434C12.7147 9.07428 12.5721 9.13295 12.4665 9.23755C12.361 9.34215 12.301 9.48422 12.2997 9.63281L12.2995 17.5335Z"
-                            fill="#FC0005"
-                          />
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_9588_5156">
-                            <rect
-                              width="20"
-                              height="20"
-                              fill="white"
-                              transform="translate(0.855469 0.5)"
-                            />
-                          </clipPath>
-                        </defs>
-                      </svg>
-                    </a>
                   </div>
                 </div>
 
-                <div class="flex items-center justify-between">
-                  <div class="grid h-full grid-cols-2 gap-12">
-                    <div class="h-[230px] w-[230px]">
+                <div class="flex flex-col 2xl:justify-between">
+                  <div
+                    class="grid h-full grid-cols-1 md:grid-cols-2 md:gap-8 lg:grid-cols-12 2xl:gap-12"
+                  >
+                    <div class="h-[230px] lg:col-span-3 lg:w-full">
                       <img
                         class="h-full w-full rounded-lg object-cover"
-                        src="../assets/img/dashboard/dashboard-main/wishlist-3.png"
+                        src="../assets/img/dashboard/dashboard-main/wishlist-img.png"
                         alt=""
                       />
                     </div>
-                    <div class="flex h-full flex-col justify-between py-4">
-                      <div class="flex flex-col gap-3 font-inter">
-                        <h2 class="text-2xl font-semibold text-[#222E48]">
-                          Imperial Palace
-                        </h2>
-                        <div class="flex items-center gap-3">
-                          <div>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="20"
-                              height="21"
-                              viewBox="0 0 20 21"
-                              fill="none"
-                            >
-                              <g clip-path="url(#clip0_9588_5124)">
-                                <path
-                                  d="M13.3389 13.7143C15.4671 10.3747 15.1996 10.7913 15.2609 10.7043C16.0358 9.61137 16.4453 8.32508 16.4453 6.98438C16.4453 3.42891 13.5601 0.5 10 0.5C6.45148 0.5 3.55469 3.42313 3.55469 6.98438C3.55469 8.32422 3.97281 9.64418 4.77305 10.7518L6.66102 13.7143C4.64246 14.0245 1.21094 14.9489 1.21094 16.9844C1.21094 17.7264 1.69523 18.7838 4.00242 19.6078C5.61344 20.1831 7.7434 20.5 10 20.5C14.2197 20.5 18.7891 19.3097 18.7891 16.9844C18.7891 14.9486 15.3616 14.0251 13.3389 13.7143ZM5.75191 10.1072C5.74547 10.0972 5.73874 10.0873 5.73172 10.0776C5.06582 9.16152 4.72656 8.07582 4.72656 6.98438C4.72656 4.05398 7.08617 1.67188 10 1.67188C12.9078 1.67188 15.2734 4.05504 15.2734 6.98438C15.2734 8.07758 14.9406 9.12645 14.3107 10.0184C14.2543 10.0929 14.5487 9.63535 10 16.773L5.75191 10.1072ZM10 19.3281C5.39086 19.3281 2.38281 17.9733 2.38281 16.9844C2.38281 16.3197 3.92844 15.2268 7.35344 14.8007L9.50586 18.1782C9.55879 18.2613 9.63181 18.3297 9.71817 18.3771C9.80454 18.4244 9.90145 18.4493 9.99996 18.4493C10.0985 18.4493 10.1954 18.4244 10.2817 18.3771C10.3681 18.3297 10.4411 18.2613 10.4941 18.1782L12.6464 14.8007C16.0715 15.2268 17.6172 16.3197 17.6172 16.9844C17.6172 17.9649 14.6362 19.3281 10 19.3281Z"
-                                  fill="#1CA8CB"
-                                />
-                                <path
-                                  d="M10 4.05469C8.38457 4.05469 7.07031 5.36895 7.07031 6.98438C7.07031 8.5998 8.38457 9.91406 10 9.91406C11.6154 9.91406 12.9297 8.5998 12.9297 6.98438C12.9297 5.36895 11.6154 4.05469 10 4.05469ZM10 8.74219C9.03074 8.74219 8.24219 7.95363 8.24219 6.98438C8.24219 6.01512 9.03074 5.22656 10 5.22656C10.9693 5.22656 11.7578 6.01512 11.7578 6.98438C11.7578 7.95363 10.9693 8.74219 10 8.74219Z"
-                                  fill="#1CA8CB"
-                                />
-                              </g>
-                              <defs>
-                                <clipPath id="clip0_9588_5124">
-                                  <rect
-                                    width="20"
-                                    height="20"
-                                    fill="white"
-                                    transform="translate(0 0.5)"
+                    <div
+                      class="flex items-center justify-between px-5 lg:col-span-9 lg:w-full lg:px-0"
+                    >
+                      <div class="flex h-full flex-col justify-between py-4">
+                        <div class="flex flex-col gap-2 font-inter md:gap-3">
+                          <h2 class="font-semibold text-[#222E48] md:text-2xl">
+                            Grand Elysee
+                          </h2>
+                          <div
+                            class="flex items-center gap-2 text-sm md:text-base"
+                          >
+                            <div>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="21"
+                                viewBox="0 0 20 21"
+                                fill="none"
+                              >
+                                <g clip-path="url(#clip0_9588_5124)">
+                                  <path
+                                    d="M13.3389 13.7143C15.4671 10.3747 15.1996 10.7913 15.2609 10.7043C16.0358 9.61137 16.4453 8.32508 16.4453 6.98438C16.4453 3.42891 13.5601 0.5 10 0.5C6.45148 0.5 3.55469 3.42313 3.55469 6.98438C3.55469 8.32422 3.97281 9.64418 4.77305 10.7518L6.66102 13.7143C4.64246 14.0245 1.21094 14.9489 1.21094 16.9844C1.21094 17.7264 1.69523 18.7838 4.00242 19.6078C5.61344 20.1831 7.7434 20.5 10 20.5C14.2197 20.5 18.7891 19.3097 18.7891 16.9844C18.7891 14.9486 15.3616 14.0251 13.3389 13.7143ZM5.75191 10.1072C5.74547 10.0972 5.73874 10.0873 5.73172 10.0776C5.06582 9.16152 4.72656 8.07582 4.72656 6.98438C4.72656 4.05398 7.08617 1.67188 10 1.67188C12.9078 1.67188 15.2734 4.05504 15.2734 6.98438C15.2734 8.07758 14.9406 9.12645 14.3107 10.0184C14.2543 10.0929 14.5487 9.63535 10 16.773L5.75191 10.1072ZM10 19.3281C5.39086 19.3281 2.38281 17.9733 2.38281 16.9844C2.38281 16.3197 3.92844 15.2268 7.35344 14.8007L9.50586 18.1782C9.55879 18.2613 9.63181 18.3297 9.71817 18.3771C9.80454 18.4244 9.90145 18.4493 9.99996 18.4493C10.0985 18.4493 10.1954 18.4244 10.2817 18.3771C10.3681 18.3297 10.4411 18.2613 10.4941 18.1782L12.6464 14.8007C16.0715 15.2268 17.6172 16.3197 17.6172 16.9844C17.6172 17.9649 14.6362 19.3281 10 19.3281Z"
+                                    fill="#1CA8CB"
                                   />
-                                </clipPath>
-                              </defs>
-                            </svg>
+                                  <path
+                                    d="M10 4.05469C8.38457 4.05469 7.07031 5.36895 7.07031 6.98438C7.07031 8.5998 8.38457 9.91406 10 9.91406C11.6154 9.91406 12.9297 8.5998 12.9297 6.98438C12.9297 5.36895 11.6154 4.05469 10 4.05469ZM10 8.74219C9.03074 8.74219 8.24219 7.95363 8.24219 6.98438C8.24219 6.01512 9.03074 5.22656 10 5.22656C10.9693 5.22656 11.7578 6.01512 11.7578 6.98438C11.7578 7.95363 10.9693 8.74219 10 8.74219Z"
+                                    fill="#1CA8CB"
+                                  />
+                                </g>
+                                <defs>
+                                  <clipPath id="clip0_9588_5124">
+                                    <rect
+                                      width="20"
+                                      height="20"
+                                      fill="white"
+                                      transform="translate(0 0.5)"
+                                    />
+                                  </clipPath>
+                                </defs>
+                              </svg>
+                            </div>
+                            <p>Paris, France</p>
                           </div>
-                          <p>Istanbul, Turkey</p>
+                        </div>
+                        <div>
+                          <p
+                            class="pt-2 font-inter text-sm text-[#1CA8CB] md:text-base"
+                          >
+                            350/per night
+                          </p>
                         </div>
                       </div>
-                      <div>
-                        <p class="font-inter text-[#1CA8CB]">350/per night</p>
+                      <div
+                        class="flex h-full cursor-pointer items-center gap-5"
+                      >
+                        <a
+                          href="../destination-details.html"
+                          class="group rounded bg-[#f7f7ff] p-2 transition duration-500 hover:bg-primary md:rounded-xl md:p-3"
+                        >
+                          <svg
+                            class="size-5 md:size-auto"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="21"
+                            height="21"
+                            viewBox="0 0 21 21"
+                            fill="none"
+                          >
+                            <g clip-path="url(#clip0_9588_5144)">
+                              <path
+                                class="transition duration-500 group-hover:fill-white"
+                                d="M20.826 10.1096C20.6473 9.8652 16.3902 4.125 10.953 4.125C5.51586 4.125 1.25851 9.8652 1.08004 10.1094C0.997566 10.2224 0.953125 10.3586 0.953125 10.4985C0.953125 10.6384 0.997566 10.7746 1.08004 10.8876C1.25851 11.132 5.51586 16.8722 10.953 16.8722C16.3902 16.8722 20.6473 11.132 20.826 10.8878C20.9086 10.7749 20.9531 10.6386 20.9531 10.4987C20.9531 10.3588 20.9086 10.2225 20.826 10.1096ZM10.953 15.5536C6.94796 15.5536 3.47918 11.7437 2.45234 10.4982C3.47785 9.25156 6.93937 5.44367 10.953 5.44367C14.9578 5.44367 18.4264 9.25289 19.4537 10.4991C18.4282 11.7456 14.9666 15.5536 10.953 15.5536Z"
+                                fill="#1CA8CB"
+                              />
+                              <path
+                                class="transition duration-500 group-hover:fill-white"
+                                d="M10.9521 6.54297C8.77082 6.54297 6.99609 8.31769 6.99609 10.499C6.99609 12.6804 8.77082 14.4551 10.9521 14.4551C13.1335 14.4551 14.9082 12.6804 14.9082 10.499C14.9082 8.31769 13.1335 6.54297 10.9521 6.54297ZM10.9521 13.1364C9.49785 13.1364 8.3148 11.9533 8.3148 10.499C8.3148 9.04477 9.49789 7.86168 10.9521 7.86168C12.4064 7.86168 13.5895 9.04477 13.5895 10.499C13.5895 11.9533 12.4064 13.1364 10.9521 13.1364Z"
+                                fill="#1CA8CB"
+                              />
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_9588_5144">
+                                <rect
+                                  width="20"
+                                  height="20"
+                                  fill="white"
+                                  transform="translate(0.953125 0.5)"
+                                />
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </a>
+                        <a
+                          href="#"
+                          class="group rounded bg-[#FFD2D4] p-2 transition duration-500 hover:bg-[#FC0005] md:rounded-xl md:p-3"
+                        >
+                          <svg
+                            class="size-4 md:size-auto"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="21"
+                            height="21"
+                            viewBox="0 0 21 21"
+                            fill="none"
+                          >
+                            <g clip-path="url(#clip0_9588_5156)">
+                              <path
+                                class="transition duration-500 group-hover:fill-white"
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M7.52848 1.05527C7.52851 0.908146 7.58695 0.767048 7.69096 0.662988C7.79497 0.558927 7.93604 0.500416 8.08316 0.500313L13.6297 0.5C13.7769 0.500341 13.9179 0.559014 14.0219 0.663159C14.1258 0.767303 14.1843 0.908423 14.1844 1.05559V2.42734H7.52848V1.05527ZM16.648 19.7054C16.6339 19.9217 16.5376 20.1244 16.3789 20.272C16.2202 20.4197 16.0111 20.501 15.7943 20.4995H5.8548C5.63811 20.4989 5.42966 20.4164 5.27131 20.2685C5.11296 20.1205 5.01644 19.9182 5.00113 19.702L4.15059 7.25992H17.5558L16.6482 19.7052L16.648 19.7054ZM18.8577 6.13305H2.85547V4.84398C2.85571 4.5021 2.99161 4.17428 3.23333 3.93251C3.47505 3.69073 3.80284 3.55476 4.14473 3.55445L17.5683 3.55402C17.9102 3.55455 18.2379 3.69064 18.4795 3.93244C18.7212 4.17424 18.8571 4.50201 18.8574 4.84387V6.13293L18.8577 6.13305ZM8.28 17.5335C8.28 17.6075 8.29457 17.6807 8.32288 17.7491C8.35119 17.8174 8.39269 17.8795 8.445 17.9318C8.49732 17.9841 8.55942 18.0256 8.62777 18.054C8.69612 18.0823 8.76938 18.0968 8.84336 18.0968C8.91734 18.0968 8.9906 18.0823 9.05895 18.054C9.1273 18.0256 9.1894 17.9841 9.24171 17.9318C9.29403 17.8795 9.33552 17.8174 9.36384 17.7491C9.39215 17.6807 9.40672 17.6075 9.40672 17.5335V9.6332C9.40553 9.48463 9.3457 9.34254 9.24023 9.23788C9.13477 9.13322 8.99223 9.07446 8.84365 9.07441C8.69507 9.07436 8.55249 9.13302 8.44695 9.2376C8.34142 9.34219 8.28148 9.48424 8.2802 9.63281V17.5335H8.28ZM12.2995 17.5335C12.2995 17.6829 12.3589 17.8262 12.4646 17.9319C12.5702 18.0376 12.7135 18.0969 12.863 18.0969C13.0124 18.0969 13.1557 18.0376 13.2614 17.9319C13.367 17.8262 13.4264 17.6829 13.4264 17.5335V9.6332C13.4252 9.48461 13.3654 9.3425 13.2599 9.23782C13.1544 9.13315 13.0119 9.07439 12.8633 9.07434C12.7147 9.07428 12.5721 9.13295 12.4665 9.23755C12.361 9.34215 12.301 9.48422 12.2997 9.63281L12.2995 17.5335Z"
+                                fill="#FC0005"
+                              />
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_9588_5156">
+                                <rect
+                                  width="20"
+                                  height="20"
+                                  fill="white"
+                                  transform="translate(0.855469 0.5)"
+                                />
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </a>
                       </div>
                     </div>
-                  </div>
-                  <div class="flex h-full cursor-pointer items-center gap-5">
-                    <a
-                      href="../destination-details.html"
-                      class="group rounded-xl bg-[#f7f7ff] p-3 transition duration-500 hover:bg-primary"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="21"
-                        height="21"
-                        viewBox="0 0 21 21"
-                        fill="none"
-                      >
-                        <g clip-path="url(#clip0_9588_5144)">
-                          <path
-                            class="transition duration-500 group-hover:fill-white"
-                            d="M20.826 10.1096C20.6473 9.8652 16.3902 4.125 10.953 4.125C5.51586 4.125 1.25851 9.8652 1.08004 10.1094C0.997566 10.2224 0.953125 10.3586 0.953125 10.4985C0.953125 10.6384 0.997566 10.7746 1.08004 10.8876C1.25851 11.132 5.51586 16.8722 10.953 16.8722C16.3902 16.8722 20.6473 11.132 20.826 10.8878C20.9086 10.7749 20.9531 10.6386 20.9531 10.4987C20.9531 10.3588 20.9086 10.2225 20.826 10.1096ZM10.953 15.5536C6.94796 15.5536 3.47918 11.7437 2.45234 10.4982C3.47785 9.25156 6.93937 5.44367 10.953 5.44367C14.9578 5.44367 18.4264 9.25289 19.4537 10.4991C18.4282 11.7456 14.9666 15.5536 10.953 15.5536Z"
-                            fill="#1CA8CB"
-                          />
-                          <path
-                            class="transition duration-500 group-hover:fill-white"
-                            d="M10.9521 6.54297C8.77082 6.54297 6.99609 8.31769 6.99609 10.499C6.99609 12.6804 8.77082 14.4551 10.9521 14.4551C13.1335 14.4551 14.9082 12.6804 14.9082 10.499C14.9082 8.31769 13.1335 6.54297 10.9521 6.54297ZM10.9521 13.1364C9.49785 13.1364 8.3148 11.9533 8.3148 10.499C8.3148 9.04477 9.49789 7.86168 10.9521 7.86168C12.4064 7.86168 13.5895 9.04477 13.5895 10.499C13.5895 11.9533 12.4064 13.1364 10.9521 13.1364Z"
-                            fill="#1CA8CB"
-                          />
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_9588_5144">
-                            <rect
-                              width="20"
-                              height="20"
-                              fill="white"
-                              transform="translate(0.953125 0.5)"
-                            />
-                          </clipPath>
-                        </defs>
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      class="group rounded-xl bg-[#FFD2D4] p-3 transition duration-500 hover:bg-[#FC0005]"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="21"
-                        height="21"
-                        viewBox="0 0 21 21"
-                        fill="none"
-                      >
-                        <g clip-path="url(#clip0_9588_5156)">
-                          <path
-                            class="transition duration-500 group-hover:fill-white"
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M7.52848 1.05527C7.52851 0.908146 7.58695 0.767048 7.69096 0.662988C7.79497 0.558927 7.93604 0.500416 8.08316 0.500313L13.6297 0.5C13.7769 0.500341 13.9179 0.559014 14.0219 0.663159C14.1258 0.767303 14.1843 0.908423 14.1844 1.05559V2.42734H7.52848V1.05527ZM16.648 19.7054C16.6339 19.9217 16.5376 20.1244 16.3789 20.272C16.2202 20.4197 16.0111 20.501 15.7943 20.4995H5.8548C5.63811 20.4989 5.42966 20.4164 5.27131 20.2685C5.11296 20.1205 5.01644 19.9182 5.00113 19.702L4.15059 7.25992H17.5558L16.6482 19.7052L16.648 19.7054ZM18.8577 6.13305H2.85547V4.84398C2.85571 4.5021 2.99161 4.17428 3.23333 3.93251C3.47505 3.69073 3.80284 3.55476 4.14473 3.55445L17.5683 3.55402C17.9102 3.55455 18.2379 3.69064 18.4795 3.93244C18.7212 4.17424 18.8571 4.50201 18.8574 4.84387V6.13293L18.8577 6.13305ZM8.28 17.5335C8.28 17.6075 8.29457 17.6807 8.32288 17.7491C8.35119 17.8174 8.39269 17.8795 8.445 17.9318C8.49732 17.9841 8.55942 18.0256 8.62777 18.054C8.69612 18.0823 8.76938 18.0968 8.84336 18.0968C8.91734 18.0968 8.9906 18.0823 9.05895 18.054C9.1273 18.0256 9.1894 17.9841 9.24171 17.9318C9.29403 17.8795 9.33552 17.8174 9.36384 17.7491C9.39215 17.6807 9.40672 17.6075 9.40672 17.5335V9.6332C9.40553 9.48463 9.3457 9.34254 9.24023 9.23788C9.13477 9.13322 8.99223 9.07446 8.84365 9.07441C8.69507 9.07436 8.55249 9.13302 8.44695 9.2376C8.34142 9.34219 8.28148 9.48424 8.2802 9.63281V17.5335H8.28ZM12.2995 17.5335C12.2995 17.6829 12.3589 17.8262 12.4646 17.9319C12.5702 18.0376 12.7135 18.0969 12.863 18.0969C13.0124 18.0969 13.1557 18.0376 13.2614 17.9319C13.367 17.8262 13.4264 17.6829 13.4264 17.5335V9.6332C13.4252 9.48461 13.3654 9.3425 13.2599 9.23782C13.1544 9.13315 13.0119 9.07439 12.8633 9.07434C12.7147 9.07428 12.5721 9.13295 12.4665 9.23755C12.361 9.34215 12.301 9.48422 12.2997 9.63281L12.2995 17.5335Z"
-                            fill="#FC0005"
-                          />
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_9588_5156">
-                            <rect
-                              width="20"
-                              height="20"
-                              fill="white"
-                              transform="translate(0.855469 0.5)"
-                            />
-                          </clipPath>
-                        </defs>
-                      </svg>
-                    </a>
                   </div>
                 </div>
 
-                <div class="flex items-center justify-between">
-                  <div class="grid h-full grid-cols-2 gap-12">
-                    <div class="h-[230px] w-[230px]">
+                <div class="flex flex-col 2xl:justify-between">
+                  <div
+                    class="grid h-full grid-cols-1 md:grid-cols-2 md:gap-8 lg:grid-cols-12 2xl:gap-12"
+                  >
+                    <div class="h-[230px] lg:col-span-3 lg:w-full">
                       <img
                         class="h-full w-full rounded-lg object-cover"
-                        src="../assets/img/dashboard/dashboard-main/wishlist-4.png"
+                        src="../assets/img/dashboard/dashboard-main/wishlist-img.png"
                         alt=""
                       />
                     </div>
-                    <div class="flex h-full flex-col justify-between py-4">
-                      <div class="flex flex-col gap-3 font-inter">
-                        <h2 class="text-xl font-semibold text-[#222E48]">
-                          Central park
-                        </h2>
-                        <div class="flex items-center gap-3">
-                          <div>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="20"
-                              height="21"
-                              viewBox="0 0 20 21"
-                              fill="none"
-                            >
-                              <g clip-path="url(#clip0_9588_5124)">
-                                <path
-                                  d="M13.3389 13.7143C15.4671 10.3747 15.1996 10.7913 15.2609 10.7043C16.0358 9.61137 16.4453 8.32508 16.4453 6.98438C16.4453 3.42891 13.5601 0.5 10 0.5C6.45148 0.5 3.55469 3.42313 3.55469 6.98438C3.55469 8.32422 3.97281 9.64418 4.77305 10.7518L6.66102 13.7143C4.64246 14.0245 1.21094 14.9489 1.21094 16.9844C1.21094 17.7264 1.69523 18.7838 4.00242 19.6078C5.61344 20.1831 7.7434 20.5 10 20.5C14.2197 20.5 18.7891 19.3097 18.7891 16.9844C18.7891 14.9486 15.3616 14.0251 13.3389 13.7143ZM5.75191 10.1072C5.74547 10.0972 5.73874 10.0873 5.73172 10.0776C5.06582 9.16152 4.72656 8.07582 4.72656 6.98438C4.72656 4.05398 7.08617 1.67188 10 1.67188C12.9078 1.67188 15.2734 4.05504 15.2734 6.98438C15.2734 8.07758 14.9406 9.12645 14.3107 10.0184C14.2543 10.0929 14.5487 9.63535 10 16.773L5.75191 10.1072ZM10 19.3281C5.39086 19.3281 2.38281 17.9733 2.38281 16.9844C2.38281 16.3197 3.92844 15.2268 7.35344 14.8007L9.50586 18.1782C9.55879 18.2613 9.63181 18.3297 9.71817 18.3771C9.80454 18.4244 9.90145 18.4493 9.99996 18.4493C10.0985 18.4493 10.1954 18.4244 10.2817 18.3771C10.3681 18.3297 10.4411 18.2613 10.4941 18.1782L12.6464 14.8007C16.0715 15.2268 17.6172 16.3197 17.6172 16.9844C17.6172 17.9649 14.6362 19.3281 10 19.3281Z"
-                                  fill="#1CA8CB"
-                                />
-                                <path
-                                  d="M10 4.05469C8.38457 4.05469 7.07031 5.36895 7.07031 6.98438C7.07031 8.5998 8.38457 9.91406 10 9.91406C11.6154 9.91406 12.9297 8.5998 12.9297 6.98438C12.9297 5.36895 11.6154 4.05469 10 4.05469ZM10 8.74219C9.03074 8.74219 8.24219 7.95363 8.24219 6.98438C8.24219 6.01512 9.03074 5.22656 10 5.22656C10.9693 5.22656 11.7578 6.01512 11.7578 6.98438C11.7578 7.95363 10.9693 8.74219 10 8.74219Z"
-                                  fill="#1CA8CB"
-                                />
-                              </g>
-                              <defs>
-                                <clipPath id="clip0_9588_5124">
-                                  <rect
-                                    width="20"
-                                    height="20"
-                                    fill="white"
-                                    transform="translate(0 0.5)"
+                    <div
+                      class="flex items-center justify-between px-5 lg:col-span-9 lg:w-full lg:px-0"
+                    >
+                      <div class="flex h-full flex-col justify-between py-4">
+                        <div class="flex flex-col gap-2 font-inter md:gap-3">
+                          <h2 class="font-semibold text-[#222E48] md:text-2xl">
+                            Grand Elysee
+                          </h2>
+                          <div
+                            class="flex items-center gap-2 text-sm md:text-base"
+                          >
+                            <div>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="21"
+                                viewBox="0 0 20 21"
+                                fill="none"
+                              >
+                                <g clip-path="url(#clip0_9588_5124)">
+                                  <path
+                                    d="M13.3389 13.7143C15.4671 10.3747 15.1996 10.7913 15.2609 10.7043C16.0358 9.61137 16.4453 8.32508 16.4453 6.98438C16.4453 3.42891 13.5601 0.5 10 0.5C6.45148 0.5 3.55469 3.42313 3.55469 6.98438C3.55469 8.32422 3.97281 9.64418 4.77305 10.7518L6.66102 13.7143C4.64246 14.0245 1.21094 14.9489 1.21094 16.9844C1.21094 17.7264 1.69523 18.7838 4.00242 19.6078C5.61344 20.1831 7.7434 20.5 10 20.5C14.2197 20.5 18.7891 19.3097 18.7891 16.9844C18.7891 14.9486 15.3616 14.0251 13.3389 13.7143ZM5.75191 10.1072C5.74547 10.0972 5.73874 10.0873 5.73172 10.0776C5.06582 9.16152 4.72656 8.07582 4.72656 6.98438C4.72656 4.05398 7.08617 1.67188 10 1.67188C12.9078 1.67188 15.2734 4.05504 15.2734 6.98438C15.2734 8.07758 14.9406 9.12645 14.3107 10.0184C14.2543 10.0929 14.5487 9.63535 10 16.773L5.75191 10.1072ZM10 19.3281C5.39086 19.3281 2.38281 17.9733 2.38281 16.9844C2.38281 16.3197 3.92844 15.2268 7.35344 14.8007L9.50586 18.1782C9.55879 18.2613 9.63181 18.3297 9.71817 18.3771C9.80454 18.4244 9.90145 18.4493 9.99996 18.4493C10.0985 18.4493 10.1954 18.4244 10.2817 18.3771C10.3681 18.3297 10.4411 18.2613 10.4941 18.1782L12.6464 14.8007C16.0715 15.2268 17.6172 16.3197 17.6172 16.9844C17.6172 17.9649 14.6362 19.3281 10 19.3281Z"
+                                    fill="#1CA8CB"
                                   />
-                                </clipPath>
-                              </defs>
-                            </svg>
+                                  <path
+                                    d="M10 4.05469C8.38457 4.05469 7.07031 5.36895 7.07031 6.98438C7.07031 8.5998 8.38457 9.91406 10 9.91406C11.6154 9.91406 12.9297 8.5998 12.9297 6.98438C12.9297 5.36895 11.6154 4.05469 10 4.05469ZM10 8.74219C9.03074 8.74219 8.24219 7.95363 8.24219 6.98438C8.24219 6.01512 9.03074 5.22656 10 5.22656C10.9693 5.22656 11.7578 6.01512 11.7578 6.98438C11.7578 7.95363 10.9693 8.74219 10 8.74219Z"
+                                    fill="#1CA8CB"
+                                  />
+                                </g>
+                                <defs>
+                                  <clipPath id="clip0_9588_5124">
+                                    <rect
+                                      width="20"
+                                      height="20"
+                                      fill="white"
+                                      transform="translate(0 0.5)"
+                                    />
+                                  </clipPath>
+                                </defs>
+                              </svg>
+                            </div>
+                            <p>Paris, France</p>
                           </div>
-                          <p>New York, USA</p>
+                        </div>
+                        <div>
+                          <p
+                            class="pt-2 font-inter text-sm text-[#1CA8CB] md:text-base"
+                          >
+                            350/per night
+                          </p>
                         </div>
                       </div>
-                      <div>
-                        <p class="font-inter text-[#1CA8CB]">350/per night</p>
+                      <div
+                        class="flex h-full cursor-pointer items-center gap-5"
+                      >
+                        <a
+                          href="../destination-details.html"
+                          class="group rounded bg-[#f7f7ff] p-2 transition duration-500 hover:bg-primary md:rounded-xl md:p-3"
+                        >
+                          <svg
+                            class="size-5 md:size-auto"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="21"
+                            height="21"
+                            viewBox="0 0 21 21"
+                            fill="none"
+                          >
+                            <g clip-path="url(#clip0_9588_5144)">
+                              <path
+                                class="transition duration-500 group-hover:fill-white"
+                                d="M20.826 10.1096C20.6473 9.8652 16.3902 4.125 10.953 4.125C5.51586 4.125 1.25851 9.8652 1.08004 10.1094C0.997566 10.2224 0.953125 10.3586 0.953125 10.4985C0.953125 10.6384 0.997566 10.7746 1.08004 10.8876C1.25851 11.132 5.51586 16.8722 10.953 16.8722C16.3902 16.8722 20.6473 11.132 20.826 10.8878C20.9086 10.7749 20.9531 10.6386 20.9531 10.4987C20.9531 10.3588 20.9086 10.2225 20.826 10.1096ZM10.953 15.5536C6.94796 15.5536 3.47918 11.7437 2.45234 10.4982C3.47785 9.25156 6.93937 5.44367 10.953 5.44367C14.9578 5.44367 18.4264 9.25289 19.4537 10.4991C18.4282 11.7456 14.9666 15.5536 10.953 15.5536Z"
+                                fill="#1CA8CB"
+                              />
+                              <path
+                                class="transition duration-500 group-hover:fill-white"
+                                d="M10.9521 6.54297C8.77082 6.54297 6.99609 8.31769 6.99609 10.499C6.99609 12.6804 8.77082 14.4551 10.9521 14.4551C13.1335 14.4551 14.9082 12.6804 14.9082 10.499C14.9082 8.31769 13.1335 6.54297 10.9521 6.54297ZM10.9521 13.1364C9.49785 13.1364 8.3148 11.9533 8.3148 10.499C8.3148 9.04477 9.49789 7.86168 10.9521 7.86168C12.4064 7.86168 13.5895 9.04477 13.5895 10.499C13.5895 11.9533 12.4064 13.1364 10.9521 13.1364Z"
+                                fill="#1CA8CB"
+                              />
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_9588_5144">
+                                <rect
+                                  width="20"
+                                  height="20"
+                                  fill="white"
+                                  transform="translate(0.953125 0.5)"
+                                />
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </a>
+                        <a
+                          href="#"
+                          class="group rounded bg-[#FFD2D4] p-2 transition duration-500 hover:bg-[#FC0005] md:rounded-xl md:p-3"
+                        >
+                          <svg
+                            class="size-4 md:size-auto"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="21"
+                            height="21"
+                            viewBox="0 0 21 21"
+                            fill="none"
+                          >
+                            <g clip-path="url(#clip0_9588_5156)">
+                              <path
+                                class="transition duration-500 group-hover:fill-white"
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M7.52848 1.05527C7.52851 0.908146 7.58695 0.767048 7.69096 0.662988C7.79497 0.558927 7.93604 0.500416 8.08316 0.500313L13.6297 0.5C13.7769 0.500341 13.9179 0.559014 14.0219 0.663159C14.1258 0.767303 14.1843 0.908423 14.1844 1.05559V2.42734H7.52848V1.05527ZM16.648 19.7054C16.6339 19.9217 16.5376 20.1244 16.3789 20.272C16.2202 20.4197 16.0111 20.501 15.7943 20.4995H5.8548C5.63811 20.4989 5.42966 20.4164 5.27131 20.2685C5.11296 20.1205 5.01644 19.9182 5.00113 19.702L4.15059 7.25992H17.5558L16.6482 19.7052L16.648 19.7054ZM18.8577 6.13305H2.85547V4.84398C2.85571 4.5021 2.99161 4.17428 3.23333 3.93251C3.47505 3.69073 3.80284 3.55476 4.14473 3.55445L17.5683 3.55402C17.9102 3.55455 18.2379 3.69064 18.4795 3.93244C18.7212 4.17424 18.8571 4.50201 18.8574 4.84387V6.13293L18.8577 6.13305ZM8.28 17.5335C8.28 17.6075 8.29457 17.6807 8.32288 17.7491C8.35119 17.8174 8.39269 17.8795 8.445 17.9318C8.49732 17.9841 8.55942 18.0256 8.62777 18.054C8.69612 18.0823 8.76938 18.0968 8.84336 18.0968C8.91734 18.0968 8.9906 18.0823 9.05895 18.054C9.1273 18.0256 9.1894 17.9841 9.24171 17.9318C9.29403 17.8795 9.33552 17.8174 9.36384 17.7491C9.39215 17.6807 9.40672 17.6075 9.40672 17.5335V9.6332C9.40553 9.48463 9.3457 9.34254 9.24023 9.23788C9.13477 9.13322 8.99223 9.07446 8.84365 9.07441C8.69507 9.07436 8.55249 9.13302 8.44695 9.2376C8.34142 9.34219 8.28148 9.48424 8.2802 9.63281V17.5335H8.28ZM12.2995 17.5335C12.2995 17.6829 12.3589 17.8262 12.4646 17.9319C12.5702 18.0376 12.7135 18.0969 12.863 18.0969C13.0124 18.0969 13.1557 18.0376 13.2614 17.9319C13.367 17.8262 13.4264 17.6829 13.4264 17.5335V9.6332C13.4252 9.48461 13.3654 9.3425 13.2599 9.23782C13.1544 9.13315 13.0119 9.07439 12.8633 9.07434C12.7147 9.07428 12.5721 9.13295 12.4665 9.23755C12.361 9.34215 12.301 9.48422 12.2997 9.63281L12.2995 17.5335Z"
+                                fill="#FC0005"
+                              />
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_9588_5156">
+                                <rect
+                                  width="20"
+                                  height="20"
+                                  fill="white"
+                                  transform="translate(0.855469 0.5)"
+                                />
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </a>
                       </div>
                     </div>
-                  </div>
-                  <div class="flex h-full cursor-pointer items-center gap-5">
-                    <a
-                      href="../destination-details.html"
-                      class="group rounded-xl bg-[#f7f7ff] p-3 transition duration-500 hover:bg-primary"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="21"
-                        height="21"
-                        viewBox="0 0 21 21"
-                        fill="none"
-                      >
-                        <g clip-path="url(#clip0_9588_5144)">
-                          <path
-                            class="transition duration-500 group-hover:fill-white"
-                            d="M20.826 10.1096C20.6473 9.8652 16.3902 4.125 10.953 4.125C5.51586 4.125 1.25851 9.8652 1.08004 10.1094C0.997566 10.2224 0.953125 10.3586 0.953125 10.4985C0.953125 10.6384 0.997566 10.7746 1.08004 10.8876C1.25851 11.132 5.51586 16.8722 10.953 16.8722C16.3902 16.8722 20.6473 11.132 20.826 10.8878C20.9086 10.7749 20.9531 10.6386 20.9531 10.4987C20.9531 10.3588 20.9086 10.2225 20.826 10.1096ZM10.953 15.5536C6.94796 15.5536 3.47918 11.7437 2.45234 10.4982C3.47785 9.25156 6.93937 5.44367 10.953 5.44367C14.9578 5.44367 18.4264 9.25289 19.4537 10.4991C18.4282 11.7456 14.9666 15.5536 10.953 15.5536Z"
-                            fill="#1CA8CB"
-                          />
-                          <path
-                            class="transition duration-500 group-hover:fill-white"
-                            d="M10.9521 6.54297C8.77082 6.54297 6.99609 8.31769 6.99609 10.499C6.99609 12.6804 8.77082 14.4551 10.9521 14.4551C13.1335 14.4551 14.9082 12.6804 14.9082 10.499C14.9082 8.31769 13.1335 6.54297 10.9521 6.54297ZM10.9521 13.1364C9.49785 13.1364 8.3148 11.9533 8.3148 10.499C8.3148 9.04477 9.49789 7.86168 10.9521 7.86168C12.4064 7.86168 13.5895 9.04477 13.5895 10.499C13.5895 11.9533 12.4064 13.1364 10.9521 13.1364Z"
-                            fill="#1CA8CB"
-                          />
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_9588_5144">
-                            <rect
-                              width="20"
-                              height="20"
-                              fill="white"
-                              transform="translate(0.953125 0.5)"
-                            />
-                          </clipPath>
-                        </defs>
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      class="group rounded-xl bg-[#FFD2D4] p-3 transition duration-500 hover:bg-[#FC0005]"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="21"
-                        height="21"
-                        viewBox="0 0 21 21"
-                        fill="none"
-                      >
-                        <g clip-path="url(#clip0_9588_5156)">
-                          <path
-                            class="transition duration-500 group-hover:fill-white"
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M7.52848 1.05527C7.52851 0.908146 7.58695 0.767048 7.69096 0.662988C7.79497 0.558927 7.93604 0.500416 8.08316 0.500313L13.6297 0.5C13.7769 0.500341 13.9179 0.559014 14.0219 0.663159C14.1258 0.767303 14.1843 0.908423 14.1844 1.05559V2.42734H7.52848V1.05527ZM16.648 19.7054C16.6339 19.9217 16.5376 20.1244 16.3789 20.272C16.2202 20.4197 16.0111 20.501 15.7943 20.4995H5.8548C5.63811 20.4989 5.42966 20.4164 5.27131 20.2685C5.11296 20.1205 5.01644 19.9182 5.00113 19.702L4.15059 7.25992H17.5558L16.6482 19.7052L16.648 19.7054ZM18.8577 6.13305H2.85547V4.84398C2.85571 4.5021 2.99161 4.17428 3.23333 3.93251C3.47505 3.69073 3.80284 3.55476 4.14473 3.55445L17.5683 3.55402C17.9102 3.55455 18.2379 3.69064 18.4795 3.93244C18.7212 4.17424 18.8571 4.50201 18.8574 4.84387V6.13293L18.8577 6.13305ZM8.28 17.5335C8.28 17.6075 8.29457 17.6807 8.32288 17.7491C8.35119 17.8174 8.39269 17.8795 8.445 17.9318C8.49732 17.9841 8.55942 18.0256 8.62777 18.054C8.69612 18.0823 8.76938 18.0968 8.84336 18.0968C8.91734 18.0968 8.9906 18.0823 9.05895 18.054C9.1273 18.0256 9.1894 17.9841 9.24171 17.9318C9.29403 17.8795 9.33552 17.8174 9.36384 17.7491C9.39215 17.6807 9.40672 17.6075 9.40672 17.5335V9.6332C9.40553 9.48463 9.3457 9.34254 9.24023 9.23788C9.13477 9.13322 8.99223 9.07446 8.84365 9.07441C8.69507 9.07436 8.55249 9.13302 8.44695 9.2376C8.34142 9.34219 8.28148 9.48424 8.2802 9.63281V17.5335H8.28ZM12.2995 17.5335C12.2995 17.6829 12.3589 17.8262 12.4646 17.9319C12.5702 18.0376 12.7135 18.0969 12.863 18.0969C13.0124 18.0969 13.1557 18.0376 13.2614 17.9319C13.367 17.8262 13.4264 17.6829 13.4264 17.5335V9.6332C13.4252 9.48461 13.3654 9.3425 13.2599 9.23782C13.1544 9.13315 13.0119 9.07439 12.8633 9.07434C12.7147 9.07428 12.5721 9.13295 12.4665 9.23755C12.361 9.34215 12.301 9.48422 12.2997 9.63281L12.2995 17.5335Z"
-                            fill="#FC0005"
-                          />
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_9588_5156">
-                            <rect
-                              width="20"
-                              height="20"
-                              fill="white"
-                              transform="translate(0.855469 0.5)"
-                            />
-                          </clipPath>
-                        </defs>
-                      </svg>
-                    </a>
                   </div>
                 </div>
               </section>
@@ -1056,9 +1481,11 @@
           <!-- Dashboard Contents::End -->
 
           <!-- Footer::Start -->
-          <footer class="flex w-full items-center justify-between px-6 py-8">
-            <div class="font-inter text-[#404A60]">
-              <p>
+          <footer
+            class="flex w-full flex-col items-center justify-between gap-5 px-6 py-8 xl:flex-row"
+          >
+            <div class="text-center font-inter text-[#404A60]">
+              <p class="text-sm md:text-base">
                 Copyright ©2024
                 <span class="text-[#5D69F4]">FineBusTour</span>. Designed By
                 <span class="text-[#00998B]">Designer</span>
@@ -1069,7 +1496,7 @@
             <div class="flex items-center gap-3">
               <a
                 href="#"
-                class="group inline-block cursor-pointer rounded-full border border-[#5D69F4] p-3 transition duration-300 hover:bg-[#5D69F4] hover:shadow-[0px_6px_30px_0px_rgba(93,105,244,0.40)]"
+                class="group inline-block cursor-pointer rounded-full border border-[#5D69F4] p-2 transition duration-300 hover:bg-[#5D69F4] hover:shadow-[0px_6px_30px_0px_rgba(93,105,244,0.40)] md:p-3"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1087,7 +1514,7 @@
               </a>
               <a
                 href="#"
-                class="group inline-block cursor-pointer rounded-full border border-[#5D69F4] p-3 transition duration-300 hover:bg-[#5D69F4] hover:shadow-[0px_6px_30px_0px_rgba(93,105,244,0.40)]"
+                class="group inline-block cursor-pointer rounded-full border border-[#5D69F4] p-2 transition duration-300 hover:bg-[#5D69F4] hover:shadow-[0px_6px_30px_0px_rgba(93,105,244,0.40)] md:p-3"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1105,7 +1532,7 @@
               </a>
               <a
                 href="#"
-                class="group inline-block cursor-pointer rounded-full border border-[#5D69F4] p-3 transition duration-300 hover:bg-[#5D69F4] hover:shadow-[0px_6px_30px_0px_rgba(93,105,244,0.40)]"
+                class="group inline-block cursor-pointer rounded-full border border-[#5D69F4] p-2 transition duration-300 hover:bg-[#5D69F4] hover:shadow-[0px_6px_30px_0px_rgba(93,105,244,0.40)] md:p-3"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1123,7 +1550,7 @@
               </a>
               <a
                 href="#"
-                class="group inline-block cursor-pointer rounded-full border border-[#5D69F4] p-3 transition duration-300 hover:bg-[#5D69F4] hover:shadow-[0px_6px_30px_0px_rgba(93,105,244,0.40)]"
+                class="group inline-block cursor-pointer rounded-full border border-[#5D69F4] p-2 transition duration-300 hover:bg-[#5D69F4] hover:shadow-[0px_6px_30px_0px_rgba(93,105,244,0.40)] md:p-3"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1153,7 +1580,7 @@
               </a>
               <a
                 href="#"
-                class="group inline-block cursor-pointer rounded-full border border-[#5D69F4] p-3 transition duration-300 hover:bg-[#5D69F4] hover:shadow-[0px_6px_30px_0px_rgba(93,105,244,0.40)]"
+                class="group inline-block cursor-pointer rounded-full border border-[#5D69F4] p-2 transition duration-300 hover:bg-[#5D69F4] hover:shadow-[0px_6px_30px_0px_rgba(93,105,244,0.40)] md:p-3"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1172,7 +1599,9 @@
             </div>
             <!-- Social Icons::End -->
 
-            <div class="flex items-center gap-6 font-inter text-[#404A60]">
+            <div
+              class="flex items-center gap-6 font-inter text-sm text-[#404A60] md:text-base"
+            >
               <a href="#">Privacy policy</a>
               <a href="#">Terms of condition</a>
             </div>
