@@ -15,7 +15,7 @@
 
       <section class="flex h-[100vh]">
         <!-- Sidebar ::Start -->
-        <section class="hidden h-full w-[450px] p-8 2xl:block">
+        <section class="hidden h-full w-[350px] p-8 xl:inline-block">
           <!-- Logo::Start -->
           <div>
             <a href="../index.html">
@@ -302,7 +302,7 @@
         <section class="w-full">
           <!-- Header::Start -->
           <header class="relative">
-            <div class="flex justify-between px-5 py-6 2xl:px-10 2xl:py-8">
+            <div class="flex justify-between px-5 py-6 xl:px-10 xl:py-8">
               <!-- Left Side ::Start -->
               <div class="flex flex-col gap-2 md:flex-row md:items-center">
                 <div>
@@ -363,7 +363,7 @@
                 </div>
 
                 <!-- Hamburger Icons::Start -->
-                <div>
+                <div class="mt-0 md:mt-2">
                   <div
                     id="hamburger"
                     class="rounded-md bg-primary px-3 py-[6px] text-white xl:hidden"
@@ -385,7 +385,7 @@
             <!-- Notifications::Start -->
             <div
               id="notification-container"
-              class="absolute right-[2%] top-[46%] -z-10 mx-5 translate-y-3 rounded-xl bg-[#f7f7ff] p-4 font-inter opacity-0 shadow-[-7px_14px_9px_7px_rgba(0,0,0,0.15)] transition-all lg:bg-white lg:px-8 lg:py-6 2xl:right-[5%] 2xl:w-[550px]"
+              class="absolute right-[2%] top-[46%] -z-10 mx-5 translate-y-3 rounded-xl bg-[#f7f7ff] p-4 font-inter opacity-0 shadow-[-7px_14px_9px_7px_rgba(0,0,0,0.15)] transition-all md:top-[70%] lg:bg-white lg:px-8 lg:py-6 2xl:right-[5%] 2xl:w-[550px]"
             >
               <!-- Top Part::Start -->
               <div class="flex items-center justify-between font-inter md:pb-5">
@@ -560,7 +560,7 @@
           <!-- Responsive Sidebar::Start -->
           <div
             id="dashboard-sidebar"
-            class="absolute inset-0 h-[200vh] w-[250px] max-w-[250px] -translate-x-full bg-[#f7f7ff] p-5 pb-5 pl-5 pt-4 transition-all duration-500"
+            class="fixed inset-0 w-[250px] max-w-[250px] -translate-x-full bg-[#f7f7ff] p-5 pb-5 pl-5 pt-4 transition-all duration-500 lg:w-[300px]"
           >
             <div class="mt-2">
               <div class="w-full">
@@ -846,20 +846,22 @@
           <!-- Header::End -->
 
           <!-- Dashboard Contents::Start -->
-          <section class="min-h-[calc(100%-234px)] bg-[#f7f7fe] p-5 md:p-7">
+          <section
+            class="min-h-[calc(100%-234px)] bg-[#f7f7fe] p-5 md:p-6 2xl:p-7"
+          >
             <!-- Top Cards::Start -->
             <div
-              class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4"
+              class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6  2xl:grid-cols-4"
             >
               <div>
                 <div
-                  class="flex items-center gap-4 rounded-lg bg-white px-4 py-4 md:gap-6 md:rounded-xl md:px-6 md:py-6 lg:rounded-2xl lg:px-8 lg:py-6"
+                  class="flex items-center gap-4 rounded-lg bg-white px-4 py-4 md:gap-6 md:rounded-xl md:px-6 md:py-6 lg:rounded-2xl lg:px-8 lg:py-6 "
                 >
                   <div
                     class="rounded-lg bg-[#f7f7fe] p-3 md:rounded-xl lg:rounded-2xl"
                   >
                     <svg
-                      class="size-7 md:size-auto"
+                      class="size-7 md:size-auto xl:size-7 2xl:size-auto"
                       xmlns="http://www.w3.org/2000/svg"
                       width="40"
                       height="41"
@@ -1297,7 +1299,7 @@
 
             <!-- Booking Table::Start -->
             <div
-              class="mb-20 mt-10 rounded-lg bg-white pl-5 pr-5 pt-6 md:rounded-xl md:pl-7 md:pr-10 md:pt-10 lg:rounded-2xl lg:pb-20 lg:pl-9 lg:pr-16 lg:pt-14"
+              class="mb-20 mt-10 rounded-lg bg-white pl-5 pr-5 pt-6 md:rounded-xl md:pl-7 md:pr-10 md:pt-10 lg:rounded-2xl lg:pb-20 lg:pl-9 lg:pr-12 lg:pt-14 2xl:pr-16"
             >
               <!-- title::Start -->
               <div class="font-inter font-semibold text-[#222E48] md:text-2xl">
@@ -1306,100 +1308,294 @@
               <!-- title::End -->
 
               <!-- Table::Start -->
-              <div class="overflow-x-auto">
-                <table class="mt-5 w-full min-w-max font-inter md:mt-10">
+              <div class="overflow-x-auto  ">
+                <table class="mt-5 w-full font-inter md:mt-10">
                   <thead>
-                    <tr class="bg-[#F2F3F4] text-sm font-bold text-[#222E48CC] md:text-base lg:text-lg">
-                      <th class="px-4 py-2 text-left md:px-5 md:py-4">Order Id</th>
+                    <tr
+                      class="bg-[#F2F3F4] text-sm font-bold text-[#222E48CC] md:text-base lg:text-lg"
+                    >
+                      <th class="px-4 py-2 text-left md:px-5 md:py-4">
+                        Order Id
+                      </th>
                       <th class="px-4 py-2 text-left md:px-5 md:py-4">Title</th>
-                      <th class="px-4 py-2 text-left md:px-5 md:py-4">Location</th>
-                      <th class="px-4 py-2 text-left md:px-5 md:py-4">Order Date</th>
-                      <th class="px-4 py-2 text-left md:px-5 md:py-4">Execution Date</th>
+                      <th class="px-4 py-2 text-left md:px-5 md:py-4">
+                        Location
+                      </th>
+                      <th class="px-4 py-2 text-left md:px-5 md:py-4">
+                        Order Date
+                      </th>
+                      <th class="px-4 py-2 text-left md:px-5 md:py-4">
+                        Execution Date
+                      </th>
                       <th class="px-4 py-2 text-left md:px-5 md:py-4">Price</th>
-                      <th class="px-4 py-2 text-left md:px-5 md:py-4">Status</th>
-                      <th class="px-4 py-2 text-left md:px-5 md:py-4">Action</th>
+                      <th class="px-4 py-2 text-left md:px-5 md:py-4">
+                        Status
+                      </th>
+                      <th class="px-4 py-2 text-left md:px-5 md:py-4">
+                        Action
+                      </th>
                     </tr>
                   </thead>
-              
+
                   <tbody>
-                    <tr class="text-sm md:text-base border-b">
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60B2]">#232</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">New York City Park</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">USA</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">30/9/23</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">10/10/23</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">$350</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">
-                        <button class="rounded-2xl bg-[#198754] px-3 font-medium text-white">Completed</button>
+                    <tr class="border-b text-sm md:text-base">
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60B2] md:px-5 md:py-4"
+                      >
+                        #232
                       </td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">
-                        <button class="rounded-2xl bg-[#287DFA] px-3 py-1 font-medium text-white">Cancel</button>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        New York City Park
                       </td>
-                    </tr>
-              
-                    <tr class="text-sm md:text-base border-b">
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60B2]">#233</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">New York City Park</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">USA</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">30/9/23</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">10/10/23</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">$350</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">
-                        <button class="rounded-2xl bg-[#0DCAF0] px-3 font-medium text-black">Pending</button>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        USA
                       </td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">
-                        <button class="rounded-2xl bg-[#287DFA] px-3 py-1 font-medium text-white">Cancel</button>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        30/9/23
                       </td>
-                    </tr>
-              
-                    <tr class="text-sm md:text-base border-b">
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60B2]">#234</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">New York City Park</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">USA</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">30/9/23</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">10/10/23</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">$350</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">
-                        <button class="rounded-2xl bg-[#FF2508] px-3 font-medium text-white">Canceled</button>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        10/10/23
                       </td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">
-                        <button class="rounded-2xl bg-[#287DFA] px-3 py-1 font-medium text-white">Cancel</button>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        $350
                       </td>
-                    </tr>
-              
-                    <tr class="text-sm md:text-base border-b">
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60B2]">#235</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">New York City Park</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">USA</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">30/9/23</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">10/10/23</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">$350</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">
-                        <button class="rounded-2xl bg-[#FFC107] px-3 font-medium text-black">Delayed</button>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        <button
+                          class="rounded-2xl bg-[#198754] px-3 font-medium text-white"
+                        >
+                          Completed
+                        </button>
                       </td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">
-                        <button class="rounded-2xl bg-[#287DFA] px-3 py-1 font-medium text-white">Cancel</button>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        <button
+                          class="rounded-2xl bg-[#287DFA] px-3 py-1 font-medium text-white"
+                        >
+                          Cancel
+                        </button>
                       </td>
                     </tr>
-              
-                    <tr class="text-sm md:text-base border-b">
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60B2]">#236</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">New York City Park</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">USA</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">30/9/23</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">10/10/23</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">$350</td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">
-                        <button class="rounded-2xl bg-[#198754] px-3 font-medium text-white">Completed</button>
+
+                    <tr class="border-b text-sm md:text-base">
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60B2] md:px-5 md:py-4"
+                      >
+                        #233
                       </td>
-                      <td class="whitespace-nowrap px-4 py-2 md:px-5 md:py-4 text-[#404A60]">
-                        <button class="rounded-2xl bg-[#287DFA] px-3 py-1 font-medium text-white">Cancel</button>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        New York City Park
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        USA
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        30/9/23
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        10/10/23
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        $350
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        <button
+                          class="rounded-2xl bg-[#0DCAF0] px-3 font-medium text-black"
+                        >
+                          Pending
+                        </button>
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        <button
+                          class="rounded-2xl bg-[#287DFA] px-3 py-1 font-medium text-white"
+                        >
+                          Cancel
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr class="border-b text-sm md:text-base">
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60B2] md:px-5 md:py-4"
+                      >
+                        #234
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        New York City Park
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        USA
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        30/9/23
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        10/10/23
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        $350
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        <button
+                          class="rounded-2xl bg-[#FF2508] px-3 font-medium text-white"
+                        >
+                          Canceled
+                        </button>
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        <button
+                          class="rounded-2xl bg-[#287DFA] px-3 py-1 font-medium text-white"
+                        >
+                          Cancel
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr class="border-b text-sm md:text-base">
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60B2] md:px-5 md:py-4"
+                      >
+                        #235
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        New York City Park
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        USA
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        30/9/23
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        10/10/23
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        $350
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        <button
+                          class="rounded-2xl bg-[#FFC107] px-3 font-medium text-black"
+                        >
+                          Delayed
+                        </button>
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        <button
+                          class="rounded-2xl bg-[#287DFA] px-3 py-1 font-medium text-white"
+                        >
+                          Cancel
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr class="border-b text-sm md:text-base">
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60B2] md:px-5 md:py-4"
+                      >
+                        #236
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        New York City Park
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        USA
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        30/9/23
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        10/10/23
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        $350
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        <button
+                          class="rounded-2xl bg-[#198754] px-3 font-medium text-white"
+                        >
+                          Completed
+                        </button>
+                      </td>
+                      <td
+                        class="whitespace-nowrap px-4 py-2 text-[#404A60] md:px-5 md:py-4"
+                      >
+                        <button
+                          class="rounded-2xl bg-[#287DFA] px-3 py-1 font-medium text-white"
+                        >
+                          Cancel
+                        </button>
                       </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              
+
               <!-- Table::End -->
             </div>
             <!-- Booking Table::End -->
@@ -1408,7 +1604,7 @@
 
           <!-- Footer::Start -->
           <footer
-            class="flex w-full flex-col items-center justify-between gap-5 px-6 py-8"
+            class="flex w-full flex-col items-center justify-between gap-5 px-6 py-8 xl:flex-row"
           >
             <div class="text-center font-inter text-[#404A60]">
               <p class="text-sm md:text-base">
