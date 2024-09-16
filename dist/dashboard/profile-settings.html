@@ -917,9 +917,9 @@
 
               <!-- Form::Start -->
               <div class="font-inter">
-                <form action="" class="flex flex-col gap-6 md:gap-12">
-                  <div class="flex flex-col w-full gap-6 2xl:gap-24 2xl:pr-32">
-                    <div class="2xl:w-1/2">
+                <form action="" class="flex flex-col md:flewo gap-6 md:gap-12">
+                  <div class="flex flex-col md:flex-row w-full gap-6 2xl:gap-24 2xl:pr-32">
+                    <div class="md:w-1/2">
                       <div class="flex flex-col gap-3 md:gap-5">
                         <label for="name" class="text-sm md:text-base">Full Name</label>
                         <input
@@ -931,7 +931,7 @@
                         />
                       </div>
                     </div>
-                    <div class="2xl:w-1/2">
+                    <div class="md:w-1/2">
                       <div class="flex flex-col gap-3 md:gap-5">
                         <label for="email" class="text-sm md:text-base">Email</label>
                         <input
@@ -945,7 +945,7 @@
                     </div>
                   </div>
 
-                  <div class="flex flex-col w-full gap-6 2xl:gap-24 2xl:pr-32">
+                  <div class="flex flex-col md:flex-row w-full gap-6 2xl:gap-24 2xl:pr-32">
                     <div class="2xl:w-1/2">
                       <div class="flex flex-col gap-3 md:gap-5">
                         <label for="phone" class="text-sm md:text-base">Phone</label>
@@ -972,7 +972,7 @@
                     </div>
                   </div>
 
-                  <div class="flex flex-col w-full 2xl:gap-24 2xl:pr-32">
+                  <div class="flex flex-col md:flex-row w-full gap-6 2xl:gap-24 2xl:pr-32">
                     <div class="flex 2xl:w-1/2 flex-col justify-center">
                       <div class="flex flex-col gap-3 md:gap-5">
                         <label for="date" class="text-sm md:text-base">Date of Birth</label>
@@ -981,45 +981,45 @@
                           name="date"
                           id="date"
                           value="1988-09-14"
-                          class="rounded-lg border border-black/10 px-10 py-5 placeholder:text-black/50 focus:outline-none"
+                          class="text-sm md:text-base rounded-lg border border-black/10 px-4 py-3 2xl:px-10 2xl:py-5 placeholder:text-black/50 focus:outline-none"
                         />
                       </div>
                     </div>
                     <div class="2xl:w-1/2">
-                      <div class="flex flex-col gap-5">
-                        <label for="">Gender</label>
-                        <div class="mt-4 flex items-center gap-8">
-                          <div class="flex items-center gap-4">
+                      <div class="flex flex-col gap-3 md:gap-5">
+                        <label for="" class="text-sm md:text-base">Gender</label>
+                        <div class="md:mt-4 flex items-center gap-4 md:gap-8">
+                          <div class="flex items-center gap-2 md:gap-4">
                             <input
                               type="radio"
                               name="gender"
                               id="male"
-                              class="size-6"
+                              class="size-4 md:size-6"
                               checked
                             />
-                            <label for="male" class="cursor-pointer"
+                            <label for="male" class="cursor-pointer text-sm text-base"
                               >Male</label
                             >
                           </div>
-                          <div class="flex items-center gap-4">
+                          <div class="flex items-center gap-2 md:gap-4">
                             <input
                               type="radio"
                               name="gender"
                               id="female"
-                              class="size-6"
+                              class="size-4 md:size-6"
                             />
-                            <label for="female" class="cursor-pointer"
+                            <label for="female" class="cursor-pointer text-sm md:text-base"
                               >Female</label
                             >
                           </div>
-                          <div class="flex items-center gap-4">
+                          <div class="flex items-center gap-2 md:gap-4">
                             <input
                               type="radio"
                               name="gender"
                               id="others"
-                              class="size-6"
+                              class="size-4 md:size-6"
                             />
-                            <label for="others" class="cursor-pointer"
+                            <label for="others" class="cursor-pointer text-sm md:text-base"
                               >Others</label
                             >
                           </div>
@@ -1029,12 +1029,12 @@
                   </div>
 
                   <div class="flex w-full">
-                    <div class="flex w-full flex-col gap-5">
-                      <label for="address">Address</label>
+                    <div class="flex w-full flex-col gap-3 md:gap-5">
+                      <label for="address" class="text-sm md:text-base">Address</label>
 
                       <textarea
                         rows="6"
-                        class="rounded-lg border border-black/10 px-10 py-8 placeholder:text-black/50 focus:outline-none"
+                        class="text-sm md:text-base rounded-lg border border-black/10 px-4 py-3 2xl:px-10  2xl:py-8 placeholder:text-black/50 focus:outline-none"
                         name="address"
                         id="address"
                       >
@@ -1044,11 +1044,11 @@
                   </div>
 
                   <div class="flex w-full">
-                    <div class="flex w-full flex-col gap-5">
+                    <div class="flex w-full flex-col gap-2 md:gap-5">
                       <label for="photo">Photo</label>
 
                       <!-- image wrapper::Start -->
-                      <div class="flex items-center gap-6">
+                      <div class="flex flex-col lg:flex-row lg:items-center gap-6">
                         <div
                           class="h-[105px] w-[100px] overflow-hidden rounded"
                         >
@@ -1060,11 +1060,11 @@
                         </div>
                         <div>
                           <div
-                            class="flex items-center gap-12 overflow-hidden rounded-xl border border-[#C2C2C2] pr-72"
+                            class="flex items-center gap-5 md:gap-12 overflow-hidden rounded-xl border border-[#C2C2C2] lg:pr-32 2xl:pr-72"
                           >
                             <label
                               for="photo"
-                              class="cursor-pointer rounded-lg bg-[#C2C2C2] px-5 py-2"
+                              class="cursor-pointer rounded-lg bg-[#C2C2C2] px-5 py-2 text-sm md:text-base"
                               >Choose File</label
                             >
                             <input
@@ -1073,15 +1073,15 @@
                               id="photo"
                               class="imageInput hidden"
                             />
-                            <span class="imageFileName">No File Chosen</span>
+                            <span class="imageFileName text-sm md:text-base">No File Chosen</span>
                           </div>
                         </div>
                       </div>
                       <!-- image wrapper::End -->
-                      <div class="pt-8">
+                      <div class="pt-4 md:pt-8">
                         <button
                           type="submit"
-                          class="rounded-[40px] border border-white bg-primary px-5 py-2 font-inter text-white transition duration-500 hover:border-primary hover:bg-white hover:text-primary"
+                          class="rounded-[40px] border border-white bg-primary px-5 py-2 font-inter text-white transition duration-500 hover:border-primary hover:bg-white hover:text-primary text-sm md:text-base"
                         >
                           Save Changes
                         </button>
@@ -1096,42 +1096,42 @@
             <!-- Top Form ::End -->
 
             <!-- 2nd Form::Start -->
-            <div class="mb-10 rounded-2xl bg-white px-16 pb-20 pt-14 hidden">
+            <div class="mb-10 rounded-2xl bg-white 2xl:px-16 2xl:pb-20 2xl:pt-14 ">
               <!-- title::Start -->
-              <div class="font-inter text-2xl font-semibold text-[#222E48]">
+              <div class="font-inter text-xl md:text-2xl font-semibold text-[#222E48]">
                 <h2>Email Updates</h2>
               </div>
               <!-- title::End -->
 
               <!-- Form::Start -->
-              <div class="pt-8 font-inter">
+              <div class="pt-5 md:pt-8 font-inter">
                 <form action="" class="flex flex-col gap-12">
-                  <div class="flex w-full flex-col gap-8">
+                  <div class="flex w-full flex-col gap-6 md:gap-8">
                     <div class="w-full">
-                      <div class="flex flex-col gap-5">
-                        <label for="newEmail">Type Your New Email</label>
+                      <div class="flex flex-col gap-3 md:gap-5">
+                        <label for="newEmail" class="text-sm md:text-base">Type Your New Email</label>
                         <input
                           type="text"
                           name="newEmail"
                           id="newEmail"
-                          class="rounded-lg border border-black/10 px-10 py-5 placeholder:text-sm placeholder:text-black/50 focus:outline-none"
+                          class="text-sm md:text-base rounded-lg border border-black/10 px-4 py-3 2xl:px-10 2xl:py-5 placeholder:text-sm placeholder:text-black/50 focus:outline-none"
                           placeholder="Type your new email Id"
                         />
                       </div>
                     </div>
                     <div class="w-full">
-                      <div class="flex flex-col gap-5">
-                        <label for="password">Password</label>
+                      <div class="flex flex-col gap-3 md:gap-5">
+                        <label for="password" class="text-sm md:text-base">Password</label>
                         <div class="relative w-full">
                           <input
                             type="password"
                             name="password"
                             id="password"
-                            class="w-full rounded-lg border border-black/10 px-10 py-5 placeholder:text-sm placeholder:text-black/50 focus:outline-none"
+                            class="text-sm md:text-base w-full rounded-lg border border-black/10 px-4 py-3 2xl:px-10 2xl:py-5 placeholder:text-sm placeholder:text-black/50 focus:outline-none"
                             placeholder="Type your password"
                           />
                           <svg
-                            class="showBtn absolute right-5 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+                            class="showBtn absolute right-5 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer size-5 md:size-auto"
                             data-input="password"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -1149,7 +1149,7 @@
                             />
                           </svg>
                           <svg
-                            class="hideBtn absolute right-5 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+                            class="hideBtn absolute right-5 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 cursor-pointer size-5 md:size-auto"
                             data-input="password"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -1172,7 +1172,7 @@
                     <div>
                       <button
                         type="submit"
-                        class="rounded-[40px] border border-white bg-primary px-5 py-2 font-inter text-white transition duration-500 hover:border-primary hover:bg-white hover:text-primary"
+                        class="rounded-[40px] border border-white bg-primary px-5 py-2 font-inter text-white transition duration-500 hover:border-primary hover:bg-white hover:text-primary text-sm md:text-base"
                       >
                         Save Changes
                       </button>
@@ -1189,30 +1189,30 @@
             <!-- 2nd Form::End -->
 
             <!-- 3rd Form::Start -->
-            <div class="mb-20 rounded-2xl bg-white px-16 pb-20 pt-14 hidden">
+            <div class="mb-6 md:mb-10 lg:mb-20 rounded-2xl bg-white 2xl:px-16 2xl:pb-20 2xl:pt-14">
               <!-- title::Start -->
-              <div class="font-inter text-2xl font-semibold text-[#222E48]">
+              <div class="font-inter text-xl tmd:text-2xl font-semibold text-[#222E48]">
                 <h2>Password Updates</h2>
               </div>
               <!-- title::End -->
 
               <!-- Form::Start -->
-              <div class="pt-8 font-inter">
+              <div class="pt-4 md:pt-8 font-inter">
                 <form action="" class="flex flex-col gap-12">
-                  <div class="flex w-full flex-col gap-8">
+                  <div class="flex w-full flex-col gap-6 md:gap-8">
                     <div class="w-full">
-                      <div class="flex flex-col gap-5">
-                        <label for="currentPass">Current password</label>
+                      <div class="flex flex-col gap-3 md:gap-5">
+                        <label for="currentPass" class="text-sm md:text-base">Current password</label>
                         <div class="relative w-full">
                           <input
                             type="password"
                             name="currentPass"
                             id="currentPass"
-                            class="w-full rounded-lg border border-black/10 px-10 py-5 placeholder:text-sm placeholder:text-black/50 focus:outline-none"
+                            class="text-sm md:text-base md:placeholder:text-base w-full rounded-lg border border-black/10 px-4 py-3 2xl:px-10 2xl:py-5 placeholder:text-sm placeholder:text-black/50 focus:outline-none"
                             placeholder="Type your password"
                           />
                           <svg
-                            class="showBtn absolute right-5 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+                            class="showBtn absolute right-5 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer size-5 md:size-auto"
                             data-input="currentPass"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -1230,7 +1230,7 @@
                             />
                           </svg>
                           <svg
-                            class="hideBtn absolute right-5 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+                            class="hideBtn absolute right-5 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 cursor-pointer size-5 md:size-auto"
                             data-input="currentPass"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -1251,18 +1251,18 @@
                       </div>
                     </div>
                     <div class="w-full">
-                      <div class="flex flex-col gap-5">
-                        <label for="newPass">New Password</label>
+                      <div class="flex flex-col gap-3 md:gap-5">
+                        <label for="newPass" class="text-sm md:text-base">New Password</label>
                         <div class="relative w-full">
                           <input
                             type="password"
                             name="newPass"
                             id="newPass"
-                            class="w-full rounded-lg border border-black/10 px-10 py-5 placeholder:text-sm placeholder:text-black/50 focus:outline-none"
+                            class="text-sm md:text-base md:placeholder:text-base w-full rounded-lg border border-black/10 px-4 py-3 2xl:px-10 2xl:py-5 placeholder:text-sm placeholder:text-black/50 focus:outline-none"
                             placeholder="Type your password"
                           />
                           <svg
-                            class="showBtn absolute right-5 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+                            class="showBtn absolute right-5 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer size-5 md:size-auto"
                             data-input="newPass"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -1280,7 +1280,7 @@
                             />
                           </svg>
                           <svg
-                            class="hideBtn absolute right-5 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+                            class="hideBtn absolute right-5 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 cursor-pointer size-5 md:size-auto"
                             data-input="newPass"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -1301,18 +1301,18 @@
                       </div>
                     </div>
                     <div class="w-full">
-                      <div class="flex flex-col gap-5">
-                        <label for="confirmPass">Confirm New Password</label>
+                      <div class="flex flex-col gap-3 md:gap-5">
+                        <label for="confirmPass" class="text-sm md:text-base">Confirm New Password</label>
                         <div class="relative w-full">
                           <input
                             type="password"
                             name="confirmPass"
                             id="confirmPass"
-                            class="w-full rounded-lg border border-black/10 px-10 py-5 placeholder:text-sm placeholder:text-black/50 focus:outline-none"
+                            class="text-sm md:text-base md:placeholder:text-base w-full rounded-lg border border-black/10 px-4 py-3 2xl:px-10 2xl:py-5 placeholder:text-sm placeholder:text-black/50 focus:outline-none"
                             placeholder="Type your password"
                           />
                           <svg
-                            class="showBtn absolute right-5 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+                            class="showBtn absolute right-5 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer size-5 md:size-auto"
                             data-input="confirmPass"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -1330,7 +1330,7 @@
                             />
                           </svg>
                           <svg
-                            class="hideBtn absolute right-5 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+                            class="hideBtn absolute right-5 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 cursor-pointer size-5 md:size-auto"
                             data-input="confirmPass"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -1353,7 +1353,7 @@
                     <div>
                       <button
                         type="submit"
-                        class="rounded-[40px] border border-white bg-primary px-5 py-2 font-inter text-white transition duration-500 hover:border-primary hover:bg-white hover:text-primary"
+                        class="rounded-[40px] border border-white bg-primary px-5 py-2 font-inter text-white transition duration-500 hover:border-primary hover:bg-white hover:text-primary text-sm md:text-base"
                       >
                         Save Changes
                       </button>
