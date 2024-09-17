@@ -15,7 +15,9 @@
 
       <section class="flex h-[100vh]">
         <!-- Sidebar ::Start -->
-        <section class="hidden h-full w-[350px] p-8 xl:inline-block">
+        <section
+          class="hidden h-full w-[350px] p-8 xl:inline-block xl:max-w-[305px]"
+        >
           <!-- Logo::Start -->
           <div>
             <a href="../index.html">
@@ -299,7 +301,7 @@
         <!-- Sidebar ::End -->
 
         <!-- Main Contents::Start -->
-        <section class="w-full">
+        <section class="w-full xl:w-[calc(100%-304px)]">
           <!-- Header::Start -->
           <header class="relative">
             <div class="flex justify-between px-5 py-6 xl:px-10 xl:py-8">
@@ -333,10 +335,10 @@
                   <div class="flex items-center gap-5 2xl:pr-12">
                     <div
                       id="notification-btn"
-                      class="relative cursor-pointer rounded-full bg-[#5D69F40D] p-3 md:p-4"
+                      class="relative cursor-pointer rounded-full bg-[#5D69F40D] p-3 xl:p-4"
                     >
                       <svg
-                        class="size-5 md:size-auto"
+                        class="size-5 xl:size-auto"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -349,7 +351,7 @@
                         />
                       </svg>
                       <svg
-                        class="absolute right-[10%] top-[30%] -translate-x-1/2 -translate-y-1/2 2xl:right-[25%] 2xl:top-[30%]"
+                        class="absolute right-[10%] top-[30%] -translate-x-1/2 -translate-y-1/2 xl:right-[25%] xl:top-[30%]"
                         xmlns="http://www.w3.org/2000/svg"
                         width="5"
                         height="5"
@@ -363,7 +365,7 @@
                 </div>
 
                 <!-- Hamburger Icons::Start -->
-                <div class="mt-0 md:mt-2">
+                <div class="mt-0">
                   <div
                     id="hamburger"
                     class="rounded-md bg-primary px-3 py-[6px] text-white xl:hidden"
@@ -385,7 +387,7 @@
             <!-- Notifications::Start -->
             <div
               id="notification-container"
-              class="absolute right-[2%] top-[46%] -z-10 mx-5 translate-y-3 rounded-xl bg-[#f7f7ff] p-4 font-inter opacity-0 shadow-[-7px_14px_9px_7px_rgba(0,0,0,0.15)] transition-all md:top-[70%] lg:bg-white lg:px-8 lg:py-6 2xl:right-[5%] 2xl:w-[550px]"
+              class="absolute right-[2%] top-[50%] -z-10 mx-5 translate-y-3 rounded-xl bg-[#f7f7ff] p-4 font-inter opacity-0 shadow-[-7px_14px_9px_7px_rgba(0,0,0,0.15)] transition-all md:top-[75%] lg:bg-white lg:px-8 lg:py-6 xl:top-[80%] 2xl:right-[5%] 2xl:w-[550px]"
             >
               <!-- Top Part::Start -->
               <div class="flex items-center justify-between font-inter md:pb-5">
@@ -396,7 +398,7 @@
 
               <!-- Notification::Start -->
               <div
-                class="custom_scrollbar flex h-fit max-h-[500px] flex-col gap-5 overflow-y-auto py-5"
+                class="custom_scrollbar flex h-fit max-h-[500px] flex-col gap-5 overflow-y-auto py-5 pl-2 pr-5"
               >
                 <div
                   class="flex items-center gap-4 border-b border-black/20 pb-3 md:pb-5 lg:gap-8"
@@ -849,7 +851,7 @@
 
           <!-- Dashboard Contents::Start -->
           <section
-            class="min-h-[calc(100%-234px)] bg-[#f7f7fe] p-5 md:p-6 2xl:p-7"
+            class="min-h-[calc(100%-234px)] w-full bg-[#f7f7fe] p-5 md:p-6 2xl:p-7"
           >
             <!-- Top Cards::Start -->
             <div
@@ -1301,7 +1303,7 @@
 
             <!-- Booking Table::Start -->
             <div
-              class="mb-20 mt-10 rounded-lg bg-white pl-5 pr-5 pt-6 md:rounded-xl md:pl-7 md:pr-10 md:pt-10 lg:rounded-2xl lg:pb-20 lg:pl-9 lg:pr-12 lg:pt-14 2xl:pr-16"
+              class="mb-20 mt-10 w-full rounded-lg bg-white pl-5 pr-5 pt-6 md:rounded-xl md:pl-7 md:pr-10 md:pt-10 lg:rounded-2xl lg:pb-20 lg:pl-9 lg:pr-12 lg:pt-14 2xl:pr-16"
             >
               <!-- title::Start -->
               <div class="font-inter font-semibold text-[#222E48] md:text-2xl">
