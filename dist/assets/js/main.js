@@ -22,6 +22,8 @@ document.addEventListener("click",(e)=>{
     closeMenu.classList.add("hidden");
     sidebar.classList.add("-translate-x-full");
   }
+
+  
 })
 
 
@@ -31,6 +33,35 @@ document.addEventListener("click",(e)=>{
 // Check In
 $(document).ready(function () {
   $("select").niceSelect();
+
+
+  // profile popup::start
+  const profilePicture=document.getElementById("user-profile-picture")
+  const profileContainer=document.getElementById("profile-container")
+
+  profilePicture?.addEventListener("click",()=>{
+    if(profileContainer){
+      if(profileContainer.classList.contains("opacity-0")){
+        profileContainer.classList.remove("opacity-0","-z-50","translate-y-2")
+        profileContainer.classList.add("opacity-100","z-50","translate-y-0")
+      }else if(profileContainer.classList.contains("opacity-100")){
+        profileContainer.classList.add("opacity-0","-z-50","translate-y-2")
+        profileContainer.classList.remove("opacity-100","z-50","translate-y-0")
+      }
+    }
+  })
+
+  document.addEventListener("click",(e)=>{
+  if( 
+    !profileContainer.contains(e.target) && !profilePicture.contains(e.target)
+  ){
+    profileContainer.classList.add("opacity-0","-z-50","translate-y-2")
+    profileContainer.classList.remove("opacity-100","z-50","translate-y-0")
+  }
+
+  
+})
+  // profile popup::end
 
   // Initialize Flatpickr for Check-In Date
   flatpickr("#check-in-date-picker", {
