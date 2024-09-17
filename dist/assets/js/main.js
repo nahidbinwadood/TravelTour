@@ -926,6 +926,11 @@ $(document).ready(function () {
   });
 
   // Suggestion::container::end
+
+  // Departure length::start
+  const departureLengthInput=document.getElementById("departure-duration-number")
+  console.log(departureLengthInput.innerText);
+  // Departure length::end
 });
 
 // ====Solaimain====
