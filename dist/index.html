@@ -425,11 +425,11 @@
           <div
             data-aos="fade-up"
             data-aos-duration="1200"
-            class="mx-auto rounded-xl bg-white py-8 font-inter xl:max-w-5xl xl:px-16 xl:py-10"
+            class="mx-auto rounded-xl bg-white py-8 font-inter xl:max-w-5xl xl:px-16 xl:py-10 px-5"
           >
-            <div class="grid grid-cols-6 gap-6 font-poppins font-normal">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 font-poppins font-normal">
               <div
-                class="relative col-span-3 flex cursor-pointer items-center justify-between rounded-md border border-[#dadada] px-4 py-4"
+                class="relative lg:col-span-3 flex cursor-pointer items-center justify-between rounded-md border border-[#dadada] px-4 py-2 md:py-3 lg:py-4"
               >
                 <div id="departure-container" class="flex items-center gap-3">
                   <div>
@@ -453,13 +453,13 @@
                       />
                     </svg>
                   </div>
-                  <h4 class="flex items-center gap-2 text-[#949494]">
+                  <h4 class="flex items-center gap-2 text-[#949494 text-sm md:text-base">
                     Departure:
-                    <div >
+                    <div class="w-fit">
                       <form action="">
                         <input
                           placeholder="Anywhere"
-                          class="text-black placeholder:text-black focus:outline-none"
+                          class="text-black placeholder:text-black focus:outline-none w-full"
                           type="text"
                           name="departure"
                           id="departure-input"
@@ -490,7 +490,7 @@
                 <!-- Suggestions::start -->
                 <div
                   id="suggestions-container-1"
-                  class="absolute -z-20 top-full w-[600px] translate-y-3 rounded-md bg-[#f7f7ff] px-8 py-6 font-inter opacity-0 shadow-[0px_2px_4px_rgba(0,0,0,0.4)] transition"
+                  class="absolute -z-20 text-sm md:text-base top-full 2xl:w-[600px] translate-y-3 rounded-md bg-[#f7f7ff] px-8 py-6 font-inter opacity-0 shadow-[0px_2px_4px_rgba(0,0,0,0.4)] transition"
                 >
                   <div class="text-secondary">
                     <h2>Top Departures:</h2>
@@ -585,9 +585,9 @@
               </div>
 
               <div
-                class="col-span-3 flex cursor-pointer items-center justify-between rounded-md border border-[#dadada] px-4 py-4"
+                class="text-sm md:text-base lg:col-span-3 flex cursor-pointer items-center justify-between rounded-md border border-[#dadada] px-4 py-2 md:py-3 lg:py-4"
               >
-                <div class="w-full">
+                <div class="w-full ">
                   <input
                     class="w-full focus:outline-none"
                     placeholder="Enter Destinations, Keyword or tour code"
@@ -601,7 +601,7 @@
 
               <div
               id="departure-date"
-                class="col-span-2 flex cursor-pointer items-center gap-5 rounded-md border border-[#dadada] px-4 py-4"
+                class="text-sm md:text-base lg:col-span-2 flex cursor-pointer items-center gap-5 rounded-md border border-[#dadada] px-4 py-2 md:py-3 lg:py-4"
               >
                 <div>
                   <svg
@@ -647,7 +647,7 @@
 
               <div
                 id="departure-length"
-                class="col-span-2 flex cursor-pointer items-center gap-5 rounded-md border border-[#dadada] px-4 py-4"
+                class="text-sm md:text-base lg:col-span-2 flex cursor-pointer items-center gap-5 rounded-md border border-[#dadada] px-4 py-2 md:py-3 lg:py-4"
               >
                 <div>
                   <svg
@@ -698,7 +698,7 @@
               <a
                 type="submit"
                 href="destination-filter.html"
-                class="col-span-2 cursor-pointer rounded-md border border-primary bg-primary px-8 py-4 text-center text-white transition duration-500 hover:bg-white hover:text-primary"
+                class="lg:col-span-2 cursor-pointer rounded-md border border-primary bg-primary px-8 py-2 md:py-3 lg:py-4 text-center text-white transition duration-500 hover:bg-white hover:text-primary"
               >
                 <span>Search Tour</span>
               </a>
