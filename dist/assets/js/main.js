@@ -13,54 +13,51 @@ document.getElementById("close--menu")?.addEventListener("click", function () {
   sidebar.classList.add("-translate-x-full");
 });
 
-
-document.addEventListener("click",(e)=>{
-  if( 
-    !sidebar.contains(e.target) && !openMenu.contains(e.target)
-  ){
+document.addEventListener("click", (e) => {
+  if (!sidebar.contains(e.target) && !openMenu.contains(e.target)) {
     openMenu.classList.remove("hidden");
     closeMenu.classList.add("hidden");
     sidebar.classList.add("-translate-x-full");
   }
-
-  
-})
-
-
-
-
+});
 
 // Check In
 $(document).ready(function () {
   $("select").niceSelect();
 
-
   // profile popup::start
-  const profilePicture=document.getElementById("user-profile-picture")
-  const profileContainer=document.getElementById("profile-container")
+  const profilePicture = document.getElementById("user-profile-picture");
+  const profileContainer = document.getElementById("profile-container");
 
-  profilePicture?.addEventListener("click",()=>{
-    if(profileContainer){
-      if(profileContainer.classList.contains("opacity-0")){
-        profileContainer.classList.remove("opacity-0","-z-50","translate-y-2")
-        profileContainer.classList.add("opacity-100","z-50","translate-y-0")
-      }else if(profileContainer.classList.contains("opacity-100")){
-        profileContainer.classList.add("opacity-0","-z-50","translate-y-2")
-        profileContainer.classList.remove("opacity-100","z-50","translate-y-0")
+  profilePicture?.addEventListener("click", () => {
+    if (profileContainer) {
+      if (profileContainer.classList.contains("opacity-0")) {
+        profileContainer.classList.remove(
+          "opacity-0",
+          "-z-50",
+          "translate-y-2",
+        );
+        profileContainer.classList.add("opacity-100", "z-50", "translate-y-0");
+      } else if (profileContainer.classList.contains("opacity-100")) {
+        profileContainer.classList.add("opacity-0", "-z-50", "translate-y-2");
+        profileContainer.classList.remove(
+          "opacity-100",
+          "z-50",
+          "translate-y-0",
+        );
       }
     }
-  })
+  });
 
-  document.addEventListener("click",(e)=>{
-  if( 
-    !profileContainer.contains(e.target) && !profilePicture.contains(e.target)
-  ){
-    profileContainer.classList.add("opacity-0","-z-50","translate-y-2")
-    profileContainer.classList.remove("opacity-100","z-50","translate-y-0")
-  }
-
-  
-})
+  document.addEventListener("click", (e) => {
+    if (
+      !profileContainer.contains(e.target) &&
+      !profilePicture.contains(e.target)
+    ) {
+      profileContainer.classList.add("opacity-0", "-z-50", "translate-y-2");
+      profileContainer.classList.remove("opacity-100", "z-50", "translate-y-0");
+    }
+  });
   // profile popup::end
 
   // Initialize Flatpickr for Check-In Date
@@ -78,16 +75,13 @@ $(document).ready(function () {
   });
 
   // Initialize Flatpickr for Check-Out Date
-  flatpickr("#check-out-date-picker", {
+  flatpickr("#departure-date", {
     enableTime: false,
     dateFormat: "Y-m-d",
     onChange: function (selectedDates, dateStr, instance) {
-      const checkOutDate = document.getElementById("check-out-selected-date");
-      const updateCheckOutDateText = document.getElementById(
-        "check-out-updated-date",
-      );
-      updateCheckOutDateText.textContent = dateStr;
-      checkOutDate.style.display = "none";
+      const dateSpan=document.getElementById("selected-departure-date")
+      dateSpan.textContent = dateStr;
+       
     },
   });
 
@@ -895,6 +889,43 @@ $(document).ready(function () {
   });
 
   // Clear All:: End
+
+  // Suggestion::container::start
+  const suggestionContainer = document.getElementById(
+    "suggestions-container-1",
+  );
+  const departureContainer = document.getElementById("departure-container");
+  const departureInput = document.getElementById("departure-input");
+
+  // Toggle suggestion container visibility on click
+  departureContainer?.addEventListener("click", (event) => {
+    event.stopPropagation(); // Prevent event from propagating to the document
+    if (suggestionContainer.classList.contains("opacity-0")) {
+      suggestionContainer.classList.remove("opacity-0", "translate-y-3","-z-20");
+      suggestionContainer.classList.add("opacity-100", "translate-y-0","z-20");
+    } else {
+      suggestionContainer.classList.add("opacity-0", "translate-y-3","-z-20");
+      suggestionContainer.classList.remove("opacity-100", "translate-y-0","z-20");
+    }
+  });
+
+  // Handle click outside of suggestion container to close it
+  document.addEventListener("click", (event) => {
+    if (!departureContainer.contains(event.target)) {
+      suggestionContainer.classList.add("opacity-0", "translate-y-3","-z-20");
+      suggestionContainer.classList.remove("opacity-100", "translate-y-0","z-20");
+    }
+  });
+
+  // Handle text selection from the suggestion container
+  suggestionContainer?.addEventListener("click", (event) => {
+    if (event.target.tagName === "P") {
+      const selectedText = event.target.textContent.trim(); // Get the text content of the clicked item
+      departureInput.value = selectedText; // Set it to the input field
+    }
+  });
+
+  // Suggestion::container::end
 });
 
 // ====Solaimain====

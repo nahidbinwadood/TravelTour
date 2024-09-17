@@ -14,7 +14,7 @@
   </head>
   <body>
     <!-- Header::start -->
-    <header class="relative h-full overflow-hidden 2xl:h-[95vh]">
+    <header class="relative h-full 2xl:h-[95vh]">
       <!-- Video ::Start -->
       <div class="absolute inset-0 -z-10">
         <video
@@ -41,13 +41,11 @@
           data-aos-duration="1500"
           class="container relative mx-auto flex items-center justify-between rounded-xl bg-white px-4 py-2 md:h-24 xl:px-8"
         >
-          <div class="cursor-pointer">
+          <div
+            class="cursor-pointer font-roboto font-bold text-primary md:text-xl lg:text-2xl"
+          >
             <a href="index.html">
-              <img
-                class="mt-2 h-12 md:h-[70px] md:w-20"
-                src="./assets/img/logo.png"
-                alt=""
-              />
+              Fined<span class="text-secondary">BusTour</span>
             </a>
           </div>
           <!-- NavLinks::start -->
@@ -92,12 +90,6 @@
 
           <!-- Navlinks with button::start -->
           <div class="hidden items-center gap-5 font-inter xl:flex 2xl:text-lg">
-            <a href="" class="transition duration-300 hover:text-primary"
-              >Track Order</a
-            >
-            <a href="" class="transition duration-300 hover:text-primary"
-              >Cart</a
-            >
             <a
               href="login.html"
               class="hidden rounded-md bg-primary px-12 py-3 text-white transition-all duration-300 hover:scale-105"
@@ -123,6 +115,41 @@
                 id="profile-container"
                 class="absolute top-20 -z-50 flex w-[200px] translate-y-2 flex-col gap-5 rounded-lg bg-[#f7f7ff] py-8 font-inter opacity-0 transition duration-[.2s] xl:right-[-30px] 2xl:right-[-50px]"
               >
+                <div
+                  class="group flex cursor-pointer items-center gap-3 px-4 pl-8 text-sm text-white"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="21"
+                    viewBox="0 0 20 21"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_9588_4769)">
+                      <path
+                        class="transition duration-500 group-hover:fill-primary"
+                        d="M10 2.5C7.51472 2.5 5.5 4.51472 5.5 7C5.5 9.48528 7.51472 11.5 10 11.5C12.4853 11.5 14.5 9.48528 14.5 7C14.5 4.51472 12.4853 2.5 10 2.5ZM10 13C7.23858 13 0 15.1193 0 17.75V19H20V17.75C20 15.1193 12.7614 13 10 13Z"
+                        fill="#5A5C5F"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_9588_4769">
+                        <rect
+                          width="20"
+                          height="20"
+                          fill="white"
+                          transform="translate(0 0.832031)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+
+                  <a
+                    href="./dashboard/dashboard.html"
+                    class="text-[#404A60] transition duration-500 group-hover:text-primary"
+                    >My Profile</a
+                  >
+                </div>
                 <div
                   class="group flex cursor-pointer items-center gap-3 px-4 pl-8 text-sm text-white"
                 >
@@ -280,8 +307,8 @@
                     </defs>
                   </svg>
                   <a
-                    href="./dashboard/wishlist.html"
-                    class="text-[#404A60] transition duration-500 hover:text-primary"
+                    href="login.html"
+                    class="text-[#404A60] transition duration-500 group-hover:text-primary"
                     >Logout</a
                   >
                 </div>
@@ -320,8 +347,12 @@
         id="sidebar"
         class="fixed left-0 top-0 z-20 h-full w-60 -translate-x-full transform overflow-y-scroll bg-white transition-transform duration-500 md:w-64"
       >
-        <div class="pb-4 pt-12">
-          <img class="mx-auto" src="./assets/img/logo.png" alt="" />
+        <div
+          class="flex w-full items-center pb-2 pl-10 pt-12 font-roboto font-bold text-primary md:text-xl"
+        >
+          <a href="index.html">
+            Fined<span class="text-secondary">BusTour</span>
+          </a>
         </div>
 
         <!-- NavLinks ::start -->
@@ -341,25 +372,21 @@
           <div class="my-4 mr-8 border bg-gray-200"></div>
           <!-- Horizontal Line ::end -->
           <div class="mt-4 flex flex-col justify-center gap-4">
-            <a href="">Track Order</a>
-            <a href="">Cart</a>
-
-            <div class="mr-8 border bg-gray-200"></div>
             <div class="flex flex-col gap-4">
+              <a href="./dashboard/dashboard.html">My Profile</a>
               <a href="./dashboard/mybooking.html">My Bookings</a>
               <a href="./dashboard/wishlist.html">My Wishlist</a>
               <a href="./dashboard/profile-settings.html">Profile Settings</a>
               <a href="login.html">Logout</a>
-          </div>
+            </div>
             <div>
               <a
                 href="login.html"
-                class="hidden inline-block rounded-md bg-primary px-12 py-3 text-white transition-all duration-300 hover:scale-105 hover:text-textColor"
+                class="inline-block hidden rounded-md bg-primary px-12 py-3 text-white transition-all duration-300 hover:scale-105 hover:text-textColor"
               >
                 Login
               </a>
             </div>
-          
           </div>
         </div>
         <!-- NavLinks ::end -->
@@ -394,193 +421,290 @@
 
         <!-- Filter::start -->
 
-        <div
-          data-aos="fade-up"
-          data-aos-duration="1200"
-          class="mx-auto rounded-xl bg-white py-8 font-inter xl:max-w-5xl xl:px-16 xl:py-10"
-        >
+        <form action="">
           <div
-            class="grid grid-cols-1 items-center gap-4 px-8 md:grid-cols-2 md:gap-8 xl:grid-cols-5 xl:gap-4 xl:px-0"
+            data-aos="fade-up"
+            data-aos-duration="1200"
+            class="mx-auto rounded-xl bg-white py-8 font-inter xl:max-w-5xl xl:px-16 xl:py-10"
           >
-            <div class="hero-filter space-y-4">
-              <div class="flex items-center gap-3">
-                <div class="rounded-full p-2 shadow-lg">
-                  <img class="" src="./assets/img/icons/loc.svg" alt="" />
-                </div>
-                <h4 class="text-sm md:text-base">Location</h4>
-              </div>
-
-              <!-- Nice Select::Start -->
-
-              <select class="text-xs">
-                <option data-display="Where are you going">
-                  Where are you going
-                </option>
-                <option value="North America">North America</option>
-                <option value="New York">New York</option>
-                <option value="Europe">Europe</option>
-                <option value="Rome">Rome</option>
-                <option value="London">London</option>
-              </select>
-
-              <!-- Nice Select::End -->
-            </div>
-
-            <!-- Dates::start -->
-
-            <div class="check-in-date-picker-container space-y-4">
-              <div class="flex items-center gap-3">
-                <div class="rounded-full p-2 shadow-lg">
-                  <img class="" src="./assets/img/icons/calendar.svg" alt="" />
-                </div>
-                <h4 class="text-sm md:text-base">Check In</h4>
-              </div>
+            <div class="grid grid-cols-6 gap-6 font-poppins font-normal">
               <div
-                id="check-in-date-picker"
-                class="check-in cursor-pointer rounded-md border py-2 pl-4 pr-10"
+                class="relative col-span-3 flex cursor-pointer items-center justify-between rounded-md border border-[#dadada] px-4 py-4"
               >
-                <label class="flex cursor-pointer items-center gap-3" for="">
+                <div id="departure-container" class="flex items-center gap-3">
+                  <div>
+                    <svg
+                      class="size-5"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="15"
+                      height="16"
+                      viewBox="0 0 15 16"
+                      fill="none"
+                    >
+                      <path
+                        d="M7.39871 14.1636L7.39873 14.1635L7.3943 14.1598C7.1288 13.9375 5.81106 12.803 4.56433 11.3556C3.94087 10.6318 3.34534 9.84135 2.908 9.05719C2.46666 8.26588 2.21094 7.5242 2.21094 6.88708C2.21094 3.98092 4.56686 1.625 7.47301 1.625C10.3792 1.625 12.7351 3.98092 12.7351 6.88708C12.7351 7.52421 12.4794 8.2659 12.0381 9.05727C11.6007 9.84148 11.0053 10.632 10.3819 11.356C9.13553 12.8036 7.81836 13.9388 7.5523 14.1636L7.55192 14.1639L7.47502 14.229L7.39871 14.1636ZM7.47358 1.87093L7.47245 1.87093C4.70373 1.87406 2.46003 4.11777 2.45689 6.88648V6.88705C2.45689 7.48214 2.68351 8.11555 3.00079 8.72136C3.32238 9.33539 3.76148 9.96653 4.24003 10.5686C5.1974 11.7731 6.34791 12.9052 7.13909 13.6151L7.47308 13.9148L7.807 13.6151C8.59822 12.9049 9.7487 11.7722 10.706 10.5675C11.1846 9.96532 11.6236 9.3342 11.9452 8.72036C12.2625 8.11477 12.4891 7.48165 12.4891 6.88705V6.88648C12.486 4.11777 10.2423 1.87409 7.47358 1.87093Z"
+                        fill="#292D32"
+                        stroke="#848484"
+                      />
+                      <path
+                        d="M7.47154 8.66964C6.48624 8.66964 5.6875 7.8709 5.6875 6.8856C5.6875 5.9003 6.48624 5.10156 7.47154 5.10156C8.45683 5.10156 9.25558 5.9003 9.25558 6.8856C9.25558 7.8709 8.45686 8.66964 7.47154 8.66964ZM7.47154 5.24355C6.56468 5.24355 5.82952 5.97871 5.82952 6.88557C5.82952 7.79244 6.56468 8.52759 7.47154 8.52759C8.3784 8.52759 9.11356 7.79243 9.11356 6.88557C9.11356 5.97872 8.37843 5.24355 7.47154 5.24355Z"
+                        fill="#292D32"
+                        stroke="#848484"
+                      />
+                    </svg>
+                  </div>
+                  <h4 class="flex items-center gap-2 text-[#949494]">
+                    Departure:
+                    <div >
+                      <form action="">
+                        <input
+                          placeholder="Anywhere"
+                          class="text-black placeholder:text-black focus:outline-none"
+                          type="text"
+                          name="departure"
+                          id="departure-input"
+                        />
+                      </form>
+                    </div>
+                  </h4>
+                </div>
+                <div>
                   <svg
-                    class=""
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
                     height="18"
                     viewBox="0 0 18 18"
                     fill="none"
                   >
-                    <g clip-path="url(#clip0_9294_1772)">
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M0.5625 3.28387C0.5625 2.08944 1.53084 1.12109 2.72531 1.12109H15.2786C16.473 1.12109 17.4413 2.08944 17.4413 3.28391V15.8371C17.4413 17.0316 16.473 17.9999 15.2786 17.9999H2.72531C1.53084 17.9999 0.5625 17.0316 0.5625 15.8371V3.28387ZM2.72531 1.9583C1.99322 1.9583 1.39971 2.55181 1.39971 3.28391V15.8371C1.39971 16.5692 1.99322 17.1627 2.72531 17.1627H15.2786C16.0106 17.1627 16.6041 16.5692 16.6041 15.8371V3.28391C16.6041 2.55181 16.0106 1.9583 15.2786 1.9583H2.72531Z"
-                        fill="#949494"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M0.5625 3.30344C0.5625 2.10897 1.53084 1.14062 2.72531 1.14062H15.2786C16.473 1.14062 17.4413 2.10897 17.4413 3.30344V6.11762H0.5625V3.30344ZM2.72531 1.97787C1.99322 1.97787 1.39971 2.57134 1.39971 3.30344V5.28041H16.6042V3.30344C16.6042 2.57134 16.0107 1.97787 15.2786 1.97787H2.72531Z"
-                        fill="#949494"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M5.54939 0C5.31821 0 5.13079 0.187383 5.13079 0.418605V3.17844C5.13079 3.40963 5.31821 3.59705 5.54939 3.59705C5.78058 3.59705 5.968 3.40966 5.968 3.17844V0.418605C5.968 0.187418 5.78058 0 5.54939 0ZM12.535 0C12.3039 0 12.1164 0.187383 12.1164 0.418605V3.17844C12.1164 3.40963 12.3039 3.59705 12.535 3.59705C12.7662 3.59705 12.9537 3.40966 12.9537 3.17844V0.418605C12.9537 0.187418 12.7662 0 12.535 0ZM3.32031 8.83768C3.32031 8.52943 3.57017 8.27954 3.87845 8.27954H5.49677C5.80502 8.27954 6.05491 8.52943 6.05491 8.83768V10.456C6.05491 10.7642 5.80502 11.0141 5.49677 11.0141H3.87845C3.57017 11.0141 3.32031 10.7642 3.32031 10.456V8.83768ZM4.15752 9.11675V10.1769H5.2177V9.11675H4.15752ZM7.63272 8.83768C7.63272 8.52943 7.88261 8.27954 8.19086 8.27954H9.80917C10.1174 8.27954 10.3673 8.52943 10.3673 8.83768V10.456C10.3673 10.7642 10.1174 11.0141 9.80917 11.0141H8.19086C7.88261 11.0141 7.63272 10.7642 7.63272 10.456V8.83768ZM8.46993 9.11675V10.1769H9.5301V9.11675H8.46993ZM11.9448 8.83768C11.9448 8.52943 12.1947 8.27954 12.503 8.27954H14.1213C14.4295 8.27954 14.6794 8.52943 14.6794 8.83768V10.456C14.6794 10.7642 14.4295 11.0141 14.1213 11.0141H12.503C12.1947 11.0141 11.9448 10.7642 11.9448 10.456V8.83768ZM12.7821 9.11675V10.1769H13.8422V9.11675H12.7821ZM3.32031 12.805C3.32031 12.4967 3.57017 12.2468 3.87845 12.2468H5.49677C5.80502 12.2468 6.05491 12.4967 6.05491 12.805V14.4233C6.05491 14.7316 5.80502 14.9814 5.49677 14.9814H3.87845C3.57017 14.9814 3.32031 14.7316 3.32031 14.4233V12.805ZM4.15752 13.084V14.1442H5.2177V13.084H4.15752ZM7.62857 12.805C7.62857 12.4967 7.87846 12.2468 8.18671 12.2468H9.80506C10.1133 12.2468 10.3632 12.4967 10.3632 12.805V14.4233C10.3632 14.7316 10.1133 14.9814 9.80506 14.9814H8.18671C7.87846 14.9814 7.62857 14.7316 7.62857 14.4233V12.805ZM8.46578 13.084V14.1442H9.52599V13.084H8.46578ZM11.9369 12.805C11.9369 12.4967 12.1868 12.2468 12.495 12.2468H14.1134C14.4216 12.2468 14.6715 12.4967 14.6715 12.805V14.4233C14.6715 14.7316 14.4216 14.9814 14.1134 14.9814H12.495C12.1868 14.9814 11.9369 14.7316 11.9369 14.4233V12.805ZM12.7741 13.084V14.1442H13.8343V13.084H12.7741Z"
-                        fill="#949494"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_9294_1772">
-                        <rect width="18" height="18" fill="white" />
-                      </clipPath>
-                    </defs>
+                    <path
+                      d="M14.9425 6.71094L10.0525 11.6009C9.475 12.1784 8.53 12.1784 7.9525 11.6009L3.0625 6.71094"
+                      stroke="#848484"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
                   </svg>
-                  <span
-                    id="check-in-selected-date"
-                    class="cursor-pointer font-poppins text-xs text-[#949494]"
-                    >Add Date</span
-                  >
-                  <span
-                    id="check-in-updated-date"
-                    class="font-poppins text-xs text-[#949494]"
-                  ></span>
-                </label>
-              </div>
-            </div>
-
-            <!-- Dates::End -->
-
-            <div class="check-in-date-picker-container space-y-4">
-              <div class="flex items-center gap-3">
-                <div class="rounded-full p-2 shadow-lg">
-                  <img class="" src="./assets/img/icons/calendar.svg" alt="" />
                 </div>
-                <h4 class="text-sm md:text-base">Check Out</h4>
-              </div>
-              <div
-                id="check-out-date-picker"
-                class="check-in cursor-pointer rounded-md border py-2 pl-4 pr-10"
-              >
-                <label
-                  id="#date-picker-checkOut"
-                  class="flex cursor-pointer items-center gap-3"
-                  for=""
+
+                <!-- Suggestions::start -->
+                <div
+                  id="suggestions-container-1"
+                  class="absolute -z-20 top-full w-[600px] translate-y-3 rounded-md bg-[#f7f7ff] px-8 py-6 font-inter opacity-0 shadow-[0px_2px_4px_rgba(0,0,0,0.4)] transition"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
+                  <div class="text-secondary">
+                    <h2>Top Departures:</h2>
+                  </div>
+                  <div
+                    class="flex cursor-pointer flex-wrap items-center gap-2 pt-2 text-primary"
                   >
-                    <g clip-path="url(#clip0_9294_1772)">
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M0.5625 3.28387C0.5625 2.08944 1.53084 1.12109 2.72531 1.12109H15.2786C16.473 1.12109 17.4413 2.08944 17.4413 3.28391V15.8371C17.4413 17.0316 16.473 17.9999 15.2786 17.9999H2.72531C1.53084 17.9999 0.5625 17.0316 0.5625 15.8371V3.28387ZM2.72531 1.9583C1.99322 1.9583 1.39971 2.55181 1.39971 3.28391V15.8371C1.39971 16.5692 1.99322 17.1627 2.72531 17.1627H15.2786C16.0106 17.1627 16.6041 16.5692 16.6041 15.8371V3.28391C16.6041 2.55181 16.0106 1.9583 15.2786 1.9583H2.72531Z"
-                        fill="#949494"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M0.5625 3.30344C0.5625 2.10897 1.53084 1.14062 2.72531 1.14062H15.2786C16.473 1.14062 17.4413 2.10897 17.4413 3.30344V6.11762H0.5625V3.30344ZM2.72531 1.97787C1.99322 1.97787 1.39971 2.57134 1.39971 3.30344V5.28041H16.6042V3.30344C16.6042 2.57134 16.0107 1.97787 15.2786 1.97787H2.72531Z"
-                        fill="#949494"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M5.54939 0C5.31821 0 5.13079 0.187383 5.13079 0.418605V3.17844C5.13079 3.40963 5.31821 3.59705 5.54939 3.59705C5.78058 3.59705 5.968 3.40966 5.968 3.17844V0.418605C5.968 0.187418 5.78058 0 5.54939 0ZM12.535 0C12.3039 0 12.1164 0.187383 12.1164 0.418605V3.17844C12.1164 3.40963 12.3039 3.59705 12.535 3.59705C12.7662 3.59705 12.9537 3.40966 12.9537 3.17844V0.418605C12.9537 0.187418 12.7662 0 12.535 0ZM3.32031 8.83768C3.32031 8.52943 3.57017 8.27954 3.87845 8.27954H5.49677C5.80502 8.27954 6.05491 8.52943 6.05491 8.83768V10.456C6.05491 10.7642 5.80502 11.0141 5.49677 11.0141H3.87845C3.57017 11.0141 3.32031 10.7642 3.32031 10.456V8.83768ZM4.15752 9.11675V10.1769H5.2177V9.11675H4.15752ZM7.63272 8.83768C7.63272 8.52943 7.88261 8.27954 8.19086 8.27954H9.80917C10.1174 8.27954 10.3673 8.52943 10.3673 8.83768V10.456C10.3673 10.7642 10.1174 11.0141 9.80917 11.0141H8.19086C7.88261 11.0141 7.63272 10.7642 7.63272 10.456V8.83768ZM8.46993 9.11675V10.1769H9.5301V9.11675H8.46993ZM11.9448 8.83768C11.9448 8.52943 12.1947 8.27954 12.503 8.27954H14.1213C14.4295 8.27954 14.6794 8.52943 14.6794 8.83768V10.456C14.6794 10.7642 14.4295 11.0141 14.1213 11.0141H12.503C12.1947 11.0141 11.9448 10.7642 11.9448 10.456V8.83768ZM12.7821 9.11675V10.1769H13.8422V9.11675H12.7821ZM3.32031 12.805C3.32031 12.4967 3.57017 12.2468 3.87845 12.2468H5.49677C5.80502 12.2468 6.05491 12.4967 6.05491 12.805V14.4233C6.05491 14.7316 5.80502 14.9814 5.49677 14.9814H3.87845C3.57017 14.9814 3.32031 14.7316 3.32031 14.4233V12.805ZM4.15752 13.084V14.1442H5.2177V13.084H4.15752ZM7.62857 12.805C7.62857 12.4967 7.87846 12.2468 8.18671 12.2468H9.80506C10.1133 12.2468 10.3632 12.4967 10.3632 12.805V14.4233C10.3632 14.7316 10.1133 14.9814 9.80506 14.9814H8.18671C7.87846 14.9814 7.62857 14.7316 7.62857 14.4233V12.805ZM8.46578 13.084V14.1442H9.52599V13.084H8.46578ZM11.9369 12.805C11.9369 12.4967 12.1868 12.2468 12.495 12.2468H14.1134C14.4216 12.2468 14.6715 12.4967 14.6715 12.805V14.4233C14.6715 14.7316 14.4216 14.9814 14.1134 14.9814H12.495C12.1868 14.9814 11.9369 14.7316 11.9369 14.4233V12.805ZM12.7741 13.084V14.1442H13.8343V13.084H12.7741Z"
-                        fill="#949494"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_9294_1772">
-                        <rect width="18" height="18" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <span
-                    id="check-out-selected-date"
-                    class="cursor-pointer font-poppins text-xs text-[#949494]"
-                    >Add Date</span
-                  >
-                  <span
-                    id="check-out-updated-date"
-                    class="font-poppins text-xs text-[#949494]"
-                  ></span>
-                </label>
-              </div>
-            </div>
+                    <p
+                      class="transition duration-300 hover:text-secondary"
+                      href=""
+                    >
+                      New York
+                    </p>
+                    <p
+                      class="transition duration-300 hover:text-secondary"
+                      href=""
+                    >
+                      Los Angeles
+                    </p>
+                    <p
+                      class="transition duration-300 hover:text-secondary"
+                      href=""
+                    >
+                      San Francisco
+                    </p>
+                    <p
+                      class="transition duration-300 hover:text-secondary"
+                      href=""
+                    >
+                      Las Vegas
+                    </p>
+                    <p
+                      class="transition duration-300 hover:text-secondary"
+                      href=""
+                    >
+                      Miami
+                    </p>
+                    <p
+                      class="transition duration-300 hover:text-secondary"
+                      href=""
+                    >
+                      Boston
+                    </p>
+                    <p
+                      class="transition duration-300 hover:text-secondary"
+                      href=""
+                    >
+                      Paris
+                    </p>
+                    <p
+                      class="transition duration-300 hover:text-secondary"
+                      href=""
+                    >
+                      San Jose
+                    </p>
+                    <p
+                      class="transition duration-300 hover:text-secondary"
+                      href=""
+                    >
+                      Vancouver
+                    </p>
+                    <p
+                      class="transition duration-300 hover:text-secondary"
+                      href=""
+                    >
+                      Washington
+                    </p>
+                    <p
+                      class="transition duration-300 hover:text-secondary"
+                      href=""
+                    >
+                      Seattle
+                    </p>
+                    <p
+                      class="transition duration-300 hover:text-secondary"
+                      href=""
+                    >
+                      London
+                    </p>
+                    <p
+                      class="transition duration-300 hover:text-secondary"
+                      href=""
+                    >
+                      Jersey City
+                    </p>
+                  </div>
 
-            <div class="space-y-4 xl:col-span-2">
-              <div class="flex items-center gap-3">
-                <div class="rounded-full p-2 shadow-lg">
-                  <img class="" src="./assets/img/icons/loc.svg" alt="" />
+                  <!-- Tabs End -->
                 </div>
-                <h4 class="text-sm md:text-base">Guests</h4>
+
+                <!-- Suggestions::end -->
               </div>
+
               <div
-                class="flex flex-col items-center gap-5 md:flex-row xl:w-full"
+                class="col-span-3 flex cursor-pointer items-center justify-between rounded-md border border-[#dadada] px-4 py-4"
               >
-                <div class="w-full 2xl:max-w-40">
+                <div class="w-full">
                   <input
-                    type="number"
+                    class="w-full focus:outline-none"
+                    placeholder="Enter Destinations, Keyword or tour code"
+                    type="text"
                     name=""
                     id=""
-                    placeholder="Add number"
-                    class="w-full rounded-md border px-5 py-2 font-poppins text-xs placeholder:text-xs focus:outline-none md:py-[9px]"
                   />
                 </div>
-                <a
-                  href="destination-filter.html"
-                  class="flex cursor-pointer items-center gap-2 rounded-md bg-primary py-3 pl-8 pr-8 font-poppins text-white transition-all duration-300 hover:scale-105 md:pl-6 md:pr-10 2xl:pl-8 2xl:pr-12"
-                >
-                  <img src="./assets/img/icons/search-normal.svg" alt="" />
-                  <p class="text-xs">Search</p>
-                </a>
+                 
               </div>
+
+              <div
+              id="departure-date"
+                class="col-span-2 flex cursor-pointer items-center gap-5 rounded-md border border-[#dadada] px-4 py-4"
+              >
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_10059_4960)">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.5 2.91856C0.5 1.85684 1.36075 0.996094 2.4225 0.996094H13.5809C14.6427 0.996094 15.5034 1.85684 15.5034 2.91859V14.077C15.5034 15.1388 14.6427 15.9995 13.5809 15.9995H2.4225C1.36075 15.9995 0.5 15.1388 0.5 14.077V2.91856ZM2.4225 1.74028C1.77175 1.74028 1.24419 2.26784 1.24419 2.91859V14.077C1.24419 14.7278 1.77175 15.2553 2.4225 15.2553H13.5809C14.2317 15.2553 14.7592 14.7278 14.7592 14.077V2.91859C14.7592 2.26784 14.2317 1.74028 13.5809 1.74028H2.4225Z"
+                        fill="#949494"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.5 2.93812C0.5 1.87637 1.36075 1.01562 2.4225 1.01562H13.5809C14.6427 1.01562 15.5034 1.87637 15.5034 2.93812V5.43962H0.5V2.93812ZM2.4225 1.75984C1.77175 1.75984 1.24419 2.28737 1.24419 2.93812V4.69544H14.7592V2.93812C14.7592 2.28737 14.2317 1.75984 13.581 1.75984H2.4225Z"
+                        fill="#949494"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M4.93453 0C4.72903 0 4.56244 0.166562 4.56244 0.372094V2.82528C4.56244 3.03078 4.72903 3.19738 4.93453 3.19738C5.14003 3.19738 5.30663 3.03081 5.30663 2.82528V0.372094C5.30663 0.166594 5.14003 0 4.93453 0ZM11.144 0C10.9385 0 10.7719 0.166562 10.7719 0.372094V2.82528C10.7719 3.03078 10.9385 3.19738 11.144 3.19738C11.3495 3.19738 11.5161 3.03081 11.5161 2.82528V0.372094C11.5161 0.166594 11.3495 0 11.144 0ZM2.95312 7.85572C2.95312 7.58172 3.17522 7.35959 3.44925 7.35959H4.88775C5.16175 7.35959 5.38388 7.58172 5.38388 7.85572V9.29422C5.38388 9.56822 5.16175 9.79034 4.88775 9.79034H3.44925C3.17522 9.79034 2.95312 9.56822 2.95312 9.29422V7.85572ZM3.69731 8.10378V9.04616H4.63969V8.10378H3.69731ZM6.78638 7.85572C6.78638 7.58172 7.0085 7.35959 7.2825 7.35959H8.721C8.995 7.35959 9.21712 7.58172 9.21712 7.85572V9.29422C9.21712 9.56822 8.995 9.79034 8.721 9.79034H7.2825C7.0085 9.79034 6.78638 9.56822 6.78638 9.29422V7.85572ZM7.53056 8.10378V9.04616H8.47294V8.10378H7.53056ZM10.6194 7.85572C10.6194 7.58172 10.8415 7.35959 11.1155 7.35959H12.554C12.828 7.35959 13.0501 7.58172 13.0501 7.85572V9.29422C13.0501 9.56822 12.828 9.79034 12.554 9.79034H11.1155C10.8415 9.79034 10.6194 9.56822 10.6194 9.29422V7.85572ZM11.3636 8.10378V9.04616H12.3059V8.10378H11.3636ZM2.95312 11.3822C2.95312 11.1082 3.17522 10.8861 3.44925 10.8861H4.88775C5.16175 10.8861 5.38388 11.1082 5.38388 11.3822V12.8207C5.38388 13.0947 5.16175 13.3168 4.88775 13.3168H3.44925C3.17522 13.3168 2.95312 13.0947 2.95312 12.8207V11.3822ZM3.69731 11.6302V12.5727H4.63969V11.6302H3.69731ZM6.78269 11.3822C6.78269 11.1082 7.00481 10.8861 7.27881 10.8861H8.71734C8.99134 10.8861 9.21347 11.1082 9.21347 11.3822V12.8207C9.21347 13.0947 8.99134 13.3168 8.71734 13.3168H7.27881C7.00481 13.3168 6.78269 13.0947 6.78269 12.8207V11.3822ZM7.52688 11.6302V12.5727H8.46928V11.6302H7.52688ZM10.6123 11.3822C10.6123 11.1082 10.8344 10.8861 11.1084 10.8861H12.5469C12.8209 10.8861 13.0431 11.1082 13.0431 11.3822V12.8207C13.0431 13.0947 12.8209 13.3168 12.5469 13.3168H11.1084C10.8344 13.3168 10.6123 13.0947 10.6123 12.8207V11.3822ZM11.3565 11.6302V12.5727H12.2989V11.6302H11.3565Z"
+                        fill="#949494"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_10059_4960">
+                        <rect width="16" height="16" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="flex items-center gap-2 text-[#949494]">
+                    Departure: <span id="selected-departure-date" class="text-black">Any Day</span>
+                  </h4>
+                </div>
+              </div>
+
+              <div
+                id="departure-length"
+                class="col-span-2 flex cursor-pointer items-center gap-5 rounded-md border border-[#dadada] px-4 py-4"
+              >
+                <div>
+                  <svg
+                    class="size-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                  >
+                    <path
+                      d="M13.8307 8.83333C13.8307 12.0533 11.2174 14.6667 7.9974 14.6667C4.7774 14.6667 2.16406 12.0533 2.16406 8.83333C2.16406 5.61333 4.7774 3 7.9974 3C11.2174 3 13.8307 5.61333 13.8307 8.83333Z"
+                      stroke="#292D32"
+                      stroke-opacity="0.4"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8 5.33203V8.66536"
+                      stroke="#292D32"
+                      stroke-opacity="0.4"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M6 1.33203H10"
+                      stroke="#292D32"
+                      stroke-opacity="0.4"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="flex items-center gap-2">
+                  <h4 class="flex items-center gap-2 text-[#949494]">
+                    Duration:
+                  </h4>
+                  <div class="w-fit">
+                    <input placeholder="Any length" type="number" name="" id="" class="focus:outline-none w-full px-2   placeholder:text-black">
+                  </div>
+                </div>
+              </div>
+
+              <a
+                type="submit"
+                href="destination-filter.html"
+                class="col-span-2 cursor-pointer rounded-md border border-primary bg-primary px-8 py-4 text-center text-white transition duration-500 hover:bg-white hover:text-primary"
+              >
+                <span>Search Tour</span>
+              </a>
             </div>
           </div>
-        </div>
+        </form>
         <!-- Filter::end -->
       </section>
       <!-- Banner::end -->
@@ -590,7 +714,7 @@
     <!-- Main::start -->
     <main>
       <!-- Special Offers::start -->
-      <section class="overflow-hidden bg-secondaryBgColor">
+      <section class="bg-secondaryBgColor overflow-hidden">
         <div class="container mx-auto py-10 md:py-20">
           <!-- Title section::start -->
           <div
@@ -3725,7 +3849,13 @@
               data-aos-delay="100"
               data-aos-offset="0"
             >
-              <img src="./assets/img/footer/footerlogo.png" alt="" />
+              <div
+                class="cursor-pointer pb-4 font-roboto font-bold text-primary md:text-xl lg:text-2xl"
+              >
+                <a href="index.html">
+                  Fined<span class="text-secondary">BusTour</span>
+                </a>
+              </div>
             </div>
             <div>
               <p
@@ -3837,7 +3967,7 @@
               class="transtition flex cursor-pointer items-center gap-5 duration-500 hover:text-primary"
             >
               <i class="fa-solid fa-chevron-right mt-[3px] text-sm"></i>
-              <a href="#" class="text-sm lg:text-base">Tour Guide</a>
+              <a href="blog.html" class="text-sm lg:text-base">Tour Guide</a>
             </div>
             <div
               data-aos="fade-right"
@@ -3956,7 +4086,7 @@
             data-aos-offset="0"
             class="text-xs md:text-sm"
           >
-            Copyright 2024 Tourm.All Rights Reserved.
+            Copyright 2024 FinedBusTour.All Rights Reserved.
           </h5>
         </div>
         <div
