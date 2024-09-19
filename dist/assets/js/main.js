@@ -79,9 +79,8 @@ $(document).ready(function () {
     enableTime: false,
     dateFormat: "Y-m-d",
     onChange: function (selectedDates, dateStr, instance) {
-      const dateSpan=document.getElementById("selected-departure-date")
+      const dateSpan = document.getElementById("selected-departure-date");
       dateSpan.textContent = dateStr;
-       
     },
   });
 
@@ -118,19 +117,18 @@ $(document).ready(function () {
   //   tab.addEventListener("click", switchTab);
   // });
 
-
   //Wishlist Icon::start
-  const wishlistIcons=document.querySelectorAll(".wishlist-icon")
-  wishlistIcons?.forEach((wishlistIcon)=>{
-    wishlistIcon?.addEventListener('click',()=>{
-      const path=wishlistIcon.querySelector("path")
-      if(path.getAttribute("fill")==="#FF5108"){
-        path.setAttribute("fill","none")
-      }else{
-        path.setAttribute("fill","#FF5108")
+  const wishlistIcons = document.querySelectorAll(".wishlist-icon");
+  wishlistIcons?.forEach((wishlistIcon) => {
+    wishlistIcon?.addEventListener("click", () => {
+      const path = wishlistIcon.querySelector("path");
+      if (path.getAttribute("fill") === "#FF5108") {
+        path.setAttribute("fill", "none");
+      } else {
+        path.setAttribute("fill", "#FF5108");
       }
-    })
-  })
+    });
+  });
   //Wishlist Icon::end
 
   // Tabs:
@@ -138,15 +136,17 @@ $(document).ready(function () {
   const tabs = document.querySelectorAll(".tab");
   const indicator = document.querySelector(".indicator");
   const panels = document.querySelectorAll(".tab-panel");
-  
+
   // Function to move the indicator
   const moveIndicator = (tab) => {
-    const tabRect = tab.getBoundingClientRect();
-    const parentRect = tab.parentElement.getBoundingClientRect();
-  
-    const leftPosition = tabRect.left - parentRect.left;
-    const topPosition = tabRect.top - parentRect.top;
-  
+    const tabRect = tab?.getBoundingClientRect();
+    const parentRect = tab?.parentElement.getBoundingClientRect();
+
+    if (tabRect) {
+      const leftPosition = tabRect.left - parentRect.left;
+      const topPosition = tabRect.top - parentRect.top;
+    }
+
     if (indicator) {
       indicator.style.width = `${tabRect.width}px`;
       indicator.style.height = `${tabRect.height}px`;
@@ -155,14 +155,14 @@ $(document).ready(function () {
       console.log("indicator not found");
     }
   };
-  
+
   // Function to activate the selected tab and panel
   const activateTab = (tab) => {
     const tabId = tab.getAttribute("aria-controls");
-  
+
     // Move indicator
     moveIndicator(tab);
-  
+
     // Update panels
     panels.forEach((panel) => {
       const panelId = panel.getAttribute("id");
@@ -171,26 +171,26 @@ $(document).ready(function () {
       panel.classList.toggle("visible", panelId === tabId);
       panel.classList.toggle("opacity-100", panelId === tabId);
     });
-  
+
     // Update selected state for tabs
     tabs.forEach((t) => {
       t.setAttribute("aria-selected", "false");
       t.classList.remove("text-primary");
       t.setAttribute("tabindex", "-1");
     });
-  
+
     // Set selected tab
     tab.setAttribute("aria-selected", "true");
     tab.classList.add("text-primary");
     tab.setAttribute("tabindex", "0");
   };
-  
+
   // Add event listeners to tabs
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
       activateTab(tab);
     });
-  
+
     // Allow keyboard navigation
     tab.addEventListener("keydown", (e) => {
       if (e.key === "ArrowRight" || e.key === "ArrowDown") {
@@ -204,14 +204,14 @@ $(document).ready(function () {
       }
     });
   });
-  
+
   // Ensure that the indicator is correctly aligned on initial load
   window.onload = () => {
     requestAnimationFrame(() => {
       moveIndicator(tabs[0]); // Initialize with the first tab
     });
   };
-  
+
   // Tabs:End
 
   // Owl Carousel::Start
@@ -726,36 +726,46 @@ $(document).ready(function () {
 
   // ====Date Range ::Start====
   const months = [
-    "January", "February", "March", "April", "May", "June", "July", "August",
-    "September", "October", "November", "December"
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
   const weekdays = ["SU", "MO", "TU", "WE", "TH", "FR", "SA"];
   let currentDate = new Date();
   let selectedStartDate = null;
   let selectedEndDate = null;
-  
+
   const departureDateShow = document.getElementById("departure-date");
-  
+
   function renderCalendar(year, month, calendarElement) {
     const firstDay = new Date(year, month, 1);
     const daysInMonth = new Date(year, month + 1, 0).getDate();
-  
+
     let html = `
       <div class="calendar-header font-inter font-bold text-lg">
         <h2>${months[month]} <span class="font-normal ml-2">${year}</span></h2>
       </div>
       <div class="calendar-grid">
     `;
-  
+
     weekdays.forEach((day) => {
       html += `<div class="calendar-cell calendar-weekday font-inter text-sm text-[#949499] font-light">${day}</div>`;
     });
-  
+
     // Add empty cells for days before the start of the month
     for (let i = 0; i < firstDay.getDay(); i++) {
       html += '<div class="calendar-cell disabled"></div>'; // Marking empty cells as disabled
     }
-  
+
     // Render days of the current month
     for (let day = 1; day <= daysInMonth; day++) {
       const date = new Date(year, month, day);
@@ -768,21 +778,29 @@ $(document).ready(function () {
         </div>
       `;
     }
-  
+
     html += "</div>";
     if (calendarElement) {
       calendarElement.innerHTML = html;
     }
   }
-  
+
   function getCellClass(date) {
     if (date < new Date()) return "disabled";
-    if (selectedStartDate && date.getTime() === selectedStartDate.getTime()) return "selected-start";
-    if (selectedEndDate && date.getTime() === selectedEndDate.getTime()) return "selected-end";
-    if (selectedStartDate && selectedEndDate && date > selectedStartDate && date < selectedEndDate) return "selected-between";
+    if (selectedStartDate && date.getTime() === selectedStartDate.getTime())
+      return "selected-start";
+    if (selectedEndDate && date.getTime() === selectedEndDate.getTime())
+      return "selected-end";
+    if (
+      selectedStartDate &&
+      selectedEndDate &&
+      date > selectedStartDate &&
+      date < selectedEndDate
+    )
+      return "selected-between";
     return "";
   }
-  
+
   function updateCalendars() {
     renderCalendar(
       currentDate.getFullYear(),
@@ -800,7 +818,7 @@ $(document).ready(function () {
       document.getElementById("calendar2"),
     );
   }
-  
+
   function updateDateRange() {
     const dateRange = document.getElementById("dateRange");
     if (selectedStartDate && selectedEndDate) {
@@ -814,15 +832,15 @@ $(document).ready(function () {
       dateRange.value = "";
     }
   }
-  
+
   function showHoverInfo(event) {
     const cell = event.target.closest(".calendar-cell");
     if (!cell || cell.classList.contains("disabled")) return; // Prevent hover on disabled cells
-  
+
     const date = new Date(cell.dataset.date);
     const price = cell.dataset.price;
     const hoverInfo = document.getElementById("hoverInfo");
-  
+
     hoverInfo.innerHTML = `
       <h4>${date.toLocaleDateString("en-US", { weekday: "short", year: "numeric", month: "short", day: "numeric" })}</h4>
       <table>
@@ -832,32 +850,40 @@ $(document).ready(function () {
         <tr><td>4th Person</td><td>$${Math.round(price * 0.6)}</td></tr>
       </table>
     `;
-  
+
     const rect = cell.getBoundingClientRect();
     hoverInfo.style.left = `${rect.left + window.scrollX}px`;
     hoverInfo.style.top = `${rect.bottom + window.scrollY}px`;
     hoverInfo.style.display = "block";
   }
-  
+
   function hideHoverInfo() {
     document.getElementById("hoverInfo").style.display = "none";
   }
-  
+
   document.getElementById("prevButton")?.addEventListener("click", () => {
     currentDate.setMonth(currentDate.getMonth() - 1);
     updateCalendars();
   });
-  
+
   document.getElementById("nextButton")?.addEventListener("click", () => {
     currentDate.setMonth(currentDate.getMonth() + 1);
     updateCalendars();
   });
-  
+
   document.querySelector(".calendars")?.addEventListener("click", (e) => {
     const cell = e.target.closest(".calendar-cell");
-    if (cell && !cell.classList.contains("calendar-weekday") && !cell.classList.contains("disabled")) {
+    if (
+      cell &&
+      !cell.classList.contains("calendar-weekday") &&
+      !cell.classList.contains("disabled")
+    ) {
       const clickedDate = new Date(cell.dataset.date);
-      if (!selectedStartDate || (selectedStartDate && selectedEndDate) || clickedDate < selectedStartDate) {
+      if (
+        !selectedStartDate ||
+        (selectedStartDate && selectedEndDate) ||
+        clickedDate < selectedStartDate
+      ) {
         selectedStartDate = clickedDate;
         selectedEndDate = null;
       } else if (clickedDate > selectedStartDate) {
@@ -867,12 +893,16 @@ $(document).ready(function () {
       updateDateRange();
     }
   });
-  
-  document.querySelector(".calendars")?.addEventListener("mouseover", showHoverInfo);
-  document.querySelector(".calendars")?.addEventListener("mouseout", hideHoverInfo);
-  
+
+  document
+    .querySelector(".calendars")
+    ?.addEventListener("mouseover", showHoverInfo);
+  document
+    .querySelector(".calendars")
+    ?.addEventListener("mouseout", hideHoverInfo);
+
   updateCalendars();
-  
+
   // ====Date Range ::End====
 
   // Clear All:: Start
@@ -907,19 +937,31 @@ $(document).ready(function () {
   departureContainer?.addEventListener("click", (event) => {
     event.stopPropagation(); // Prevent event from propagating to the document
     if (suggestionContainer.classList.contains("opacity-0")) {
-      suggestionContainer.classList.remove("opacity-0", "translate-y-3","-z-20");
-      suggestionContainer.classList.add("opacity-100", "translate-y-0","z-20");
+      suggestionContainer.classList.remove(
+        "opacity-0",
+        "translate-y-3",
+        "-z-20",
+      );
+      suggestionContainer.classList.add("opacity-100", "translate-y-0", "z-20");
     } else {
-      suggestionContainer.classList.add("opacity-0", "translate-y-3","-z-20");
-      suggestionContainer.classList.remove("opacity-100", "translate-y-0","z-20");
+      suggestionContainer.classList.add("opacity-0", "translate-y-3", "-z-20");
+      suggestionContainer.classList.remove(
+        "opacity-100",
+        "translate-y-0",
+        "z-20",
+      );
     }
   });
 
   // Handle click outside of suggestion container to close it
   document.addEventListener("click", (event) => {
-    if (!departureContainer.contains(event.target)) {
-      suggestionContainer.classList.add("opacity-0", "translate-y-3","-z-20");
-      suggestionContainer.classList.remove("opacity-100", "translate-y-0","z-20");
+    if (!departureContainer?.contains(event.target)) {
+      suggestionContainer?.classList.add("opacity-0", "translate-y-3", "-z-20");
+      suggestionContainer?.classList.remove(
+        "opacity-100",
+        "translate-y-0",
+        "z-20",
+      );
     }
   });
 
@@ -934,9 +976,57 @@ $(document).ready(function () {
   // Suggestion::container::end
 
   // Departure length::start
-  const departureLengthInput=document.getElementById("departure-duration-number")
-  console.log(departureLengthInput.innerText);
+
   // Departure length::end
+
+  //===================//
+  //Room Number::Start
+
+  const initialRoomNumber = $(".room-number").val();
+  const roomDetailsContainer = $("#room-details-container");
+
+  function createRoomDiv(roomNumber) {
+    return `  <div class="flex flex-col items-center gap-4 pt-2.5 md:flex-row md:pl-8 xl:flex-col xl:pl-0 2xl:flex-row 2xl:pl-7">
+        <h4 class="text-xs font-medium text-black">Room  ${roomNumber}:</h4>
+        <div class="flex items-center gap-2">
+          <div class="flex items-center gap-1">
+            <span class="text-xs text-gray-500">Child</span>
+            <select class="child-select">
+              <option value="0" selected>0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+          </div>
+          <div class="flex items-center gap-1">
+            <span class="text-xs text-gray-500">Adult</span>
+            <select class="adult-select">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2" selected>2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  function renderRoomContainer(number) {
+    roomDetailsContainer.html("")
+    for (let i = 1; i <= number; i++) {
+      roomDetailsContainer.append(createRoomDiv(i));
+    }
+    $("select").niceSelect();
+  }
+  renderRoomContainer(initialRoomNumber);
+
+  $(".room-number").on("change", function () {
+    const selectedRoomNumber = $(this).val();
+    renderRoomContainer(selectedRoomNumber);
+  });
+  //Room Number::End
+
+  //===================//
 });
 
 // ====Solaimain====

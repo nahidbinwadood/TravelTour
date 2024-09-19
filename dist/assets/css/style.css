@@ -730,14 +730,6 @@ video {
   top: 100%;
 }
 
-.right-10{
-  right: 2.5rem;
-}
-
-.top-10{
-  top: 2.5rem;
-}
-
 .-z-10{
   z-index: -10;
 }
@@ -801,11 +793,6 @@ video {
 .my-12{
   margin-top: 3rem;
   margin-bottom: 3rem;
-}
-
-.my-14{
-  margin-top: 3.5rem;
-  margin-bottom: 3.5rem;
 }
 
 .my-16{
@@ -936,10 +923,6 @@ video {
 
 .mt-2{
   margin-top: 0.5rem;
-}
-
-.mt-20{
-  margin-top: 5rem;
 }
 
 .mt-3{
@@ -1678,14 +1661,6 @@ video {
 .border-white{
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.border-\[10b2db38\]{
-  border-color: 10b2db38;
-}
-
-.border-\[\#10b2db38\]{
-  border-color: #10b2db38;
 }
 
 .border-b-\[\#E1E4E6\]{
@@ -2803,15 +2778,6 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.hover\:text-\[\#10b2db38\]:hover{
-  color: #10b2db38;
-}
-
-.hover\:text-\[white\]:hover{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 .hover\:shadow-2xl:hover{
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
@@ -3635,10 +3601,6 @@ video {
     width: 300px;
   }
 
-  .lg\:w-\[310px\]{
-    width: 310px;
-  }
-
   .lg\:w-\[360px\]{
     width: 360px;
   }
@@ -4000,11 +3962,6 @@ video {
   .xl\:my-20{
     margin-top: 5rem;
     margin-bottom: 5rem;
-  }
-
-  .xl\:my-28{
-    margin-top: 7rem;
-    margin-bottom: 7rem;
   }
 
   .xl\:my-32{
@@ -4694,6 +4651,10 @@ video {
 
   .\32xl\:pt-\[90px\]{
     padding-top: 90px;
+  }
+
+  .\32xl\:pl-7{
+    padding-left: 1.75rem;
   }
 
   .\32xl\:text-start{

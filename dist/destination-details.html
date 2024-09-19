@@ -2548,7 +2548,7 @@
                   <div
                     class="destination-details-page-room-number flex flex-col"
                   >
-                    <!-- room number -->
+                    <!-- room number selection -->
                     <div class="flex items-center gap-2">
                       <div class="flex items-center gap-2">
                         <span
@@ -2561,41 +2561,22 @@
                           >Number of Room:</label
                         >
                       </div>
-                      <select>
-                        <option data-display="Select">Nothing</option>
+                      <select class="room-number">
+                        <option value="1" selected>1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
-                        <option value="4" disabled>4</option>
+                        <option value="4">4</option>
                         <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
                       </select>
                     </div>
-                    <div
-                      class="flex flex-col items-center gap-4 pt-2.5 md:flex-row md:pl-8 xl:flex-col xl:pl-0 2xl:flex-row 2xl:pl-8"
-                    >
-                      <h4 class="text-xs text-gray-500">Room 1:</h4>
-                      <div class="flex items-center gap-2">
-                        <div class="flex items-center gap-1">
-                          <span class="text-xs text-gray-500">Child</span>
-                          <select>
-                            <option data-display="Select">Nothing</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4" disabled>4</option>
-                            <option value="5">5</option>
-                          </select>
-                        </div>
-                        <div class="flex items-center gap-1">
-                          <span class="text-xs text-gray-500">Adult</span>
-                          <select>
-                            <option data-display="Select">Nothing</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4" disabled>4</option>
-                            <option value="5">5</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
+
+                    <!-- Container for dynamically added room sections -->
+                    <div id="room-details-container"></div>
                   </div>
                   <!-- hotel option -->
                   <div class="">
@@ -2614,15 +2595,14 @@
                         >
                       </div>
                       <select class="text-sm md:text-base">
-                        <option data-display="Select">Nothing</option>
-                        <option value="1">Some option</option>
-                        <option value="2">Another option</option>
-                        <option value="3" disabled>A disabled option</option>
-                        <option value="4">Potato</option>
+                        <option value="5 Start" selected>5 Star</option>
+                        <option value="4 Start">4 Star</option>
+                        <option value="3 Start">3 Star</option>
+                        <option value="Budget">Budget</option>
                       </select>
                     </div>
                   </div>
-                  <!-- seat category -->
+                  <!-- fuel -->
                   <div class="">
                     <div
                       class="destination-details-page-seat-option flex flex-col items-start gap-4"
@@ -2635,19 +2615,18 @@
                         <label
                           class="text-nowrap text-sm text-[#113D48] md:text-base"
                           for=""
-                          >Seat Category:</label
+                          >Fuel Surcharge:</label
                         >
                       </div>
                       <select>
-                        <option data-display="Select">Nothing</option>
-                        <option value="1">Some option</option>
-                        <option value="2">Another option</option>
-                        <option value="3" disabled>A disabled option</option>
-                        <option value="4">Potato</option>
+                        <option value="Fuel Surcharge $6 Per Day (+$42)">Fuel Surcharge $6 Per Day (+$42)</option>
+                        <option value="Fuel Surcharge $10 Per Day (+$60)">Fuel Surcharge $10 Per Day (+$60)</option>
+                        <option value="Fuel Surcharge $15 Per Day (+$100)">Fuel Surcharge $15 Per Day (+$100)</option>
+ 
                       </select>
                     </div>
                   </div>
-                  <!-- return  -->
+                  <!-- Drop Off  -->
                   <div class="">
                     <div
                       class="destination-details-page-return-option flex flex-col items-start gap-4"
@@ -2660,15 +2639,14 @@
                         <label
                           class="text-nowrap text-sm text-[#113D48] md:text-base"
                           for=""
-                          >Return:</label
+                          >Drop Off:</label
                         >
                       </div>
                       <select>
-                        <option data-display="Select">Nothing</option>
-                        <option value="1">Some option</option>
-                        <option value="2">Another option</option>
-                        <option value="3" disabled>A disabled option</option>
-                        <option value="4">Potato</option>
+                        <option value="Same stop as pick up in Los Angeles">Same stop as pick up in Los Angeles</option>
+                        <option value="Different stop from the pick up in Los Angeles">Different stop from the pick up in Los Angeles</option>
+                        <option value="Self dismiss in Las Vegas">Self dismiss in Las Vegas</option>
+                        
                       </select>
                     </div>
                   </div>
