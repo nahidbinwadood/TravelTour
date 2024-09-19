@@ -1060,6 +1060,7 @@ $(document).ready(function () {
   //Staying::
 
   //===================//
+  
 });
 
 // ====Solaimain====
