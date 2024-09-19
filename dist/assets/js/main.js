@@ -1012,7 +1012,7 @@ $(document).ready(function () {
   }
 
   function renderRoomContainer(number) {
-    roomDetailsContainer.html("")
+    roomDetailsContainer.html("");
     for (let i = 1; i <= number; i++) {
       roomDetailsContainer.append(createRoomDiv(i));
     }
@@ -1025,6 +1025,39 @@ $(document).ready(function () {
     renderRoomContainer(selectedRoomNumber);
   });
   //Room Number::End
+
+  // Arriving::
+
+  const arrivalYes = document.getElementById("arrivalYes");
+  const arrivalNo = document.getElementById("arrivalNo");
+  const arrivalContainer = document.getElementById("arrival-container");
+  arrivalYes?.addEventListener("click", () => {
+    if (arrivalContainer) {
+      arrivalContainer.classList.remove("hidden");
+    }
+  });
+  arrivalNo?.addEventListener("click", () => {
+    if (arrivalContainer) {
+      arrivalContainer.classList.add("hidden");
+    }
+  });
+  // Arriving::
+
+  //Staying::
+  const stayingYes = document.getElementById("stayingYes");
+  const stayingNo = document.getElementById("stayingNo");
+  const stayingContainer = document.getElementById("staying-container");
+  stayingYes?.addEventListener("click", () => {
+    if (stayingContainer) {
+      stayingContainer.classList.remove("hidden");
+    }
+  });
+  stayingNo?.addEventListener("click", () => {
+    if (stayingContainer) {
+      stayingContainer.classList.add("hidden");
+    }
+  });
+  //Staying::
 
   //===================//
 });

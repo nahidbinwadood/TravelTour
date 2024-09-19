@@ -2619,10 +2619,15 @@
                         >
                       </div>
                       <select>
-                        <option value="Fuel Surcharge $6 Per Day (+$42)">Fuel Surcharge $6 Per Day (+$42)</option>
-                        <option value="Fuel Surcharge $10 Per Day (+$60)">Fuel Surcharge $10 Per Day (+$60)</option>
-                        <option value="Fuel Surcharge $15 Per Day (+$100)">Fuel Surcharge $15 Per Day (+$100)</option>
- 
+                        <option value="Fuel Surcharge $6 Per Day (+$42)">
+                          Fuel Surcharge $6 Per Day (+$42)
+                        </option>
+                        <option value="Fuel Surcharge $10 Per Day (+$60)">
+                          Fuel Surcharge $10 Per Day (+$60)
+                        </option>
+                        <option value="Fuel Surcharge $15 Per Day (+$100)">
+                          Fuel Surcharge $15 Per Day (+$100)
+                        </option>
                       </select>
                     </div>
                   </div>
@@ -2643,15 +2648,22 @@
                         >
                       </div>
                       <select>
-                        <option value="Same stop as pick up in Los Angeles">Same stop as pick up in Los Angeles</option>
-                        <option value="Different stop from the pick up in Los Angeles">Different stop from the pick up in Los Angeles</option>
-                        <option value="Self dismiss in Las Vegas">Self dismiss in Las Vegas</option>
-                        
+                        <option value="Same stop as pick up in Los Angeles">
+                          Same stop as pick up in Los Angeles
+                        </option>
+                        <option
+                          value="Different stop from the pick up in Los Angeles"
+                        >
+                          Different stop from the pick up in Los Angeles
+                        </option>
+                        <option value="Self dismiss in Las Vegas">
+                          Self dismiss in Las Vegas
+                        </option>
                       </select>
                     </div>
                   </div>
 
-                  <!-- pickup depurture option  -->
+                  <!-- pickup departure option  -->
                   <div class="">
                     <div
                       class="destination-details-page-return-option flex flex-col items-start gap-4"
@@ -2815,6 +2827,7 @@
                         </label>
                       </div>
 
+                      <!-- arriving early -->
                       <div class="flex flex-col gap-2 pl-px">
                         <div
                           class="flex items-center gap-5 text-sm md:text-base"
@@ -2826,9 +2839,9 @@
                                 class="h-4 w-4 cursor-pointer"
                                 type="radio"
                                 name="yes-no"
-                                id="yes"
+                                id="arrivalYes"
                               />
-                              <label class="cursor-pointer" for="yes"
+                              <label class="cursor-pointer" for="arrivalYes"
                                 >Yes</label
                               >
                             </div>
@@ -2837,13 +2850,109 @@
                                 class="h-4 w-4 cursor-pointer"
                                 type="radio"
                                 name="yes-no"
-                                id="no"
+                                id="arrivalNo"
                               />
-                              <label class="cursor-pointer" for="no">No</label>
+                              <label class="cursor-pointer" for="arrivalNo">No</label>
                             </div>
                           </div>
                         </div>
                       </div>
+
+                      <!-- early options -->
+                      <div id="arrival-container" class="hidden">
+                        <div class="flex flex-col gap-3">
+                          <div class="flex items-center gap-2">
+                            <p class="w-[90px]">Check In:</p>
+                            <div
+                              class="relative w-36 flex items-center gap-3 rounded border border-black/50 px-4 py-2 text-sm"
+                            >
+                              <p id="check-in-date">2024-10-15</p>
+                              <svg
+                                class="cursor-pointer"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="17"
+                                viewBox="0 0 16 17"
+                                fill="none"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M12.6668 2.49935H13.3335C14.0668 2.49935 14.6668 3.09935 14.6668 3.83268V14.4993C14.6668 15.2327 14.0668 15.8327 13.3335 15.8327H2.66683C1.9335 15.8327 1.3335 15.2327 1.3335 14.4993V3.83268C1.3335 3.09935 1.9335 2.49935 2.66683 2.49935H3.3335V1.83268C3.3335 1.46602 3.6335 1.16602 4.00016 1.16602C4.36683 1.16602 4.66683 1.46602 4.66683 1.83268V2.49935H11.3335V1.83268C11.3335 1.46602 11.6335 1.16602 12.0002 1.16602C12.3668 1.16602 12.6668 1.46602 12.6668 1.83268V2.49935ZM3.3335 14.4993H12.6668C13.0335 14.4993 13.3335 14.1993 13.3335 13.8327V5.83268H2.66683V13.8327C2.66683 14.1993 2.96683 14.4993 3.3335 14.4993Z"
+                                  fill="#494E50"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2">
+                            <p class="w-[90px]">Check Out:</p>
+                            <div
+                              class="relative w-36 flex items-center gap-3 rounded border border-black/50 px-4 py-2 text-sm"
+                            >
+                              <p id="check-out-date">2024-10-15</p>
+                            
+                            </div>
+                          </div>
+                          <div class="flex gap-4 pt-2">
+                            <div>
+                              <p class="w-[45px]">City:</p>
+                            </div>
+                            <div class="space-y-1">
+                              <div class="cursor-pointer">
+                                <input type="radio" name="city" id="LA" />
+                                <label class="cursor-pointer" for="LA"
+                                  >Los Angeles, CA</label
+                                >
+                              </div>
+                              <div>
+                                <input type="radio" name="city" id="LEL" />
+                                <label class="cursor-pointer" for="LEL"
+                                  >LEl Monte, CA</label
+                                >
+                              </div>
+                              <div>
+                                <input type="radio" name="city" id="LV" />
+                                <label class="cursor-pointer" for="LV">Las Vegas, NV</label>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="flex gap-4 pt-2">
+                            <div>
+                              <p class="text-nowrap">Hotel:</p>
+                            </div>
+                            <div class="space-y-1">
+                              <div>
+                                <input type="radio" name="hotel" id="RE" />
+                                <label class="cursor-pointer" for="RE"
+                                  >Red Roof Inn Bellflower</label
+                                >
+                              </div>
+                              <div>
+                                <input type="radio" name="hotel" id="RI" />
+                                <label class="cursor-pointer" for="RI"
+                                  >
+                                  Rodeway Inn Artesia</label
+                                >
+                              </div>
+                              <div>
+                                <input type="radio" name="hotel" id="MB" />
+                                <label class="cursor-pointer" for="MB">Motel 6 Buena Park Knotts Berry Farm</label>
+                              </div>
+                              <div>
+                                <input type="radio" name="hotel" id="DI" />
+                                <label class="cursor-pointer" for="DI">Days Inn & Suites by Wyndham Artesia</label>
+                              </div>
+                              <div>
+                                <input type="radio" name="hotel" id="RB" />
+                                <label class="cursor-pointer" for="RB">Redondo Beach Inn</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- staying late -->
                       <div class="flex flex-col gap-2 pl-px">
                         <div
                           class="flex items-center gap-4 text-sm md:text-base"
@@ -2855,9 +2964,9 @@
                                 class="h-4 w-4 cursor-pointer"
                                 type="radio"
                                 name="late"
-                                id="late1"
+                                id="stayingYes"
                               />
-                              <label class="cursor-pointer" for="late1"
+                              <label class="cursor-pointer" for="stayingYes"
                                 >Yes</label
                               >
                             </div>
@@ -2866,11 +2975,105 @@
                                 class="h-4 w-4 cursor-pointer"
                                 type="radio"
                                 name="late"
-                                id="late2"
+                                id="stayingNo"
                               />
-                              <label class="cursor-pointer" for="late2"
+                              <label class="cursor-pointer" for="stayingNo"
                                 >No</label
                               >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- late options -->
+                      <div id="staying-container" class="hidden">
+                        <div class="flex flex-col gap-3">
+                          <div class="flex items-center gap-2">
+                            <p class="w-[90px]">Check In:</p>
+                            <div
+                              class="relative w-36 flex items-center gap-3 rounded border border-black/50 px-4 py-2 text-sm"
+                            >
+                              <p id="check-in-date" >2024-10-15</p>
+ 
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-2">
+                            <p class="w-[90px]">Check Out:</p>
+                            <div
+                              class="relative w-36 flex items-center gap-3 rounded border border-black/50 px-4 py-2 text-sm"
+                            >
+                              <p id="check-out-date" >2024-10-15</p>
+                              <svg
+                                class="cursor-pointer"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="17"
+                                viewBox="0 0 16 17"
+                                fill="none"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M12.6668 2.49935H13.3335C14.0668 2.49935 14.6668 3.09935 14.6668 3.83268V14.4993C14.6668 15.2327 14.0668 15.8327 13.3335 15.8327H2.66683C1.9335 15.8327 1.3335 15.2327 1.3335 14.4993V3.83268C1.3335 3.09935 1.9335 2.49935 2.66683 2.49935H3.3335V1.83268C3.3335 1.46602 3.6335 1.16602 4.00016 1.16602C4.36683 1.16602 4.66683 1.46602 4.66683 1.83268V2.49935H11.3335V1.83268C11.3335 1.46602 11.6335 1.16602 12.0002 1.16602C12.3668 1.16602 12.6668 1.46602 12.6668 1.83268V2.49935ZM3.3335 14.4993H12.6668C13.0335 14.4993 13.3335 14.1993 13.3335 13.8327V5.83268H2.66683V13.8327C2.66683 14.1993 2.96683 14.4993 3.3335 14.4993Z"
+                                  fill="#494E50"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="flex gap-4 pt-2">
+                            <div>
+                              <p class="w-[45px]">City:</p>
+                            </div>
+                            <div class="space-y-1">
+                              <div class="cursor-pointer">
+                                <input type="radio" name="city" id="LA" />
+                                <label class="cursor-pointer" for="LA"
+                                  >Los Angeles, CA</label
+                                >
+                              </div>
+                              <div>
+                                <input type="radio" name="city" id="LEL" />
+                                <label class="cursor-pointer" for="LEL"
+                                  >LEl Monte, CA</label
+                                >
+                              </div>
+                              <div>
+                                <input type="radio" name="city" id="LV" />
+                                <label class="cursor-pointer" for="LV">Las Vegas, NV</label>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="flex gap-4 pt-2">
+                            <div>
+                              <p class="text-nowrap">Hotel:</p>
+                            </div>
+                            <div class="space-y-1">
+                              <div>
+                                <input type="radio" name="hotel" id="RE" />
+                                <label class="cursor-pointer" for="RE"
+                                  >Red Roof Inn Bellflower</label
+                                >
+                              </div>
+                              <div>
+                                <input type="radio" name="hotel" id="RI" />
+                                <label class="cursor-pointer" for="RI"
+                                  >
+                                  Rodeway Inn Artesia</label
+                                >
+                              </div>
+                              <div>
+                                <input type="radio" name="hotel" id="MB" />
+                                <label class="cursor-pointer" for="MB">Motel 6 Buena Park Knotts Berry Farm</label>
+                              </div>
+                              <div>
+                                <input type="radio" name="hotel" id="DI" />
+                                <label class="cursor-pointer" for="DI">Days Inn & Suites by Wyndham Artesia</label>
+                              </div>
+                              <div>
+                                <input type="radio" name="hotel" id="RB" />
+                                <label class="cursor-pointer" for="RB">Redondo Beach Inn</label>
+                              </div>
                             </div>
                           </div>
                         </div>
