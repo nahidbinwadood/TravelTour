@@ -689,83 +689,63 @@ $(document).ready(function () {
 
   // ====Date Range ::Start====
   const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    "January", "February", "March", "April", "May", "June", "July", "August",
+    "September", "October", "November", "December"
   ];
   const weekdays = ["SU", "MO", "TU", "WE", "TH", "FR", "SA"];
   let currentDate = new Date();
   let selectedStartDate = null;
   let selectedEndDate = null;
-
+  
   const departureDateShow = document.getElementById("departure-date");
-
+  
   function renderCalendar(year, month, calendarElement) {
     const firstDay = new Date(year, month, 1);
     const daysInMonth = new Date(year, month + 1, 0).getDate();
-
+  
     let html = `
-          <div class="calendar-header font-inter font-bold text-lg">
-              <h2>${months[month]} <span class="font-normal ml-2">${year}</span></h2>
-          </div>
-          <div class="calendar-grid">
-      `;
-
+      <div class="calendar-header font-inter font-bold text-lg">
+        <h2>${months[month]} <span class="font-normal ml-2">${year}</span></h2>
+      </div>
+      <div class="calendar-grid">
+    `;
+  
     weekdays.forEach((day) => {
-      html += `<div class="calendar-cell calendar-weekday  font-inter text-sm text-[#949499] font-light">${day}</div>`;
+      html += `<div class="calendar-cell calendar-weekday font-inter text-sm text-[#949499] font-light">${day}</div>`;
     });
-
+  
+    // Add empty cells for days before the start of the month
     for (let i = 0; i < firstDay.getDay(); i++) {
-      html += '<div class="calendar-cell "></div>';
+      html += '<div class="calendar-cell disabled"></div>'; // Marking empty cells as disabled
     }
-
+  
+    // Render days of the current month
     for (let day = 1; day <= daysInMonth; day++) {
       const date = new Date(year, month, day);
       const cellClass = getCellClass(date);
       const price = "200";
       html += `
-              <div class="calendar-cell ${cellClass} font-inter " data-date="${date.toISOString()}" data-price="${price}">
-                  <div class="font-medium">${day}</div>
-                  <div class="price">$${price}</div>
-              </div>
-          `;
+        <div class="calendar-cell ${cellClass} font-inter" data-date="${date.toISOString()}" data-price="${price}">
+          <div class="font-medium">${day}</div>
+          <div class="price">$${price}</div>
+        </div>
+      `;
     }
-
+  
     html += "</div>";
     if (calendarElement) {
       calendarElement.innerHTML = html;
     }
   }
-
+  
   function getCellClass(date) {
     if (date < new Date()) return "disabled";
-    if (selectedStartDate && date.getTime() === selectedStartDate.getTime())
-      return "selected-start";
-    if (selectedEndDate && date.getTime() === selectedEndDate.getTime())
-      return "selected-end";
-    if (
-      selectedStartDate &&
-      selectedEndDate &&
-      date > selectedStartDate &&
-      date < selectedEndDate
-    )
-      return "selected-between";
+    if (selectedStartDate && date.getTime() === selectedStartDate.getTime()) return "selected-start";
+    if (selectedEndDate && date.getTime() === selectedEndDate.getTime()) return "selected-end";
+    if (selectedStartDate && selectedEndDate && date > selectedStartDate && date < selectedEndDate) return "selected-between";
     return "";
   }
-
-  function getRandomPrice() {
-    return (Math.random() * (150 - 50) + 50).toFixed(0);
-  }
-
+  
   function updateCalendars() {
     renderCalendar(
       currentDate.getFullYear(),
@@ -783,7 +763,7 @@ $(document).ready(function () {
       document.getElementById("calendar2"),
     );
   }
-
+  
   function updateDateRange() {
     const dateRange = document.getElementById("dateRange");
     if (selectedStartDate && selectedEndDate) {
@@ -797,58 +777,50 @@ $(document).ready(function () {
       dateRange.value = "";
     }
   }
-
+  
   function showHoverInfo(event) {
     const cell = event.target.closest(".calendar-cell");
-    if (!cell || cell.classList.contains("disabled")) return;
-
+    if (!cell || cell.classList.contains("disabled")) return; // Prevent hover on disabled cells
+  
     const date = new Date(cell.dataset.date);
     const price = cell.dataset.price;
     const hoverInfo = document.getElementById("hoverInfo");
-
+  
     hoverInfo.innerHTML = `
-          <h4>${date.toLocaleDateString("en-US", { weekday: "short", year: "numeric", month: "short", day: "numeric" })}</h4>
-          <table>
-              <tr><td>Single</td><td>$${price}</td></tr>
-              <tr><td>Double</td><td>$${price}</td></tr>
-              <tr><td>3rd Person</td><td>$${Math.round(price * 0.7)}</td></tr>
-              <tr><td>4th Person</td><td>$${Math.round(price * 0.6)}</td></tr>
-          </table>
-      `;
-
+      <h4>${date.toLocaleDateString("en-US", { weekday: "short", year: "numeric", month: "short", day: "numeric" })}</h4>
+      <table>
+        <tr><td>Single</td><td>$${price}</td></tr>
+        <tr><td>Double</td><td>$${price}</td></tr>
+        <tr><td>3rd Person</td><td>$${Math.round(price * 0.7)}</td></tr>
+        <tr><td>4th Person</td><td>$${Math.round(price * 0.6)}</td></tr>
+      </table>
+    `;
+  
     const rect = cell.getBoundingClientRect();
     hoverInfo.style.left = `${rect.left + window.scrollX}px`;
     hoverInfo.style.top = `${rect.bottom + window.scrollY}px`;
     hoverInfo.style.display = "block";
   }
-
+  
   function hideHoverInfo() {
     document.getElementById("hoverInfo").style.display = "none";
   }
-
+  
   document.getElementById("prevButton")?.addEventListener("click", () => {
     currentDate.setMonth(currentDate.getMonth() - 1);
     updateCalendars();
   });
-
+  
   document.getElementById("nextButton")?.addEventListener("click", () => {
     currentDate.setMonth(currentDate.getMonth() + 1);
     updateCalendars();
   });
-
+  
   document.querySelector(".calendars")?.addEventListener("click", (e) => {
     const cell = e.target.closest(".calendar-cell");
-    if (
-      cell &&
-      !cell.classList.contains("calendar-weekday") &&
-      !cell.classList.contains("disabled")
-    ) {
+    if (cell && !cell.classList.contains("calendar-weekday") && !cell.classList.contains("disabled")) {
       const clickedDate = new Date(cell.dataset.date);
-      if (
-        !selectedStartDate ||
-        (selectedStartDate && selectedEndDate) ||
-        clickedDate < selectedStartDate
-      ) {
+      if (!selectedStartDate || (selectedStartDate && selectedEndDate) || clickedDate < selectedStartDate) {
         selectedStartDate = clickedDate;
         selectedEndDate = null;
       } else if (clickedDate > selectedStartDate) {
@@ -858,15 +830,12 @@ $(document).ready(function () {
       updateDateRange();
     }
   });
-
-  document
-    .querySelector(".calendars")
-    ?.addEventListener("mouseover", showHoverInfo);
-  document
-    .querySelector(".calendars")
-    ?.addEventListener("mouseout", hideHoverInfo);
-
+  
+  document.querySelector(".calendars")?.addEventListener("mouseover", showHoverInfo);
+  document.querySelector(".calendars")?.addEventListener("mouseout", hideHoverInfo);
+  
   updateCalendars();
+  
   // ====Date Range ::End====
 
   // Clear All:: Start
