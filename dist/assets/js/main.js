@@ -118,6 +118,21 @@ $(document).ready(function () {
   //   tab.addEventListener("click", switchTab);
   // });
 
+
+  //Wishlist Icon::start
+  const wishlistIcons=document.querySelectorAll(".wishlist-icon")
+  wishlistIcons?.forEach((wishlistIcon)=>{
+    wishlistIcon?.addEventListener('click',()=>{
+      const path=wishlistIcon.querySelector("path")
+      if(path.getAttribute("fill")==="#FF5108"){
+        path.setAttribute("fill","none")
+      }else{
+        path.setAttribute("fill","#FF5108")
+      }
+    })
+  })
+  //Wishlist Icon::end
+
   // Tabs:
 
   const tabs = document.querySelectorAll(".tab");
