@@ -123,58 +123,80 @@ $(document).ready(function () {
   const tabs = document.querySelectorAll(".tab");
   const indicator = document.querySelector(".indicator");
   const panels = document.querySelectorAll(".tab-panel");
+  
+  // Function to move the indicator
   const moveIndicator = (tab) => {
-    const tabRect = tab?.getBoundingClientRect();
-    const parentRect = tab?.parentElement?.getBoundingClientRect();
-
-    const leftPosition = tabRect?.left - parentRect?.left;
-    const topPosition = tabRect?.top - parentRect?.top;
-
+    const tabRect = tab.getBoundingClientRect();
+    const parentRect = tab.parentElement.getBoundingClientRect();
+  
+    const leftPosition = tabRect.left - parentRect.left;
+    const topPosition = tabRect.top - parentRect.top;
+  
     if (indicator) {
-      indicator.style.width = tabRect.width + "px";
-      indicator.style.height = tabRect.height + "px";
+      indicator.style.width = `${tabRect.width}px`;
+      indicator.style.height = `${tabRect.height}px`;
       indicator.style.transform = `translate(${leftPosition}px, ${topPosition}px)`;
     } else {
       console.log("indicator not found");
     }
   };
-
-  // Initialize with the first tab
-  moveIndicator(tabs[0]);
-
-  tabs.forEach((tab) => {
+  
+  // Function to activate the selected tab and panel
+  const activateTab = (tab) => {
     const tabId = tab.getAttribute("aria-controls");
+  
+    // Move indicator
+    moveIndicator(tab);
+  
+    // Update panels
+    panels.forEach((panel) => {
+      const panelId = panel.getAttribute("id");
+      panel.classList.toggle("invisible", panelId !== tabId);
+      panel.classList.toggle("opacity-0", panelId !== tabId);
+      panel.classList.toggle("visible", panelId === tabId);
+      panel.classList.toggle("opacity-100", panelId === tabId);
+    });
+  
+    // Update selected state for tabs
+    tabs.forEach((t) => {
+      t.setAttribute("aria-selected", "false");
+      t.classList.remove("text-primary");
+      t.setAttribute("tabindex", "-1");
+    });
+  
+    // Set selected tab
+    tab.setAttribute("aria-selected", "true");
+    tab.classList.add("text-primary");
+    tab.setAttribute("tabindex", "0");
+  };
+  
+  // Add event listeners to tabs
+  tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
-      console.log(tabId);
-      moveIndicator(tab);
-
-      // Updating Panels:
-      panels.forEach((panel) => {
-        let panelId = panel.getAttribute("id");
-        if (panelId === tabId) {
-          panel.classList.remove("invisible", "opacity-0");
-          panel.classList.add("visible", "opacity-100");
-        } else {
-          panel.classList.add("invisible", "opacity-0");
-          panel.classList.remove("visible", "opacity-100");
-        }
-      });
-
-      // Update selected state for accessibility and styling
-      tabs.forEach((t) => {
-        t.setAttribute("aria-selected", "false");
-        t.classList.remove("text-primary");
-      });
-
-      tab.setAttribute("aria-selected", "true");
-      tab.classList.add("text-primary");
-
-      // Manage tab index for keyboard navigation
-      tabs.forEach((t) => t.setAttribute("tabindex", "-1"));
-      tab.setAttribute("tabindex", "0");
+      activateTab(tab);
+    });
+  
+    // Allow keyboard navigation
+    tab.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        const nextTab = tab.nextElementSibling || tabs[0];
+        nextTab.focus();
+        activateTab(nextTab);
+      } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        const prevTab = tab.previousElementSibling || tabs[tabs.length - 1];
+        prevTab.focus();
+        activateTab(prevTab);
+      }
     });
   });
-
+  
+  // Ensure that the indicator is correctly aligned on initial load
+  window.onload = () => {
+    requestAnimationFrame(() => {
+      moveIndicator(tabs[0]); // Initialize with the first tab
+    });
+  };
+  
   // Tabs:End
 
   // Owl Carousel::Start
