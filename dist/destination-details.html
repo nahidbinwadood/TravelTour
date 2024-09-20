@@ -2876,7 +2876,7 @@
                       </div>
 
                       <!-- arriving early -->
-                      <div class="flex flex-col gap-2 pl-px">
+                      <div class="flex w-full flex-col gap-2 pl-px">
                         <div
                           class="flex items-center gap-5 text-sm md:text-base"
                         >
@@ -2911,7 +2911,10 @@
                       <!-- early options -->
                       <div id="arrival-container" class="hidden">
                         <div class="flex flex-col gap-3">
-                          <div class="flex items-center gap-2">
+                          <div
+                            id="arriving-container"
+                            class="relative flex items-center gap-2"
+                          >
                             <p class="w-[90px]">Check In:</p>
                             <div
                               class="relative flex w-36 items-center gap-3 rounded border border-black/50 px-4 py-2 text-sm"
@@ -2932,6 +2935,81 @@
                                   fill="#494E50"
                                 />
                               </svg>
+                            </div>
+
+                            <!-- calendar -->
+                            <div
+                              id="arriving-date-show-calendar"
+                              class="absolute top-full -z-20 w-full translate-y-5 rounded-md border border-black/20 bg-gray-100 px-2 pt-6 opacity-0 shadow-2xl transition-all duration-500"
+                            >
+                              <!-- top Calendar -->
+                              <div
+                                class="flex items-center bg-primary/20 px-4 py-2"
+                              >
+                                <div
+                                  id="prevButtonArrivingCalendar"
+                                  class="cursor-pointer"
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                  >
+                                    <path
+                                      d="M15 19L8 12L15 5"
+                                      stroke="#292A34"
+                                      stroke-width="2"
+                                    />
+                                  </svg>
+                                </div>
+                                <div
+                                  id="monthLabelArrivingCalendar"
+                                  class="w-full text-center font-semibold"
+                                >
+                                  September
+                                  <span class="font-normal">2024</span>
+                                </div>
+                                <div
+                                  id="nextButtonArrivingCalendar"
+                                  class="cursor-pointer"
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                  >
+                                    <path
+                                      d="M9 19L16 12L9 5"
+                                      stroke="#292A34"
+                                      stroke-width="2"
+                                    />
+                                  </svg>
+                                </div>
+                              </div>
+                              <div class="my-3 border-t border-black/5"></div>
+
+                              <!-- weeks -->
+                              <div
+                                class="grid grid-cols-7 gap-2 text-center text-xs font-medium text-[#292A34B3]"
+                              >
+                                <div><p>MO</p></div>
+                                <div><p>TU</p></div>
+                                <div><p>WE</p></div>
+                                <div><p>TH</p></div>
+                                <div><p>FR</p></div>
+                                <div><p>SA</p></div>
+                                <div><p>SU</p></div>
+                              </div>
+
+                              <!-- Days container -->
+                              <div
+                                id="arrivingCalendarDays"
+                                class="mt-2 grid min-h-[256px] grid-cols-7 pb-4 text-center"
+                              ></div>
                             </div>
                           </div>
                           <div class="flex items-center gap-2">
@@ -4455,7 +4533,16 @@
             //show input ::start
             document.getElementById("departure--start--date").innerText =
               selectedStartDate.toLocaleDateString();
+            document.getElementById("check-in-date").innerText =
+              selectedStartDate.toLocaleDateString();
             document.getElementById("departure--end--date").innerText =
+              selectedEndDate.toLocaleDateString();
+
+            //hotel::
+            document.getElementById("check-in-date").innerText =
+              selectedStartDate.toLocaleDateString();
+
+            document.getElementById("check-out-date").innerText =
               selectedEndDate.toLocaleDateString();
             //show input ::end
 
@@ -4495,6 +4582,12 @@
               selectedStartDate.toLocaleDateString();
             document.getElementById("departure--end--date").innerText =
               selectedEndDate.toLocaleDateString();
+
+            //hotel::
+            document.getElementById("check-in-date").innerText =
+              selectedStartDate.toLocaleDateString();
+            document.getElementById("check-out-date").innerText =
+              selectedEndDate.toLocaleDateString();
             //show input ::end
 
             // Update the first calendar to reflect the selected departure date
@@ -4507,9 +4600,148 @@
       }
 
       //===========================//
-    </script>
 
-    <script></script>
+      // ====arriving:
+      let arrivalStartDate;
+      let arrivalEndDate;
+      let arrivalCurrentDate = new Date(); // Reintroduce this variable
+
+      // Function to update arrival calendar dates based on selectedStartDate
+      function updateArrivalDates() {
+        if (selectedStartDate) {
+          arrivalEndDate = new Date(selectedStartDate);
+          arrivalStartDate = new Date(selectedStartDate);
+          arrivalStartDate.setDate(arrivalStartDate.getDate() - 7); // 7 days before departure
+
+          // Update arrivalCurrentDate to show the month containing the arrival window
+          arrivalCurrentDate = new Date(arrivalStartDate);
+        }
+      }
+
+      // Modify the renderArrivingCalendar function
+      function renderArrivingCalendar(
+        year,
+        month,
+        calendarElement,
+        monthLabelElement,
+      ) {
+        const firstDay = new Date(year, month, 1);
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const startDay = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1;
+
+        let html = "";
+
+        for (let i = 0; i < startDay; i++) {
+          html += `<div class="p-2 bg-transparent"></div>`;
+        }
+
+        for (let day = 1; day <= daysInMonth; day++) {
+          const date = new Date(year, month, day);
+          const isBeforeDeparture =
+            arrivalStartDate &&
+            arrivalEndDate &&
+            date >= arrivalStartDate &&
+            date < arrivalEndDate;
+          let isPast = date < new Date().setHours(0, 0, 0, 0);
+
+          let selectableClass =
+            isBeforeDeparture && !isPast
+              ? "cursor-pointer bg-white hover:bg-blue-200"
+              : "text-gray-400 cursor-not-allowed bg-gray-200";
+
+          html += `<div class="py-2 min-h-[50px] bg-white text-center border-r border-b ${selectableClass}" data-date="${date.toISOString()}">
+      <p class="text-sm font-medium">${day}</p>
+    </div>`;
+        }
+
+        if (calendarElement) {
+          calendarElement.innerHTML = html;
+        }
+
+        if (monthLabelElement) {
+          monthLabelElement.innerHTML = `${months[month]} <span class="font-normal">${year}</span>`;
+        }
+
+        addArrivalDateClickListener(calendarElement);
+      }
+
+      // Modify the addArrivalDateClickListener function
+      function addArrivalDateClickListener(calendarElement) {
+        const dayCells = calendarElement.querySelectorAll("[data-date]");
+        dayCells.forEach((cell) => {
+          cell.addEventListener("click", () => {
+            const clickedDate = new Date(cell.getAttribute("data-date"));
+
+            if (
+              arrivalStartDate &&
+              arrivalEndDate &&
+              clickedDate >= arrivalStartDate &&
+              clickedDate < arrivalEndDate
+            ) {
+              alert(
+                "Arrival Date Selected: " + clickedDate.toLocaleDateString(),
+              );
+              // You can add more functionality here, such as updating UI elements
+            }
+          });
+        });
+      }
+
+      // Update the arrival calendar whenever selectedStartDate changes
+      function updateArrivingCalendars() {
+        updateArrivalDates(); // This now also updates arrivalCurrentDate
+        const calendarElement = document.getElementById("arrivingCalendarDays");
+        const monthLabel = document.getElementById(
+          "monthLabelArrivingCalendar",
+        );
+
+        renderArrivingCalendar(
+          arrivalCurrentDate.getFullYear(),
+          arrivalCurrentDate.getMonth(),
+          calendarElement,
+          monthLabel,
+        );
+      }
+
+      // Event listeners for next and previous buttons
+      document
+        .getElementById("prevButtonArrivingCalendar")
+        ?.addEventListener("click", () => {
+          arrivalCurrentDate.setMonth(arrivalCurrentDate.getMonth() - 1);
+          updateArrivingCalendars();
+        });
+
+      document
+        .getElementById("nextButtonArrivingCalendar")
+        ?.addEventListener("click", () => {
+          arrivalCurrentDate.setMonth(arrivalCurrentDate.getMonth() + 1);
+          updateArrivingCalendars();
+        });
+
+      // Initial render
+      updateArrivingCalendars();
+
+      // Make sure to call updateArrivingCalendars() whenever selectedStartDate changes
+      // For example, add this to the end of addDateClickListener function:
+      // updateArrivingCalendars();
+      const arrivingContainer = document.getElementById("arriving-container");
+      const arrivingCal = document.getElementById(
+        "arriving-date-show-calendar",
+      );
+      arrivingContainer?.addEventListener("click", () => {
+        if (arrivingCal.classList.contains("opacity-0")) {
+          arrivingCal.classList.remove("opacity-0", "translate-y-5", "-z-20");
+          arrivingCal.classList.add("opacity-100", "translate-y-0", "z-20");
+        } else if (arrivingCal.classList.contains("opacity-100")) {
+          arrivingCal.classList.add("opacity-0", "translate-y-5", "-z-20");
+          arrivingCal.classList.remove("opacity-100", "translate-y-0", "z-20");
+        }
+      });
+
+       
+
+      // ====arriving:
+    </script>
 
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/plugins/plugins.js"></script>
