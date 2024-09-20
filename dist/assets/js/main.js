@@ -726,6 +726,7 @@ $(document).ready(function () {
 
   // ====Date Range ::Start====
    
+  let finalDepartureDate=null;
 
   // ====Date Range ::End====
 
