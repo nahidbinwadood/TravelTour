@@ -1650,6 +1650,11 @@
                     ></div>
                   </div>
                 </div>
+                <div
+                  id="hoverPopup"
+                  class="absolute hidden rounded-md bg-white p-4 shadow-md"
+                ></div>
+
                 <!-- Calendar::End -->
               </div>
 
@@ -2486,7 +2491,7 @@
                 </div>
 
                 <div class="space-y-[26px] p-5 md:p-7">
-                  <div>
+                  <div class="relative">
                     <div class="flex items-center gap-2">
                       <span
                         class="flex h-4 w-4 items-center justify-center rounded-full bg-[#1CA8CB] text-xs text-white"
@@ -2499,7 +2504,10 @@
                     <div
                       class="relative mt-4 w-full cursor-pointer rounded-lg border px-5 py-4 text-sm md:text-base"
                     >
-                      <p id="departure-date"></p>
+                      <!-- <p id="departure-date"></p> -->
+
+                      <!-- Departure Date Calendar:: -->
+
                       <svg
                         class="absolute right-4 top-[50%] -translate-x-1/2 -translate-y-1/2 cursor-pointer"
                         xmlns="http://www.w3.org/2000/svg"
@@ -2516,6 +2524,41 @@
                         />
                       </svg>
                     </div>
+
+                    <!-- calendar-1 -->
+                    <div class="h-full w-full bg-gray-200 px-2 pt-6 2xl:px-8">
+                      <!-- top Calendar -->
+                      <div class="flex items-center">
+                        <div id="prevButtonDepartureCalendar" class="cursor-pointer">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 19L8 12L15 5" stroke="#292A34" stroke-width="2" />
+                          </svg>
+                        </div>
+                        <div id="monthLabelDepartureCalendar" class="w-full text-center font-semibold">September <span class="font-normal">2024</span></div>
+                        <div id="nextButtonDepartureCalendar" class="cursor-pointer">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 19L16 12L9 5" stroke="#292A34" stroke-width="2" />
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="my-6 border-t border-black/5"></div>
+                    
+                      <!-- weeks -->
+                      <div class="grid grid-cols-7 gap-2 text-center text-xs font-medium text-[#292A34B3]">
+                        <div><p>MO</p></div>
+                        <div><p>TU</p></div>
+                        <div><p>WE</p></div>
+                        <div><p>TH</p></div>
+                        <div><p>FR</p></div>
+                        <div><p>SA</p></div>
+                        <div><p>SU</p></div>
+                      </div>
+                    
+                      <!-- Days container -->
+                      <div id="departureCalendarDays" class="mt-2 grid grid-cols-7 text-center"></div>
+                    </div>
+                    
+                    
                   </div>
                   <div
                     class="destination-details-page-room-number flex flex-col"
@@ -3932,22 +3975,18 @@
     <!-- Scripts::Start -->
 
     <!-- <script src="./assets/js/jquery.js"></script> -->
-   
-    
-
     <script>
-      const months = [
+      const departureMonths = [
         "January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December",
       ];
     
-      let currentDate = new Date();
-      let selectedStartDate = null;
-      let selectedEndDate = null;
-      const today = new Date(); // Today's date without time
+      let departureCurrentDate = new Date();
+      let selectedDepartureDate = null; // The date selected by the user
+      const departureToday = new Date(); // Today's date without time
     
       // Simulate dynamic prices for the month (from backend)
-      const dynamicPrices = {
+      const departureDynamicPrices = {
         "2024-09-01": 370,
         "2024-09-02": 370,
         "2024-09-03": 370,
@@ -3960,16 +3999,11 @@
         "2024-10-03": 370,
         "2024-10-14": 370,
         "2024-10-15": 370,
-        "2024-10-20": 370,
-        "2024-10-25": 370,
-        "2024-10-30": 370,
-        "2024-11-2": 370,
-        "2024-11-5": 370,
-        "2024-11-7": 370,
+        "2024-10-16": 370,
       };
     
-      // Render the calendar for a specific month and year
-      function renderCalendar(year, month, calendarElement, monthLabelElement) {
+      // Render the departure calendar for a specific month and year
+      function renderDepartureCalendar(year, month, calendarElement, monthLabelElement) {
         const firstDay = new Date(year, month, 1);
         const daysInMonth = new Date(year, month + 1, 0).getDate(); // Number of days in the month
         const startDay = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1; // Monday start (adjusting for Sunday)
@@ -3985,101 +4019,300 @@
         for (let day = 1; day <= daysInMonth; day++) {
           const date = new Date(year, month, day);
           const isoDate = date.toISOString().split('T')[0]; // Get date in YYYY-MM-DD format for price matching
-          let cellClass = getCellClass(date); // Get class for selected date range
-          let isPast = date < today.setHours(0, 0, 0, 0); // Disable dates before today
+          let isPast = date < departureToday.setHours(0, 0, 0, 0); // Disable dates before today
     
           // Check if the date has a price
-          let price = dynamicPrices[isoDate] ? `$${dynamicPrices[isoDate]}` : "";
-          let selectableClass = dynamicPrices[isoDate] ? "cursor-pointer" : "static-date";
+          let price = departureDynamicPrices[isoDate] ? `$${departureDynamicPrices[isoDate]}` : "";
+          let selectableClass = departureDynamicPrices[isoDate] ? "cursor-pointer" : "static-date";
+    
+          // Highlight the selected date
+          let selectedClass = selectedDepartureDate && date.getTime() === selectedDepartureDate.getTime() ? "bg-blue-500 text-white" : "";
     
           // Disable past dates
           let disabledClass = isPast ? "text-gray-400 cursor-not-allowed" : selectableClass;
     
-          html += `<div class="py-2 min-h-[50px] bg-white text-center border-r border-b ${cellClass} ${disabledClass}" data-date="${date}">
+          html += `<div class="py-2 min-h-[50px] bg-white text-center border-r border-b ${disabledClass} ${selectedClass}" data-date="${date}" data-price="${departureDynamicPrices[isoDate] || ''}">
                     <p class="text-sm font-medium">${day}</p>
                     <p class="text-xs text-secondary">${price}</p>
                   </div>`;
         }
     
         calendarElement.innerHTML = html;
-        monthLabelElement.innerHTML = `${months[month]} <span class="font-normal">${year}</span>`;
+        monthLabelElement.innerHTML = `${departureMonths[month]} <span class="font-normal">${year}</span>`;
     
-        addDateClickListener(calendarElement); // Add click event for date selection
+        addDepartureDateClickListener(calendarElement); // Add click event for date selection
       }
     
+      // Update the departure calendar views (current month)
+      function updateDepartureCalendars() {
+        const calendarElement = document.getElementById("departureCalendarDays");
+        const monthLabel = document.getElementById("monthLabelDepartureCalendar");
+    
+        renderDepartureCalendar(
+          departureCurrentDate.getFullYear(),
+          departureCurrentDate.getMonth(),
+          calendarElement,
+          monthLabel
+        );
+      }
+    
+      // Add click listener for selectable departure dates
+      function addDepartureDateClickListener(calendarElement) {
+        const dayCells = calendarElement.querySelectorAll("[data-date]");
+        dayCells.forEach((cell) => {
+          cell.addEventListener("click", () => {
+            const clickedDate = new Date(cell.getAttribute("data-date"));
+            const isoDate = clickedDate.toISOString().split('T')[0];
+    
+            // Ignore clicks on past dates and static dates
+            if (clickedDate < departureToday.setHours(0, 0, 0, 0) || !departureDynamicPrices[isoDate]) return;
+    
+            // Set the clicked date as the selected departure date
+            selectedDepartureDate = clickedDate;
+    
+            // Update the calendar to reflect the selected departure date
+            updateDepartureCalendars();
+          });
+        });
+      }
+    
+      // Event listeners for next and previous buttons
+      document
+        .getElementById("prevButtonDepartureCalendar")
+        .addEventListener("click", () => {
+          departureCurrentDate.setMonth(departureCurrentDate.getMonth() - 1);
+          updateDepartureCalendars();
+        });
+    
+      document
+        .getElementById("nextButtonDepartureCalendar")
+        .addEventListener("click", () => {
+          departureCurrentDate.setMonth(departureCurrentDate.getMonth() + 1);
+          updateDepartureCalendars();
+        });
+    
+      updateDepartureCalendars(); // Initial call to render the calendars
+    </script>
+    
+    
+    <script>
+      const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+
+      let currentDate = new Date();
+      let selectedStartDate = null;
+      let selectedEndDate = null;
+      const today = new Date(); // Today's date without time
+
+      // Simulate dynamic prices for the month (from backend)
+      const dynamicPrices = {
+        "2024-09-01": 370,
+        "2024-09-02": 370,
+        "2024-09-03": 370,
+        "2024-09-05": 400,
+        "2024-09-15": 450,
+        "2024-09-16": 370,
+        "2024-09-17": 370,
+        "2024-10-01": 500,
+        "2024-10-02": 350,
+        "2024-10-03": 370,
+        "2024-10-14": 370,
+        "2024-10-15": 370,
+        "2024-10-16": 370,
+      };
+
+      // Prices for different persons
+      const personPrices = {
+        single: 599,
+        double: 370,
+        thirdPerson: 214,
+        fourthPerson: 229,
+      };
+
+      // Render the calendar for a specific month and year
+      function renderCalendar(year, month, calendarElement, monthLabelElement) {
+        const firstDay = new Date(year, month, 1);
+        const daysInMonth = new Date(year, month + 1, 0).getDate(); // Number of days in the month
+        const startDay = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1; // Monday start (adjusting for Sunday)
+
+        let html = "";
+
+        // Empty cells before the first day of the month
+        for (let i = 0; i < startDay; i++) {
+          html += `<div class="p-2 bg-transparent"></div>`;
+        }
+
+        // Generate the days of the month
+        for (let day = 1; day <= daysInMonth; day++) {
+          const date = new Date(year, month, day);
+          const isoDate = date.toISOString().split("T")[0]; // Get date in YYYY-MM-DD format for price matching
+          let cellClass = getCellClass(date); // Get class for selected date range
+          let isPast = date < today.setHours(0, 0, 0, 0); // Disable dates before today
+
+          // Check if the date has a price
+          let price = dynamicPrices[isoDate]
+            ? `$${dynamicPrices[isoDate]}`
+            : "";
+          let selectableClass = dynamicPrices[isoDate]
+            ? "cursor-pointer"
+            : "static-date";
+
+          // Disable past dates
+          let disabledClass = isPast
+            ? "text-gray-400 cursor-not-allowed"
+            : selectableClass;
+
+          html += `<div class="py-2 min-h-[50px] bg-white text-center border-r border-b ${cellClass} ${disabledClass}" data-date="${date}" data-price="${dynamicPrices[isoDate] || ""}">
+                    <p class="text-sm font-medium">${day}</p>
+                    <p class="text-xs text-secondary">${price}</p>
+                  </div>`;
+        }
+
+        calendarElement.innerHTML = html;
+        monthLabelElement.innerHTML = `${months[month]} <span class="font-normal">${year}</span>`;
+
+        addDateClickListener(calendarElement); // Add click event for date selection
+        addHoverListener(calendarElement); // Add hover event for available dates
+      }
+
       // Determine the CSS class based on the selection state
       function getCellClass(date) {
         if (!selectedStartDate && !selectedEndDate) {
           return ""; // No dates selected
         }
-    
-        if (selectedStartDate && date.getTime() === selectedStartDate.getTime()) {
+
+        if (
+          selectedStartDate &&
+          date.getTime() === selectedStartDate.getTime()
+        ) {
           return "bg-blue-500 text-white"; // Start date
         }
-    
+
         if (selectedEndDate && date.getTime() === selectedEndDate.getTime()) {
           return "bg-blue-500 text-white"; // End date
         }
-    
-        if (selectedStartDate && selectedEndDate && date > selectedStartDate && date <= selectedEndDate) {
+
+        if (
+          selectedStartDate &&
+          selectedEndDate &&
+          date > selectedStartDate &&
+          date <= selectedEndDate
+        ) {
           return "bg-gray-400 text-white"; // In-between dates
         }
-    
+
         return ""; // Default
       }
-    
+
       // Update the calendar views (current month and next month)
       function updateCalendars() {
         const month1Element = document.getElementById("calendarDays1");
         const month2Element = document.getElementById("calendarDays2");
         const month1Label = document.getElementById("monthLabelCalendar1");
         const month2Label = document.getElementById("monthLabelCalendar2");
-    
+
         renderCalendar(
           currentDate.getFullYear(),
           currentDate.getMonth(),
           month1Element,
-          month1Label
+          month1Label,
         );
-    
+
         let nextMonthDate = new Date(
           currentDate.getFullYear(),
-          currentDate.getMonth() + 1
+          currentDate.getMonth() + 1,
         );
         renderCalendar(
           nextMonthDate.getFullYear(),
           nextMonthDate.getMonth(),
           month2Element,
-          month2Label
+          month2Label,
         );
       }
-    
+
       // Add click listener for selectable dates
       function addDateClickListener(calendarElement) {
         const dayCells = calendarElement.querySelectorAll("[data-date]");
         dayCells.forEach((cell) => {
           cell.addEventListener("click", () => {
             const selectedDate = new Date(cell.getAttribute("data-date"));
-            const isoDate = selectedDate.toISOString().split('T')[0];
-    
+            const isoDate = selectedDate.toISOString().split("T")[0];
+
             // Ignore clicks on past dates
             if (selectedDate < today.setHours(0, 0, 0, 0)) return;
-    
+
             // If the clicked date has a price, automatically select a range of 4 consecutive days
             if (dynamicPrices[isoDate]) {
               selectedStartDate = selectedDate;
               selectedEndDate = new Date(selectedStartDate);
-    
+
               for (let i = 0; i < 3; i++) {
                 selectedEndDate.setDate(selectedEndDate.getDate() + 1);
               }
             }
-    
+            console.log(
+              selectedStartDate.toLocaleDateString(),
+              selectedEndDate.toLocaleDateString(),
+            );
             updateCalendars(); // Re-render the calendars to show the new selection
           });
         });
       }
-    
+
+      // Add hover listener to show prices popup for available dates
+      function addHoverListener(calendarElement) {
+        const dayCells = calendarElement.querySelectorAll("[data-date]");
+        const popup = document.getElementById("hoverPopup");
+
+        dayCells.forEach((cell) => {
+          cell.addEventListener("mouseover", (e) => {
+            const price = cell.getAttribute("data-price");
+            if (price) {
+              showPopup(e, price);
+            }
+          });
+
+          cell.addEventListener("mouseout", () => {
+            hidePopup();
+          });
+        });
+
+        // Show popup at the position of the mouse only for available dates with prices
+        function showPopup(event, price) {
+          const personPriceHTML = `
+            <h4 class="font-bold mb-2 ">Price (/Person)</h4>
+            <table class="text-sm">
+              <tr><td class="p-2 text-black font-semibold" >Single</td><td>$${personPrices.single}</td></tr>
+              <tr><td class="p-2 text-black font-semibold" >Double</td><td>$${price}</td></tr>
+              <tr><td class="p-2 text-black font-semibold" >3rd Person</td><td>$${personPrices.thirdPerson}</td></tr>
+              <tr><td class="p-2 text-black font-semibold" >4th Person</td><td>$${personPrices.fourthPerson}</td></tr>
+            </table>
+          `;
+
+          popup.innerHTML = personPriceHTML;
+          popup.style.display = "block";
+          popup.style.left = `${event.pageX + 10}px`; // Adjust the popup position near the hovered date
+          popup.style.top = `${event.pageY + 10}px`;
+        }
+
+        // Hide the popup
+        function hidePopup() {
+          popup.style.display = "none";
+        }
+      }
+
       // Event listeners for next and previous buttons
       document
         .getElementById("prevButtonCalendar1")
@@ -4087,23 +4320,17 @@
           currentDate.setMonth(currentDate.getMonth() - 1);
           updateCalendars();
         });
-    
+
       document
         .getElementById("nextButtonCalendar2")
         .addEventListener("click", () => {
           currentDate.setMonth(currentDate.getMonth() + 1);
           updateCalendars();
         });
-    
+
       updateCalendars(); // Initial call to render the calendars
     </script>
-    
-    
-    
-    
-    
 
-    
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/plugins/plugins.js"></script>
     <script src="./assets/js/jquery.nice-select.min.js"></script>
