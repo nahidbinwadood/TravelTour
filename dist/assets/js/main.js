@@ -146,6 +146,7 @@ $(document).ready(function () {
       const leftPosition = tabRect.left - parentRect.left;
       const topPosition = tabRect.top - parentRect.top;
 
+      // Ensure the indicator is correctly positioned
       indicator.style.width = `${tabRect.width}px`;
       indicator.style.height = `${tabRect.height}px`;
       indicator.style.transform = `translate(${leftPosition}px, ${topPosition}px)`;
@@ -184,6 +185,13 @@ $(document).ready(function () {
     tab.setAttribute("tabindex", "0");
   };
 
+  // Function to handle window resize and recalculate the indicator position
+  const handleResize = () => {
+    const activeTab =
+      document.querySelector(".tab[aria-selected='true']") || tabs[0];
+    moveIndicator(activeTab); // Recalculate indicator position on resize
+  };
+
   // Add event listeners to tabs
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
@@ -205,11 +213,14 @@ $(document).ready(function () {
   });
 
   // Ensure that the indicator is correctly aligned on initial load
-  window.onload = () => {
+  window.addEventListener("load", () => {
     const activeTab =
       document.querySelector(".tab[aria-selected='true']") || tabs[0];
     activateTab(activeTab); // Activate the first tab or the active one on load
-  };
+  });
+
+  // Ensure indicator stays aligned on window resize
+  window.addEventListener("resize", handleResize);
 
   // Tabs:End
 
