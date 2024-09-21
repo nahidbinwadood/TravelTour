@@ -142,17 +142,13 @@ $(document).ready(function () {
     const tabRect = tab?.getBoundingClientRect();
     const parentRect = tab?.parentElement.getBoundingClientRect();
 
-    if (tabRect) {
+    if (tabRect && parentRect) {
       const leftPosition = tabRect.left - parentRect.left;
       const topPosition = tabRect.top - parentRect.top;
-    }
 
-    if (indicator) {
       indicator.style.width = `${tabRect.width}px`;
       indicator.style.height = `${tabRect.height}px`;
       indicator.style.transform = `translate(${leftPosition}px, ${topPosition}px)`;
-    } else {
-      console.log("indicator not found");
     }
   };
 
@@ -163,13 +159,16 @@ $(document).ready(function () {
     // Move indicator
     moveIndicator(tab);
 
-    // Update panels
+    // Update panels visibility based on the selected tab
     panels.forEach((panel) => {
       const panelId = panel.getAttribute("id");
-      panel.classList.toggle("invisible", panelId !== tabId);
-      panel.classList.toggle("opacity-0", panelId !== tabId);
-      panel.classList.toggle("visible", panelId === tabId);
-      panel.classList.toggle("opacity-100", panelId === tabId);
+      if (panelId === tabId) {
+        panel.classList.remove("invisible", "opacity-0");
+        panel.classList.add("visible", "opacity-100");
+      } else {
+        panel.classList.remove("visible", "opacity-100");
+        panel.classList.add("invisible", "opacity-0");
+      }
     });
 
     // Update selected state for tabs
@@ -207,9 +206,9 @@ $(document).ready(function () {
 
   // Ensure that the indicator is correctly aligned on initial load
   window.onload = () => {
-    requestAnimationFrame(() => {
-      moveIndicator(tabs[0]); // Initialize with the first tab
-    });
+    const activeTab =
+      document.querySelector(".tab[aria-selected='true']") || tabs[0];
+    activateTab(activeTab); // Activate the first tab or the active one on load
   };
 
   // Tabs:End
@@ -725,8 +724,8 @@ $(document).ready(function () {
   //  ===Custom Day Range::End
 
   // ====Date Range ::Start====
-   
-  let finalDepartureDate=null;
+
+  let finalDepartureDate = null;
 
   // ====Date Range ::End====
 
@@ -885,7 +884,6 @@ $(document).ready(function () {
   //Staying::
 
   //===================//
-  
 });
 
 // ====Solaimain====
