@@ -4192,11 +4192,11 @@
           selectedStartDate &&
           date.getTime() === selectedStartDate.getTime()
         ) {
-          return "bg-blue-600 text-white"; // Start date
+          return "bg-blue-500 text-white"; // Start date
         }
 
         if (selectedEndDate && date.getTime() === selectedEndDate.getTime()) {
-          return "bg-blue-600 text-white"; // End date
+          return "bg-blue-500 text-white"; // End date
         }
 
         if (
@@ -4205,7 +4205,7 @@
           date > selectedStartDate &&
           date <= selectedEndDate
         ) {
-          return "bg-blue-400 text-white"; // In-between dates
+          return "bg-blue-300 text-white"; // In-between dates
         }
 
         return ""; // Default
@@ -4416,7 +4416,7 @@
           let selectedClass =
             selectedDepartureDate &&
             date.getTime() === selectedDepartureDate.getTime()
-              ? "bg-blue-600 text-white"
+              ? "bg-blue-500 text-white"
               : "";
 
           // Disable past dates and dates without prices
@@ -4602,143 +4602,221 @@
       //===========================//
 
       // ====arriving:
-      let arrivalStartDate;
-      let arrivalEndDate;
-      let arrivalCurrentDate = new Date(); // Reintroduce this variable
 
-      // Function to update arrival calendar dates based on selectedStartDate
-      function updateArrivalDates() {
-        if (selectedStartDate) {
-          arrivalEndDate = new Date(selectedStartDate);
-          arrivalStartDate = new Date(selectedStartDate);
-          arrivalStartDate.setDate(arrivalStartDate.getDate() - 7); // 7 days before departure
+      function observeDepartureDateChange(callback) {
+        const targetElement = document.getElementById("check-in-date");
 
-          // Update arrivalCurrentDate to show the month containing the arrival window
-          arrivalCurrentDate = new Date(arrivalStartDate);
+        // Create a new MutationObserver to monitor changes in the innerText
+        const observer = new MutationObserver(() => {
+          const departureDateString = targetElement.innerText; // Get the updated innerText
+          const newDepartureDate = new Date(departureDateString); // Convert string to Date object
+
+          // Check if the date is valid and call the callback
+          if (!isNaN(newDepartureDate.getTime())) {
+            callback(newDepartureDate); // Pass the new valid date to the callback
+          }
+        });
+
+        // Start observing the target element for character data changes
+        observer.observe(targetElement, {
+          childList: true,
+          subtree: true,
+          characterData: true,
+        });
+      }
+
+      // Example usage:
+      observeDepartureDateChange((newDate) => {
+        console.log("New departure date detected:", newDate);
+        // Here, you can update your calendar or perform other actions with the newDate
+      });
+
+      // Define months for the calendar
+      const arrivalCalendarMonths = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+
+      // Variables to track the current month displayed
+      let arrivalCalendarCurrentDate = new Date(); // Track the current month in the calendar
+
+      // Function to get the departure date from the innerText of "check-in-date"
+      function getDepartureDate() {
+        const departureDateString =
+          document.getElementById("check-in-date").innerText; // Get the inner text (string format)
+        if (departureDateString) {
+          const departureDate = new Date(departureDateString); // Convert string to Date object
+          if (!isNaN(departureDate.getTime())) {
+            return departureDate; // Return the valid date
+          }
+        }
+        return null; // Return null if the date is invalid
+      }
+
+      // Function to render the arrival calendar based on departure date
+      function updateArrivalCalendar() {
+        const departureDate = getDepartureDate(); // Get the updated departure date
+
+        if (departureDate) {
+          renderArrivalCalendar(
+            arrivalCalendarCurrentDate.getFullYear(),
+            arrivalCalendarCurrentDate.getMonth(),
+            departureDate,
+          );
         }
       }
 
-      // Modify the renderArrivingCalendar function
-      function renderArrivingCalendar(
-        year,
-        month,
-        calendarElement,
-        monthLabelElement,
-      ) {
-        const firstDay = new Date(year, month, 1);
-        const daysInMonth = new Date(year, month + 1, 0).getDate();
-        const startDay = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1;
+      // Function to render the arrival calendar for a specific month and year
+      function renderArrivalCalendar(arrivalYear, arrivalMonth, departureDate) {
+        const firstDay = new Date(arrivalYear, arrivalMonth, 1);
+        const daysInMonth = new Date(
+          arrivalYear,
+          arrivalMonth + 1,
+          0,
+        ).getDate(); // Number of days in the month
+        const startDay = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1; // Adjust for Monday start
 
-        let html = "";
+        let arrivalCalendarHtml = "";
 
+        // Calculate 7 days before the selected departure date
+        let sevenDaysBeforeDeparture = new Date(departureDate);
+        sevenDaysBeforeDeparture.setDate(
+          sevenDaysBeforeDeparture.getDate() - 7,
+        );
+
+        // Empty cells before the first day of the month
         for (let i = 0; i < startDay; i++) {
-          html += `<div class="p-2 bg-transparent"></div>`;
+          arrivalCalendarHtml += `<div class="p-2 bg-transparent"></div>`;
         }
 
+        // Generate the days of the month
         for (let day = 1; day <= daysInMonth; day++) {
-          const date = new Date(year, month, day);
-          const isBeforeDeparture =
-            arrivalStartDate &&
-            arrivalEndDate &&
-            date >= arrivalStartDate &&
-            date < arrivalEndDate;
-          let isPast = date < new Date().setHours(0, 0, 0, 0);
+          const date = new Date(arrivalYear, arrivalMonth, day);
 
-          let selectableClass =
-            isBeforeDeparture && !isPast
-              ? "cursor-pointer bg-white hover:bg-blue-200"
-              : "text-gray-400 cursor-not-allowed bg-gray-200";
+          // Determine if the date is within the 7-day range before the departure date
+          const isWithinRange =
+            date >= sevenDaysBeforeDeparture && date < departureDate;
 
-          html += `<div class="py-2 min-h-[50px] bg-white text-center border-r border-b ${selectableClass}" data-date="${date.toISOString()}">
-      <p class="text-sm font-medium">${day}</p>
-    </div>`;
+          let selectableClass = isWithinRange
+            ? "cursor-pointer bg-white hover:bg-blue-200"
+            : "text-gray-400 bg-gray-200 cursor-not-allowed";
+
+          arrivalCalendarHtml += `
+      <div class="py-2 min-h-[50px] text-center border-r border-b ${selectableClass}" data-date="${date.toISOString()}">
+        <p class="text-sm font-medium">${day}</p>
+      </div>`;
         }
 
-        if (calendarElement) {
-          calendarElement.innerHTML = html;
-        }
+        // Insert the generated calendar HTML into the page
+        document.getElementById("arrivingCalendarDays").innerHTML =
+          arrivalCalendarHtml;
+        document.getElementById("monthLabelArrivingCalendar").innerHTML =
+          `${arrivalCalendarMonths[arrivalMonth]} <span class="font-normal">${arrivalYear}</span>`;
 
-        if (monthLabelElement) {
-          monthLabelElement.innerHTML = `${months[month]} <span class="font-normal">${year}</span>`;
-        }
-
-        addArrivalDateClickListener(calendarElement);
+        // Add click event listeners for selectable days
+        addArrivalDateClickListener();
       }
 
-      // Modify the addArrivalDateClickListener function
-      function addArrivalDateClickListener(calendarElement) {
-        const dayCells = calendarElement.querySelectorAll("[data-date]");
-        dayCells.forEach((cell) => {
-          cell.addEventListener("click", () => {
-            const clickedDate = new Date(cell.getAttribute("data-date"));
-
-            if (
-              arrivalStartDate &&
-              arrivalEndDate &&
-              clickedDate >= arrivalStartDate &&
-              clickedDate < arrivalEndDate
-            ) {
-              alert(
-                "Arrival Date Selected: " + clickedDate.toLocaleDateString(),
-              );
-              // You can add more functionality here, such as updating UI elements
-            }
-          });
-        });
-      }
-
-      // Update the arrival calendar whenever selectedStartDate changes
-      function updateArrivingCalendars() {
-        updateArrivalDates(); // This now also updates arrivalCurrentDate
-        const calendarElement = document.getElementById("arrivingCalendarDays");
-        const monthLabel = document.getElementById(
-          "monthLabelArrivingCalendar",
-        );
-
-        renderArrivingCalendar(
-          arrivalCurrentDate.getFullYear(),
-          arrivalCurrentDate.getMonth(),
-          calendarElement,
-          monthLabel,
-        );
-      }
-
-      // Event listeners for next and previous buttons
-      document
-        .getElementById("prevButtonArrivingCalendar")
-        ?.addEventListener("click", () => {
-          arrivalCurrentDate.setMonth(arrivalCurrentDate.getMonth() - 1);
-          updateArrivingCalendars();
-        });
-
-      document
-        .getElementById("nextButtonArrivingCalendar")
-        ?.addEventListener("click", () => {
-          arrivalCurrentDate.setMonth(arrivalCurrentDate.getMonth() + 1);
-          updateArrivingCalendars();
-        });
-
-      // Initial render
-      updateArrivingCalendars();
-
-      // Make sure to call updateArrivingCalendars() whenever selectedStartDate changes
-      // For example, add this to the end of addDateClickListener function:
-      // updateArrivingCalendars();
+      //show Calendar==========::Start
       const arrivingContainer = document.getElementById("arriving-container");
       const arrivingCal = document.getElementById(
         "arriving-date-show-calendar",
       );
-      arrivingContainer?.addEventListener("click", () => {
+      arrivingContainer?.addEventListener("click", (e) => {
         if (arrivingCal.classList.contains("opacity-0")) {
           arrivingCal.classList.remove("opacity-0", "translate-y-5", "-z-20");
           arrivingCal.classList.add("opacity-100", "translate-y-0", "z-20");
-        } else if (arrivingCal.classList.contains("opacity-100")) {
+        } else if (
+          arrivingCal.classList.contains("opacity-100") &&
+          !arrivingCal.contains(e.target)
+        ) {
           arrivingCal.classList.add("opacity-0", "translate-y-5", "-z-20");
           arrivingCal.classList.remove("opacity-100", "translate-y-0", "z-20");
         }
       });
 
-       
+      document.addEventListener("click", (e) => {
+        if (
+          !arrivingCal.contains(e.target) &&
+          !arrivingContainer.contains(e.target)
+        ) {
+          arrivingCal.classList.add("opacity-0", "translate-y-5", "-z-20");
+          arrivingCal.classList.remove("opacity-100", "translate-y-0", "z-20");
+        }
+      });
+      //show Calendar==========::end
+
+      // Function to add a click listener for the arrival calendar days
+      function addArrivalDateClickListener() {
+        const dayCells = document.querySelectorAll(
+          "#arrivingCalendarDays [data-date]",
+        );
+        dayCells.forEach((cell) => {
+          if (!cell.classList.contains("cursor-not-allowed")) {
+            cell.addEventListener("click", () => {
+              const selectedDate = new Date(cell.getAttribute("data-date"));
+              arrivingCal.classList.add("opacity-0", "translate-y-5", "-z-20",'hidden');
+ 
+              document.getElementById("check-in-date").innerText =
+                selectedDate.toLocaleDateString();
+            });
+          }
+        });
+      }
+
+      // Event listener for the previous button
+      document
+        .getElementById("prevButtonArrivingCalendar")
+        .addEventListener("click", () => {
+          arrivalCalendarCurrentDate.setMonth(
+            arrivalCalendarCurrentDate.getMonth() - 1,
+          );
+          updateArrivalCalendar();
+        });
+
+      // Event listener for the next button
+      document
+        .getElementById("nextButtonArrivingCalendar")
+        .addEventListener("click", () => {
+          arrivalCalendarCurrentDate.setMonth(
+            arrivalCalendarCurrentDate.getMonth() + 1,
+          );
+          updateArrivalCalendar();
+        });
+
+      // Use MutationObserver to detect changes in the departure date and update the calendar
+      function observeDepartureDateChange() {
+        const departureDateElement = document.getElementById("check-out-date");
+
+        const observer = new MutationObserver(() => {
+          updateArrivalCalendar(); // Update the arrival calendar whenever the departure date changes
+        });
+
+        // Start observing the target element for changes in the innerText
+        observer.observe(departureDateElement, {
+          childList: true,
+          subtree: true,
+          characterData: true,
+        });
+      }
+
+      // Call the observer function to start listening for changes in the departure date
+      observeDepartureDateChange();
+
+      // Initial render of the arrival calendar for the current month
+      updateArrivalCalendar();
+
+      //===============================//
 
       // ====arriving:
     </script>
