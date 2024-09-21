@@ -3133,11 +3133,12 @@
                           </div>
 
                           <div
-                            id="staying-late-container"
+                           
                             class="relative flex items-center gap-2"
                           >
                             <p class="w-[90px]">Check Out:</p>
                             <div
+                            id="staying-late-container"
                               class="relative flex w-36 items-center gap-3 rounded border border-black/50 px-4 py-2 text-sm"
                             >
                               <p id="staying-check-out-date">2024-10-15</p>
@@ -3158,80 +3159,83 @@
                               </svg>
                             </div>
 
-                            <!-- calendar -->
-                            <div
-                              id="staying-late-show-calendar"
-                              class="absolute top-full w-full translate-y-5 rounded-md border border-black/20 bg-gray-100 px-2 pt-6 shadow-2xl transition-all duration-500"
-                            >
-                              <!-- top Calendar -->
-                              <div
-                                class="flex items-center bg-primary/20 px-4 py-2"
-                              >
-                                <div
-                                  id="prevButtonStaying"
-                                  class="cursor-pointer"
-                                >
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                  >
-                                    <path
-                                      d="M15 19L8 12L15 5"
-                                      stroke="#292A34"
-                                      stroke-width="2"
-                                    />
-                                  </svg>
-                                </div>
-                                <div
-                                  id="monthLabelStayingCalendar"
-                                  class="w-full text-center font-semibold"
-                                >
-                                  September
-                                  <span class="font-normal">2024</span>
-                                </div>
-                                <div
-                                  id="nextButtonStayingCalendar"
-                                  class="cursor-pointer"
-                                >
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                  >
-                                    <path
-                                      d="M9 19L16 12L9 5"
-                                      stroke="#292A34"
-                                      stroke-width="2"
-                                    />
-                                  </svg>
-                                </div>
-                              </div>
-                              <div class="my-3 border-t border-black/5"></div>
 
-                              <!-- weeks -->
-                              <div
-                                class="grid grid-cols-7 gap-2 text-center text-xs font-medium text-[#292A34B3]"
-                              >
-                                <div><p>MO</p></div>
-                                <div><p>TU</p></div>
-                                <div><p>WE</p></div>
-                                <div><p>TH</p></div>
-                                <div><p>FR</p></div>
-                                <div><p>SA</p></div>
-                                <div><p>SU</p></div>
-                              </div>
+                             <!-- calendar -->
+                             <div
+                             id="staying-late-show-calendar"
+                             class="absolute top-full w-full -z-20 translate-y-5 rounded-md border border-black/20 opacity-0 bg-gray-100 px-2 pt-6 shadow-2xl transition-all duration-500"
+                           >
+                             <!-- top Calendar -->
+                             <div
+                               class="flex items-center bg-primary/20 px-4 py-2"
+                             >
+                               <div
+                                 id="prevButtonStaying"
+                                 class="cursor-pointer"
+                               >
+                                 <svg
+                                   xmlns="http://www.w3.org/2000/svg"
+                                   width="24"
+                                   height="24"
+                                   viewBox="0 0 24 24"
+                                   fill="none"
+                                 >
+                                   <path
+                                     d="M15 19L8 12L15 5"
+                                     stroke="#292A34"
+                                     stroke-width="2"
+                                   />
+                                 </svg>
+                               </div>
+                               <div
+                                 id="monthLabelStayingCalendar"
+                                 class="w-full text-center font-semibold"
+                               >
+                                 September
+                                 <span class="font-normal">2024</span>
+                               </div>
+                               <div
+                                 id="nextButtonStayingCalendar"
+                                 class="cursor-pointer"
+                               >
+                                 <svg
+                                   xmlns="http://www.w3.org/2000/svg"
+                                   width="24"
+                                   height="24"
+                                   viewBox="0 0 24 24"
+                                   fill="none"
+                                 >
+                                   <path
+                                     d="M9 19L16 12L9 5"
+                                     stroke="#292A34"
+                                     stroke-width="2"
+                                   />
+                                 </svg>
+                               </div>
+                             </div>
+                             <div class="my-3 border-t border-black/5"></div>
 
-                              <!-- Days container -->
-                              <div
-                                id="stayingCalendarDays"
-                                class="mt-2 grid min-h-[256px] grid-cols-7 pb-4 text-center"
-                              ></div>
-                            </div>
+                             <!-- weeks -->
+                             <div
+                               class="grid grid-cols-7 gap-2 text-center text-xs font-medium text-[#292A34B3]"
+                             >
+                               <div><p>MO</p></div>
+                               <div><p>TU</p></div>
+                               <div><p>WE</p></div>
+                               <div><p>TH</p></div>
+                               <div><p>FR</p></div>
+                               <div><p>SA</p></div>
+                               <div><p>SU</p></div>
+                             </div>
+
+                             <!-- Days container -->
+                             <div
+                               id="stayingCalendarDays"
+                               class="mt-2 grid min-h-[256px] grid-cols-7 pb-4 text-center"
+                             ></div>
+                           </div>
+
+                           
                           </div>
 
                           <div class="flex gap-4 pt-2">
@@ -4698,223 +4702,229 @@
 
       // ====arriving:
 
-  // Observer function to monitor changes in check-in-date innerText
-function observeDepartureDateChange(callback) {
-  const targetElement = document.getElementById("check-in-date");
+      // Observer function to monitor changes in check-in-date innerText
+      function observeDepartureDateChange(callback) {
+        const targetElement = document.getElementById("check-in-date");
 
-  // Create a new MutationObserver to monitor changes in the innerText
-  const observer = new MutationObserver(() => {
-    const departureDateString = targetElement.innerText; // Get the updated innerText
-    const newDepartureDate = new Date(departureDateString); // Convert string to Date object
+        // Create a new MutationObserver to monitor changes in the innerText
+        const observer = new MutationObserver(() => {
+          const departureDateString = targetElement.innerText; // Get the updated innerText
+          const newDepartureDate = new Date(departureDateString); // Convert string to Date object
 
-    // Check if the date is valid and call the callback
-    if (!isNaN(newDepartureDate.getTime())) {
-      callback(newDepartureDate); // Pass the new valid date to the callback
-    }
-  });
+          // Check if the date is valid and call the callback
+          if (!isNaN(newDepartureDate.getTime())) {
+            callback(newDepartureDate); // Pass the new valid date to the callback
+          }
+        });
 
-  // Start observing the target element for character data changes
-  observer.observe(targetElement, {
-    childList: true,
-    subtree: true,
-    characterData: true,
-  });
-}
+        // Start observing the target element for character data changes
+        observer.observe(targetElement, {
+          childList: true,
+          subtree: true,
+          characterData: true,
+        });
+      }
 
-// Example usage:
-observeDepartureDateChange((newDate) => {
-  console.log("New departure date detected:", newDate);
-  updateArrivalCalendar(); // Update the calendar when a new date is detected
-});
+      // Example usage:
+      observeDepartureDateChange((newDate) => {
+        console.log("New departure date detected:", newDate);
+        updateArrivalCalendar(); // Update the calendar when a new date is detected
+      });
 
-// Define months for the calendar
-const arrivalCalendarMonths = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
+      // Define months for the calendar
+      const arrivalCalendarMonths = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
 
-// Variables to track the current month displayed
-let arrivalCalendarCurrentDate = new Date(); // Track the current month in the calendar
+      // Variables to track the current month displayed
+      let arrivalCalendarCurrentDate = new Date(); // Track the current month in the calendar
 
-// Function to get the departure date from the innerText of "check-in-date"
-function getDepartureDate() {
-  const departureDateString =
-    document.getElementById("check-in-date").innerText; // Get the inner text (string format)
-  if (departureDateString) {
-    const departureDate = new Date(departureDateString); // Convert string to Date object
-    if (!isNaN(departureDate.getTime())) {
-      return departureDate; // Return the valid date
-    }
-  }
-  return null; // Return null if the date is invalid
-}
+      // Function to get the departure date from the innerText of "check-in-date"
+      function getDepartureDate() {
+        const departureDateString =
+          document.getElementById("check-in-date").innerText; // Get the inner text (string format)
+        if (departureDateString) {
+          const departureDate = new Date(departureDateString); // Convert string to Date object
+          if (!isNaN(departureDate.getTime())) {
+            return departureDate; // Return the valid date
+          }
+        }
+        return null; // Return null if the date is invalid
+      }
 
-// Function to render the arrival calendar based on departure date
-function updateArrivalCalendar() {
-  const departureDate = getDepartureDate(); // Get the updated departure date
+      // Function to render the arrival calendar based on departure date
+      function updateArrivalCalendar() {
+        const departureDate = getDepartureDate(); // Get the updated departure date
 
-  if (departureDate) {
-    // Calculate the 7-day range before the departure date
-    let sevenDaysBeforeDeparture = new Date(departureDate);
-    sevenDaysBeforeDeparture.setDate(
-      sevenDaysBeforeDeparture.getDate() - 7
-    );
+        if (departureDate) {
+          // Calculate the 7-day range before the departure date
+          let sevenDaysBeforeDeparture = new Date(departureDate);
+          sevenDaysBeforeDeparture.setDate(
+            sevenDaysBeforeDeparture.getDate() - 7,
+          );
 
-    // If the 7-day range starts in a different month, switch to that month
-    if (
-      sevenDaysBeforeDeparture.getMonth() !== arrivalCalendarCurrentDate.getMonth() ||
-      sevenDaysBeforeDeparture.getFullYear() !== arrivalCalendarCurrentDate.getFullYear()
-    ) {
-      arrivalCalendarCurrentDate = new Date(sevenDaysBeforeDeparture); // Switch to the correct month
-    }
+          // If the 7-day range starts in a different month, switch to that month
+          if (
+            sevenDaysBeforeDeparture.getMonth() !==
+              arrivalCalendarCurrentDate.getMonth() ||
+            sevenDaysBeforeDeparture.getFullYear() !==
+              arrivalCalendarCurrentDate.getFullYear()
+          ) {
+            arrivalCalendarCurrentDate = new Date(sevenDaysBeforeDeparture); // Switch to the correct month
+          }
 
-    renderArrivalCalendar(
-      arrivalCalendarCurrentDate.getFullYear(),
-      arrivalCalendarCurrentDate.getMonth(),
-      departureDate
-    );
-  }
-}
+          renderArrivalCalendar(
+            arrivalCalendarCurrentDate.getFullYear(),
+            arrivalCalendarCurrentDate.getMonth(),
+            departureDate,
+          );
+        }
+      }
 
-// Function to render the arrival calendar for a specific month and year
-function renderArrivalCalendar(arrivalYear, arrivalMonth, departureDate) {
-  const firstDay = new Date(arrivalYear, arrivalMonth, 1);
-  const daysInMonth = new Date(arrivalYear, arrivalMonth + 1, 0).getDate(); // Number of days in the month
-  const startDay = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1; // Adjust for Monday start
+      // Function to render the arrival calendar for a specific month and year
+      function renderArrivalCalendar(arrivalYear, arrivalMonth, departureDate) {
+        const firstDay = new Date(arrivalYear, arrivalMonth, 1);
+        const daysInMonth = new Date(
+          arrivalYear,
+          arrivalMonth + 1,
+          0,
+        ).getDate(); // Number of days in the month
+        const startDay = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1; // Adjust for Monday start
 
-  let arrivalCalendarHtml = "";
+        let arrivalCalendarHtml = "";
 
-  // Calculate 7 days before the selected departure date
-  let sevenDaysBeforeDeparture = new Date(departureDate);
-  sevenDaysBeforeDeparture.setDate(sevenDaysBeforeDeparture.getDate() - 7);
+        // Calculate 7 days before the selected departure date
+        let sevenDaysBeforeDeparture = new Date(departureDate);
+        sevenDaysBeforeDeparture.setDate(
+          sevenDaysBeforeDeparture.getDate() - 7,
+        );
 
-  // Empty cells before the first day of the month
-  for (let i = 0; i < startDay; i++) {
-    arrivalCalendarHtml += `<div class="p-2 bg-transparent"></div>`;
-  }
+        // Empty cells before the first day of the month
+        for (let i = 0; i < startDay; i++) {
+          arrivalCalendarHtml += `<div class="p-2 bg-transparent"></div>`;
+        }
 
-  // Generate the days of the month
-  for (let day = 1; day <= daysInMonth; day++) {
-    const date = new Date(arrivalYear, arrivalMonth, day);
+        // Generate the days of the month
+        for (let day = 1; day <= daysInMonth; day++) {
+          const date = new Date(arrivalYear, arrivalMonth, day);
 
-    // Determine if the date is within the 7-day range before the departure date
-    const isWithinRange =
-      date >= sevenDaysBeforeDeparture && date < departureDate;
+          // Determine if the date is within the 7-day range before the departure date
+          const isWithinRange =
+            date >= sevenDaysBeforeDeparture && date < departureDate;
 
-    let selectableClass = isWithinRange
-      ? "cursor-pointer bg-white hover:bg-blue-200"
-      : "text-gray-400 bg-gray-200 cursor-not-allowed";
+          let selectableClass = isWithinRange
+            ? "cursor-pointer bg-white hover:bg-blue-200"
+            : "text-gray-400 bg-gray-200 cursor-not-allowed";
 
-    arrivalCalendarHtml += `
+          arrivalCalendarHtml += `
   <div class="py-2 min-h-[50px] text-center border-r border-b ${selectableClass}" data-date="${date.toISOString()}">
     <p class="text-sm font-medium">${day}</p>
   </div>`;
-  }
+        }
 
-  // Insert the generated calendar HTML into the page
-  document.getElementById("arrivingCalendarDays").innerHTML = arrivalCalendarHtml;
-  document.getElementById("monthLabelArrivingCalendar").innerHTML =
-    `${arrivalCalendarMonths[arrivalMonth]} <span class="font-normal">${arrivalYear}</span>`;
+        // Insert the generated calendar HTML into the page
+        document.getElementById("arrivingCalendarDays").innerHTML =
+          arrivalCalendarHtml;
+        document.getElementById("monthLabelArrivingCalendar").innerHTML =
+          `${arrivalCalendarMonths[arrivalMonth]} <span class="font-normal">${arrivalYear}</span>`;
 
-  // Add click event listeners for selectable days
-  addArrivalDateClickListener();
-}
+        // Add click event listeners for selectable days
+        addArrivalDateClickListener();
+      }
 
-//show Calendar==========::Start
-const arrivingContainer = document.getElementById("arriving-container");
-const arrivingCal = document.getElementById("arriving-date-show-calendar");
-arrivingContainer?.addEventListener("click", (e) => {
-  if (arrivingCal.classList.contains("opacity-0")) {
-    arrivingCal.classList.remove("opacity-0", "translate-y-5", "-z-20");
-    arrivingCal.classList.add("opacity-100", "translate-y-0", "z-20");
-  } else if (
-    arrivingCal.classList.contains("opacity-100") &&
-    !arrivingCal.contains(e.target)
-  ) {
-    arrivingCal.classList.add("opacity-0", "translate-y-5", "-z-20");
-    arrivingCal.classList.remove("opacity-100", "translate-y-0", "z-20");
-  }
-});
+      //show Calendar==========::Start
+      const arrivingContainer = document.getElementById("arriving-container");
+      const arrivingCal = document.getElementById(
+        "arriving-date-show-calendar",
+      );
+ 
+      arrivingContainer?.addEventListener('click',()=>{
+        if(arrivingCal.classList.contains("opacity-0")){
+          arrivingCal.classList.remove("opacity-0","translate-y-5","-z-20")
+          arrivingCal.classList.add("opacity-100","translate-y-0","z-20")
+        }else if(arrivingCal.classList.contains("opacity-100")){
+          arrivingCal.classList.add("opacity-0","translate-y-5","-z-20")
+          arrivingCal.classList.remove("opacity-100","translate-y-0","z-20")
+        }
+      })
 
-document.addEventListener("click", (e) => {
-  if (!arrivingCal.contains(e.target) && !arrivingContainer.contains(e.target)) {
-    arrivingCal.classList.add("opacity-0", "translate-y-5", "-z-20");
-    arrivingCal.classList.remove("opacity-100", "translate-y-0", "z-20");
-  }
-});
-//show Calendar==========::end
+      document.addEventListener("click",(e)=>{
+        if(!arrivingContainer.contains(e.target) && !arrivingCal.contains(e.target) && !document.getElementById("calendarDays1").contains(e.target) && !document.getElementById("calendarDays1").contains(e.target)){
+          arrivingCal.classList.add("opacity-0","translate-y-5","-z-20")
+          arrivingCal.classList.remove("opacity-100","translate-y-0","z-20")
+        }
+      })
+      //show Calendar==========::end
 
-// Function to add a click listener for the arrival calendar days
-function addArrivalDateClickListener() {
-  const dayCells = document.querySelectorAll(
-    "#arrivingCalendarDays [data-date]"
-  );
-  dayCells.forEach((cell) => {
-    if (!cell.classList.contains("cursor-not-allowed")) {
-      cell.addEventListener("click", () => {
-        const selectedDate = new Date(cell.getAttribute("data-date"));
-        arrivingCal.classList.add(
-          "opacity-0",
-          "translate-y-5",
-          "-z-20",
-          "hidden"
+      // Function to add a click listener for the arrival calendar days
+      function addArrivalDateClickListener() {
+        const dayCells = document.querySelectorAll(
+          "#arrivingCalendarDays [data-date]",
         );
+        dayCells.forEach((cell) => {
+          if (!cell.classList.contains("cursor-not-allowed")) {
+            cell.addEventListener("click", () => {
+              const selectedDate = new Date(cell.getAttribute("data-date"));
+              
+              document.getElementById("check-in-date").innerText =
+                selectedDate.toLocaleDateString();
+            });
+          }
+        });
+      }
 
-        document.getElementById("check-in-date").innerText =
-          selectedDate.toLocaleDateString();
-      });
-    }
-  });
-}
+      // Event listener for the previous button
+      document
+        .getElementById("prevButtonArrivingCalendar")
+        .addEventListener("click", () => {
+          arrivalCalendarCurrentDate.setMonth(
+            arrivalCalendarCurrentDate.getMonth() - 1,
+          );
+          updateArrivalCalendar();
+        });
 
-// Event listener for the previous button
-document.getElementById("prevButtonArrivingCalendar").addEventListener("click", () => {
-  arrivalCalendarCurrentDate.setMonth(
-    arrivalCalendarCurrentDate.getMonth() - 1
-  );
-  updateArrivalCalendar();
-});
+      // Event listener for the next button
+      document
+        .getElementById("nextButtonArrivingCalendar")
+        .addEventListener("click", () => {
+          arrivalCalendarCurrentDate.setMonth(
+            arrivalCalendarCurrentDate.getMonth() + 1,
+          );
+          updateArrivalCalendar();
+        });
 
-// Event listener for the next button
-document.getElementById("nextButtonArrivingCalendar").addEventListener("click", () => {
-  arrivalCalendarCurrentDate.setMonth(
-    arrivalCalendarCurrentDate.getMonth() + 1
-  );
-  updateArrivalCalendar();
-});
+      // Use MutationObserver to detect changes in the departure date and update the calendar
+      function observeDepartureDateChange() {
+        const departureDateElement = document.getElementById("check-out-date");
 
-// Use MutationObserver to detect changes in the departure date and update the calendar
-function observeDepartureDateChange() {
-  const departureDateElement = document.getElementById("check-out-date");
+        const observer = new MutationObserver(() => {
+          updateArrivalCalendar(); // Update the arrival calendar whenever the departure date changes
+        });
 
-  const observer = new MutationObserver(() => {
-    updateArrivalCalendar(); // Update the arrival calendar whenever the departure date changes
-  });
+        // Start observing the target element for changes in the innerText
+        observer.observe(departureDateElement, {
+          childList: true,
+          subtree: true,
+          characterData: true,
+        });
+      }
 
-  // Start observing the target element for changes in the innerText
-  observer.observe(departureDateElement, {
-    childList: true,
-    subtree: true,
-    characterData: true,
-  });
-}
+      // Call the observer function to start listening for changes in the departure date
+      observeDepartureDateChange();
 
-// Call the observer function to start listening for changes in the departure date
-observeDepartureDateChange();
-
-// Initial render of the arrival calendar for the current month
-updateArrivalCalendar();
-
+      // Initial render of the arrival calendar for the current month
+      updateArrivalCalendar();
 
       //===============================//
 
@@ -5038,7 +5048,8 @@ updateArrivalCalendar();
             selectedStayingDate = selectedDate;
 
             // Log the selected date to the console
-            console.log("Selected staying late date:", selectedStayingDate);
+            document.getElementById('staying-check-out-date').innerText=selectedStayingDate.toLocaleDateString()
+            // console.log("Selected staying late date:", selectedStayingDate);
 
             // Re-render the calendar to show the selected date
             renderStayingCalendar(
@@ -5098,6 +5109,29 @@ updateArrivalCalendar();
         stayingCurrentDate.getMonth(),
       );
 
+
+
+
+
+      const stayingLateCalendarContainer=document.getElementById("staying-late-container")
+      const stayingLateCalendarShow=document.getElementById("staying-late-show-calendar")
+      stayingLateCalendarContainer?.addEventListener('click',()=>{
+        if(stayingLateCalendarShow.classList.contains("opacity-0")){
+          stayingLateCalendarShow.classList.remove("opacity-0","translate-y-5","-z-20")
+          stayingLateCalendarShow.classList.add("opacity-100","translate-y-0","z-20")
+        }else if(stayingLateCalendarShow.classList.contains("opacity-100")){
+          stayingLateCalendarShow.classList.add("opacity-0","translate-y-5","-z-20")
+          stayingLateCalendarShow.classList.remove("opacity-100","translate-y-0","z-20")
+        }
+      })
+
+
+      document.addEventListener("click",(e)=>{
+        if(!stayingLateCalendarContainer.contains(e.target) && !stayingLateCalendarShow.contains(e.target) && !document.getElementById("calendarDays1").contains(e.target) && !document.getElementById("calendarDays1").contains(e.target)){
+          stayingLateCalendarShow.classList.add("opacity-0","translate-y-5","-z-20")
+          stayingLateCalendarShow.classList.remove("opacity-100","translate-y-0","z-20")
+        }
+      })
       //==========staying::
     </script>
 
