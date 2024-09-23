@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FineBus Tour | Home</title>
     <link rel="stylesheet" href="./assets/css/nice-select.css" />
-    <link rel="stylesheet" href="./assets/css/plugins/flatpickr.min.css" />
     <link rel="stylesheet" href="./assets/css/plugins/owl.carousel.min.css" />
     <link rel="stylesheet" href="./assets/css/custom.css" />
     <link rel="stylesheet" href="./assets/css/plugins/aos.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/plugins/datepicker.css" />
+ 
   </head>
   <body>
     <!-- Header::start -->
@@ -603,7 +604,6 @@
               </div>
 
               <div
-                id="departure-date"
                 class="flex cursor-pointer items-center gap-5 rounded-md border border-[#dadada] px-4 py-2 text-sm md:py-3 md:text-base lg:col-span-2 lg:py-4"
               >
                 <div>
@@ -641,13 +641,19 @@
                     </defs>
                   </svg>
                 </div>
-                <div>
-                  <h4 class="flex items-center gap-2 text-[#949494]">
-                    Departure:
-                    <span id="selected-departure-date" class="text-black"
-                      >Any Day</span
-                    >
+                <div class="flex items-center gap-2 text-nowrap">
+                  <h4 class="  text-[#949494]">
+                    Start Date:
                   </h4>
+                  <div >
+                    <!-- Input for Datepicker -->
+                    <input
+                      type="text"
+                      placeholder="Any Day"
+                      id="datepicker"
+                      class="focus:outline-none p-2 w-full text-black/80 max-h-7"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -700,6 +706,7 @@
                       placeholder="Any length"
                       type="number"
                       name=""
+                      min="0"
                       id="departure-duration-number"
                       class="w-full px-2 placeholder:text-black focus:outline-none"
                     />
@@ -1213,424 +1220,424 @@
 
           <!-- Cards Section::start -->
           <div
-          class="cards grid grid-cols-1 gap-8 pt-12 md:mx-0 md:grid-cols-2 lg:mx-0 lg:grid-cols-4"
-        >
-          <!-- Card::start -->
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="100"
-            class="group cursor-pointer overflow-hidden rounded-xl bg-white shadow-lg transition duration-500 hover:-translate-y-2 hover:shadow-2xl md:rounded-2xl"
+            class="cards grid grid-cols-1 gap-8 pt-12 md:mx-0 md:grid-cols-2 lg:mx-0 lg:grid-cols-4"
           >
-            <!-- image:start -->
-            <div class="relative overflow-hidden rounded-xl md:rounded-2xl">
-              <div class="h-[250px] rounded-xl md:rounded-2xl lg:h-[280px]">
-                <img
-                  class="h-full w-full transition duration-300 group-hover:scale-105"
-                  src="./assets/img/special/img-1.png"
-                  alt=""
-                />
-              </div>
-              <div
-                class="absolute left-0 top-12 min-w-24 bg-tagColor md:top-16"
-                style="
-                  clip-path: polygon(
-                    100% 0,
-                    83% 47%,
-                    100% 100%,
-                    0% 100%,
-                    0 53%,
-                    0 0
-                  );
-                "
-              >
-                <p
-                  class="py-3 pl-4 pr-8 text-center font-poppins text-xs tracking-tight text-white"
-                >
-                  buy 2 get 2 free
-                </p>
-              </div>
-              <div class="absolute right-5 top-5">
-                <svg
-                  class="wishlist-icon cursor-pointer"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="25"
-                  viewBox="0 0 24 25"
-                  fill="none"
-                >
-                  <path
-                    d="M12.62 21.3116C12.28 21.4316 11.72 21.4316 11.38 21.3116C8.48 20.3216 2 16.1916 2 9.19156C2 6.10156 4.49 3.60156 7.56 3.60156C9.38 3.60156 10.99 4.48156 12 5.84156C13.01 4.48156 14.63 3.60156 16.44 3.60156C19.51 3.60156 22 6.10156 22 9.19156C22 16.1916 15.52 20.3216 12.62 21.3116Z"
-                    stroke="#FF5108"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+            <!-- Card::start -->
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="100"
+              class="group cursor-pointer overflow-hidden rounded-xl bg-white shadow-lg transition duration-500 hover:-translate-y-2 hover:shadow-2xl md:rounded-2xl"
+            >
+              <!-- image:start -->
+              <div class="relative overflow-hidden rounded-xl md:rounded-2xl">
+                <div class="h-[250px] rounded-xl md:rounded-2xl lg:h-[280px]">
+                  <img
+                    class="h-full w-full transition duration-300 group-hover:scale-105"
+                    src="./assets/img/special/img-1.png"
+                    alt=""
                   />
-                </svg>
-              </div>
-            </div>
-            <!-- image:end -->
-            <div class="flex items-center justify-between px-6 py-5">
-              <div class="font-poppins">
-                <h4 class="mb-1 font-semibold tracking-tight">
-                  Naigra Falls Tour
-                </h4>
-                <p class="text-sm tracking-tight md:text-base">
-                  $100/<span class="text-grayText">person</span>
-                </p>
-              </div>
-              <!-- view button:Start -->
-              <a
-                href="destination-details.html"
-                class="rounded-full bg-primary p-3"
-              >
-                <div>
+                </div>
+                <div
+                  class="absolute left-0 top-12 min-w-24 bg-tagColor md:top-16"
+                  style="
+                    clip-path: polygon(
+                      100% 0,
+                      83% 47%,
+                      100% 100%,
+                      0% 100%,
+                      0 53%,
+                      0 0
+                    );
+                  "
+                >
+                  <p
+                    class="py-3 pl-4 pr-8 text-center font-poppins text-xs tracking-tight text-white"
+                  >
+                    buy 2 get 2 free
+                  </p>
+                </div>
+                <div class="absolute right-5 top-5">
                   <svg
+                    class="wishlist-icon cursor-pointer"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
+                    width="24"
+                    height="25"
+                    viewBox="0 0 24 25"
                     fill="none"
                   >
                     <path
-                      d="M10.8203 4.44922L15.3728 9.00172L10.8203 13.5542"
-                      stroke="white"
+                      d="M12.62 21.3116C12.28 21.4316 11.72 21.4316 11.38 21.3116C8.48 20.3216 2 16.1916 2 9.19156C2 6.10156 4.49 3.60156 7.56 3.60156C9.38 3.60156 10.99 4.48156 12 5.84156C13.01 4.48156 14.63 3.60156 16.44 3.60156C19.51 3.60156 22 6.10156 22 9.19156C22 16.1916 15.52 20.3216 12.62 21.3116Z"
+                      stroke="#FF5108"
                       stroke-width="1.5"
-                      stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M2.625 9H15.2475"
-                      stroke="white"
-                      stroke-width="1.5"
-                      stroke-miterlimit="10"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                   </svg>
                 </div>
-              </a>
+              </div>
+              <!-- image:end -->
+              <div class="flex items-center justify-between px-6 py-5">
+                <div class="font-poppins">
+                  <h4 class="mb-1 font-semibold tracking-tight">
+                    Naigra Falls Tour
+                  </h4>
+                  <p class="text-sm tracking-tight md:text-base">
+                    $100/<span class="text-grayText">person</span>
+                  </p>
+                </div>
+                <!-- view button:Start -->
+                <a
+                  href="destination-details.html"
+                  class="rounded-full bg-primary p-3"
+                >
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                    >
+                      <path
+                        d="M10.8203 4.44922L15.3728 9.00172L10.8203 13.5542"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M2.625 9H15.2475"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </a>
 
-              <!-- <i class="fa-solid fa-arrow-right text-white text-sm bg-primary p-3 rounded-full"></i> -->
+                <!-- <i class="fa-solid fa-arrow-right text-white text-sm bg-primary p-3 rounded-full"></i> -->
 
-              <!-- view button:end -->
+                <!-- view button:end -->
+              </div>
             </div>
-          </div>
-          <!-- Card::End -->
+            <!-- Card::End -->
 
-          <!-- Card::start -->
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="100"
-            class="group cursor-pointer overflow-hidden rounded-xl bg-white shadow-lg transition duration-500 hover:-translate-y-2 hover:shadow-2xl md:rounded-2xl"
-          >
-            <!-- image:start -->
-            <div class="relative overflow-hidden rounded-xl md:rounded-2xl">
-              <div class="h-[250px] rounded-xl md:rounded-2xl lg:h-[280px]">
-                <img
-                  class="h-full w-full transition duration-300 group-hover:scale-105"
-                  src="./assets/img/special/img-2.png"
-                  alt=""
-                />
-              </div>
-              <div
-                class="absolute left-0 top-12 min-w-24 bg-tagColor md:top-16"
-                style="
-                  clip-path: polygon(
-                    100% 0,
-                    83% 47%,
-                    100% 100%,
-                    0% 100%,
-                    0 53%,
-                    0 0
-                  );
-                "
-              >
-                <p
-                  class="py-3 pl-4 pr-8 text-center font-poppins text-xs tracking-tight text-white"
-                >
-                  30%
-                </p>
-              </div>
-              <div class="absolute right-5 top-5">
-                <svg
-                  class="wishlist-icon cursor-pointer"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="25"
-                  viewBox="0 0 24 25"
-                  fill="none"
-                >
-                  <path
-                    d="M12.62 21.3116C12.28 21.4316 11.72 21.4316 11.38 21.3116C8.48 20.3216 2 16.1916 2 9.19156C2 6.10156 4.49 3.60156 7.56 3.60156C9.38 3.60156 10.99 4.48156 12 5.84156C13.01 4.48156 14.63 3.60156 16.44 3.60156C19.51 3.60156 22 6.10156 22 9.19156C22 16.1916 15.52 20.3216 12.62 21.3116Z"
-                    stroke="#FF5108"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+            <!-- Card::start -->
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="100"
+              class="group cursor-pointer overflow-hidden rounded-xl bg-white shadow-lg transition duration-500 hover:-translate-y-2 hover:shadow-2xl md:rounded-2xl"
+            >
+              <!-- image:start -->
+              <div class="relative overflow-hidden rounded-xl md:rounded-2xl">
+                <div class="h-[250px] rounded-xl md:rounded-2xl lg:h-[280px]">
+                  <img
+                    class="h-full w-full transition duration-300 group-hover:scale-105"
+                    src="./assets/img/special/img-2.png"
+                    alt=""
                   />
-                </svg>
-              </div>
-            </div>
-            <!-- image:end -->
-            <div class="flex items-center justify-between px-6 py-5">
-              <div class="font-poppins">
-                <h4 class="mb-1 font-semibold tracking-tight">
-                  Naigra Falls Tour
-                </h4>
-                <p class="text-sm tracking-tight md:text-base">
-                  $100/<span class="text-grayText">person</span>
-                </p>
-              </div>
-              <!-- view button:Start -->
-              <a
-                href="destination-details.html"
-                class="rounded-full bg-primary p-3"
-              >
-                <div>
+                </div>
+                <div
+                  class="absolute left-0 top-12 min-w-24 bg-tagColor md:top-16"
+                  style="
+                    clip-path: polygon(
+                      100% 0,
+                      83% 47%,
+                      100% 100%,
+                      0% 100%,
+                      0 53%,
+                      0 0
+                    );
+                  "
+                >
+                  <p
+                    class="py-3 pl-4 pr-8 text-center font-poppins text-xs tracking-tight text-white"
+                  >
+                    30%
+                  </p>
+                </div>
+                <div class="absolute right-5 top-5">
                   <svg
+                    class="wishlist-icon cursor-pointer"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
+                    width="24"
+                    height="25"
+                    viewBox="0 0 24 25"
                     fill="none"
                   >
                     <path
-                      d="M10.8203 4.44922L15.3728 9.00172L10.8203 13.5542"
-                      stroke="white"
+                      d="M12.62 21.3116C12.28 21.4316 11.72 21.4316 11.38 21.3116C8.48 20.3216 2 16.1916 2 9.19156C2 6.10156 4.49 3.60156 7.56 3.60156C9.38 3.60156 10.99 4.48156 12 5.84156C13.01 4.48156 14.63 3.60156 16.44 3.60156C19.51 3.60156 22 6.10156 22 9.19156C22 16.1916 15.52 20.3216 12.62 21.3116Z"
+                      stroke="#FF5108"
                       stroke-width="1.5"
-                      stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M2.625 9H15.2475"
-                      stroke="white"
-                      stroke-width="1.5"
-                      stroke-miterlimit="10"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                   </svg>
                 </div>
-              </a>
+              </div>
+              <!-- image:end -->
+              <div class="flex items-center justify-between px-6 py-5">
+                <div class="font-poppins">
+                  <h4 class="mb-1 font-semibold tracking-tight">
+                    Naigra Falls Tour
+                  </h4>
+                  <p class="text-sm tracking-tight md:text-base">
+                    $100/<span class="text-grayText">person</span>
+                  </p>
+                </div>
+                <!-- view button:Start -->
+                <a
+                  href="destination-details.html"
+                  class="rounded-full bg-primary p-3"
+                >
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                    >
+                      <path
+                        d="M10.8203 4.44922L15.3728 9.00172L10.8203 13.5542"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M2.625 9H15.2475"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </a>
 
-              <!-- <i class="fa-solid fa-arrow-right text-white text-sm bg-primary p-3 rounded-full"></i> -->
+                <!-- <i class="fa-solid fa-arrow-right text-white text-sm bg-primary p-3 rounded-full"></i> -->
 
-              <!-- view button:end -->
+                <!-- view button:end -->
+              </div>
             </div>
-          </div>
-          <!-- Card::End -->
+            <!-- Card::End -->
 
-          <!-- Card::start -->
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="100"
-            class="group cursor-pointer overflow-hidden rounded-xl bg-white shadow-lg transition duration-500 hover:-translate-y-2 hover:shadow-2xl md:rounded-2xl"
-          >
-            <!-- image:start -->
-            <div class="relative overflow-hidden rounded-xl md:rounded-2xl">
-              <div class="h-[250px] rounded-xl md:rounded-2xl lg:h-[280px]">
-                <img
-                  class="h-full w-full transition duration-300 group-hover:scale-105"
-                  src="./assets/img/special/img-3.png"
-                  alt=""
-                />
-              </div>
-              <div
-                class="absolute left-0 top-12 min-w-24 bg-tagColor md:top-16"
-                style="
-                  clip-path: polygon(
-                    100% 0,
-                    83% 47%,
-                    100% 100%,
-                    0% 100%,
-                    0 53%,
-                    0 0
-                  );
-                "
-              >
-                <p
-                  class="py-3 pl-4 pr-8 text-center font-poppins text-xs tracking-tight text-white"
-                >
-                  20%
-                </p>
-              </div>
-              <div class="absolute right-5 top-5">
-                <svg
-                  class="wishlist-icon cursor-pointer"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="25"
-                  viewBox="0 0 24 25"
-                  fill="none"
-                >
-                  <path
-                    d="M12.62 21.3116C12.28 21.4316 11.72 21.4316 11.38 21.3116C8.48 20.3216 2 16.1916 2 9.19156C2 6.10156 4.49 3.60156 7.56 3.60156C9.38 3.60156 10.99 4.48156 12 5.84156C13.01 4.48156 14.63 3.60156 16.44 3.60156C19.51 3.60156 22 6.10156 22 9.19156C22 16.1916 15.52 20.3216 12.62 21.3116Z"
-                    stroke="#FF5108"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+            <!-- Card::start -->
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="100"
+              class="group cursor-pointer overflow-hidden rounded-xl bg-white shadow-lg transition duration-500 hover:-translate-y-2 hover:shadow-2xl md:rounded-2xl"
+            >
+              <!-- image:start -->
+              <div class="relative overflow-hidden rounded-xl md:rounded-2xl">
+                <div class="h-[250px] rounded-xl md:rounded-2xl lg:h-[280px]">
+                  <img
+                    class="h-full w-full transition duration-300 group-hover:scale-105"
+                    src="./assets/img/special/img-3.png"
+                    alt=""
                   />
-                </svg>
-              </div>
-            </div>
-            <!-- image:end -->
-            <div class="flex items-center justify-between px-6 py-5">
-              <div class="font-poppins">
-                <h4 class="mb-1 font-semibold tracking-tight">
-                  Naigra Falls Tour
-                </h4>
-                <p class="text-sm tracking-tight md:text-base">
-                  $100/<span class="text-grayText">person</span>
-                </p>
-              </div>
-              <!-- view button:Start -->
-              <a
-                href="destination-details.html"
-                class="rounded-full bg-primary p-3"
-              >
-                <div>
+                </div>
+                <div
+                  class="absolute left-0 top-12 min-w-24 bg-tagColor md:top-16"
+                  style="
+                    clip-path: polygon(
+                      100% 0,
+                      83% 47%,
+                      100% 100%,
+                      0% 100%,
+                      0 53%,
+                      0 0
+                    );
+                  "
+                >
+                  <p
+                    class="py-3 pl-4 pr-8 text-center font-poppins text-xs tracking-tight text-white"
+                  >
+                    20%
+                  </p>
+                </div>
+                <div class="absolute right-5 top-5">
                   <svg
+                    class="wishlist-icon cursor-pointer"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
+                    width="24"
+                    height="25"
+                    viewBox="0 0 24 25"
                     fill="none"
                   >
                     <path
-                      d="M10.8203 4.44922L15.3728 9.00172L10.8203 13.5542"
-                      stroke="white"
+                      d="M12.62 21.3116C12.28 21.4316 11.72 21.4316 11.38 21.3116C8.48 20.3216 2 16.1916 2 9.19156C2 6.10156 4.49 3.60156 7.56 3.60156C9.38 3.60156 10.99 4.48156 12 5.84156C13.01 4.48156 14.63 3.60156 16.44 3.60156C19.51 3.60156 22 6.10156 22 9.19156C22 16.1916 15.52 20.3216 12.62 21.3116Z"
+                      stroke="#FF5108"
                       stroke-width="1.5"
-                      stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M2.625 9H15.2475"
-                      stroke="white"
-                      stroke-width="1.5"
-                      stroke-miterlimit="10"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                   </svg>
                 </div>
-              </a>
+              </div>
+              <!-- image:end -->
+              <div class="flex items-center justify-between px-6 py-5">
+                <div class="font-poppins">
+                  <h4 class="mb-1 font-semibold tracking-tight">
+                    Naigra Falls Tour
+                  </h4>
+                  <p class="text-sm tracking-tight md:text-base">
+                    $100/<span class="text-grayText">person</span>
+                  </p>
+                </div>
+                <!-- view button:Start -->
+                <a
+                  href="destination-details.html"
+                  class="rounded-full bg-primary p-3"
+                >
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                    >
+                      <path
+                        d="M10.8203 4.44922L15.3728 9.00172L10.8203 13.5542"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M2.625 9H15.2475"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </a>
 
-              <!-- <i class="fa-solid fa-arrow-right text-white text-sm bg-primary p-3 rounded-full"></i> -->
+                <!-- <i class="fa-solid fa-arrow-right text-white text-sm bg-primary p-3 rounded-full"></i> -->
 
-              <!-- view button:end -->
+                <!-- view button:end -->
+              </div>
             </div>
-          </div>
-          <!-- Card::End -->
+            <!-- Card::End -->
 
-          <!-- Card::start -->
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="100"
-            class="group cursor-pointer overflow-hidden rounded-xl bg-white shadow-lg transition duration-500 hover:-translate-y-2 hover:shadow-2xl md:rounded-2xl"
-          >
-            <!-- image:start -->
-            <div class="relative overflow-hidden rounded-xl md:rounded-2xl">
-              <div class="h-[250px] rounded-xl md:rounded-2xl lg:h-[280px]">
-                <img
-                  class="h-full w-full transition duration-300 group-hover:scale-105"
-                  src="./assets/img/special/img-4.png"
-                  alt=""
-                />
-              </div>
-              <div
-                class="absolute left-0 top-12 min-w-24 bg-tagColor md:top-16"
-                style="
-                  clip-path: polygon(
-                    100% 0,
-                    83% 47%,
-                    100% 100%,
-                    0% 100%,
-                    0 53%,
-                    0 0
-                  );
-                "
-              >
-                <p
-                  class="py-3 pl-4 pr-8 text-center font-poppins text-xs tracking-tight text-white"
-                >
-                  30%
-                </p>
-              </div>
-              <div class="absolute right-5 top-5">
-                <svg
-                  class="wishlist-icon cursor-pointer"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="25"
-                  viewBox="0 0 24 25"
-                  fill="none"
-                >
-                  <path
-                    d="M12.62 21.3116C12.28 21.4316 11.72 21.4316 11.38 21.3116C8.48 20.3216 2 16.1916 2 9.19156C2 6.10156 4.49 3.60156 7.56 3.60156C9.38 3.60156 10.99 4.48156 12 5.84156C13.01 4.48156 14.63 3.60156 16.44 3.60156C19.51 3.60156 22 6.10156 22 9.19156C22 16.1916 15.52 20.3216 12.62 21.3116Z"
-                    stroke="#FF5108"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+            <!-- Card::start -->
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="100"
+              class="group cursor-pointer overflow-hidden rounded-xl bg-white shadow-lg transition duration-500 hover:-translate-y-2 hover:shadow-2xl md:rounded-2xl"
+            >
+              <!-- image:start -->
+              <div class="relative overflow-hidden rounded-xl md:rounded-2xl">
+                <div class="h-[250px] rounded-xl md:rounded-2xl lg:h-[280px]">
+                  <img
+                    class="h-full w-full transition duration-300 group-hover:scale-105"
+                    src="./assets/img/special/img-4.png"
+                    alt=""
                   />
-                </svg>
-              </div>
-            </div>
-            <!-- image:end -->
-            <div class="flex items-center justify-between px-6 py-5">
-              <div class="font-poppins">
-                <h4 class="mb-1 font-semibold tracking-tight">
-                  Naigra Falls Tour
-                </h4>
-                <p class="text-sm tracking-tight md:text-base">
-                  $100/<span class="text-grayText">person</span>
-                </p>
-              </div>
-              <!-- view button:Start -->
-              <a
-                href="destination-details.html"
-                class="rounded-full bg-primary p-3"
-              >
-                <div>
+                </div>
+                <div
+                  class="absolute left-0 top-12 min-w-24 bg-tagColor md:top-16"
+                  style="
+                    clip-path: polygon(
+                      100% 0,
+                      83% 47%,
+                      100% 100%,
+                      0% 100%,
+                      0 53%,
+                      0 0
+                    );
+                  "
+                >
+                  <p
+                    class="py-3 pl-4 pr-8 text-center font-poppins text-xs tracking-tight text-white"
+                  >
+                    30%
+                  </p>
+                </div>
+                <div class="absolute right-5 top-5">
                   <svg
+                    class="wishlist-icon cursor-pointer"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
+                    width="24"
+                    height="25"
+                    viewBox="0 0 24 25"
                     fill="none"
                   >
                     <path
-                      d="M10.8203 4.44922L15.3728 9.00172L10.8203 13.5542"
-                      stroke="white"
+                      d="M12.62 21.3116C12.28 21.4316 11.72 21.4316 11.38 21.3116C8.48 20.3216 2 16.1916 2 9.19156C2 6.10156 4.49 3.60156 7.56 3.60156C9.38 3.60156 10.99 4.48156 12 5.84156C13.01 4.48156 14.63 3.60156 16.44 3.60156C19.51 3.60156 22 6.10156 22 9.19156C22 16.1916 15.52 20.3216 12.62 21.3116Z"
+                      stroke="#FF5108"
                       stroke-width="1.5"
-                      stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M2.625 9H15.2475"
-                      stroke="white"
-                      stroke-width="1.5"
-                      stroke-miterlimit="10"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                   </svg>
                 </div>
-              </a>
+              </div>
+              <!-- image:end -->
+              <div class="flex items-center justify-between px-6 py-5">
+                <div class="font-poppins">
+                  <h4 class="mb-1 font-semibold tracking-tight">
+                    Naigra Falls Tour
+                  </h4>
+                  <p class="text-sm tracking-tight md:text-base">
+                    $100/<span class="text-grayText">person</span>
+                  </p>
+                </div>
+                <!-- view button:Start -->
+                <a
+                  href="destination-details.html"
+                  class="rounded-full bg-primary p-3"
+                >
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                    >
+                      <path
+                        d="M10.8203 4.44922L15.3728 9.00172L10.8203 13.5542"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M2.625 9H15.2475"
+                        stroke="white"
+                        stroke-width="1.5"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </a>
 
-              <!-- <i class="fa-solid fa-arrow-right text-white text-sm bg-primary p-3 rounded-full"></i> -->
+                <!-- <i class="fa-solid fa-arrow-right text-white text-sm bg-primary p-3 rounded-full"></i> -->
 
-              <!-- view button:end -->
+                <!-- view button:end -->
+              </div>
             </div>
+            <!-- Card::End -->
           </div>
-          <!-- Card::End -->
-        </div>
 
           <!-- Cards Section::end -->
         </div>
@@ -3390,11 +3397,16 @@
     <!-- Footer::End -->
 
     <!-- Scripts::Start -->
+
     <script src="./assets/js/jquery.js"></script>
+    <!-- datepicker: -->
+    <script src="./assets/js/plugins/datepicker.js"></script>
+    <!-- datepicker: -->
     <script src="./assets/js/plugins/owl.carousel.min.js"></script>
     <script src="./assets/js/jquery.nice-select.min.js"></script>
     <script src="./assets/js/plugins/aos.js"></script>
     <script src="./assets/js/plugins/plugins.js"></script>
+
     <script src="./assets/js/main.js"></script>
     <!-- Scripts::End -->
   </body>

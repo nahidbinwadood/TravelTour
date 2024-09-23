@@ -164,7 +164,9 @@ body {
  
 
 
-
+.ui-icon ui-icon-circle-triangle-w{
+  background:black !important; 
+}
 
 /* Test */
 

@@ -25,6 +25,10 @@ document.addEventListener("click", (e) => {
 $(document).ready(function () {
   $("select").niceSelect();
 
+  // Date picker::
+ $("#datepicker").datepicker();
+  // Date picker::
+
   // profile popup::start
   const profilePicture = document.getElementById("user-profile-picture");
   const profileContainer = document.getElementById("profile-container");
@@ -61,28 +65,7 @@ $(document).ready(function () {
   // profile popup::end
 
   // Initialize Flatpickr for Check-In Date
-  flatpickr("#check-in-date-picker", {
-    enableTime: false,
-    dateFormat: "Y-m-d",
-    onChange: function (selectedDates, dateStr, instance) {
-      const checkInDate = document.getElementById("check-in-selected-date");
-      const updateCheckInDateText = document.getElementById(
-        "check-in-updated-date",
-      );
-      updateCheckInDateText.textContent = dateStr;
-      checkInDate.style.display = "none";
-    },
-  });
-
-  // Initialize Flatpickr for Check-Out Date
-  flatpickr("#departure-date", {
-    enableTime: false,
-    dateFormat: "Y-m-d",
-    onChange: function (selectedDates, dateStr, instance) {
-      const dateSpan = document.getElementById("selected-departure-date");
-      dateSpan.textContent = dateStr;
-    },
-  });
+  
 
   // // Select all tab elements
   // const tabs = document.querySelectorAll(".tab");
