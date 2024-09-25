@@ -621,7 +621,7 @@
                 <div
                   class="flex w-full items-center pb-2 pt-12 font-roboto font-bold text-primary md:text-xl"
                 >
-                <a href="../index.html">
+                  <a href="../index.html">
                     Fine<span class="text-secondary">BusTour</span>
                   </a>
                 </div>
@@ -995,25 +995,94 @@
                           >Date of Birth</label
                         >
                         <div
-                          id="dob-show"
-                          class="check-in cursor-pointer rounded-lg border border-black/10 px-4 py-3 text-sm placeholder:text-black/50 focus:outline-none md:text-base 2xl:px-10 2xl:py-5"
+                          id="dob-show-container"
+                          class="dob-show check-in relative cursor-pointer rounded-lg border border-black/10 px-4 py-3 text-sm placeholder:text-black/50 focus:outline-none md:text-base 2xl:px-10 2xl:py-5"
                         >
-                          <label
-                            class="flex cursor-pointer items-center gap-3"
-                            for=""
+                          <input
+                            readonly
+                            class="dob-show w-full cursor-pointer border-none focus:outline-none"
+                            type="text"
+                            name=""
+                            id="dob-input"
+                            value="19-08-88"
+                          />
+
+                           <!-- New Calendar for DOB -->
+                        <div
+                        id="dob-date-show-calendar"
+                        class="absolute top-full opacity-0 -z-20 w-full translate-y-5 rounded-md border border-black/20 bg-gray-100 px-2 pt-6 shadow-2xl transition-all duration-500"
+                      >
+                        <!-- top Calendar -->
+                        <div
+                          class="flex items-center bg-primary/20 px-4 py-2"
+                        >
+                          <div
+                            id="prevButtonDOBCalendar"
+                            class="cursor-pointer"
                           >
-                            <!-- Ignore the SVG part -->
-                            <span
-                              id="date-of-birth"
-                              class="cursor-pointer font-poppins text-sm md:text-base"
-                              >19-08-08</span
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
                             >
-                            <span
-                              id="check-in-updated-date"
-                              class="font-poppins text-sm md:text-base"
-                            ></span>
-                          </label>
+                              <path
+                                d="M15 19L8 12L15 5"
+                                stroke="#292A34"
+                                stroke-width="2"
+                              />
+                            </svg>
+                          </div>
+                          <div
+                            id="monthLabelDOBCalendar"
+                            class="w-full text-center font-semibold"
+                          >
+                            September <span class="font-normal">2024</span>
+                          </div>
+                          <div
+                            id="nextButtonDOBCalendar"
+                            class="cursor-pointer"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                            >
+                              <path
+                                d="M9 19L16 12L9 5"
+                                stroke="#292A34"
+                                stroke-width="2"
+                              />
+                            </svg>
+                          </div>
                         </div>
+                        <div class="my-3 border-t border-black/5"></div>
+
+                        <!-- weeks -->
+                        <div
+                          class="grid grid-cols-7 gap-2 text-center text-xs font-medium text-[#292A34B3]"
+                        >
+                          <div><p>MO</p></div>
+                          <div><p>TU</p></div>
+                          <div><p>WE</p></div>
+                          <div><p>TH</p></div>
+                          <div><p>FR</p></div>
+                          <div><p>SA</p></div>
+                          <div><p>SU</p></div>
+                        </div>
+
+                        <!-- Days container -->
+                        <div
+                          id="dobCalendarDays"
+                          class="mt-2 grid min-h-[256px] grid-cols-7 pb-4 text-center"
+                        ></div>
+                      </div>
+                        </div>
+
+                       
                       </div>
                     </div>
                     <div class="md:w-1/2">
@@ -1573,7 +1642,7 @@
     <!-- Scripts ::Start -->
 
     <script src="../assets/js/dashboard.js"></script>
-    <script src="../assets/js/plugins/flatpicker.js"></script>
+
     <!-- Scripts ::End -->
   </body>
 </html>

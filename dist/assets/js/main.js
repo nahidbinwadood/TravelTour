@@ -171,7 +171,7 @@ $(document).ready(function () {
   renderDepartureCalendarUnique(currentMonthUnique, currentYearUnique);
 
   // Show calendar when clicking on the container
-  if(containerUnique){
+  if (containerUnique) {
     containerUnique.addEventListener("click", (event) => {
       event.stopPropagation(); // Stop propagation so that it doesn't trigger the document click event
       showCalendar();
@@ -188,6 +188,11 @@ $(document).ready(function () {
     }
   });
   // select the date of departure:end
+
+  //dob:start
+ 
+
+  //dob:end
 
   // profile popup::start
   const profilePicture = document.getElementById("user-profile-picture");
