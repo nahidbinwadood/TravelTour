@@ -171,10 +171,12 @@ $(document).ready(function () {
   renderDepartureCalendarUnique(currentMonthUnique, currentYearUnique);
 
   // Show calendar when clicking on the container
-  containerUnique.addEventListener("click", (event) => {
-    event.stopPropagation(); // Stop propagation so that it doesn't trigger the document click event
-    showCalendar();
-  });
+  if(containerUnique){
+    containerUnique.addEventListener("click", (event) => {
+      event.stopPropagation(); // Stop propagation so that it doesn't trigger the document click event
+      showCalendar();
+    });
+  }
 
   // Hide calendar if clicking outside the calendar or container
   document.addEventListener("click", (event) => {
