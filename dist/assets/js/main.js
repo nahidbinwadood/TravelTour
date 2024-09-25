@@ -25,9 +25,167 @@ document.addEventListener("click", (e) => {
 $(document).ready(function () {
   $("select").niceSelect();
 
-  // Date picker::
- $("#datepicker").datepicker();
-  // Date picker::
+  // select the date of departure:start
+  // Select the date of departure:start
+  const departureCalendarHomepageUnique = document.getElementById(
+    "departure-date-show-calendar-unique",
+  );
+  const departureCalendarDaysUnique = document.getElementById(
+    "departureCalendarDaysUnique",
+  );
+  const monthLabelUnique = document.getElementById(
+    "monthLabelDepartureCalendarUnique",
+  );
+  const prevButtonUnique = document.getElementById(
+    "prevButtonDepartureCalendarUnique",
+  );
+  const nextButtonUnique = document.getElementById(
+    "nextButtonDepartureCalendarUnique",
+  );
+  const containerUnique = document.querySelector(
+    ".departure--start--date-unique",
+  );
+  let currentMonthUnique = new Date().getMonth();
+  let currentYearUnique = new Date().getFullYear();
+  let selectedDateUnique = null;
+
+  // Function to show the calendar
+  function showCalendar() {
+    departureCalendarHomepageUnique.classList.remove(
+      "opacity-0",
+      "-z-20",
+      "translate-y-5",
+    );
+    departureCalendarHomepageUnique.classList.add(
+      "opacity-100",
+      "z-20",
+      "translate-y-0",
+    );
+  }
+
+  // Function to hide the calendar
+  function hideCalendar() {
+    departureCalendarHomepageUnique.classList.add(
+      "opacity-0",
+      "-z-20",
+      "translate-y-5",
+    );
+    departureCalendarHomepageUnique.classList.remove(
+      "opacity-100",
+      "z-20",
+      "translate-y-0",
+    );
+  }
+
+  // Render the calendar with updated month/year
+  function renderDepartureCalendarUnique(month, year) {
+    if (departureCalendarDaysUnique) {
+      departureCalendarDaysUnique.innerHTML = "";
+    }
+    const firstDayUnique = new Date(year, month).getDay();
+    const daysInMonthUnique = 32 - new Date(year, month, 32).getDate();
+
+    if (monthLabelUnique) {
+      monthLabelUnique.textContent =
+        new Date(year, month).toLocaleString("default", { month: "long" }) +
+        " " +
+        year;
+    }
+
+    // Fill in the days
+    for (let i = 0; i < firstDayUnique; i++) {
+      const emptyDayUnique = document.createElement("div");
+      departureCalendarDaysUnique.appendChild(emptyDayUnique);
+    }
+
+    for (let day = 1; day <= daysInMonthUnique; day++) {
+      const dayElementUnique = document.createElement("div");
+      dayElementUnique.textContent = day;
+      dayElementUnique.classList.add(
+        "cursor-pointer",
+        "flex",
+        "items-center",
+        "justify-center",
+        "size-10",
+        "rounded-xl",
+        "hover:bg-gray-300",
+      );
+
+      // If day is selected, apply a different background
+      if (
+        selectedDateUnique &&
+        selectedDateUnique.getDate() === day &&
+        selectedDateUnique.getMonth() === month &&
+        selectedDateUnique.getFullYear() === year
+      ) {
+        dayElementUnique.classList.add("bg-blue-400", "text-white");
+      }
+
+      dayElementUnique.addEventListener("click", function (event) {
+        event.stopPropagation(); // Ensure this click doesn't trigger the outside click listener
+        if (selectedDateUnique) {
+          // Clear the previous selected date background
+          const previouslySelectedDayUnique =
+            departureCalendarDaysUnique.querySelector(".bg-blue-400");
+          if (previouslySelectedDayUnique) {
+            previouslySelectedDayUnique.classList.remove(
+              "bg-blue-400",
+              "text-white",
+            );
+            previouslySelectedDayUnique.classList.add("hover:bg-gray-300");
+          }
+        }
+
+        // Set the new selected date
+        selectedDateUnique = new Date(year, month, day);
+        dayElementUnique.classList.add("bg-blue-400", "text-white");
+        document.getElementById("departure--start--date").value =
+          selectedDateUnique.toLocaleDateString();
+
+        // Hide the calendar after selecting the date
+        hideCalendar();
+      });
+
+      departureCalendarDaysUnique?.appendChild(dayElementUnique);
+    }
+  }
+
+  prevButtonUnique?.addEventListener("click", () => {
+    currentMonthUnique--;
+    if (currentMonthUnique < 0) {
+      currentMonthUnique = 11;
+      currentYearUnique--;
+    }
+    renderDepartureCalendarUnique(currentMonthUnique, currentYearUnique);
+  });
+
+  nextButtonUnique?.addEventListener("click", () => {
+    currentMonthUnique++;
+    if (currentMonthUnique > 11) {
+      currentMonthUnique = 0;
+      currentYearUnique++;
+    }
+    renderDepartureCalendarUnique(currentMonthUnique, currentYearUnique);
+  });
+
+  renderDepartureCalendarUnique(currentMonthUnique, currentYearUnique);
+
+  // Show calendar when clicking on the container
+  containerUnique.addEventListener("click", (event) => {
+    event.stopPropagation(); // Stop propagation so that it doesn't trigger the document click event
+    showCalendar();
+  });
+
+  // Hide calendar if clicking outside the calendar or container
+  document.addEventListener("click", (event) => {
+    if (
+      !containerUnique.contains(event.target) &&
+      !departureCalendarHomepageUnique.contains(event.target)
+    ) {
+      hideCalendar();
+    }
+  });
+  // select the date of departure:end
 
   // profile popup::start
   const profilePicture = document.getElementById("user-profile-picture");
@@ -65,7 +223,6 @@ $(document).ready(function () {
   // profile popup::end
 
   // Initialize Flatpickr for Check-In Date
-  
 
   // // Select all tab elements
   // const tabs = document.querySelectorAll(".tab");
@@ -138,7 +295,7 @@ $(document).ready(function () {
 
   // Function to activate the selected tab and panel
   const activateTab = (tab) => {
-    const tabId = tab.getAttribute("aria-controls");
+    const tabId = tab?.getAttribute("aria-controls");
 
     // Move indicator
     moveIndicator(tab);
@@ -163,9 +320,11 @@ $(document).ready(function () {
     });
 
     // Set selected tab
-    tab.setAttribute("aria-selected", "true");
-    tab.classList.add("text-primary");
-    tab.setAttribute("tabindex", "0");
+    if (tab) {
+      tab.setAttribute("aria-selected", "true");
+      tab.classList.add("text-primary");
+      tab.setAttribute("tabindex", "0");
+    }
   };
 
   // Function to handle window resize and recalculate the indicator position
