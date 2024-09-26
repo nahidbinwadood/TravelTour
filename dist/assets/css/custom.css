@@ -270,6 +270,15 @@ body {
 /* Date Range::End */
 /* ====Custom Range::End==== */
 
+/* cart::start */
+.cart-body .nice-select {
+  padding: 0px 10px;
+  min-width: 90px;
+  height: 28px;
+  line-height:28px;
+}
+/* cart::end */
+
 /* ===Dashboard::Start=== */
 .dashboard-sidebar-links .active {
   color: white;

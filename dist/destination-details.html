@@ -3835,11 +3835,11 @@
           selectedStartDate &&
           date.getTime() === selectedStartDate.getTime()
         ) {
-          return "bg-blue-600 text-white"; // Start date
+          return "bg-blue-700 text-white"; // Start date
         }
 
         if (selectedEndDate && date.getTime() === selectedEndDate.getTime()) {
-          return "bg-blue-600 text-white"; // End date
+          return "bg-blue-700 text-white"; // End date
         }
 
         if (
@@ -3848,7 +3848,7 @@
           date > selectedStartDate &&
           date <= selectedEndDate
         ) {
-          return "bg-blue-200 text-white"; // In-between dates
+          return "bg-blue-300 text-white"; // In-between dates
         }
 
         return ""; // Default
@@ -3930,11 +3930,11 @@
         function showPopup(event, price) {
           const personPriceHTML = `
                   <h4 class="font-bold mb-2 ">Price (/Person)</h4>
-                  <table class="text-sm border border-collapse">
-                    <tr class="border border-collapse"><td class="p-2 text-black font-semibold" >Single</td><td>$${personPrices.single}</td></tr>
-                    <tr class="border border-collapse"><td class="p-2 text-black font-semibold " >Double</td><td>$${price}</td></tr>
-                    <tr class="border border-collapse"><td class="p-2 text-black font-semibold " >3rd Person</td><td>$${personPrices.thirdPerson}</td></tr>
-                    <tr class="border border-collapse"><td class="p-2 text-black font-semibold " >4th Person</td><td class="mr-3" >$${personPrices.fourthPerson}</td></tr>
+                  <table class="text-sm  ">
+                    <tr class=" "><td class="p-2 text-black font-semibold" >Single</td><td>$${personPrices.single}</td></tr>
+                    <tr class=" "><td class="p-2 text-black font-semibold " >Double</td><td>$${price}</td></tr>
+                    <tr class=" "><td class="p-2 text-black font-semibold " >3rd Person</td><td>$${personPrices.thirdPerson}</td></tr>
+                    <tr class=" "><td class="p-2 text-black font-semibold " >4th Person</td><td class="mr-3" >$${personPrices.fourthPerson}</td></tr>
                   </table>
                 `;
 
@@ -4059,7 +4059,7 @@
           let selectedClass =
             selectedDepartureDate &&
             date.getTime() === selectedDepartureDate.getTime()
-              ? "bg-blue-600 text-white"
+              ? "bg-blue-700 text-white"
               : "";
 
           // Disable past dates and dates without prices
