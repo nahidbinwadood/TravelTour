@@ -3815,7 +3815,7 @@
             ? "text-gray-400 cursor-not-allowed"
             : selectableClass;
 
-          html += `<div class="py-2 min-h-[50px] bg-white text-center border-r border-b ${cellClass} ${disabledClass}" data-date="${date}" data-price="${dynamicPrices[isoDate] || ""}">
+          html += `<div class="py-2 min-h-[50px]  text-center border-r border-b ${cellClass} ${disabledClass}" data-date="${date}" data-price="${dynamicPrices[isoDate] || ""}">
                           <p class="text-sm font-medium">${day}</p>
                           <p class="text-xs text-secondary">${price}</p>
                         </div>`;
@@ -3838,11 +3838,11 @@
           selectedStartDate &&
           date.getTime() === selectedStartDate.getTime()
         ) {
-          return "bg-blue-700 text-white"; // Start date
+          return "bg-blue-500 text-white"; // Start date
         }
 
         if (selectedEndDate && date.getTime() === selectedEndDate.getTime()) {
-          return "bg-blue-700 text-white"; // End date
+          return "bg-blue-500 text-white"; // End date
         }
 
         if (
@@ -3851,7 +3851,7 @@
           date > selectedStartDate &&
           date <= selectedEndDate
         ) {
-          return "bg-blue-300 text-white"; // In-between dates
+          return "bg-blue-200 text-white"; // In-between dates
         }
 
         return ""; // Default
@@ -4062,7 +4062,7 @@
           let selectedClass =
             selectedDepartureDate &&
             date.getTime() === selectedDepartureDate.getTime()
-              ? "bg-blue-700 text-white"
+              ? "bg-blue-500 text-white"
               : "";
 
           // Disable past dates and dates without prices
@@ -4071,7 +4071,7 @@
               ? "text-gray-400 cursor-not-allowed"
               : selectableClass;
 
-          html += `<div class="py-2 min-h-[40px] bg-white text-center border-r border-b ${disabledClass} ${selectedClass}" data-date="${date}" data-price="${hasPrice || ""}">
+          html += `<div class="py-2 min-h-[40px] text-center border-r border-b ${disabledClass} ${selectedClass}" data-date="${date}" data-price="${hasPrice || ""}">
                   <p class="text-xs font-medium">${day}</p>
                   <p class="text-xs text-secondary">${price}</p>
                 </div>`;
