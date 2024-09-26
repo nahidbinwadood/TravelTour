@@ -447,14 +447,14 @@
       <div class="bg-white py-12 font-poppins 2xl:py-[150px]">
         <div class="container mx-auto px-4 xl:px-8">
           <div
-            class="grid grid-cols-1 gap-8 md:gap-4 xl:grid-cols-12 2xl:gap-16"
+            class="grid grid-cols-1 gap-8 md:gap-4 xl:gap-8 xl:grid-cols-12 2xl:gap-16"
           >
             <!-- Left Part::Start -->
 
             <div class="date-range-details xl:col-span-8">
               <!-- top text content -->
               <div class="flex items-center justify-between pb-6 xl:pb-14">
-                <div class="flex flex-col gap-3 md:flex-row md:items-center">
+                <div class="flex flex-col flex-wrap gap-3 md:flex-row md:items-center">
                   <h2
                     data-aos="zoom-in"
                     data-aos-duration="1200"
@@ -469,7 +469,7 @@
                     data-aos-delay="200"
                   >
                     <span
-                      class="text-sm text-black/70 md:text-base lg:ml-8 lg:text-lg"
+                      class="text-sm text-black/70 md:text-base lg:ml-8 xl:ml-0 2xl:ml-12 lg:text-lg"
                       >Tour Code: <span class="text-black"
                         >762-19609</span
                       ></span
@@ -1538,7 +1538,9 @@
               <!-- Date Range::Start -->
 
               <div class="date-range-calender">
-                <div
+                <div data-aos="fade-up"
+                data-aos-duration="1200"
+                data-aos-delay="150"
                   class="mt-5 w-full rounded-md border border-black/20 px-8 py-5"
                 >
                   <p class=" ">
@@ -1548,7 +1550,9 @@
                 </div>
 
                 <!-- Calendar::Start -->
-                <div
+                <div data-aos="fade-up"
+                data-aos-duration="1200"
+                data-aos-delay="200"
                   class="mt-4 flex w-full flex-col items-center gap-2 font-inter md:h-[450px] md:flex-row xl:gap-0 2xl:h-[570px]"
                 >
                   <!-- calendar-1 -->
@@ -2883,7 +2887,7 @@
                         Calculate
                       </button>
                     </a>
-                    <a href="">
+                    <a href="shopping-cart.html">
                       <button
                         class="text-nowrap rounded-full bg-[#1CA8CB] px-5 py-2 text-sm text-white md:py-2.5 md:text-base"
                       >
@@ -3751,9 +3755,7 @@
 
       // Simulate dynamic prices for the month (from backend)
       const dynamicPrices = {
-        "2024-09-16": 370,
-        "2024-09-17": 370,
-        "2024-10-01": 500,
+       
         "2024-10-02": 350,
         "2024-10-03": 370,
         "2024-10-14": 370,
@@ -3764,6 +3766,9 @@
         "2024-11-03": 370,
         "2024-11-05": 400,
         "2024-11-15": 450,
+        "2024-12-16": 370,
+        "2024-12-17": 370,
+        "2024-11-01": 500,
       };
 
       // Prices for different persons
@@ -3830,11 +3835,11 @@
           selectedStartDate &&
           date.getTime() === selectedStartDate.getTime()
         ) {
-          return "bg-blue-700 text-white"; // Start date
+          return "bg-blue-600 text-white"; // Start date
         }
 
         if (selectedEndDate && date.getTime() === selectedEndDate.getTime()) {
-          return "bg-blue-700 text-white"; // End date
+          return "bg-blue-600 text-white"; // End date
         }
 
         if (
@@ -3843,7 +3848,7 @@
           date > selectedStartDate &&
           date <= selectedEndDate
         ) {
-          return "bg-blue-400 text-white"; // In-between dates
+          return "bg-blue-200 text-white"; // In-between dates
         }
 
         return ""; // Default
@@ -3925,11 +3930,11 @@
         function showPopup(event, price) {
           const personPriceHTML = `
                   <h4 class="font-bold mb-2 ">Price (/Person)</h4>
-                  <table class="text-sm">
-                    <tr><td class="p-2 text-black font-semibold" >Single</td><td>$${personPrices.single}</td></tr>
-                    <tr><td class="p-2 text-black font-semibold" >Double</td><td>$${price}</td></tr>
-                    <tr><td class="p-2 text-black font-semibold" >3rd Person</td><td>$${personPrices.thirdPerson}</td></tr>
-                    <tr><td class="p-2 text-black font-semibold" >4th Person</td><td>$${personPrices.fourthPerson}</td></tr>
+                  <table class="text-sm border border-collapse">
+                    <tr class="border border-collapse"><td class="p-2 text-black font-semibold" >Single</td><td>$${personPrices.single}</td></tr>
+                    <tr class="border border-collapse"><td class="p-2 text-black font-semibold " >Double</td><td>$${price}</td></tr>
+                    <tr class="border border-collapse"><td class="p-2 text-black font-semibold " >3rd Person</td><td>$${personPrices.thirdPerson}</td></tr>
+                    <tr class="border border-collapse"><td class="p-2 text-black font-semibold " >4th Person</td><td class="mr-3" >$${personPrices.fourthPerson}</td></tr>
                   </table>
                 `;
 
@@ -4054,7 +4059,7 @@
           let selectedClass =
             selectedDepartureDate &&
             date.getTime() === selectedDepartureDate.getTime()
-              ? "bg-blue-700 text-white"
+              ? "bg-blue-600 text-white"
               : "";
 
           // Disable past dates and dates without prices
@@ -4155,9 +4160,13 @@
               selectedStartDate = selectedDate;
               selectedEndDate = new Date(selectedStartDate);
 
+              //duration of tour:start
+
               for (let i = 0; i < 3; i++) {
                 selectedEndDate.setDate(selectedEndDate.getDate() + 1);
               }
+              //duration of tour:end
+
 
               // Update the departure calendar based on the selected main calendar date
               selectedDepartureDate = selectedStartDate;

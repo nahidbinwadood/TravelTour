@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="./assets/css/plugins/owl.carousel.min.css" />
     <link rel="stylesheet" href="./assets/css/custom.css" />
     <link rel="stylesheet" href="./assets/css/plugins/aos.css" />
-    <link rel="stylesheet" href="./assets/css/all.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
   </head>
   <body>
     <!-- Header::start -->
@@ -429,10 +429,10 @@
             <div
               class="grid grid-cols-1 gap-6 font-poppins font-normal md:grid-cols-2 lg:grid-cols-6"
             >
-              <div
+              <div  id="departure-container"
                 class="relative flex cursor-pointer items-center justify-between rounded-md border border-[#dadada] px-4 py-2 md:py-3 lg:col-span-3 lg:py-4"
               >
-                <div id="departure-container" class="flex items-center gap-3">
+                <div class="flex items-center gap-3">
                   <div>
                     <svg
                       class="size-5"
@@ -455,7 +455,7 @@
                     </svg>
                   </div>
                   <h4
-                    class="text-[#949494 flex items-center gap-2 text-sm md:text-base"
+                    class="text-[#949494] flex items-center gap-2 text-sm md:text-base"
                   >
                     Departure:
                     <div class="w-fit">
@@ -648,7 +648,7 @@
                       placeholder="Any Day"
                       id="departure--start--date"
                       name="date"
-                      class="departure--start--date-unique max-h-7 w-full p-2 text-black/80 focus:outline-none"
+                      class="departure--start--date-unique placeholder:text-black max-h-7 w-full p-2 text-black/80 focus:outline-none"
                     />
                   </div>
                 </div>
