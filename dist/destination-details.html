@@ -3838,11 +3838,11 @@
           selectedStartDate &&
           date.getTime() === selectedStartDate.getTime()
         ) {
-          return "bg-blue-500 text-white"; // Start date
+          return "bg-primary text-white"; // Start date
         }
 
         if (selectedEndDate && date.getTime() === selectedEndDate.getTime()) {
-          return "bg-blue-500 text-white"; // End date
+          return "bg-primary text-white"; // End date
         }
 
         if (
@@ -3851,7 +3851,7 @@
           date > selectedStartDate &&
           date <= selectedEndDate
         ) {
-          return "bg-blue-200 text-white"; // In-between dates
+          return "bg-primary bg-opacity-55 text-white"; // In-between dates
         }
 
         return ""; // Default
@@ -4062,7 +4062,7 @@
           let selectedClass =
             selectedDepartureDate &&
             date.getTime() === selectedDepartureDate.getTime()
-              ? "bg-blue-500 text-white"
+              ? "bg-primary text-white"
               : "";
 
           // Disable past dates and dates without prices
