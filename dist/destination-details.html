@@ -446,7 +446,9 @@
       <!-- destination details main wrapper -->
       <div class="bg-white py-12 font-poppins 2xl:py-[150px]">
         <div class="container mx-auto px-4 xl:px-8">
-          <div class="grid grid-cols-1 gap-8 xl:grid-cols-12 md:gap-4 2xl:gap-16">
+          <div
+            class="grid grid-cols-1 gap-8 md:gap-4 xl:grid-cols-12 2xl:gap-16"
+          >
             <!-- Left Part::Start -->
 
             <div class="date-range-details xl:col-span-8">
@@ -1547,7 +1549,7 @@
 
                 <!-- Calendar::Start -->
                 <div
-                  class="flex md:h-[450px] 2xl:h-[570px] w-full flex-col items-center gap-2 font-inter md:flex-row xl:gap-0 mt-4  "
+                  class="mt-4 flex w-full flex-col items-center gap-2 font-inter md:h-[450px] md:flex-row xl:gap-0 2xl:h-[570px]"
                 >
                   <!-- calendar-1 -->
                   <div class="h-full w-full px-2 pt-6 xl:w-1/2 2xl:px-8">
@@ -2856,7 +2858,6 @@
                       </div>
                     </div>
                   </div>
-                
                 </div>
                 <div class="w-full bg-[#BBE5F0] px-8 pb-6 pt-6">
                   <!-- total fare -->
@@ -2884,7 +2885,7 @@
                     </a>
                     <a href="">
                       <button
-                        class="rounded-full bg-[#1CA8CB] px-5 py-2 text-sm text-white md:py-2.5 md:text-base text-nowrap"
+                        class="text-nowrap rounded-full bg-[#1CA8CB] px-5 py-2 text-sm text-white md:py-2.5 md:text-base"
                       >
                         Add to Cart
                       </button>
@@ -3750,7 +3751,6 @@
 
       // Simulate dynamic prices for the month (from backend)
       const dynamicPrices = {
-      
         "2024-09-16": 370,
         "2024-09-17": 370,
         "2024-10-01": 500,
@@ -4171,11 +4171,10 @@
             //show input ::start
             document.getElementById("departure--start--date").innerText =
               selectedStartDate.toLocaleDateString();
-          
+
             document.getElementById("departure--end--date").innerText =
               selectedEndDate.toLocaleDateString();
 
-             
             //show input ::end
 
             updateCalendars(); // Re-render the main calendar to show 4 selected days
@@ -4215,10 +4214,7 @@
             document.getElementById("departure--end--date").innerText =
               selectedEndDate.toLocaleDateString();
 
-            
             //show input ::end
-
-             
 
             // Update the first calendar to reflect the selected departure date
             updateCalendars(); // Re-render the first calendar to show 4 selected days
@@ -4230,9 +4226,6 @@
       }
 
       //===========================//
-
-      
- 
     </script>
 
     <script src="./assets/js/jquery.js"></script>

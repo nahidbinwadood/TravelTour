@@ -190,7 +190,6 @@ $(document).ready(function () {
   // select the date of departure:end
 
   //dob:start
- 
 
   //dob:end
 

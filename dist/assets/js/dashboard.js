@@ -135,53 +135,25 @@ document.addEventListener("click", (e) => {
 });
 // Sidebar::End
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Initialize a Flatpickr instance without using an extra input field
-  const datePickerDiv = document.getElementById("dob-show");
-  const dateSpan = document.getElementById("date-of-birth");
-
-  // Initialize Flatpickr on a virtual input
-  const flatpickrInstance = flatpickr(datePickerDiv, {
-    dateFormat: "d-m-Y",
-    defaultDate: "19-08-08", // Initial date
-    clickOpens: false, // Disable default click behavior
-    onReady: function (selectedDates, dateStr) {
-      // Display initial date in the div
-      dateSpan.textContent = dateStr || "19-08-08";
-    },
-    onChange: function (selectedDates, dateStr) {
-      // Update the div with the selected date
-      dateSpan.textContent = dateStr;
-    },
-  });
-
-  // Add click event listener to open the Flatpickr calendar
-  datePickerDiv.addEventListener("click", function () {
-    flatpickrInstance.open();
-  });
-});
-
 // Dashboard::End
 
-
-
-
-
-
 // dob:start
-
-// Select the DOB container and related elements
 const dobContainer = document.getElementById("dob-show-container");
 const dobInput = document.getElementById("dob-input");
 const dobCalendar = document.getElementById("dob-date-show-calendar");
 const dobCalendarDays = document.getElementById("dobCalendarDays");
 const monthLabelDOBCalendar = document.getElementById("monthLabelDOBCalendar");
+const yearLabel = document.getElementById("yearLabel");
 const prevButtonDOBCalendar = document.getElementById("prevButtonDOBCalendar");
 const nextButtonDOBCalendar = document.getElementById("nextButtonDOBCalendar");
 
+const yearSelection = document.getElementById("yearSelection");
+
 let currentMonthDOB = new Date().getMonth();
-let currentYearDOB = new Date().getFullYear();
+let currentYearDOB = 2024; // Default year to 2024
 let selectedDateDOB = null;
+let yearRangeStart = 1900; // Starting year
+let yearRangeEnd = 2035; // Ending year (can be extended)
 
 // Function to show the calendar
 function showDOBCalendar() {
@@ -195,6 +167,71 @@ function hideDOBCalendar() {
   dobCalendar.classList.remove("opacity-100", "z-20", "translate-y-0");
 }
 
+// Function to hide the year selection
+function hideYearSelection() {
+  yearSelection.classList.add("opacity-0", "pointer-events-none");
+  yearSelection.classList.remove("opacity-100", "z-50");
+}
+
+// Toggle the year selection dropdown
+function toggleYearSelection() {
+  yearSelection.innerHTML = ""; // Clear previous content
+
+  // Match the width of yearSelection with dobCalendar
+  yearSelection.style.width = dobCalendar.offsetWidth + "px";
+
+  // Dynamically generate year grid in a 4-column layout
+  for (let year = yearRangeStart; year <= yearRangeEnd; year++) {
+    const yearOption = document.createElement("div");
+    yearOption.classList.add(
+      "year-option",
+      "cursor-pointer",
+      "p-2",
+      "text-center",
+      "hover:bg-gray-200",
+      "rounded"
+    );
+    yearOption.textContent = year;
+
+    // Highlight the current year (2024 by default)
+    if (year === currentYearDOB) {
+      yearOption.classList.add("bg-blue-500", "text-white");
+      yearOption.setAttribute("id", "currentYear");
+    }
+
+    yearOption.onclick = function () {
+      selectYear(year);
+    };
+    yearSelection.appendChild(yearOption);
+  }
+
+  // Set z-index higher when year selection is visible
+  yearSelection.style.zIndex = 50;
+
+  // Scroll to the year 2024
+  const currentYearElement = document.getElementById("currentYear");
+
+  if (currentYearElement) {
+    // Scroll to 2024 by default
+    currentYearElement.scrollIntoView({
+      block: 'center',
+      behavior: 'smooth'
+    });
+  }
+
+  // Show/hide the year selection
+  yearSelection.classList.toggle("opacity-0");
+  yearSelection.classList.toggle("pointer-events-none");
+}
+
+// Select a year
+function selectYear(year) {
+  currentYearDOB = year; // Update the selected year
+  yearLabel.textContent = year; // Update year label
+  hideYearSelection(); // Hide year selection grid
+  renderDOBCalendar(currentMonthDOB, currentYearDOB); // Update calendar with new year
+}
+
 // Render the calendar for DOB
 function renderDOBCalendar(month, year) {
   if (dobCalendarDays) {
@@ -204,15 +241,14 @@ function renderDOBCalendar(month, year) {
   const firstDay = new Date(year, month).getDay();
   const daysInMonth = 32 - new Date(year, month, 32).getDate();
 
-  // Update the month label
+  // Update the month and year label
   if (monthLabelDOBCalendar) {
-    monthLabelDOBCalendar.textContent = new Date(year, month).toLocaleString(
-      "default",
-      { month: "long" }
-    ) + ` ${year}`;
+    monthLabelDOBCalendar.textContent =
+      new Date(year, month).toLocaleString("default", { month: "long" }) +
+      ` ${year}`;
   }
 
-  // Add empty spaces for the first days
+  // Add empty spaces for the first days of the week
   for (let i = 0; i < firstDay; i++) {
     const emptyDay = document.createElement("div");
     dobCalendarDays.appendChild(emptyDay);
@@ -243,12 +279,11 @@ function renderDOBCalendar(month, year) {
     }
 
     dayElement.addEventListener("click", function (event) {
-      event.stopPropagation(); // Ensure this click doesn't trigger document click listener
+      event.stopPropagation(); // Prevent document click listener from firing
       // Clear previous selection
       if (selectedDateDOB) {
-        const previousSelectedDay = dobCalendarDays.querySelector(
-          ".bg-blue-400"
-        );
+        const previousSelectedDay =
+          dobCalendarDays.querySelector(".bg-blue-400");
         if (previousSelectedDay) {
           previousSelectedDay.classList.remove("bg-blue-400", "text-white");
         }
@@ -261,6 +296,7 @@ function renderDOBCalendar(month, year) {
 
       // Hide the calendar after selection
       hideDOBCalendar();
+      hideYearSelection(); // Also hide the year selection if it is open
     });
 
     if (dobCalendarDays) {
@@ -294,17 +330,20 @@ dobContainer?.addEventListener("click", (event) => {
   showDOBCalendar();
 });
 
-// Hide the calendar when clicking outside
+// Hide both the calendar and the year selection when clicking outside
 document.addEventListener("click", (event) => {
   if (
     !dobContainer.contains(event.target) &&
-    !dobCalendar.contains(event.target)
+    !dobCalendar.contains(event.target) &&
+    !yearSelection.contains(event.target)
   ) {
     hideDOBCalendar();
+    hideYearSelection();
   }
 });
 
 // Initial render for the current month/year
 renderDOBCalendar(currentMonthDOB, currentYearDOB);
+
 
 // dob:end
