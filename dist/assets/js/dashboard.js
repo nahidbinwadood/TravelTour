@@ -189,7 +189,7 @@ function toggleYearSelection() {
       "p-2",
       "text-center",
       "hover:bg-gray-200",
-      "rounded"
+      "rounded",
     );
     yearOption.textContent = year;
 
@@ -214,8 +214,8 @@ function toggleYearSelection() {
   if (currentYearElement) {
     // Scroll to 2024 by default
     currentYearElement.scrollIntoView({
-      block: 'center',
-      behavior: 'smooth'
+      block: "center",
+      behavior: "smooth",
     });
   }
 
@@ -265,7 +265,7 @@ function renderDOBCalendar(month, year) {
       "justify-center",
       "size-10",
       "rounded-xl",
-      "hover:bg-gray-300"
+      "hover:bg-gray-300",
     );
 
     // Highlight the selected day
@@ -344,6 +344,5 @@ document.addEventListener("click", (event) => {
 
 // Initial render for the current month/year
 renderDOBCalendar(currentMonthDOB, currentYearDOB);
-
 
 // dob:end

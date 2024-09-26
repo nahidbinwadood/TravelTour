@@ -992,7 +992,7 @@ $(document).ready(function () {
           </div>
         </div>
       </div>`;
-  } 
+  }
 
   function renderRoomContainer(number) {
     roomDetailsContainer.html("");
@@ -1045,12 +1045,12 @@ $(document).ready(function () {
   //===================//
 
   // cart:start
-  const cartCardHeadings=document.querySelectorAll(".header-card-title")
-  cartCardHeadings?.forEach((cartHeading)=>{
-    if(cartHeading.textContent.length>60){
-      cartHeading.textContent=cartHeading?.textContent.slice(0,60)+"..."
+  const cartCardHeadings = document.querySelectorAll(".header-card-title");
+  cartCardHeadings?.forEach((cartHeading) => {
+    if (cartHeading.textContent.length > 60) {
+      cartHeading.textContent = cartHeading?.textContent.slice(0, 60) + "...";
     }
-  })
+  });
   // cart:end
 });
 

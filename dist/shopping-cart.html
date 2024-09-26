@@ -377,16 +377,18 @@
       <section
         class="container mx-auto my-8 font-poppins md:my-14 lg:my-16 xl:my-20"
       >
-        <div class="flex flex-col md:flex-row gap-5 w-full md:items-center justify-between text-textColor">
+        <div
+          class="flex w-full flex-col justify-between gap-5 text-textColor md:flex-row md:items-center"
+        >
           <h2 class="font-inter font-medium text-black md:text-2xl lg:text-3xl">
             Your Shopping Cart
           </h2>
           <div>
             <button
-            class="rounded-lg md:rounded-xl border border-[#090909] px-6 py-2 text-sm md:text-base md:px-8 md:py-3 lg:text-lg text-[#090909]"
-          >
-            Continue Shopping
-          </button>
+              class="rounded-lg border border-[#090909] px-6 py-2 text-sm text-[#090909] md:rounded-xl md:px-8 md:py-3 md:text-base lg:text-lg"
+            >
+              Continue Shopping
+            </button>
           </div>
         </div>
       </section>
@@ -397,15 +399,20 @@
         <!-- cart:start -->
         <div class="space-y-6">
           <!-- cart-1 -->
-          <div class="rounded-xl border border-primary px-5 py-6 lg:px-12 lg:py-10">
+          <div
+            class="rounded-xl border border-primary px-5 py-6 lg:px-12 lg:py-10"
+          >
             <!-- cart header:start -->
             <div class="flex w-full items-center justify-between">
-              <h3 class="font-inter text-sm md:text-base lg:text-xl font-medium text-black w-[80%]">
+              <h3
+                class="w-[80%] font-inter text-sm font-medium text-black md:text-base lg:text-xl"
+              >
                 5-Day US East Coast Discovery Deluxe Tour from Boston - 072-475
               </h3>
               <!-- close btn:start -->
               <div id="cart-close-btn" class="cursor-pointer">
-                <svg class="size-8 md:size-12 lg:size-auto"
+                <svg
+                  class="size-8 md:size-12 lg:size-auto"
                   xmlns="http://www.w3.org/2000/svg"
                   width="50"
                   height="50"
@@ -433,9 +440,15 @@
             <!-- cart header:end -->
 
             <!-- cart body:start -->
-            <div class="cart-body mt-4 md:mt-5 lg:mt-8 xl:mt-12 flex flex-col sm:flex-row gap-5 justify-between font-poppins">
-              <div class="flex flex-col md:flex-row gap-3 md:gap-7 lg:gap-10 xl:gap-12">
-                <div class="h-[170px] w-full md:w-[250px] overflow-hidden rounded-md">
+            <div
+              class="cart-body mt-4 flex flex-col justify-between gap-5 font-poppins sm:flex-row md:mt-5 lg:mt-8 xl:mt-12"
+            >
+              <div
+                class="flex flex-col gap-3 md:flex-row md:gap-7 lg:gap-10 xl:gap-12"
+              >
+                <div
+                  class="h-[170px] w-full overflow-hidden rounded-md md:w-[250px]"
+                >
                   <img
                     class="h-full w-full object-cover"
                     src="./assets/img/cart/cart.png"
@@ -444,30 +457,49 @@
                 </div>
                 <div class="space-y-2 md:space-y-4">
                   <div>
-                    <p class="text-sm md:text-base lg:text-lg font-medium text-black">
+                    <p
+                      class="text-sm font-medium text-black md:text-base lg:text-lg"
+                    >
                       Date :
-                      <span class="md:ml-2 text-sm md:text-base font-normal text-[#404A60]">
+                      <span
+                        class="text-sm font-normal text-[#404A60] md:ml-2 md:text-base"
+                      >
                         24-09-2024</span
                       >
                     </p>
                   </div>
                   <div>
-                    <p class="text-sm md:text-base lg:text-lg font-medium text-black">
+                    <p
+                      class="text-sm font-medium text-black md:text-base lg:text-lg"
+                    >
                       Departure :
-                      <span class="md:ml-2 text-sm md:text-base font-normal text-[#404A60]">
+                      <span
+                        class="text-sm font-normal text-[#404A60] md:ml-2 md:text-base"
+                      >
                         10:30am 255 State St - Boston, MA</span
                       >
                     </p>
                   </div>
                   <div>
-                    <div class="flex flex-wrap md:flex-row md:items-center gap-3">
-                      <h4 class="text-sm md:text-base lg:text-lg font-medium text-black">Room 1:</h4>
-                      <div class="flex flex-wrap md:items-center gap-3 md:gap-5">
+                    <div
+                      class="flex flex-wrap gap-3 md:flex-row md:items-center"
+                    >
+                      <h4
+                        class="text-sm font-medium text-black md:text-base lg:text-lg"
+                      >
+                        Room 1:
+                      </h4>
+                      <div
+                        class="flex flex-wrap gap-3 md:items-center md:gap-5"
+                      >
                         <div class="flex items-center gap-2">
-                          <span class="font-medium text-black text-xs md:text-sm lg:text-base"
-                            ><span class=" text-secondary">*</span>Adult</span
+                          <span
+                            class="text-xs font-medium text-black md:text-sm lg:text-base"
+                            ><span class="text-secondary">*</span>Adult</span
                           >
-                          <select class="adult-select text-[#404A60] text-xs md:text-sm lg:text-base">
+                          <select
+                            class="adult-select text-xs text-[#404A60] md:text-sm lg:text-base"
+                          >
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2" selected>2</option>
@@ -475,7 +507,9 @@
                             <option value="4">4</option>
                           </select>
                         </div>
-                        <div class="flex items-center gap-2 text-xs md:text-sm lg:text-base">
+                        <div
+                          class="flex items-center gap-2 text-xs md:text-sm lg:text-base"
+                        >
                           <span class="font-medium text-black"
                             ><span class="text-secondary">*</span>Child</span
                           >
@@ -491,22 +525,31 @@
                 </div>
               </div>
               <div>
-                <p class="text-sm md:text-base lg:text-xl font-medium text-secondary w-full">$429</p>
+                <p
+                  class="w-full text-sm font-medium text-secondary md:text-base lg:text-xl"
+                >
+                  $429
+                </p>
               </div>
             </div>
             <!-- cart body:end -->
           </div>
 
           <!-- cart-2 -->
-          <div class="rounded-xl border border-primary px-5 py-6 lg:px-12 lg:py-10">
+          <div
+            class="rounded-xl border border-primary px-5 py-6 lg:px-12 lg:py-10"
+          >
             <!-- cart header:start -->
             <div class="flex w-full items-center justify-between">
-              <h3 class="font-inter text-sm md:text-base lg:text-xl font-medium text-black w-[80%]">
+              <h3
+                class="w-[80%] font-inter text-sm font-medium text-black md:text-base lg:text-xl"
+              >
                 5-Day US East Coast Discovery Deluxe Tour from Boston - 072-475
               </h3>
               <!-- close btn:start -->
               <div id="cart-close-btn" class="cursor-pointer">
-                <svg class="size-8 md:size-12 lg:size-auto"
+                <svg
+                  class="size-8 md:size-12 lg:size-auto"
                   xmlns="http://www.w3.org/2000/svg"
                   width="50"
                   height="50"
@@ -534,9 +577,15 @@
             <!-- cart header:end -->
 
             <!-- cart body:start -->
-            <div class="cart-body mt-4 md:mt-5 lg:mt-8 xl:mt-12 flex flex-col sm:flex-row gap-5 justify-between font-poppins">
-              <div class="flex flex-col md:flex-row gap-3 md:gap-7 lg:gap-10 xl:gap-12">
-                <div class="h-[170px] w-full md:w-[250px] overflow-hidden rounded-md">
+            <div
+              class="cart-body mt-4 flex flex-col justify-between gap-5 font-poppins sm:flex-row md:mt-5 lg:mt-8 xl:mt-12"
+            >
+              <div
+                class="flex flex-col gap-3 md:flex-row md:gap-7 lg:gap-10 xl:gap-12"
+              >
+                <div
+                  class="h-[170px] w-full overflow-hidden rounded-md md:w-[250px]"
+                >
                   <img
                     class="h-full w-full object-cover"
                     src="./assets/img/cart/cart.png"
@@ -545,30 +594,49 @@
                 </div>
                 <div class="space-y-2 md:space-y-4">
                   <div>
-                    <p class="text-sm md:text-base lg:text-lg font-medium text-black">
+                    <p
+                      class="text-sm font-medium text-black md:text-base lg:text-lg"
+                    >
                       Date :
-                      <span class="md:ml-2 text-sm md:text-base font-normal text-[#404A60]">
+                      <span
+                        class="text-sm font-normal text-[#404A60] md:ml-2 md:text-base"
+                      >
                         24-09-2024</span
                       >
                     </p>
                   </div>
                   <div>
-                    <p class="text-sm md:text-base lg:text-lg font-medium text-black">
+                    <p
+                      class="text-sm font-medium text-black md:text-base lg:text-lg"
+                    >
                       Departure :
-                      <span class="md:ml-2 text-sm md:text-base font-normal text-[#404A60]">
+                      <span
+                        class="text-sm font-normal text-[#404A60] md:ml-2 md:text-base"
+                      >
                         10:30am 255 State St - Boston, MA</span
                       >
                     </p>
                   </div>
                   <div>
-                    <div class="flex flex-wrap md:flex-row md:items-center gap-3">
-                      <h4 class="text-sm md:text-base lg:text-lg font-medium text-black">Room 1:</h4>
-                      <div class="flex flex-wrap md:items-center gap-3 md:gap-5">
+                    <div
+                      class="flex flex-wrap gap-3 md:flex-row md:items-center"
+                    >
+                      <h4
+                        class="text-sm font-medium text-black md:text-base lg:text-lg"
+                      >
+                        Room 1:
+                      </h4>
+                      <div
+                        class="flex flex-wrap gap-3 md:items-center md:gap-5"
+                      >
                         <div class="flex items-center gap-2">
-                          <span class="font-medium text-black text-xs md:text-sm lg:text-base"
-                            ><span class=" text-secondary">*</span>Adult</span
+                          <span
+                            class="text-xs font-medium text-black md:text-sm lg:text-base"
+                            ><span class="text-secondary">*</span>Adult</span
                           >
-                          <select class="adult-select text-[#404A60] text-xs md:text-sm lg:text-base">
+                          <select
+                            class="adult-select text-xs text-[#404A60] md:text-sm lg:text-base"
+                          >
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2" selected>2</option>
@@ -576,7 +644,9 @@
                             <option value="4">4</option>
                           </select>
                         </div>
-                        <div class="flex items-center gap-2 text-xs md:text-sm lg:text-base">
+                        <div
+                          class="flex items-center gap-2 text-xs md:text-sm lg:text-base"
+                        >
                           <span class="font-medium text-black"
                             ><span class="text-secondary">*</span>Child</span
                           >
@@ -592,22 +662,31 @@
                 </div>
               </div>
               <div>
-                <p class="text-sm md:text-base lg:text-xl font-medium text-secondary w-full">$429</p>
+                <p
+                  class="w-full text-sm font-medium text-secondary md:text-base lg:text-xl"
+                >
+                  $429
+                </p>
               </div>
             </div>
             <!-- cart body:end -->
           </div>
 
           <!-- cart-3 -->
-          <div class="rounded-xl border border-primary px-5 py-6 lg:px-12 lg:py-10">
+          <div
+            class="rounded-xl border border-primary px-5 py-6 lg:px-12 lg:py-10"
+          >
             <!-- cart header:start -->
             <div class="flex w-full items-center justify-between">
-              <h3 class="font-inter text-sm md:text-base lg:text-xl font-medium text-black w-[80%]">
+              <h3
+                class="w-[80%] font-inter text-sm font-medium text-black md:text-base lg:text-xl"
+              >
                 5-Day US East Coast Discovery Deluxe Tour from Boston - 072-475
               </h3>
               <!-- close btn:start -->
               <div id="cart-close-btn" class="cursor-pointer">
-                <svg class="size-8 md:size-12 lg:size-auto"
+                <svg
+                  class="size-8 md:size-12 lg:size-auto"
                   xmlns="http://www.w3.org/2000/svg"
                   width="50"
                   height="50"
@@ -635,9 +714,15 @@
             <!-- cart header:end -->
 
             <!-- cart body:start -->
-            <div class="cart-body mt-4 md:mt-5 lg:mt-8 xl:mt-12 flex flex-col sm:flex-row gap-5 justify-between font-poppins">
-              <div class="flex flex-col md:flex-row gap-3 md:gap-7 lg:gap-10 xl:gap-12">
-                <div class="h-[170px] w-full md:w-[250px] overflow-hidden rounded-md">
+            <div
+              class="cart-body mt-4 flex flex-col justify-between gap-5 font-poppins sm:flex-row md:mt-5 lg:mt-8 xl:mt-12"
+            >
+              <div
+                class="flex flex-col gap-3 md:flex-row md:gap-7 lg:gap-10 xl:gap-12"
+              >
+                <div
+                  class="h-[170px] w-full overflow-hidden rounded-md md:w-[250px]"
+                >
                   <img
                     class="h-full w-full object-cover"
                     src="./assets/img/cart/cart.png"
@@ -646,30 +731,49 @@
                 </div>
                 <div class="space-y-2 md:space-y-4">
                   <div>
-                    <p class="text-sm md:text-base lg:text-lg font-medium text-black">
+                    <p
+                      class="text-sm font-medium text-black md:text-base lg:text-lg"
+                    >
                       Date :
-                      <span class="md:ml-2 text-sm md:text-base font-normal text-[#404A60]">
+                      <span
+                        class="text-sm font-normal text-[#404A60] md:ml-2 md:text-base"
+                      >
                         24-09-2024</span
                       >
                     </p>
                   </div>
                   <div>
-                    <p class="text-sm md:text-base lg:text-lg font-medium text-black">
+                    <p
+                      class="text-sm font-medium text-black md:text-base lg:text-lg"
+                    >
                       Departure :
-                      <span class="md:ml-2 text-sm md:text-base font-normal text-[#404A60]">
+                      <span
+                        class="text-sm font-normal text-[#404A60] md:ml-2 md:text-base"
+                      >
                         10:30am 255 State St - Boston, MA</span
                       >
                     </p>
                   </div>
                   <div>
-                    <div class="flex flex-wrap md:flex-row md:items-center gap-3">
-                      <h4 class="text-sm md:text-base lg:text-lg font-medium text-black">Room 1:</h4>
-                      <div class="flex flex-wrap md:items-center gap-3 md:gap-5">
+                    <div
+                      class="flex flex-wrap gap-3 md:flex-row md:items-center"
+                    >
+                      <h4
+                        class="text-sm font-medium text-black md:text-base lg:text-lg"
+                      >
+                        Room 1:
+                      </h4>
+                      <div
+                        class="flex flex-wrap gap-3 md:items-center md:gap-5"
+                      >
                         <div class="flex items-center gap-2">
-                          <span class="font-medium text-black text-xs md:text-sm lg:text-base"
-                            ><span class=" text-secondary">*</span>Adult</span
+                          <span
+                            class="text-xs font-medium text-black md:text-sm lg:text-base"
+                            ><span class="text-secondary">*</span>Adult</span
                           >
-                          <select class="adult-select text-[#404A60] text-xs md:text-sm lg:text-base">
+                          <select
+                            class="adult-select text-xs text-[#404A60] md:text-sm lg:text-base"
+                          >
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2" selected>2</option>
@@ -677,7 +781,9 @@
                             <option value="4">4</option>
                           </select>
                         </div>
-                        <div class="flex items-center gap-2 text-xs md:text-sm lg:text-base">
+                        <div
+                          class="flex items-center gap-2 text-xs md:text-sm lg:text-base"
+                        >
                           <span class="font-medium text-black"
                             ><span class="text-secondary">*</span>Child</span
                           >
@@ -693,22 +799,31 @@
                 </div>
               </div>
               <div>
-                <p class="text-sm md:text-base lg:text-xl font-medium text-secondary w-full">$429</p>
+                <p
+                  class="w-full text-sm font-medium text-secondary md:text-base lg:text-xl"
+                >
+                  $429
+                </p>
               </div>
             </div>
             <!-- cart body:end -->
           </div>
 
           <!-- cart-4 -->
-          <div class="rounded-xl border border-primary px-5 py-6 lg:px-12 lg:py-10">
+          <div
+            class="rounded-xl border border-primary px-5 py-6 lg:px-12 lg:py-10"
+          >
             <!-- cart header:start -->
             <div class="flex w-full items-center justify-between">
-              <h3 class="font-inter text-sm md:text-base lg:text-xl font-medium text-black w-[80%]">
+              <h3
+                class="w-[80%] font-inter text-sm font-medium text-black md:text-base lg:text-xl"
+              >
                 5-Day US East Coast Discovery Deluxe Tour from Boston - 072-475
               </h3>
               <!-- close btn:start -->
               <div id="cart-close-btn" class="cursor-pointer">
-                <svg class="size-8 md:size-12 lg:size-auto"
+                <svg
+                  class="size-8 md:size-12 lg:size-auto"
                   xmlns="http://www.w3.org/2000/svg"
                   width="50"
                   height="50"
@@ -736,9 +851,15 @@
             <!-- cart header:end -->
 
             <!-- cart body:start -->
-            <div class="cart-body mt-4 md:mt-5 lg:mt-8 xl:mt-12 flex flex-col sm:flex-row gap-5 justify-between font-poppins">
-              <div class="flex flex-col md:flex-row gap-3 md:gap-7 lg:gap-10 xl:gap-12">
-                <div class="h-[170px] w-full md:w-[250px] overflow-hidden rounded-md">
+            <div
+              class="cart-body mt-4 flex flex-col justify-between gap-5 font-poppins sm:flex-row md:mt-5 lg:mt-8 xl:mt-12"
+            >
+              <div
+                class="flex flex-col gap-3 md:flex-row md:gap-7 lg:gap-10 xl:gap-12"
+              >
+                <div
+                  class="h-[170px] w-full overflow-hidden rounded-md md:w-[250px]"
+                >
                   <img
                     class="h-full w-full object-cover"
                     src="./assets/img/cart/cart.png"
@@ -747,30 +868,49 @@
                 </div>
                 <div class="space-y-2 md:space-y-4">
                   <div>
-                    <p class="text-sm md:text-base lg:text-lg font-medium text-black">
+                    <p
+                      class="text-sm font-medium text-black md:text-base lg:text-lg"
+                    >
                       Date :
-                      <span class="md:ml-2 text-sm md:text-base font-normal text-[#404A60]">
+                      <span
+                        class="text-sm font-normal text-[#404A60] md:ml-2 md:text-base"
+                      >
                         24-09-2024</span
                       >
                     </p>
                   </div>
                   <div>
-                    <p class="text-sm md:text-base lg:text-lg font-medium text-black">
+                    <p
+                      class="text-sm font-medium text-black md:text-base lg:text-lg"
+                    >
                       Departure :
-                      <span class="md:ml-2 text-sm md:text-base font-normal text-[#404A60]">
+                      <span
+                        class="text-sm font-normal text-[#404A60] md:ml-2 md:text-base"
+                      >
                         10:30am 255 State St - Boston, MA</span
                       >
                     </p>
                   </div>
                   <div>
-                    <div class="flex flex-wrap md:flex-row md:items-center gap-3">
-                      <h4 class="text-sm md:text-base lg:text-lg font-medium text-black">Room 1:</h4>
-                      <div class="flex flex-wrap md:items-center gap-3 md:gap-5">
+                    <div
+                      class="flex flex-wrap gap-3 md:flex-row md:items-center"
+                    >
+                      <h4
+                        class="text-sm font-medium text-black md:text-base lg:text-lg"
+                      >
+                        Room 1:
+                      </h4>
+                      <div
+                        class="flex flex-wrap gap-3 md:items-center md:gap-5"
+                      >
                         <div class="flex items-center gap-2">
-                          <span class="font-medium text-black text-xs md:text-sm lg:text-base"
-                            ><span class=" text-secondary">*</span>Adult</span
+                          <span
+                            class="text-xs font-medium text-black md:text-sm lg:text-base"
+                            ><span class="text-secondary">*</span>Adult</span
                           >
-                          <select class="adult-select text-[#404A60] text-xs md:text-sm lg:text-base">
+                          <select
+                            class="adult-select text-xs text-[#404A60] md:text-sm lg:text-base"
+                          >
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2" selected>2</option>
@@ -778,7 +918,9 @@
                             <option value="4">4</option>
                           </select>
                         </div>
-                        <div class="flex items-center gap-2 text-xs md:text-sm lg:text-base">
+                        <div
+                          class="flex items-center gap-2 text-xs md:text-sm lg:text-base"
+                        >
                           <span class="font-medium text-black"
                             ><span class="text-secondary">*</span>Child</span
                           >
@@ -794,7 +936,11 @@
                 </div>
               </div>
               <div>
-                <p class="text-sm md:text-base lg:text-xl font-medium text-secondary w-full">$429</p>
+                <p
+                  class="w-full text-sm font-medium text-secondary md:text-base lg:text-xl"
+                >
+                  $429
+                </p>
               </div>
             </div>
             <!-- cart body:end -->
@@ -805,14 +951,18 @@
       <!-- Cart Container:End -->
 
       <!-- confirm:start -->
-      <div class="container mx-auto flex w-full justify-end pb-4 md:pb-6 lg:pb-8 xl:pb-12 font-poppins">
+      <div
+        class="container mx-auto flex w-full justify-end pb-4 font-poppins md:pb-6 lg:pb-8 xl:pb-12"
+      >
         <div>
-          <p class="mb-5 md:mb-7 lg:mb-10 xl:mb-12 w-full text-end text-sm md:text-base lg:text-lg font-medium">
+          <p
+            class="mb-5 w-full text-end text-sm font-medium md:mb-7 md:text-base lg:mb-10 lg:text-lg xl:mb-12"
+          >
             Total: <span class="text-secondary">$700</span>
           </p>
           <a
             href="checkout.html"
-            class="block rounded-md text-sm md:text-base lg:rounded-lg border border-secondary bg-secondary px-6 py-2 lg:px-8 lg:py-4 text-white transition-all duration-500 hover:bg-transparent hover:text-secondary"
+            class="block rounded-md border border-secondary bg-secondary px-6 py-2 text-sm text-white transition-all duration-500 hover:bg-transparent hover:text-secondary md:text-base lg:rounded-lg lg:px-8 lg:py-4"
           >
             Proceed to Checkout
           </a>
@@ -822,7 +972,7 @@
 
       <!-- cards:start -->
       <div
-        class="container mx-auto grid grid-cols-1 sm:grid-cols-2 justify-center gap-5 py-6 md:py-8 lg:py-12 2xl:py-20 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
+        class="container mx-auto grid grid-cols-1 justify-center gap-5 py-6 sm:grid-cols-2 md:grid-cols-3 md:py-8 lg:py-12 xl:grid-cols-4 2xl:grid-cols-5 2xl:py-20"
       >
         <a
           class="cursor-pointer overflow-hidden rounded-xl bg-white shadow-lg duration-500 hover:shadow-2xl md:rounded-2xl"
@@ -835,7 +985,9 @@
               alt=""
             />
           </div>
-          <div class="mt-3 space-y-4 px-4 py-3 text-sm md:text-base font-poppins">
+          <div
+            class="mt-3 space-y-4 px-4 py-3 font-poppins text-sm md:text-base"
+          >
             <h4 class="header-card-title">
               4-Day East Coast New York Washington DC Coast New York Washington
               DC
@@ -855,7 +1007,9 @@
               alt=""
             />
           </div>
-          <div class="mt-3 space-y-4 px-4 py-3 text-sm md:text-base font-poppins">
+          <div
+            class="mt-3 space-y-4 px-4 py-3 font-poppins text-sm md:text-base"
+          >
             <h4 class="header-card-title">
               4-Day East Coast New York Washington DC Coast New York Washington
               DC
@@ -875,7 +1029,9 @@
               alt=""
             />
           </div>
-          <div class="mt-3 space-y-4 px-4 py-3 text-sm md:text-base font-poppins">
+          <div
+            class="mt-3 space-y-4 px-4 py-3 font-poppins text-sm md:text-base"
+          >
             <h4 class="header-card-title">
               4-Day East Coast New York Washington DC Coast New York Washington
               DC
@@ -895,7 +1051,9 @@
               alt=""
             />
           </div>
-          <div class="mt-3 space-y-4 px-4 py-3 text-sm md:text-base font-poppins">
+          <div
+            class="mt-3 space-y-4 px-4 py-3 font-poppins text-sm md:text-base"
+          >
             <h4 class="header-card-title">
               4-Day East Coast New York Washington DC Coast New York Washington
               DC
@@ -915,7 +1073,9 @@
               alt=""
             />
           </div>
-          <div class="mt-3 space-y-4 px-4 py-3 text-sm md:text-base font-poppins">
+          <div
+            class="mt-3 space-y-4 px-4 py-3 font-poppins text-sm md:text-base"
+          >
             <h4 class="header-card-title">
               4-Day East Coast New York Washington DC Coast New York Washington
               DC
@@ -923,9 +1083,6 @@
             <p class="font-medium text-secondary">$299</p>
           </div>
         </a>
-
-        
-         
       </div>
       <!-- cards:end -->
     </main>
