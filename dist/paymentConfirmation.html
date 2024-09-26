@@ -67,6 +67,14 @@
 
           <!-- NavLinks with button::start -->
           <div class="hidden items-center gap-5 font-inter xl:flex 2xl:text-lg">
+            <a href="#" class="transition duration-300 hover:text-primary"
+              >Track Order</a
+            >
+            <a
+              href="shopping-cart.html"
+              class="transition duration-300 hover:text-primary"
+              >Cart</a
+            >
             <a
               href="login.html"
               class="hidden rounded-md bg-primary px-12 py-3 text-white transition-all duration-300 hover:scale-105"
@@ -342,7 +350,19 @@
 
               <!-- Horizontal Line ::start -->
               <div class="my-4 mr-8 border bg-gray-200"></div>
+              <div class="flex flex-col gap-4">
+                <a href="#" class="transition duration-300 hover:text-primary"
+                  >Track Order</a
+                >
+                <a
+                  href="shopping-cart.html"
+                  class="transition duration-300 hover:text-primary"
+                  >Cart</a
+                >
+              </div>
+              <div class="my-4 mr-8 border bg-gray-200"></div>
               <!-- Horizontal Line ::end -->
+               
               <div class="mt-4 flex flex-col justify-center gap-4">
                 <div class="flex flex-col gap-4">
                   <a href="./dashboard/mybooking.html">My Bookings</a>
@@ -410,14 +430,20 @@
 
       <!-- Checkout Form::Start -->
       <section class="container mx-auto mb-12 font-poppins md:mb-20 lg:mb-28">
-        <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-12 gap-6 xl:gap-16">
+        <div
+          class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:gap-16 2xl:grid-cols-12"
+        >
           <!-- payment form:start -->
-          <div class="2xl:col-span-8 rounded-xl border border-black/10 px-5 py-4 md:px-7 md:py-8 2xl:px-14 2xl:py-16">
+          <div
+            class="rounded-xl border border-black/10 px-5 py-4 md:px-7 md:py-8 2xl:col-span-8 2xl:px-14 2xl:py-16"
+          >
             <!-- title -->
-            <div class="flex flex-col 2xl::flex-row items-center lg:gap-5 xl:gap-0 2xl:gap-10">
+            <div
+              class="2xl::flex-row flex flex-col items-center lg:gap-5 xl:gap-0 2xl:gap-10"
+            >
               <div>
                 <svg
-                class="size-16 md:size-20 xl:size-24 2xl:size-auto"
+                  class="size-16 md:size-20 xl:size-24 2xl:size-auto"
                   xmlns="http://www.w3.org/2000/svg"
                   width="129"
                   height="54"
@@ -440,7 +466,9 @@
                 </svg>
               </div>
               <div>
-                <h2 class="text-nowrap text-lg md:text-xl lg:text-2xl 2xl:text-3xl font-bold text-textColor">
+                <h2
+                  class="text-nowrap text-lg font-bold text-textColor md:text-xl lg:text-2xl 2xl:text-3xl"
+                >
                   Stripe Pay Secure Payment
                 </h2>
               </div>
@@ -450,21 +478,22 @@
             <form action="" class="mt-5 md:mt-6 lg:mt-12 xl:mt-16 2xl:mt-20">
               <div class="space-y-4 lg:space-y-8 2xl:space-y-10">
                 <div>
-                  <label class="text-sm md:text-base lg:text-xl font-medium text-textColor"
+                  <label
+                    class="text-sm font-medium text-textColor md:text-base lg:text-xl"
                     >Card Holder Name</label
                   >
                   <div
-                    class="mt-2 md:mt-4 px-5 py-3 flex items-center justify-between rounded-md md:rounded-lg border border-black/10 xl:px-10 xl:py-5"
+                    class="mt-2 flex items-center justify-between rounded-md border border-black/10 px-5 py-3 md:mt-4 md:rounded-lg xl:px-10 xl:py-5"
                   >
                     <input
                       placeholder="Card Holder Name"
                       type="text"
                       name=""
                       id=""
-                      class="w-full focus:outline-none text-sm md:text-base"
+                      class="w-full text-sm focus:outline-none md:text-base"
                     />
                     <svg
-                    class="size-5 md:size-auto"
+                      class="size-5 md:size-auto"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -493,11 +522,11 @@
                 <div>
                   <label
                     for="card-number"
-                    class="text-sm md:text-base lg:text-xl font-medium text-textColor"
+                    class="text-sm font-medium text-textColor md:text-base lg:text-xl"
                     >Card Number</label
                   >
                   <div
-                    class="mt-2 md:mt-4 flex text-sm md:text-base items-center justify-between gap-5 rounded-md md:rounded-lg border border-black/10 pl-4 pr-4 py-3 xl:py-5 xl:pl-10 xl:pr-8"
+                    class="mt-2 flex items-center justify-between gap-5 rounded-md border border-black/10 py-3 pl-4 pr-4 text-sm md:mt-4 md:rounded-lg md:text-base xl:py-5 xl:pl-10 xl:pr-8"
                   >
                     <input
                       placeholder="Card Number"
@@ -663,15 +692,17 @@
                   </div>
                 </div>
 
-                <div class="flex flex-col gap-3 xl:flex-row xl:items-center justify-between">
+                <div
+                  class="flex flex-col justify-between gap-3 xl:flex-row xl:items-center"
+                >
                   <label
                     for="expiry-date"
-                    class="text-sm md:text-base lg:text-xl font-medium text-textColor"
+                    class="text-sm font-medium text-textColor md:text-base lg:text-xl"
                     >Expiry Date</label
                   >
                   <div class="flex items-center gap-3 md:gap-5">
                     <div
-                      class="max-w-[180px] rounded-lg border border-black/10 bg-[#EAEAEA4D] py-3 px-5 xl:px-10 xl:py-4  2xl:px-16 2xl:pb-5 2xl:pt-5"
+                      class="max-w-[180px] rounded-lg border border-black/10 bg-[#EAEAEA4D] px-5 py-3 xl:px-10 xl:py-4 2xl:px-16 2xl:pb-5 2xl:pt-5"
                     >
                       <input
                         placeholder="MM"
@@ -683,7 +714,7 @@
                     </div>
                     <div class="text-black/70">/</div>
                     <div
-                      class="max-w-[180px] rounded-lg border border-black/10 bg-[#EAEAEA4D] py-3 px-5 xl:px-10 xl:py-4  2xl:px-16 2xl:pb-5 2xl:pt-5"
+                      class="max-w-[180px] rounded-lg border border-black/10 bg-[#EAEAEA4D] px-5 py-3 xl:px-10 xl:py-4 2xl:px-16 2xl:pb-5 2xl:pt-5"
                     >
                       <input
                         placeholder="YY"
@@ -696,15 +727,17 @@
                   </div>
                 </div>
 
-                <div class="flex gap-3 flex-col xl:flex-row xl:items-center justify-between">
+                <div
+                  class="flex flex-col justify-between gap-3 xl:flex-row xl:items-center"
+                >
                   <label
                     for="cvc-number"
-                    class="text-sm md:text-base lg:text-xl font-medium text-textColor"
+                    class="text-sm font-medium text-textColor md:text-base lg:text-xl"
                     >CVC Number</label
                   >
                   <div class="flex items-center gap-5">
                     <div
-                      class="w-full xl:max-w-[180px] pt-3 pb-2 px-5 rounded-lg border border-black/10 bg-[#EAEAEA4D] xl:pt-4 xl:pb-3 xl:px-10 2xl:px-16 2xl:pb-4 2:pt-5"
+                      class="2:pt-5 w-full rounded-lg border border-black/10 bg-[#EAEAEA4D] px-5 pb-2 pt-3 xl:max-w-[180px] xl:px-10 xl:pb-3 xl:pt-4 2xl:px-16 2xl:pb-4"
                     >
                       <input
                         placeholder="***"
@@ -724,7 +757,7 @@
                   >
                     <a
                       href="confirmation.html"
-                      class="flex items-center gap-2 py-2 pl-5 xl:py-3 pr-4 font-poppins text-sm md:pl-8 md:pr-6 md:text-base lg:pl-9 lg:pr-8 lg:text-lg"
+                      class="flex items-center gap-2 py-2 pl-5 pr-4 font-poppins text-sm md:pl-8 md:pr-6 md:text-base lg:pl-9 lg:pr-8 lg:text-lg xl:py-3"
                       >Confirm Payment
                       <svg
                         class="size-7 md:size-auto"
@@ -764,7 +797,7 @@
 
           <!-- tour info:start -->
           <div
-            class="2xl:col-span-4 h-fit rounded-xl border border-black/10 px-4 py-4 font-poppins"
+            class="h-fit rounded-xl border border-black/10 px-4 py-4 font-poppins 2xl:col-span-4"
           >
             <div>
               <img
@@ -774,31 +807,35 @@
               />
             </div>
 
-            <div class="mt-5 md:mt-8 lg:mt-10 space-y-2 md:space-y-4">
+            <div class="mt-5 space-y-2 md:mt-8 md:space-y-4 lg:mt-10">
               <div>
-                <h2 class="md:text-lg font-semibold">Tour of the Swiss Alps</h2>
+                <h2 class="font-semibold md:text-lg">Tour of the Swiss Alps</h2>
               </div>
-              <div class="flex items-center justify-between text-sm md:text-base">
+              <div
+                class="flex items-center justify-between text-sm md:text-base"
+              >
                 <h5 class="font-semibold">
                   Date: <span class="font-normal">24 September 2024</span>
                 </h5>
-                <p class="font-semibold text-nowrap">
+                <p class="text-nowrap font-semibold">
                   Time: <span class="font-normal">12 am</span>
                 </p>
               </div>
               <div>
-                <h5 class="font-semibold text-sm md:text-base">
+                <h5 class="text-sm font-semibold md:text-base">
                   Duration: <span class="font-normal">4 Days</span>
                 </h5>
               </div>
               <div>
-                <h5 class="font-semibold text-sm md:text-base">
+                <h5 class="text-sm font-semibold md:text-base">
                   Tickets:
                   <span class="ml-3 font-normal">Children x1= $200.00</span>
                 </h5>
               </div>
 
-              <div class="flex items-center justify-between pt-5 md:pt-10 pb-5 text-sm md:text-base">
+              <div
+                class="flex items-center justify-between pb-5 pt-5 text-sm md:pt-10 md:text-base"
+              >
                 <h5 class="font-semibold">Total Payment</h5>
                 <p>
                   <span class="font-normal">$4500</span>
