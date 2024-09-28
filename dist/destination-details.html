@@ -2257,11 +2257,11 @@
                     data-aos="fade-down"
                     data-aos-duration="1000"
                     data-aos-delay="100"
-                    class="flex items-center gap-2 w-fit"
-                     id='review-stars'
+                    class="flex w-fit items-center gap-2"
+                    id="review-stars"
                   >
                     <svg
-                      class="group size-4 cursor-pointer md:size-auto star"
+                      class="star group size-4 cursor-pointer md:size-auto"
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
                       height="20"
@@ -2284,7 +2284,7 @@
                       </defs>
                     </svg>
                     <svg
-                      class="group size-4 cursor-pointer md:size-auto star"
+                      class="star group size-4 cursor-pointer md:size-auto"
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
                       height="20"
@@ -2307,7 +2307,7 @@
                       </defs>
                     </svg>
                     <svg
-                      class="group size-4 cursor-pointer md:size-auto star"
+                      class="star group size-4 cursor-pointer md:size-auto"
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
                       height="20"
@@ -2330,7 +2330,7 @@
                       </defs>
                     </svg>
                     <svg
-                      class="group size-4 cursor-pointer md:size-auto star"
+                      class="star group size-4 cursor-pointer md:size-auto"
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
                       height="20"
@@ -2353,7 +2353,7 @@
                       </defs>
                     </svg>
                     <svg
-                      class="group size-4 cursor-pointer md:size-auto star"
+                      class="star group size-4 cursor-pointer md:size-auto"
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
                       height="20"
@@ -3910,6 +3910,7 @@
       // Simulate dynamic prices for the month (from backend)
       const dynamicPrices = {
         "2024-10-02": 350,
+        "2024-09-29": 350,
         "2024-10-03": 370,
         "2024-10-14": 370,
         "2024-10-15": 370,
@@ -3932,6 +3933,13 @@
         fourthPerson: 229,
       };
 
+      function formatDate(date) {
+        const year = date.getFullYear();
+        const month = (date.getMonth() + 1).toString().padStart(2, "0"); // Months are zero-indexed
+        const day = date.getDate().toString().padStart(2, "0");
+        return `${year}-${month}-${day}`;
+      }
+
       // Render the calendar for a specific month and year
       function renderCalendar(year, month, calendarElement, monthLabelElement) {
         const firstDay = new Date(year, month, 1);
@@ -3948,7 +3956,7 @@
         // Generate the days of the month
         for (let day = 1; day <= daysInMonth; day++) {
           const date = new Date(year, month, day);
-          const isoDate = date.toISOString().split("T")[0]; // Get date in YYYY-MM-DD format for price matching
+          const isoDate = formatDate(date);
           let cellClass = getCellClass(date); // Get class for selected date range
           let isPast = date < today.setHours(0, 0, 0, 0); // Disable dates before today
 
@@ -4039,7 +4047,8 @@
         dayCells.forEach((cell) => {
           cell.addEventListener("click", () => {
             const selectedDate = new Date(cell.getAttribute("data-date"));
-            const isoDate = selectedDate.toISOString().split("T")[0];
+
+            const isoDate = formatDate(selectedDate);
 
             // Ignore clicks on past dates
             if (selectedDate < today.setHours(0, 0, 0, 0)) return;
@@ -4197,7 +4206,7 @@
         // Generate the days of the month
         for (let day = 1; day <= daysInMonth; day++) {
           const date = new Date(year, month, day);
-          const isoDate = date.toISOString().split("T")[0]; // Get date in YYYY-MM-DD format for price matching
+          const isoDate = formatDate(date);
 
           let isPast = date < departureToday.setHours(0, 0, 0, 0); // Disable dates before today
           let hasPrice = dynamicPrices[isoDate]; // Check if the date has a price
@@ -4260,7 +4269,8 @@
         dayCells?.forEach((cell) => {
           cell.addEventListener("click", () => {
             const clickedDate = new Date(cell.getAttribute("data-date"));
-            const isoDate = clickedDate.toISOString().split("T")[0];
+
+            const isoDate = formatDate(clickedDate);
 
             // Ignore clicks on past dates and dates without prices
             if (
@@ -4303,7 +4313,8 @@
         dayCells.forEach((cell) => {
           cell.addEventListener("click", () => {
             const selectedDate = new Date(cell.getAttribute("data-date"));
-            const isoDate = selectedDate.toISOString().split("T")[0];
+
+            const isoDate = formatDate(selectedDate);
 
             // Ignore clicks on past dates
             if (selectedDate < today.setHours(0, 0, 0, 0)) return;
@@ -4348,7 +4359,8 @@
         dayCells?.forEach((cell) => {
           cell.addEventListener("click", () => {
             const clickedDate = new Date(cell.getAttribute("data-date"));
-            const isoDate = clickedDate.toISOString().split("T")[0];
+
+            const isoDate = formatDate(clickedDate);
 
             // Ignore clicks on past dates and dates without prices
             if (
