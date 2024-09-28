@@ -2994,6 +2994,10 @@ video {
   fill: #fff;
 }
 
+.group:hover .group-hover\:stroke-\[\#EFCE4A\]{
+  stroke: #EFCE4A;
+}
+
 .group:hover .group-hover\:stroke-secondary{
   stroke: #FF5108;
 }
@@ -3156,6 +3160,10 @@ video {
     margin-top: 5rem;
   }
 
+  .md\:mt-3{
+    margin-top: 0.75rem;
+  }
+
   .md\:mt-4{
     margin-top: 1rem;
   }
@@ -3170,10 +3178,6 @@ video {
 
   .md\:mt-8{
     margin-top: 2rem;
-  }
-
-  .md\:mt-3{
-    margin-top: 0.75rem;
   }
 
   .md\:block{
@@ -4877,10 +4881,6 @@ video {
 
   .\32xl\:justify-between{
     justify-content: space-between;
-  }
-
-  .\32xl\:gap-10{
-    gap: 2.5rem;
   }
 
   .\32xl\:gap-12{

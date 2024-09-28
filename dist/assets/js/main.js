@@ -56,7 +56,7 @@ $(document).ready(function () {
       "-z-20",
       "translate-y-5",
     );
-    departureCalendarHomepageUnique.classList.add(
+    departureCalendarHomepageUnique?.classList.add(
       "opacity-100",
       "z-20",
       "translate-y-0",
@@ -65,12 +65,12 @@ $(document).ready(function () {
 
   // Function to hide the calendar
   function hideCalendar() {
-    departureCalendarHomepageUnique.classList.add(
+    departureCalendarHomepageUnique?.classList.add(
       "opacity-0",
       "-z-20",
       "translate-y-5",
     );
-    departureCalendarHomepageUnique.classList.remove(
+    departureCalendarHomepageUnique?.classList.remove(
       "opacity-100",
       "z-20",
       "translate-y-0",
@@ -181,8 +181,8 @@ $(document).ready(function () {
   // Hide calendar if clicking outside the calendar or container
   document.addEventListener("click", (event) => {
     if (
-      !containerUnique.contains(event.target) &&
-      !departureCalendarHomepageUnique.contains(event.target)
+      !containerUnique?.contains(event.target) &&
+      !departureCalendarHomepageUnique?.contains(event.target)
     ) {
       hideCalendar();
     }
@@ -1052,6 +1052,41 @@ $(document).ready(function () {
     }
   });
   // cart:end
+
+  //review:start
+  const reviewStars = document.querySelectorAll(".star");
+  function setActiveStars(count) {
+    reviewStars?.forEach((star, index) => {
+      const path = star.querySelector("path");
+      if (index < count) {
+        path.setAttribute("fill", "#EFCE4A");
+        path.setAttribute("stroke", "#EFCE4A");
+      } else {
+        path.setAttribute("fill", "#fff");
+        path.setAttribute("stroke", "#000");
+      }
+    });
+  }
+
+  reviewStars?.forEach((star) => {
+    if (star) {
+      star?.addEventListener("click", () => {
+        const count = parseInt(star.getAttribute("data-index"));
+        setActiveStars(count);
+      });
+    }
+  });
+
+  document.addEventListener("click",(e)=>{
+     if(!document.getElementById("review-stars").contains(e.target)){
+      reviewStars?.forEach((star)=>{
+        const path = star.querySelector("path");
+        path.setAttribute("fill", "#fff");
+        path.setAttribute("stroke", "#000");
+      })
+     }
+  })
+  //review:end
 });
 
 // ====Solaimain====
