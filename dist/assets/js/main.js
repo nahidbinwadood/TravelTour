@@ -374,8 +374,12 @@ $(document).ready(function () {
 
   // Owl Carousel::Start
   $(".destination--slider .owl-carousel").owlCarousel({
-    loop: true, // Enable looping
-    margin: 40, // Set margin between items
+    loop: true, // Enable looping for infinite scroll
+    margin: 40,
+    nav: true, // Show next/prev navigation arrows
+    autoplay: true, // Enable autoplay (optional)
+    autoplayTimeout: 3000, // Set autoplay speed (3 seconds in this example)
+    autoplayHoverPause: true, // Pause autoplay on hover (optional)
     nav: true, // Show navigation arrows
     responsive: {
       0: {
@@ -389,26 +393,34 @@ $(document).ready(function () {
       },
     },
   });
-  $(".auth-container .owl-carousel").owlCarousel({
-    loop: true, // Enable looping
-    margin: 10, // Set margin between items
-    nav: true,
+  $(".about--us--slider .owl-carousel").owlCarousel({
+    loop: true, // Enable looping for infinite scroll
+    margin: 40,
+    nav: true, // Show next/prev navigation arrows
+    autoplay: true, // Enable autoplay (optional)
+    autoplayTimeout: 3000, // Set autoplay speed (3 seconds in this example)
+    autoplayHoverPause: true, // Pause autoplay on hover (optional)
+    nav: false, // Show navigation arrows
     responsive: {
       0: {
         items: 1, // Number of items for screens up to 600px wide
       },
       768: {
-        items: 1, // Number of items for screens up to 1000px wide
+        items: 2, // Number of items for screens up to 1000px wide
       },
       1000: {
-        items: 1, // Number of items for screens wider than 1000px
+        items: 3, // Number of items for screens wider than 1000px
       },
     },
   });
   $(".blogs--slider .owl-carousel").owlCarousel({
-    loop: true, // Enable looping
-    margin: 40, // Set margin between items
-    nav: true,
+    loop: true, // Enable looping for infinite scroll
+    margin: 40,
+    nav: true, // Show next/prev navigation arrows
+    autoplay: true, // Enable autoplay (optional)
+    autoplayTimeout: 3000, // Set autoplay speed (3 seconds in this example)
+    autoplayHoverPause: true, // Pause autoplay on hover (optional)
+
     navText: [
       '<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 33C26.2843 33 33 26.2843 33 18C33 9.71573 26.2843 3 18 3C9.71573 3 3 9.71573 3 18C3 26.2843 9.71573 33 18 33Z" fill="white" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.8894 23.2931L14.6094 17.9981L19.8894 12.7031" stroke="#1CA8CB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
       '<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 33C26.2843 33 33 26.2843 33 18C33 9.71573 26.2843 3 18 3C9.71573 3 3 9.71573 3 18C3 26.2843 9.71573 33 18 33Z" fill="white" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.1094 23.2931L21.3894 17.9981L16.1094 12.7031" stroke="#1CA8CB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
@@ -1077,15 +1089,15 @@ $(document).ready(function () {
     }
   });
 
-  document.addEventListener("click",(e)=>{
-     if(!document.getElementById("review-stars").contains(e.target)){
-      reviewStars?.forEach((star)=>{
+  document.addEventListener("click", (e) => {
+    if (!document.getElementById("review-stars").contains(e.target)) {
+      reviewStars?.forEach((star) => {
         const path = star.querySelector("path");
         path.setAttribute("fill", "#fff");
         path.setAttribute("stroke", "#000");
-      })
-     }
-  })
+      });
+    }
+  });
   //review:end
 });
 

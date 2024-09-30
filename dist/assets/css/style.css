@@ -4247,10 +4247,6 @@ video {
     margin-top: -11rem;
   }
 
-  .xl\:-mt-\[200px\]{
-    margin-top: -200px;
-  }
-
   .xl\:mb-12{
     margin-bottom: 3rem;
   }
@@ -4452,10 +4448,6 @@ video {
 
   .xl\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .xl\:grid-cols-3{
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .xl\:grid-cols-4{
@@ -4745,16 +4737,8 @@ video {
     margin-top: -15rem;
   }
 
-  .\32xl\:-mt-\[220px\]{
-    margin-top: -220px;
-  }
-
   .\32xl\:mb-20{
     margin-bottom: 5rem;
-  }
-
-  .\32xl\:mb-32{
-    margin-bottom: 8rem;
   }
 
   .\32xl\:mb-5{
