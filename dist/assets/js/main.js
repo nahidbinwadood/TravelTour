@@ -95,7 +95,7 @@ $(document).ready(function () {
     // Fill in the days
     for (let i = 0; i < firstDayUnique; i++) {
       const emptyDayUnique = document.createElement("div");
-      departureCalendarDaysUnique.appendChild(emptyDayUnique);
+      departureCalendarDaysUnique?.appendChild(emptyDayUnique);
     }
 
     for (let day = 1; day <= daysInMonthUnique; day++) {

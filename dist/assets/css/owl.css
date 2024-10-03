@@ -100,7 +100,7 @@
 
 /* ===About Us::End */
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .destination--slider .owl-dots .owl-dot {
     height: 12px;
     width: 12px;

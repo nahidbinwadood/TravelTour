@@ -4047,6 +4047,7 @@
         dayCells.forEach((cell) => {
           cell.addEventListener("click", () => {
             const selectedDate = new Date(cell.getAttribute("data-date"));
+            const selectedDatePrices = cell.getAttribute("data-date");
 
             const isoDate = formatDate(selectedDate);
 
@@ -4056,6 +4057,7 @@
             // If the clicked date has a price, automatically select a range of 4 consecutive days
             if (dynamicPrices[isoDate]) {
               selectedStartDate = selectedDate;
+
               selectedEndDate = new Date(selectedStartDate);
 
               for (let i = 0; i < 3; i++) {
@@ -4313,6 +4315,7 @@
         dayCells.forEach((cell) => {
           cell.addEventListener("click", () => {
             const selectedDate = new Date(cell.getAttribute("data-date"));
+            const selectedDatePrice = cell.getAttribute("data-price");
 
             const isoDate = formatDate(selectedDate);
 
@@ -4344,6 +4347,10 @@
             document.getElementById("departure--start--date").innerText =
               selectedStartDate.toLocaleDateString();
 
+            // Selected Prices::Start
+            console.log(selectedDatePriceselectedDatePrice);
+            // Selected Prices::end
+
             document.getElementById("departure--end--date").innerText =
               selectedEndDate.toLocaleDateString();
 
@@ -4359,6 +4366,7 @@
         dayCells?.forEach((cell) => {
           cell.addEventListener("click", () => {
             const clickedDate = new Date(cell.getAttribute("data-date"));
+            const clickedDatePrice = cell.getAttribute("data-price");
 
             const isoDate = formatDate(clickedDate);
 
@@ -4371,6 +4379,11 @@
 
             // Set the clicked date as the selected departure date
             selectedDepartureDate = clickedDate;
+
+            // Selected Prices::Start
+            console.log(clickedDatePrice);
+            // Selected Prices::end
+
             finalStartDate = selectedDepartureDate;
 
             departureDateShow.innerText =
@@ -4384,6 +4397,7 @@
             //show input ::start
             document.getElementById("departure--start--date").innerText =
               selectedStartDate.toLocaleDateString();
+
             document.getElementById("departure--end--date").innerText =
               selectedEndDate.toLocaleDateString();
 

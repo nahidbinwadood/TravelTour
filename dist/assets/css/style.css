@@ -4551,11 +4551,6 @@ video {
     padding-bottom: 2.5rem;
   }
 
-  .xl\:py-24{
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-
   .xl\:py-28{
     padding-top: 7rem;
     padding-bottom: 7rem;
@@ -4785,10 +4780,6 @@ video {
 
   .\32xl\:h-\[500px\]{
     height: 500px;
-  }
-
-  .\32xl\:h-\[50vh\]{
-    height: 50vh;
   }
 
   .\32xl\:h-\[570px\]{
