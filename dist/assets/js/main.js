@@ -1090,7 +1090,7 @@ $(document).ready(function () {
   });
 
   document.addEventListener("click", (e) => {
-    if (!document.getElementById("review-stars").contains(e.target)) {
+    if (!document.getElementById("review-stars")?.contains(e.target)) {
       reviewStars?.forEach((star) => {
         const path = star.querySelector("path");
         path.setAttribute("fill", "#fff");
@@ -1099,6 +1099,104 @@ $(document).ready(function () {
     }
   });
   //review:end
+
+  //homepage duration label:
+  const durationLabelContainer = document.getElementById("departure-length");
+  const durationSuggestionContainer = document.getElementById(
+    "duration-suggestion",
+  );
+  const durationInputContainer = document.getElementById(
+    "banner-departure-duration",
+  );
+
+  // Show suggestion container on label click
+  durationLabelContainer?.addEventListener("click", () => {
+    durationSuggestionContainer?.classList.remove("translate-y-5", "opacity-0");
+    durationSuggestionContainer?.classList.add("translate-y-0", "opacity-100");
+  });
+
+  // Select all span options and set up click event
+  const durationOptions = document.querySelectorAll(
+    "#duration-suggestion .duration--option span",
+  );
+
+  durationOptions.forEach((span) => {
+    span.addEventListener("click", (event) => {
+      const value = event.target.textContent.trim();
+      durationInputContainer.value = `${value} Days`;
+
+      // Fade out the suggestion container after setting the input value
+      setTimeout(() => {
+        durationSuggestionContainer?.classList.remove(
+          "translate-y-0",
+          "opacity-100",
+        );
+        durationSuggestionContainer?.classList.add(
+          "translate-y-5",
+          "opacity-0",
+        );
+      }, 50); // 50ms delay to allow animation trigger
+    });
+  });
+
+  //buttons:
+  const anyLengthBtn = document.getElementById("any-length");
+  const customizeDurationBtn = document.getElementById("customize-duration");
+  const customDurationContainer = document.getElementById("custom--duration--container");
+  const anyLengthContainer = document.getElementById("any--length--container");
+
+  const startDateInput = document.getElementById("banner--start--departure--date");
+  const endDateInput = document.getElementById("banner--end--departure--date");
+  const goButton = document.getElementById("go-btn")
+
+  customizeDurationBtn?.addEventListener("click", () => {
+    anyLengthContainer.classList.add("hidden");
+    customDurationContainer.classList.remove("hidden")
+  });
+  anyLengthBtn?.addEventListener("click", () => {
+    anyLengthContainer.classList.remove("hidden");
+    customDurationContainer.classList.add("hidden")
+  });
+
+
+  //2nd tab:
+  goButton.addEventListener("click", () => {
+    const startValue = startDateInput.value.trim();
+    const endValue = endDateInput.value.trim();
+
+    // Check if both values are entered
+    if (startValue && endValue) {
+      // Set the input field value to "start - end Days" format
+      durationInputContainer.value = `${startValue} - ${endValue} Days`;
+      // Fade out the suggestion container after setting the input value
+      setTimeout(() => {
+        durationSuggestionContainer?.classList.remove(
+          "translate-y-0",
+          "opacity-100",
+        );
+        durationSuggestionContainer?.classList.add(
+          "translate-y-5",
+          "opacity-0",
+        );
+      }, 50); // 50ms delay to allow animation trigger
+    } else {
+      // Optionally, you can add a message if the fields are empty
+      alert("Please enter both start and end days.");
+    }
+  });
+  // Hide suggestion container when clicking outside
+  document.addEventListener("click", (e) => {
+    if (
+      !durationLabelContainer?.contains(e.target) &&
+      !durationSuggestionContainer?.contains(e.target)
+    ) {
+      durationSuggestionContainer?.classList.remove(
+        "translate-y-0",
+        "opacity-100",
+      );
+      durationSuggestionContainer?.classList.add("translate-y-5", "opacity-0");
+    }
+  });
 });
 
 // ====Solaimain====
